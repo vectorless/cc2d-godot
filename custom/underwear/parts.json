@@ -7,147 +7,6 @@
     "body": [
      "Female"
     ],
-    "name": "Lace Bra Female",
-    "package": "Underwear",
-    "texture": "res://custom/underwear/textures/Armor/Lace Bra Female.png",
-    "mask": "res://custom/underwear/textures/Armor/Lace Bra Female Mask.png",
-    "sprites": {
-     "Armor Body": {
-      "texture": "res://custom/underwear/textures/Armor/Lace Bra Female.png",
-      "region": [
-       0,
-       0,
-       512,
-       512
-      ],
-      "offset": [
-       -256,
-       -256
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.314,
-      0.3132,
-      0.3136,
-      1.0
-     ],
-     [
-      0.492,
-      0.4913,
-      0.4918,
-      1.0
-     ],
-     [
-      0.8426,
-      0.8429,
-      0.8422,
-      1.0
-     ]
-    ],
-    "template": "Base 00 Female",
-    "desc": "a tasteful black lace balconette bra with thin straps"
-   },
-   {
-    "body": [
-     "Female"
-    ],
-    "name": "Sports Bra Female",
-    "package": "Underwear",
-    "texture": "res://custom/underwear/textures/Armor/Sports Bra Female.png",
-    "mask": "res://custom/underwear/textures/Armor/Sports Bra Female Mask.png",
-    "sprites": {
-     "Armor Body": {
-      "texture": "res://custom/underwear/textures/Armor/Sports Bra Female.png",
-      "region": [
-       0,
-       0,
-       512,
-       512
-      ],
-      "offset": [
-       -256,
-       -256
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.5192,
-      0.5196,
-      0.519,
-      1.0
-     ],
-     [
-      0.4603,
-      0.4594,
-      0.4591,
-      1.0
-     ],
-     [
-      0.3287,
-      0.3283,
-      0.3278,
-      1.0
-     ]
-    ],
-    "template": "Base 00 Female",
-    "desc": "a plain grey athletic sports bra with a wide elastic band"
-   },
-   {
-    "body": [
-     "Female"
-    ],
-    "name": "Bandeau Female",
-    "package": "Underwear",
-    "texture": "res://custom/underwear/textures/Armor/Bandeau Female.png",
-    "mask": "res://custom/underwear/textures/Armor/Bandeau Female Mask.png",
-    "sprites": {
-     "Armor Body": {
-      "texture": "res://custom/underwear/textures/Armor/Bandeau Female.png",
-      "region": [
-       0,
-       0,
-       512,
-       512
-      ],
-      "offset": [
-       -256,
-       -256
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      1.0,
-      1.0,
-      1.0,
-      1.0
-     ],
-     [
-      0.825,
-      0.4928,
-      0.4876,
-      1.0
-     ],
-     [
-      0.6456,
-      0.3431,
-      0.3406,
-      1.0
-     ]
-    ],
-    "template": "Base 00 Female",
-    "desc": "a simple strapless striped cotton bandeau top"
-   },
-   {
-    "body": [
-     "Female"
-    ],
     "name": "Silk Camisole Female",
     "package": "Underwear",
     "texture": "res://custom/underwear/textures/Armor/Silk Camisole Female.png",
@@ -387,6 +246,147 @@
     ],
     "template": "Daily 00 Male",
     "desc": "a plain white cotton crew-neck undershirt T-shirt"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Lace Bra Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Lace Bra Female.png",
+    "mask": "res://custom/underwear/textures/Armor/Lace Bra Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Lace Bra Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3228,
+      0.3221,
+      0.3227,
+      1.0
+     ],
+     [
+      0.5251,
+      0.5248,
+      0.5251,
+      1.0
+     ],
+     [
+      0.9324,
+      0.9328,
+      0.9323,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a tasteful black lace balconette bra with thin straps"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Sports Bra Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Sports Bra Female.png",
+    "mask": "res://custom/underwear/textures/Armor/Sports Bra Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Sports Bra Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5191,
+      0.5196,
+      0.5189,
+      1.0
+     ],
+     [
+      0.4549,
+      0.4548,
+      0.4537,
+      1.0
+     ],
+     [
+      0.321,
+      0.321,
+      0.3207,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a plain grey athletic sports bra with a wide elastic band"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Bandeau Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Bandeau Female.png",
+    "mask": "res://custom/underwear/textures/Armor/Bandeau Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Bandeau Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.8448,
+      0.3699,
+      0.3622,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     [
+      0.852,
+      0.8146,
+      0.8139,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a simple strapless striped cotton bandeau top"
    }
   ],
   "Pants": [

@@ -54,53 +54,6 @@
     "body": [
      "Female"
     ],
-    "name": "Satin Bralette Female",
-    "package": "Nightclub",
-    "texture": "res://custom/nightclub/textures/Armor/Satin Bralette Female.png",
-    "mask": "res://custom/nightclub/textures/Armor/Satin Bralette Female Mask.png",
-    "sprites": {
-     "Armor Body": {
-      "texture": "res://custom/nightclub/textures/Armor/Satin Bralette Female.png",
-      "region": [
-       0,
-       0,
-       512,
-       512
-      ],
-      "offset": [
-       -256,
-       -256
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.5724,
-      0.2096,
-      0.2507,
-      1.0
-     ],
-     [
-      0.78,
-      0.4336,
-      0.4715,
-      1.0
-     ],
-     [
-      1.0,
-      1.0,
-      1.0,
-      1.0
-     ]
-    ],
-    "template": "Base 00 Female",
-    "desc": "a fashionable nightclub satin bralette top in deep red with thin straps"
-   },
-   {
-    "body": [
-     "Female"
-    ],
     "name": "Mesh Long-Sleeve Top Female",
     "package": "Nightclub",
     "texture": "res://custom/nightclub/textures/Armor/Mesh Long-Sleeve Top Female.png",
@@ -527,6 +480,53 @@
     ],
     "template": "Daily 14 Male",
     "desc": "a fashionable nightclub sheer black mesh sleeveless tank top"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Satin Bralette Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Satin Bralette Female.png",
+    "mask": "res://custom/nightclub/textures/Armor/Satin Bralette Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Satin Bralette Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5773,
+      0.2054,
+      0.2486,
+      1.0
+     ],
+     [
+      0.7518,
+      0.4635,
+      0.4974,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a fashionable nightclub satin bralette top in deep red with thin straps"
    }
   ],
   "Pants": [

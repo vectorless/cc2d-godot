@@ -121,7 +121,13 @@ def fit_rule(sprite):
     return 'none'
 
 
-def convert(gen_path, meta, tex_path, regions, out_path, mode='auto'):
+# Templates whose pieces need a different placement than fit_rule's default.
+TEMPLATE_FIT = {
+    'Base 00 Female': {'Armor Body': 'width_bottom'},   # strapless bra sheet: match the cups' width, keep the band
+}
+
+
+def convert(gen_path, meta, tex_path, regions, out_path, mode='auto', overrides=None):
     tmpl = Image.open(tex_path).convert('RGBA')
     W, H = tmpl.size
     talpha = np.asarray(tmpl)[:, :, 3]
@@ -142,7 +148,7 @@ def convert(gen_path, meta, tex_path, regions, out_path, mode='auto'):
         tb = bbox(talpha[ry:ry + rh, rx:rx + rw] > 20)
         canvas_rgb = rect.copy()
         canvas_a = fg.astype(np.float32)
-        rule = fit_rule(name) if mode != 'identity' else 'none'
+        rule = (overrides or {}).get(name) or (fit_rule(name) if mode != 'identity' else 'none')
         if rule != 'none' and tb is not None:
             tb = [2 * v for v in tb]
             gx0, gy0, gx1, gy1 = gb
@@ -154,6 +160,9 @@ def convert(gen_path, meta, tex_path, regions, out_path, mode='auto'):
                 if abs(np.log(sx / sy)) > 0.25:
                     sx = sy = np.sqrt(sx * sy)
                 ax, ay = 'c', 't'
+            elif rule == 'width_bottom':   # bras / bandeaus: as wide as the template, band on its band (straps go up)
+                sx = sy = tw / gw
+                ax, ay = 'c', 'b'
             elif rule == 'length':   # limbs: same length so the joints line up; keep its own width
                 sx = sy = th / gh
                 ax, ay = 'c', 't'
@@ -243,7 +252,8 @@ def run_part(spec_file, spec, p, reuse=False):
         return False
     regions = regions_of(cat, tp, size)
     rgba = os.path.join(wd, 'part.png')
-    rep_fit = convert(files[0], meta, tex_path, regions, rgba, p.get('mode', 'auto'))
+    overrides = dict(TEMPLATE_FIT.get(p['template'], {}) if cat == 'Armor' else {}, **p.get('fit', {}))
+    rep_fit = convert(files[0], meta, tex_path, regions, rgba, p.get('mode', 'auto'), overrides)
     colors = recolor.split(rgba, os.path.join(wd, 'tex.png'), os.path.join(wd, 'mask.png'))
     extra = {'template': p['template'], 'desc': p['desc']}
     register(spec['pack_dir'], pkg, cat, p['name'], tp, os.path.join(wd, 'tex.png'), os.path.join(wd, 'mask.png'), colors, extra)
