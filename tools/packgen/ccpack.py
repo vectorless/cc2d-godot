@@ -29,11 +29,46 @@ def background(rgb, thresh=232):
     white = (rgb.min(axis=2) > thresh) & ((rgb.max(axis=2) - rgb.min(axis=2)) < 18)
     return white
 
-def piece_mask(rgb_rect):
+def piece_mask(rgb_rect, tmpl_alpha=None, gap=14):
+    """Foreground of one piece: everything but the white background around it.
+    Hand-drawn outlines have small gaps, and a plain flood fill would pour through them into
+    white fabric (shirts, socks...). So the flood runs with the dark lines thickened by `gap`
+    px (closing gaps up to ~2*gap wide), then grows back by `gap` px into white only."""
     white = background(rgb_rect)
+    ink = rgb_rect.min(axis=2) < 150
+    if gap > 0:
+        thick = ndimage.binary_dilation(ink, iterations=gap)
+        lab0, _ = ndimage.label(white & ~thick)
+        b0 = set(np.unique(np.concatenate([lab0[0], lab0[-1], lab0[:, 0], lab0[:, -1]]))) - {0}
+        seed = np.isin(lab0, list(b0))
+        grown = ndimage.binary_dilation(seed, iterations=gap + 1) & white
+        # anything still white and connected only through the thickened lines stays foreground
+        white = grown | (white & ~thick & np.isin(lab0, list(b0)))
     lab, n = ndimage.label(white)
     border = set(np.unique(np.concatenate([lab[0], lab[-1], lab[:, 0], lab[:, -1]]))) - {0}
     bg = np.isin(lab, list(border))
+    # Background also shows through closed loops (between a shoulder strap and the body, inside a
+    # handle...). Those holes are flat background white; a garment's own whites are shaded.
+    if bg.any() and n > len(border):
+        mins = rgb_rect.min(axis=2)
+        ref = float(np.median(mins[bg]))
+        for i in range(1, n + 1):
+            if i in border:
+                continue
+            comp = lab == i
+            size = int(comp.sum())
+            if size < 60:
+                continue
+            m = mins[comp]
+            if not (abs(float(np.median(m)) - ref) <= 3.0 and float(m.std()) < 3.5):
+                continue
+            # A white garment is flat white too, so only small holes that lie where the template
+            # piece is see-through count as background (e.g. between a strap and the body).
+            if size > 0.06 * (~bg).sum():
+                continue
+            if tmpl_alpha is not None and float((tmpl_alpha[comp] < 0.5).mean()) < 0.5:
+                continue
+            bg |= comp
     fg = ~bg
     # drop specks, fill holes that aren't real gaps
     lab2, n2 = ndimage.label(fg)

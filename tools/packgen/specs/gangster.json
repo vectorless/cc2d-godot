@@ -3,6 +3,13 @@
  "package": "Gangster",
  "parts": [
   {
+   "id": "jacket_m",
+   "category": "Armor",
+   "name": "Gangster 00 Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1950s gangster's charcoal-grey pinstripe double-breasted suit jacket over a white shirt and a dark silk tie, with wide peak lapels and a pocket square"
+  },
+  {
    "id": "vest_shirt_m",
    "category": "Armor",
    "name": "Waistcoat and Shirt Male",

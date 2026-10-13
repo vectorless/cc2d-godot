@@ -3,6 +3,13 @@
  "package": "Flower Power",
  "parts": [
   {
+   "id": "paisley_m",
+   "category": "Armor",
+   "name": "Flower Power 00 Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1960s flower-power hippie shirt: a loose paisley-print tunic in orange, mustard yellow and teal, with a deep V-neck, embroidered trim at the neckline and cuffs, and flared bell sleeves"
+  },
+  {
    "id": "fringe_vest_m",
    "category": "Armor",
    "name": "Fringed Vest Male",
@@ -83,8 +90,9 @@
    "id": "gogo",
    "category": "Boots",
    "name": "Go-Go Boots",
-   "template": "Fantasy 03",
-   "desc": "1960s shiny white patent go-go boots, calf-high with a low heel"
+   "template": "Fantasy 09",
+   "desc": "1960s shiny white patent go-go boots reaching the knee, with a low heel. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part.",
+   "matte": true
   },
   {
    "id": "long_hair",

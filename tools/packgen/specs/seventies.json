@@ -83,8 +83,9 @@
    "id": "platform_boots",
    "category": "Boots",
    "name": "Platform Boots",
-   "template": "Fantasy 03",
-   "desc": "1970s knee-high platform boots with thick soles, in metallic silver"
+   "template": "Fantasy 09",
+   "desc": "1970s knee-high platform boots with thick soles, in metallic silver. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part.",
+   "matte": true
   },
   {
    "id": "feathered",

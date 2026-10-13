@@ -69,8 +69,9 @@
    "id": "tall_boots",
    "category": "Boots",
    "name": "Tall Uniform Boots",
-   "template": "Fantasy 03",
-   "desc": "sleek knee-high black sci-fi uniform boots with a thin metallic trim"
+   "template": "Fantasy 08",
+   "desc": "sleek knee-high black sci-fi uniform boots with a thin metallic trim. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part.",
+   "matte": true
   },
   {
    "id": "mag_boots",

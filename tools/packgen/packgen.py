@@ -2,7 +2,9 @@
 
     python3 packgen.py run specs/gangster.json [more specs...] [--budget 150] [--only ID] [--redo ID]
     python3 packgen.py list specs/*.json
-    python3 packgen.py reconvert specs/x.json [--only ID]   (redo fitting/colours from the saved image, no API call)
+    python3 packgen.py reconvert specs/x.json [--only ID]   (redo fitting/colours from the saved image, no image-model call)
+    --matte   cut pieces out with a background-removal model instead of flood-filling the white
+              (also per part / per spec: "matte": true). Use it for white garments, straps, loops.
 
 A spec file: {"pack_dir": "custom/gangster", "package": "Gangster", "parts": [
    {"id": "jacket_m", "category": "Armor", "name": "Gangster 01 Male", "template": "Daily 09 Male",
@@ -127,7 +129,43 @@ TEMPLATE_FIT = {
 }
 
 
-def convert(gen_path, meta, tex_path, regions, out_path, mode='auto', overrides=None):
+MATTE_MODEL = 'bria/remove-background'
+
+
+def matte(gen_path):
+    """Alpha matte of the generated sheet from a background-removal model, cached next to it as
+    <gen>_alpha.png. Far better than flood-filling white for white garments, thin straps and
+    loops (camisole straps, halter necks, strappy shoes). Costs one ~1 s API call per part."""
+    out = os.path.splitext(gen_path)[0] + '_alpha.png'
+    if not os.path.exists(out):
+        inp = {'image': rep.data_uri(gen_path)}
+        p = rep.req('POST', '%s/models/%s/predictions' % (rep.API, MATTE_MODEL), {'input': inp}, {'Prefer': 'wait=60'})
+        while p['status'] not in ('succeeded', 'failed', 'canceled'):
+            time.sleep(2)
+            p = rep.req('GET', p['urls']['get'])
+        if p['status'] != 'succeeded':
+            raise RuntimeError('matte failed: %s' % p.get('error'))
+        url = p['output'] if isinstance(p['output'], str) else p['output'][0]
+        tmp = out + '.dl'
+        __import__('urllib.request').request.urlretrieve(url, tmp)
+        Image.open(tmp).convert('RGBA').getchannel('A').save(out)
+        os.remove(tmp)
+    return out
+
+
+def _matte_mask(a_rect):
+    """Pieces in a matte rectangle: drop specks and bits of neighbouring pieces."""
+    from scipy import ndimage
+    fg = a_rect > 0.5
+    lab, n = ndimage.label(fg)
+    if n == 0:
+        return fg
+    sizes = ndimage.sum(fg, lab, range(1, n + 1))
+    keep = [i + 1 for i, v in enumerate(sizes) if v >= max(200, 0.04 * sizes.max())]
+    return np.isin(lab, keep)
+
+
+def convert(gen_path, meta, tex_path, regions, out_path, mode='auto', overrides=None, alpha_path=None):
     tmpl = Image.open(tex_path).convert('RGBA')
     W, H = tmpl.size
     talpha = np.asarray(tmpl)[:, :, 3]
@@ -135,19 +173,31 @@ def convert(gen_path, meta, tex_path, regions, out_path, mode='auto', overrides=
     x, y, pw, ph = meta['box']
     g = g.crop((x, y, x + pw, y + ph)).resize((2 * W, 2 * H), Image.LANCZOS)
     g2 = np.asarray(g).astype(np.float32)
+    am = None
+    if alpha_path:
+        al = Image.open(alpha_path).convert('L').resize(tuple(meta['canvas']), Image.LANCZOS)
+        al = al.crop((x, y, x + pw, y + ph)).resize((2 * W, 2 * H), Image.LANCZOS)
+        am = np.asarray(al).astype(np.float32) / 255.0
     out = np.zeros((H * 2, W * 2, 4), np.float32)
     report = {}
     for name, (rx, ry, rw, rh) in regions.items():
         X, Y, Wr, Hr = 2 * rx, 2 * ry, 2 * rw, 2 * rh
         rect = g2[Y:Y + Hr, X:X + Wr]
-        fg = piece_mask(rect)
+        ta2 = np.asarray(Image.fromarray(talpha[ry:ry + rh, rx:rx + rw]).resize((Wr, Hr), Image.NEAREST)).astype(np.float32) / 255.0
+        if am is not None:
+            from scipy import ndimage
+            fg = _matte_mask(am[Y:Y + Hr, X:X + Wr])
+            soft_fg = am[Y:Y + Hr, X:X + Wr] * ndimage.binary_dilation(fg, iterations=3)
+        else:
+            fg = piece_mask(rect, ta2)
+            soft_fg = fg.astype(np.float32)
         gb = bbox(fg)
         if gb is None:
             report[name] = 'empty'
             continue
         tb = bbox(talpha[ry:ry + rh, rx:rx + rw] > 20)
         canvas_rgb = rect.copy()
-        canvas_a = fg.astype(np.float32)
+        canvas_a = soft_fg.copy()
         rule = (overrides or {}).get(name) or (fit_rule(name) if mode != 'identity' else 'none')
         if rule != 'none' and tb is not None:
             tb = [2 * v for v in tb]
@@ -177,7 +227,28 @@ def convert(gen_path, meta, tex_path, regions, out_path, mode='auto', overrides=
                 ax, ay = 'c', 'c'
             nw, nh = max(1, round(gw * sx)), max(1, round(gh * sy))
             pim = Image.fromarray(rect[gy0:gy1, gx0:gx1].astype(np.uint8)).resize((nw, nh), Image.LANCZOS)
-            mim = Image.fromarray((fg[gy0:gy1, gx0:gx1] * 255).astype(np.uint8)).resize((nw, nh), Image.LANCZOS)
+            mim = Image.fromarray((soft_fg[gy0:gy1, gx0:gx1] * 255).astype(np.uint8)).resize((nw, nh), Image.LANCZOS)
+            flipped = False
+            if rule == 'foot' and name[-2:] in (' L', ' R'):
+                # Side-view shoes: image models like to mirror one of the pair. Both of the
+                # template's side pieces point the same way, so match the template's silhouette.
+                # The toe is the low end of a side-view shoe: compare the silhouette's height over
+                # its outer quarters, in the template and in the drawing (+ = toe on the right).
+                def lean(m):
+                    m = np.asarray(m) > 127 if not isinstance(m, np.ndarray) else m
+                    b = bbox(m)
+                    if b is None:
+                        return 0.0
+                    x0_, y0_, x1_, y1_ = b
+                    h_ = m[y0_:y1_, x0_:x1_].sum(axis=0).astype(np.float32) / max(1, y1_ - y0_)
+                    q = max(1, len(h_) // 4)
+                    return float(h_[:q].mean() - h_[-q:].mean())
+                tl, gl = lean(ta2 > 0.5), lean(mim)
+                if os.environ.get("PG_DEBUG"): print("   lean", name, round(tl, 3), round(gl, 3))
+                if abs(tl) < 0.1:
+                    tl = 1.0   # flat template shoe: CC2D characters face right, so toes point right
+                if tl * gl < 0 and abs(gl) > 0.1:
+                    pim, mim, flipped = pim.transpose(Image.FLIP_LEFT_RIGHT), mim.transpose(Image.FLIP_LEFT_RIGHT), True
             px = int(round((tx0 + tx1) / 2 - nw / 2))
             py = int(round(ty0 if ay == 't' else (ty1 - nh if ay == 'b' else (ty0 + ty1) / 2 - nh / 2)))
             canvas_rgb = np.full((Hr, Wr, 3), 255, np.float32)
@@ -186,10 +257,19 @@ def convert(gen_path, meta, tex_path, regions, out_path, mode='auto', overrides=
             cw, chh = min(nw - sx0, Wr - dx0), min(nh - sy0, Hr - dy0)
             canvas_rgb[dy0:dy0 + chh, dx0:dx0 + cw] = np.asarray(pim).astype(np.float32)[sy0:sy0 + chh, sx0:sx0 + cw]
             canvas_a[dy0:dy0 + chh, dx0:dx0 + cw] = np.asarray(mim).astype(np.float32)[sy0:sy0 + chh, sx0:sx0 + cw] / 255.0
-            report[name] = '%s %.2fx%.2f' % (rule, sx, sy)
+            report[name] = '%s %.2fx%.2f%s' % (rule, sx, sy, ' flipped' if flipped else '')
         else:
             report[name] = 'as drawn'
         # soften the cut edge and un-blend the anti-aliasing from the white background
+        if am is not None:
+            # matte alpha is already soft: just un-blend the edge colour from the white background
+            a = canvas_a
+            edge = (a > 0.01) & (a < 0.99)
+            safe = np.maximum(a, 1e-3)[..., None]
+            unblend = np.clip((canvas_rgb - 255.0 * (1 - a[..., None])) / safe, 0, 255)
+            out[Y:Y + Hr, X:X + Wr, :3] = np.where(edge[..., None], unblend, canvas_rgb)
+            out[Y:Y + Hr, X:X + Wr, 3] = a * 255
+            continue
         soft = np.asarray(Image.fromarray((canvas_a * 255).astype(np.uint8)).filter(__import__('PIL.ImageFilter', fromlist=['x']).GaussianBlur(1.2))).astype(np.float32) / 255.0
         lum = canvas_rgb.mean(axis=2) / 255.0
         edge = (soft > 0.02) & (soft < 0.98)
@@ -227,7 +307,7 @@ def register(pack_dir, package, category, name, tp, tex_src, mask_src, colors, e
     json.dump(data, open(pj, 'w'), indent=1)
 
 
-def run_part(spec_file, spec, p, reuse=False):
+def run_part(spec_file, spec, p, reuse=False, force_matte=False):
     pkg = spec['package']
     wd = os.path.join(WORK, pkg.replace(' ', '_'), p['id'])
     os.makedirs(wd, exist_ok=True)
@@ -253,11 +333,14 @@ def run_part(spec_file, spec, p, reuse=False):
     regions = regions_of(cat, tp, size)
     rgba = os.path.join(wd, 'part.png')
     overrides = dict(TEMPLATE_FIT.get(p['template'], {}) if cat == 'Armor' else {}, **p.get('fit', {}))
-    rep_fit = convert(files[0], meta, tex_path, regions, rgba, p.get('mode', 'auto'), overrides)
+    use_matte = force_matte or p.get('matte', spec.get('matte', False))
+    alpha = matte(files[0]) if use_matte else None
+    rep_fit = convert(files[0], meta, tex_path, regions, rgba, p.get('mode', 'auto'), overrides, alpha)
     colors = recolor.split(rgba, os.path.join(wd, 'tex.png'), os.path.join(wd, 'mask.png'))
     extra = {'template': p['template'], 'desc': p['desc']}
     register(spec['pack_dir'], pkg, cat, p['name'], tp, os.path.join(wd, 'tex.png'), os.path.join(wd, 'mask.png'), colors, extra)
-    json.dump({'model': model, 'seconds': round(time.time() - t0, 1), 'prompt': prompt, 'fit': rep_fit, 'meta': meta},
+    json.dump({'model': model, 'seconds': round(time.time() - t0, 1), 'prompt': prompt, 'fit': rep_fit, 'meta': meta,
+               'matte': MATTE_MODEL if use_matte else None},
               open(os.path.join(wd, 'done.json'), 'w'), indent=1)
     print('  done %s/%s in %.0fs %s' % (pkg, p['name'], time.time() - t0, rep_fit))
     return True
@@ -265,13 +348,15 @@ def run_part(spec_file, spec, p, reuse=False):
 
 def main(argv):
     cmd, rest = argv[0], argv[1:]
-    budget, only, redo, files = 150.0, None, None, []
+    budget, only, redo, files, force_matte = 150.0, None, None, [], False
     i = 0
     while i < len(rest):
         if rest[i] == '--budget':
             budget = float(rest[i + 1]); i += 2
         elif rest[i] == '--only':
             only = rest[i + 1].split(','); i += 2
+        elif rest[i] == '--matte':
+            force_matte = True; i += 1
         elif rest[i] == '--redo':
             redo = rest[i + 1].split(','); i += 2
         else:
@@ -292,7 +377,7 @@ def main(argv):
                 continue
             if cmd == 'reconvert':
                 if os.path.exists(os.path.join(wd, 'gen_0.png')):
-                    run_part(f, spec, p, reuse=True)
+                    run_part(f, spec, p, reuse=True, force_matte=force_matte)
                 continue
             if done:
                 continue
@@ -300,7 +385,7 @@ def main(argv):
                 pending += 1
                 continue
             try:
-                if not run_part(f, spec, p):
+                if not run_part(f, spec, p, force_matte=force_matte):
                     print('  FAILED', p['id'])
             except Exception as e:
                 print('  ERROR', p['id'], repr(e)[:300])

@@ -7,31 +7,10 @@
     "body": [
      "Male"
     ],
-    "colors": [
-     [
-      0.8357,
-      0.6487,
-      0.3254,
-      1
-     ],
-     [
-      0.623,
-      0.4693,
-      0.2232,
-      1
-     ],
-     [
-      0.4094,
-      0.5611,
-      0.4798,
-      1
-     ]
-    ],
     "name": "Flower Power 00 Male",
     "package": "Flower Power",
     "texture": "res://custom/flower_power/textures/Armor/Flower Power 00 Male.png",
     "mask": "res://custom/flower_power/textures/Armor/Flower Power 00 Male Mask.png",
-    "template": "Daily 09 Male",
     "sprites": {
      "Armor Body": {
       "texture": "res://custom/flower_power/textures/Armor/Flower Power 00 Male.png",
@@ -117,7 +96,29 @@
       ],
       "px_scale": 1
      }
-    }
+    },
+    "colors": [
+     [
+      0.8201,
+      0.6243,
+      0.2678,
+      1.0
+     ],
+     [
+      0.3942,
+      0.5505,
+      0.4727,
+      1.0
+     ],
+     [
+      0.997,
+      0.9972,
+      0.9954,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a 1960s flower-power hippie shirt: a loose paisley-print tunic in orange, mustard yellow and teal, with a deep V-neck, embroidered trim at the neckline and cuffs, and flared bell sleeves"
    },
    {
     "body": [
@@ -215,21 +216,21 @@
     },
     "colors": [
      [
-      0.5898,
-      0.4636,
-      0.367,
+      0.5888,
+      0.466,
+      0.373,
       1.0
      ],
      [
+      0.8358,
+      0.8357,
       0.8354,
-      0.8354,
-      0.8351,
       1.0
      ],
      [
-      0.973,
-      0.9732,
-      0.9726,
+      0.9759,
+      0.976,
+      0.9756,
       1.0
      ]
     ],
@@ -422,25 +423,114 @@
     "colors": [
      [
       0.5738,
-      0.26,
-      0.1883,
+      0.2588,
+      0.188,
       1.0
      ],
      [
-      0.671,
-      0.5119,
-      0.3339,
+      0.673,
+      0.5116,
+      0.3321,
       1.0
      ],
      [
-      0.9219,
-      0.793,
-      0.5134,
+      0.9229,
+      0.796,
+      0.5227,
       1.0
      ]
     ],
     "template": "Daily 09 Male",
     "desc": "a 1960s mod Nehru jacket with a mandarin collar, in a bold floral brocade, buttoned"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Tie-Dye Tee Female",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
+    "mask": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7016,
+      0.4522,
+      0.6503,
+      1.0
+     ],
+     [
+      0.997,
+      0.9286,
+      0.5232,
+      1.0
+     ],
+     [
+      0.9404,
+      0.7067,
+      0.7543,
+      1.0
+     ]
+    ],
+    "template": "Daily 00 Female",
+    "desc": "a 1960s tie-dye T-shirt in purple, pink and yellow swirls, with a peace sign on the chest"
    },
    {
     "body": [
@@ -544,15 +634,15 @@
       1.0
      ],
      [
-      0.8536,
-      0.8532,
       0.8514,
+      0.851,
+      0.8494,
       1.0
      ],
      [
-      0.5656,
-      0.5647,
-      0.5325,
+      0.559,
+      0.5699,
+      0.5389,
       1.0
      ]
     ],
@@ -585,115 +675,26 @@
     },
     "colors": [
      [
-      0.3418,
-      0.6536,
-      0.5371,
+      0.3207,
+      0.6533,
+      0.5304,
       1.0
      ],
      [
-      0.9495,
-      0.7615,
-      0.2214,
+      0.932,
+      0.5767,
+      0.1499,
       1.0
      ],
      [
+      0.9997,
       1.0,
-      1.0,
-      1.0,
+      0.9994,
       1.0
      ]
     ],
     "template": "Daily 14 Female",
     "desc": "a 1960s hippie crochet halter top made of colourful granny squares"
-   },
-   {
-    "body": [
-     "Female"
-    ],
-    "name": "Tie-Dye Tee Female",
-    "package": "Flower Power",
-    "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
-    "mask": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female Mask.png",
-    "sprites": {
-     "Armor Body": {
-      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
-      "region": [
-       0,
-       0,
-       350,
-       512
-      ],
-      "offset": [
-       -175,
-       -256
-      ],
-      "px_scale": 1
-     },
-     "Armor Neck": {
-      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
-      "region": [
-       350,
-       0,
-       190,
-       177
-      ],
-      "offset": [
-       -95,
-       -88.5
-      ],
-      "px_scale": 1
-     },
-     "Armor Upper Arm L": {
-      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
-      "region": [
-       540,
-       177,
-       190,
-       335
-      ],
-      "offset": [
-       -95,
-       -167.5
-      ],
-      "px_scale": 1
-     },
-     "Armor Upper Arm R": {
-      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
-      "region": [
-       350,
-       177,
-       190,
-       335
-      ],
-      "offset": [
-       -95,
-       -167.5
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.7016,
-      0.4522,
-      0.6503,
-      1.0
-     ],
-     [
-      0.997,
-      0.9286,
-      0.5232,
-      1.0
-     ],
-     [
-      0.9404,
-      0.7067,
-      0.7543,
-      1.0
-     ]
-    ],
-    "template": "Daily 00 Female",
-    "desc": "a 1960s tie-dye T-shirt in purple, pink and yellow swirls, with a peace sign on the chest"
    }
   ],
   "Pants": [
@@ -793,21 +794,21 @@
     },
     "colors": [
      [
-      0.6829,
-      0.7274,
-      0.7491,
+      0.7479,
+      0.7513,
+      0.7234,
       1.0
      ],
      [
-      0.4055,
-      0.4968,
-      0.5841,
+      0.4991,
+      0.5867,
+      0.6458,
       1.0
      ],
      [
-      0.9487,
-      0.7944,
-      0.3758,
+      0.3669,
+      0.4279,
+      0.5152,
       1.0
      ]
     ],
@@ -973,7 +974,7 @@
      ],
      [
       0.4502,
-      0.4496,
+      0.4495,
       0.4493,
       1.0
      ]
@@ -1008,21 +1009,21 @@
     },
     "colors": [
      [
-      0.8491,
-      0.7052,
-      0.5668,
+      0.834,
+      0.637,
+      0.4313,
       1.0
      ],
      [
-      0.7017,
-      0.508,
-      0.318,
+      0.6151,
+      0.4372,
+      0.2723,
       1.0
      ],
      [
-      0.4584,
-      0.3627,
-      0.2658,
+      1.0,
+      1.0,
+      1.0,
       1.0
      ]
     ],
@@ -1086,15 +1087,15 @@
     },
     "colors": [
      [
-      0.4915,
+      0.4914,
       0.3233,
-      0.2372,
+      0.2373,
       1.0
      ],
      [
-      0.701,
-      0.5312,
-      0.4242,
+      0.7007,
+      0.5316,
+      0.4253,
       1.0
      ],
      [
@@ -1204,21 +1205,21 @@
     },
     "colors": [
      [
-      0.9896,
-      0.9894,
-      0.9894,
+      0.9921,
+      0.992,
+      0.9919,
       1.0
      ],
      [
-      0.7957,
-      0.7918,
-      0.8431,
+      0.7969,
+      0.7928,
+      0.8434,
       1.0
      ],
      [
-      0.5212,
-      0.5209,
-      0.5396,
+      0.5228,
+      0.5221,
+      0.5405,
       1.0
      ]
     ],
@@ -1268,21 +1269,21 @@
     },
     "colors": [
      [
-      0.4789,
-      0.4783,
-      0.4782,
+      0.4591,
+      0.4587,
+      0.4584,
       1.0
      ],
      [
-      0.6752,
-      0.6746,
-      0.6745,
+      0.587,
+      0.5865,
+      0.5862,
       1.0
      ],
      [
-      0.351,
-      0.3506,
-      0.3504,
+      0.7368,
+      0.7365,
+      0.7361,
       1.0
      ]
     ],
@@ -1316,21 +1317,21 @@
     },
     "colors": [
      [
-      0.7574,
-      0.7576,
-      0.7575,
+      0.7593,
+      0.7595,
+      0.7593,
       1.0
      ],
      [
-      0.581,
-      0.5799,
-      0.58,
+      0.5946,
+      0.5936,
+      0.5935,
       1.0
      ],
      [
-      0.815,
-      0.815,
-      0.8148,
+      0.4023,
+      0.402,
+      0.4017,
       1.0
      ]
     ],
@@ -1364,21 +1365,21 @@
     },
     "colors": [
      [
-      0.8266,
-      0.8264,
-      0.8261,
+      0.8621,
+      0.862,
+      0.8616,
       1.0
      ],
      [
-      0.6185,
-      0.6176,
-      0.6176,
+      0.6223,
+      0.6214,
+      0.6214,
       1.0
      ],
      [
-      0.4073,
-      0.4062,
-      0.4064,
+      0.4101,
+      0.4092,
+      0.4092,
       1.0
      ]
     ],
@@ -1414,21 +1415,21 @@
     },
     "colors": [
      [
-      0.4474,
-      0.524,
-      0.4276,
+      0.4846,
+      0.5028,
+      0.3111,
       1.0
      ],
      [
-      0.9999,
-      0.9999,
-      0.9865,
+      1.0,
+      1.0,
+      0.9962,
       1.0
      ],
      [
-      0.9819,
-      0.858,
-      0.2411,
+      0.9752,
+      0.8432,
+      0.2367,
       1.0
      ]
     ],
@@ -1462,9 +1463,9 @@
     },
     "colors": [
      [
-      0.4175,
-      0.4858,
-      0.5714,
+      0.4188,
+      0.4865,
+      0.5721,
       1.0
      ],
      [
@@ -1510,21 +1511,21 @@
     },
     "colors": [
      [
-      0.7519,
-      0.6316,
-      0.4855,
+      0.7476,
+      0.6269,
+      0.483,
       1.0
      ],
      [
-      0.477,
-      0.4018,
-      0.3323,
+      0.5071,
+      0.4176,
+      0.3346,
       1.0
      ],
      [
-      0.7892,
-      0.4076,
-      0.3059,
+      0.3503,
+      0.2876,
+      0.2345,
       1.0
      ]
     ],
@@ -1565,21 +1566,21 @@
     },
     "colors": [
      [
-      0.9637,
-      0.7751,
-      0.526,
+      0.7568,
+      0.5945,
+      0.3686,
       1.0
      ],
      [
-      0.6875,
-      0.5636,
-      0.3493,
+      0.504,
+      0.4215,
+      0.3158,
       1.0
      ],
      [
-      0.4431,
-      0.396,
-      0.2977,
+      0.9734,
+      0.8119,
+      0.5829,
       1.0
      ]
     ],
@@ -1624,15 +1625,15 @@
       1.0
      ],
      [
-      0.7894,
-      0.7269,
-      0.6054,
+      0.7889,
+      0.726,
+      0.6039,
       1.0
      ],
      [
-      0.5318,
-      0.5125,
-      0.3369,
+      0.5293,
+      0.511,
+      0.3358,
       1.0
      ]
     ],
