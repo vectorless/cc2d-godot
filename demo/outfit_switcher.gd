@@ -1,12 +1,12 @@
 ## Demo UI for runtime part swapping.
 ## Tab / Shift+Tab: choose slot   W/S or Up/Down: previous/next part
-## C: random colours for the slot   R: random outfit   X: unequip slot
+## C: random colours for the slot   R: random outfit   X: unequip slot   B: male/female
 extends CanvasLayer
 
 @export var character_path: NodePath = ^"../Player/Character"
 
 const DEMO_SLOTS := ["Armor", "Pants", "Boots", "Gloves", "Helmet", "Hair", "FacialHair",
-	"Eyebrow", "Eyes", "Mouth", "Nose", "Ear", "SkinDetails", "MainHand", "OffHand"]
+	"Eyebrow", "Eyes", "Mouth", "Nose", "Ear", "SkinDetails", "MainHand", "OffHand", "Cape", "Skirt"]
 
 var slot_index := 0
 var label: Label
@@ -22,6 +22,7 @@ func _ready() -> void:
 	panel.add_child(label)
 	character.part_equipped.connect(func(_slot, _part): _refresh())
 	character.character_loaded.connect(_refresh)
+	character.body_type_changed.connect(func(_b): _refresh())
 	_refresh.call_deferred()
 
 
@@ -42,6 +43,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			character.set_part_color(slot, _rand_color(), _rand_color(), _rand_color())
 		KEY_R:
 			randomize_outfit()
+		KEY_B:
+			character.set_body_type("Female" if character.body_type == "Male" else "Male")
 		_:
 			return
 	get_viewport().set_input_as_handled()
@@ -56,6 +59,14 @@ func randomize_outfit() -> void:
 		var p = options.pick_random()
 		character.equip_part(slot, p.name, p.package)
 		character.set_part_color(slot, _rand_color(), _rand_color(), _rand_color())
+	for slot in ["Cape", "Skirt"]:
+		var options: Array = character.get_parts(slot)
+		if randf() < 0.5 and not options.is_empty():
+			var p = options.pick_random()
+			character.equip_part(slot, p.name, p.package)
+			character.set_part_color(slot, _rand_color(), _rand_color(), _rand_color())
+		else:
+			character.equip_part(slot, "")
 	character.equip_part("Helmet", "")
 
 
@@ -68,5 +79,5 @@ func _refresh() -> void:
 		return
 	var slot: String = DEMO_SLOTS[slot_index]
 	var equipped: String = character.get_equipped(slot)
-	label.text = "Slot: %s   [Tab]\nPart: %s   [W/S]  (%d options)\n[C] colours   [X] remove   [R] random outfit\n[A/D] walk   [Shift] run" % [
-		slot, equipped if equipped != "" else "(none)", character.get_parts(slot).size()]
+	label.text = "Body: %s   [B]\nSlot: %s   [Tab]\nPart: %s   [W/S]  (%d options)\n[C] colours   [X] remove   [R] random outfit\n[A/D] walk   [Shift] run" % [
+		character.body_type, slot, equipped if equipped != "" else "(none)", character.get_parts(slot).size()]

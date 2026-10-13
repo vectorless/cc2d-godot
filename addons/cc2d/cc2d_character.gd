@@ -1,7 +1,9 @@
 ## Godot runtime for characters exported from Character Creator 2D (Unity).
-## Port of CharacterViewer + HumanoidSetter/HumanoidAssigner: builds the rig,
-## recolouring materials and AnimationPlayer from the exporter's JSON, and
-## supports equipping any part from the exported catalogue at runtime.
+## Port of CharacterViewer + HumanoidSetter/HumanoidAssigner:
+## - builds the Male/Female rig from cc2d/rigs/*.json
+## - equips any part from cc2d/parts.json (incl. capes and skirts)
+## - recolours parts with the CC2D armour/skin shaders
+## - plays CC2D animations (cape/skirt motion is pre-baked per frame by the exporter)
 class_name CC2DCharacter
 extends Node2D
 
@@ -11,13 +13,16 @@ const SKIN_SHADER := preload("res://addons/cc2d/cc2d_skin.gdshader")
 ## Slot names, same as CC2D's SlotCategory enum.
 const SLOTS := ["Armor", "Boots", "Ear", "Eyebrow", "Eyes", "FacialHair", "Gloves", "Hair",
 	"Helmet", "Mouth", "Nose", "Pants", "SkinDetails", "MainHand", "OffHand", "Cape", "Skirt", "BodySkin"]
+const BODY_TYPES := ["Male", "Female"]
 const SKIN_SLOTS := ["BodySkin", "Ear", "Nose"]
+const CLOTH_SLOTS := ["Cape", "Skirt"]
 const MAIN_HAND_WEAPONS := ["OneHanded", "TwoHanded", "Gun", "Rifle"]
 const OFF_HAND_WEAPONS := ["OneHanded", "Shield", "Bow", "Gun"]
 const TWO_HANDED_WEAPONS := ["TwoHanded", "Bow", "Rifle"]
 
 signal character_loaded
 signal part_equipped(slot: String, part_name: String)
+signal body_type_changed(body_type: String)
 
 ## character.json produced by the Unity exporter.
 @export_file("*.json") var character_file: String
@@ -28,17 +33,20 @@ signal part_equipped(slot: String, part_name: String)
 
 var animation_player: AnimationPlayer
 var current_animation := ""
-var parts := {}      ## Unity path -> Node2D (bones / part anchors)
-var sprites := {}    ## Unity path -> Sprite2D
-var materials := {}  ## material key (e.g. "Exa Armor") -> ShaderMaterial
-var slots := {}      ## slot -> {material, part (Dictionary or null), color1, color2, color3}
+var parts := {}        ## rig path -> Node2D
+var sprites := {}      ## rig path -> Sprite2D
+var cloth := {}        ## "Cape"/"Skirt" -> Polygon2D
+var materials := {}    ## material key -> ShaderMaterial
+var slots := {}        ## slot -> {material, part (Dictionary or null), color1, color2, color3}
 var body_type := "Male"
 var skin_color := Color.GRAY
 var tint_color := Color.WHITE
-var catalogue := {}  ## exported part catalogue (cc2d/parts.json)
+var catalogue := {}
 var data := {}
+var rig := {}
 
-static var _catalogue_cache := {}
+static var _json_cache := {}
+static var _library_cache := {}
 
 
 func _ready() -> void:
@@ -48,21 +56,67 @@ func _ready() -> void:
 
 ## (Re)builds the character from an exported character.json.
 func load_character(path: String) -> void:
-	_clear()
 	data = _read_json(path)
 	if data.is_empty():
 		return
-	catalogue = _load_catalogue(data.get("parts", "res://cc2d/parts.json"))
+	catalogue = _cached_json(data.get("parts", "res://cc2d/parts.json"))
 	body_type = data.get("body_type", "Male")
 	skin_color = _col(data.get("skin_color", [0.5, 0.5, 0.5, 1]))
 	tint_color = _col(data.get("tint_color", [1, 1, 1, 1]))
-	_build_materials(data.get("materials", {}))
-	_build_nodes(data.get("nodes", []))
-	_build_animations(data.get("animations", ""))
-	_init_slots(data.get("slots", {}))
-	if autoplay:
-		play(data.get("default_animation", "Idle"), 0.0)
+	slots.clear()
+	var slot_data: Dictionary = data.get("slots", {})
+	for slot in SLOTS:
+		var sd: Dictionary = slot_data.get(slot, {})
+		slots[slot] = {
+			"material": sd.get("material"),
+			"part": find_part(slot, sd.part, sd.get("package", "")) if sd.get("part") != null else null,
+			"color1": _col(sd.get("color1", [0.5, 0.5, 0.5, 1])),
+			"color2": _col(sd.get("color2", [0.5, 0.5, 0.5, 1])),
+			"color3": _col(sd.get("color3", [0.5, 0.5, 0.5, 1])),
+		}
+	_rebuild("", 0.0)
 	character_loaded.emit()
+
+
+# ================================================================== body type
+
+## Switches between "Male" and "Female" (CharacterViewer.SetBodyType). Parts that
+## don't support the new body are swapped for the nearest one that does.
+func set_body_type(new_body_type: String) -> void:
+	if not new_body_type in BODY_TYPES or new_body_type == body_type:
+		return
+	var anim := current_animation
+	var t := animation_player.current_animation_position if animation_player and animation_player.is_playing() else 0.0
+	body_type = new_body_type
+	_rebuild(anim, t)
+	body_type_changed.emit(body_type)
+
+
+func _rebuild(anim: String, anim_time: float) -> void:
+	_clear()
+	rig = _cached_json(data.get("rigs", {}).get(body_type, "res://cc2d/rigs/%s.json" % body_type.to_lower()))
+	if rig.is_empty():
+		return
+	_build_materials(rig.get("materials", {}))
+	_build_materials(data.get("materials", {}))
+	_build_nodes(rig.get("nodes", []))
+	_build_cloth(rig.get("cloth", {}))
+	_build_animation_player()
+	# CharacterViewer.Initialize: materials, skin, tint, then each slot's part -> sprites -> colours.
+	_assign_slot_materials()
+	set_skin_color(skin_color)
+	set_tint_color(tint_color)
+	for slot in SLOTS:
+		_set_part_to_slot(slot, slots[slot].part)
+	for slot in SLOTS:
+		_assign_part_to_renderer(slot)
+		_assign_color_to_renderer(slot)
+	if anim != "":
+		current_animation = ""
+		play(anim, 0.0)
+		animation_player.seek(anim_time, true)
+	elif autoplay:
+		play(data.get("default_animation", "Idle"), 0.0)
 
 
 # ================================================================== animation
@@ -85,7 +139,6 @@ func get_animation_names() -> PackedStringArray:
 # ================================================================== equipment
 
 ## Equips a part by name (CharacterViewer.EquipPart). Empty name unequips the slot.
-## If the part doesn't support this body type, the nearest one that does is used (as in CC2D).
 func equip_part(slot: String, part_name: String, package := "") -> bool:
 	if not slots.has(slot):
 		push_warning("CC2DCharacter: unknown slot '%s'" % slot)
@@ -111,15 +164,11 @@ func get_equipped(slot: String) -> String:
 
 ## All parts that can go in a slot (optionally only those supporting this body type).
 func get_parts(slot: String, only_supported := true) -> Array:
-	var result := []
 	var source: Array
 	match slot:
 		"MainHand", "OffHand":
 			var allowed := MAIN_HAND_WEAPONS if slot == "MainHand" else OFF_HAND_WEAPONS
-			for w in catalogue.get("categories", {}).get("Weapon", []):
-				if w.get("weapon", "") in allowed:
-					result.append(w)
-			source = result
+			source = catalogue.get("categories", {}).get("Weapon", []).filter(func(w): return w.get("weapon", "") in allowed)
 		_:
 			source = catalogue.get("categories", {}).get(slot, [])
 	if not only_supported:
@@ -152,7 +201,7 @@ func cycle_part(slot: String, step := 1) -> String:
 
 # ================================================================== colours
 
-## Sets a slot's three colours (CharacterViewer.SetPartColor). Hair, eyes, eyebrows,
+## Sets a slot's colours (CharacterViewer.SetPartColor). Hair, eyes, eyebrows,
 ## mouth and facial hair only use color1, applied as the sprite colour.
 func set_part_color(slot: String, color1: Color, color2 = null, color3 = null) -> void:
 	if not slots.has(slot):
@@ -221,8 +270,8 @@ func _set_part_to_slot(slot: String, part) -> bool:
 func _check_supported_body(slot: String, part):
 	if part == null or body_type in part.body:
 		return part
-	# Same search as HumanoidSetter.GetAlternatePart: walk forwards (Male) or
-	# backwards (Female) from this part, then fall back to any supported part.
+	# HumanoidSetter.GetAlternatePart: walk forwards (Male) or backwards (Female)
+	# from this part, then fall back to any part that supports the body.
 	var list := get_parts(slot, false)
 	var sid := list.find(part)
 	var inc := 1 if body_type == "Male" else -1
@@ -252,13 +301,25 @@ func _assign_part_to_renderer(slot: String) -> void:
 				mat.set_shader_parameter("details", tex)
 				mat.set_shader_parameter("has_details", tex != null)
 		"Cape", "Skirt":
-			# Cloth meshes aren't ported yet; keep them hidden.
-			var link: String = catalogue.get("cape_link" if slot == "Cape" else "skirt_link", "")
-			var cloth_root := link.get_base_dir()
-			if parts.has(cloth_root):
-				parts[cloth_root].visible = false
-			if slots[slot].part != null:
-				push_warning("CC2DCharacter: %s parts aren't supported in Godot yet" % slot)
+			var part = slots[slot].part
+			var poly: Polygon2D = cloth.get(slot)
+			_set_mask(slot, part.mask if part != null else null)
+			if poly == null:
+				return
+			if part == null or part.texture == null:
+				poly.texture = null
+				poly.visible = false
+			else:
+				var tex := _tex(part.texture)
+				poly.texture = tex
+				var uv_norm: PackedVector2Array = poly.get_meta("uv_norm")
+				var size := tex.get_size()
+				var uv := PackedVector2Array()
+				uv.resize(uv_norm.size())
+				for i in uv_norm.size():
+					uv[i] = uv_norm[i] * size
+				poly.uv = uv
+				poly.visible = true
 		_:
 			var part = slots[slot].part
 			_set_mask(slot, part.mask if part != null else null)
@@ -316,17 +377,38 @@ func _assign_color_to_renderer(slot: String) -> void:
 		m.set_shader_parameter("color3", s.color3)
 
 
+## CharacterViewer.RelinkMaterials: every renderer linked to a slot uses that slot's material.
+func _assign_slot_materials() -> void:
+	var wl: Dictionary = catalogue.get("weapon_links", {})
+	for slot in SLOTS:
+		var m := _slot_material(slot)
+		if m == null:
+			continue
+		var paths: Array
+		match slot:
+			"MainHand":
+				paths = wl.main.values()
+			"OffHand":
+				paths = wl.off.values() + wl.bow.values() + wl.shield.values()
+			_:
+				paths = catalogue.get("links", {}).get(slot, {}).values()
+		for path in paths:
+			if sprites.has(path):
+				sprites[path].material = m
+		if cloth.has(slot):
+			cloth[slot].material = m
+
+
 ## RendererUtility.AssignSprites: clear every linked renderer, then fill those named by the part.
 func _assign_sprites(links: Dictionary, part_sprites: Dictionary) -> void:
 	for path in links.values():
-		_set_sprite(path, null)
+		_set_sprite(sprites.get(path), null)
 	for sprite_name in part_sprites:
 		if links.has(sprite_name):
-			_set_sprite(links[sprite_name], part_sprites[sprite_name])
+			_set_sprite(sprites.get(links[sprite_name]), part_sprites[sprite_name])
 
 
-func _set_sprite(path: String, sd) -> void:
-	var spr: Sprite2D = sprites.get(path)
+func _set_sprite(spr: Sprite2D, sd) -> void:
 	if spr == null:
 		return
 	if sd == null:
@@ -359,38 +441,14 @@ func _slot_material(slot: String) -> ShaderMaterial:
 func _clear() -> void:
 	for c in get_children():
 		if c.has_meta("cc2d_generated"):
+			remove_child(c)
 			c.queue_free()
 	parts.clear()
 	sprites.clear()
+	cloth.clear()
 	materials.clear()
-	slots.clear()
 	animation_player = null
 	current_animation = ""
-
-
-func _init_slots(slot_data: Dictionary) -> void:
-	# Same order as CharacterViewer.Initialize: skin colour, tint, then every slot's
-	# part (setter) -> sprites (assigner) -> colours.
-	for slot in SLOTS:
-		var sd: Dictionary = slot_data.get(slot, {})
-		slots[slot] = {
-			"material": sd.get("material"),
-			"part": null,
-			"color1": _col(sd.get("color1", [0.5, 0.5, 0.5, 1])),
-			"color2": _col(sd.get("color2", [0.5, 0.5, 0.5, 1])),
-			"color3": _col(sd.get("color3", [0.5, 0.5, 0.5, 1])),
-		}
-	set_skin_color(skin_color)
-	set_tint_color(tint_color)
-	for slot in SLOTS:
-		var sd: Dictionary = slot_data.get(slot, {})
-		var part = null
-		if sd.get("part") != null:
-			part = find_part(slot, sd.part, sd.get("package", ""))
-		_set_part_to_slot(slot, part)
-	for slot in SLOTS:
-		_assign_part_to_renderer(slot)
-		_assign_color_to_renderer(slot)
 
 
 func _build_materials(mats: Dictionary) -> void:
@@ -426,10 +484,11 @@ func _build_nodes(nodes: Array) -> void:
 		node.rotation = n.rot
 		node.scale = _v2(n.scale)
 		node.visible = n.visible
-		var parent: Node = self if n.parent == "" else parts[n.parent]
-		parent.add_child(node)
 		if n.parent == "":
 			node.set_meta("cc2d_generated", true)
+			add_child(node)
+		else:
+			parts[n.parent].add_child(node)
 		parts[n.path] = node
 
 		var s = n.get("sprite")
@@ -445,84 +504,140 @@ func _build_nodes(nodes: Array) -> void:
 		spr.set_meta("flip_y", -1.0 if s.get("flip_v", false) else 1.0)
 		if s.get("material") != null and materials.has(s.material):
 			spr.material = materials[s.material]
-		if s.get("texture") != null:
-			_set_sprite_from_node_data(spr, s)
+		_set_sprite(spr, s.get("data"))
 		node.add_child(spr)
 		node.move_child(spr, 0)
 		sprites[n.path] = spr
 
 
-func _set_sprite_from_node_data(spr: Sprite2D, s: Dictionary) -> void:
-	spr.texture = _tex(s.texture)
-	spr.region_enabled = true
-	spr.region_rect = Rect2(s.region[0], s.region[1], s.region[2], s.region[3])
-	spr.offset = _v2(s.offset)
-	var k: float = s.px_scale
-	spr.scale = Vector2(k * spr.get_meta("flip_x"), k * spr.get_meta("flip_y"))
+func _build_cloth(cloth_data: Dictionary) -> void:
+	for slot in cloth_data:
+		var c: Dictionary = cloth_data[slot]
+		if not parts.has(c.parent):
+			continue
+		var poly := Polygon2D.new()
+		poly.name = "_cloth_" + slot
+		poly.polygon = _pv2(c.rest)
+		var tris: Array = c.triangles
+		var polys := []
+		for i in range(0, tris.size(), 3):
+			polys.append(PackedInt32Array([int(tris[i]), int(tris[i + 1]), int(tris[i + 2])]))
+		poly.polygons = polys
+		poly.set_meta("uv_norm", _pv2(c.uv))
+		poly.z_index = int(c.z)
+		poly.visible = false
+		if c.get("material") != null and materials.has(c.material):
+			poly.material = materials[c.material]
+		parts[c.parent].add_child(poly)
+		cloth[slot] = poly
+		# The cloth's own bone nodes are only used by the bake; hide the subtree marker node.
+		if parts.has(c.node):
+			parts[c.node].visible = false
 
 
-func _build_animations(path: String) -> void:
-	if path == "":
-		return
-	var d := _read_json(path)
-	if d.is_empty():
-		return
+func _build_animation_player() -> void:
 	animation_player = AnimationPlayer.new()
 	animation_player.name = "AnimationPlayer"
 	animation_player.set_meta("cc2d_generated", true)
 	add_child(animation_player)  # root_node ".." -> this character
+	var anim_path: String = data.get("animations", "res://cc2d/animations/cc2d.json")
+	var rig_path: String = data.get("rigs", {}).get(body_type, "")
+	var key := anim_path + "|" + rig_path
+	if not _library_cache.has(key):
+		_library_cache[key] = _build_library(_cached_json(anim_path), rig)
+	animation_player.add_animation_library("", _library_cache[key])
 
-	var base_rot := {}
-	for n in data.get("nodes", []):
-		base_rot[n.path] = n.rot
+
+## Builds an AnimationLibrary for one rig. Unity's "write defaults" is emulated by giving
+## every animation a track for everything any animation touches, holding the rig's rest
+## value where the clip doesn't animate it.
+static func _build_library(anim_data: Dictionary, rig_data: Dictionary) -> AnimationLibrary:
+	var base := {}
+	for n in rig_data.get("nodes", []):
+		base[n.path] = n
+	var anims: Dictionary = anim_data.get("animations", {})
+	var union := {}
+	for anim_name in anims:
+		for tr in anims[anim_name].tracks:
+			union[tr.path + "|" + tr.prop] = true
 
 	var lib := AnimationLibrary.new()
-	var anims: Dictionary = d.get("animations", {})
 	for anim_name in anims:
 		var a: Dictionary = anims[anim_name]
 		var anim := Animation.new()
 		anim.length = a.length
 		anim.loop_mode = Animation.LOOP_LINEAR if a.loop else Animation.LOOP_NONE
+		var present := {}
 		for tr in a.tracks:
-			var prop: String = tr.prop
-			var idx := anim.add_track(Animation.TYPE_VALUE)
-			anim.track_set_path(idx, NodePath("%s:%s" % [tr.path, prop]))
-			if prop == "visible":
-				anim.value_track_set_update_mode(idx, Animation.UPDATE_DISCRETE)
-				anim.track_set_interpolation_type(idx, Animation.INTERPOLATION_NEAREST)
-			else:
-				anim.value_track_set_update_mode(idx, Animation.UPDATE_CONTINUOUS)
-				anim.track_set_interpolation_type(idx, Animation.INTERPOLATION_LINEAR)
-			var times: Array = tr.times
-			var values: Array = tr.values
-			# Keep rotation tracks in the same 2*PI "turn" as the rest pose, so
-			# cross-fades between animations never spin a bone the long way round.
+			present[tr.path + "|" + tr.prop] = true
 			var turn := 0.0
-			if prop == "rotation" and values.size() > 0:
-				turn = round((float(values[0]) - float(base_rot.get(tr.path, 0.0))) / TAU) * TAU
-			for i in times.size():
-				anim.track_insert_key(idx, times[i], _anim_value(prop, values[i], turn))
+			if tr.prop == "rotation" and base.has(tr.path):
+				# keep rotations in the same 2*PI turn as the rest pose so cross-fades don't spin
+				turn = round((float(tr.values[0]) - float(base[tr.path].rot)) / TAU) * TAU
+			_add_track(anim, tr.path, tr.prop, tr.times, tr.values, turn)
+		for key in union:
+			if present.has(key):
+				continue
+			var path: String = key.get_slice("|", 0)
+			var prop: String = key.get_slice("|", 1)
+			if base.has(path):
+				_add_track(anim, path, prop, [0.0], [_rest_value(base[path], prop)], 0.0)
+		for slot in rig_data.get("cloth", {}):
+			var c: Dictionary = rig_data.cloth[slot]
+			var idx := anim.add_track(Animation.TYPE_VALUE)
+			anim.track_set_path(idx, NodePath("%s/_cloth_%s:polygon" % [c.parent, slot]))
+			anim.value_track_set_update_mode(idx, Animation.UPDATE_CONTINUOUS)
+			var ca = c.animations.get(anim_name)
+			if ca == null:
+				anim.track_insert_key(idx, 0.0, _pv2(c.rest))
+			else:
+				for i in ca.times.size():
+					anim.track_insert_key(idx, ca.times[i], _pv2(ca.frames[i]))
 		lib.add_animation(anim_name, anim)
-	animation_player.add_animation_library("", lib)
+	return lib
+
+
+static func _add_track(anim: Animation, path: String, prop: String, times: Array, values: Array, turn: float) -> void:
+	var idx := anim.add_track(Animation.TYPE_VALUE)
+	anim.track_set_path(idx, NodePath("%s:%s" % [path, prop]))
+	if prop == "visible":
+		anim.value_track_set_update_mode(idx, Animation.UPDATE_DISCRETE)
+		anim.track_set_interpolation_type(idx, Animation.INTERPOLATION_NEAREST)
+	else:
+		anim.value_track_set_update_mode(idx, Animation.UPDATE_CONTINUOUS)
+		anim.track_set_interpolation_type(idx, Animation.INTERPOLATION_LINEAR)
+	for i in times.size():
+		var v = values[i]
+		if prop == "visible":
+			v = bool(v)
+		else:
+			v = float(v) - turn
+		anim.track_insert_key(idx, times[i], v)
+
+
+static func _rest_value(n: Dictionary, prop: String):
+	match prop:
+		"position:x":
+			return n.pos[0]
+		"position:y":
+			return n.pos[1]
+		"scale:x":
+			return n.scale[0]
+		"scale:y":
+			return n.scale[1]
+		"rotation":
+			return n.rot
+		"visible":
+			return n.visible
+	return 0.0
 
 
 # ================================================================== helpers
 
-func _anim_value(prop: String, v, turn: float):
-	match prop:
-		"position", "scale":
-			return Vector2(v[0], v[1])
-		"rotation":
-			return float(v) - turn
-		"visible":
-			return bool(v)
-	return v
-
-
-static func _load_catalogue(path: String) -> Dictionary:
-	if not _catalogue_cache.has(path):
-		_catalogue_cache[path] = _read_json(path)
-	return _catalogue_cache[path]
+static func _cached_json(path: String) -> Dictionary:
+	if not _json_cache.has(path):
+		_json_cache[path] = _read_json(path)
+	return _json_cache[path]
 
 
 static func _tex(path) -> Texture2D:
@@ -538,6 +653,14 @@ static func _read_json(path: String) -> Dictionary:
 		push_error("CC2DCharacter: could not parse %s" % path)
 		return {}
 	return parsed
+
+
+static func _pv2(a: Array) -> PackedVector2Array:
+	var out := PackedVector2Array()
+	out.resize(a.size() / 2)
+	for i in out.size():
+		out[i] = Vector2(a[i * 2], a[i * 2 + 1])
+	return out
 
 
 static func _v2(a) -> Vector2:
