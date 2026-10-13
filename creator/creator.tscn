@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://creator/creator.gd" id="1_creator"]
+[ext_resource type="Script" path="res://addons/cc2d/cc2d_character.gd" id="2_cc2d"]
+
+[node name="Creator" type="Node2D"]
+script = ExtResource("1_creator")
+
+[node name="Floor" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -2000.0
+offset_right = 4000.0
+offset_bottom = 600.0
+color = Color(0.33, 0.45, 0.3, 1)
+
+[node name="Character" type="Node2D" parent="."]
+scale = Vector2(0.42, 0.42)
+script = ExtResource("2_cc2d")
+character_file = "res://characters/exa/character.json"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-230, -270)

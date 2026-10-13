@@ -5,6 +5,8 @@
 ## - recolours parts with the CC2D armour/skin shaders
 ## - plays CC2D animations (cape/skirt motion is pre-baked per frame by the exporter)
 ## - facial expressions (CharacterViewer.Expression): emote(), reset_emote(), animation-driven emotes
+## - the Aim layer (aim blend trees for bows/guns/spells), weapon slash effects
+## - body sliders (BodySegmentScaler) and CC2D CharacterData JSON save/load (Unity-compatible)
 class_name CC2DCharacter
 extends Node2D
 
@@ -19,6 +21,10 @@ const SKIN_SLOTS := ["BodySkin", "Ear", "Nose"]
 const CLOTH_SLOTS := ["Cape", "Skirt"]
 ## Face slots swapped by emotes (HumanoidUtility.IsFace).
 const FACE_SLOTS := ["Eyebrow", "Eyes", "Nose", "Mouth", "Ear"]
+## Body slider segments, in CC2D SegmentType enum order.
+const SEGMENTS := ["Head", "Ear", "Neck", "Body", "UpperArm", "LowerArm", "Hand", "UpperLeg", "LowerLeg", "Foot"]
+## CC2D EmotionType values for the built-in emotes (custom ones are Emote_0..Emote_9 = 0..9).
+const AIM_LAYER := "Aim Layer"
 const MAIN_HAND_WEAPONS := ["OneHanded", "TwoHanded", "Gun", "Rifle"]
 const OFF_HAND_WEAPONS := ["OneHanded", "Shield", "Bow", "Gun"]
 const TWO_HANDED_WEAPONS := ["TwoHanded", "Bow", "Rifle"]
@@ -59,6 +65,21 @@ var _is_emoting := false
 var _is_emoting_anim := false
 var _emote_token := 0
 
+## Aim layer state (Unity "Aim Layer": override layer of 1D blend trees over the "Aim" parameter).
+var aim_state := ""
+var aim_value := 0.0
+var _aim_phase := 0.0
+var _aim_cache := {}
+
+## Body sliders (0..1 per axis, 0.5 = default), keyed by SEGMENTS name.
+var body_sliders := {}
+var _segments := {}
+var _pos_affections := {}  # node path -> [{segment, data}] in Unity's insertion order
+var _rig_nodes := {}       # rig path -> node data from the rig json
+
+static var _sprite_tables := {}
+static var _emote_keys := {}  # animations path -> {anim name: [times, values]}
+
 static var _json_cache := {}
 static var _library_cache := {}
 
@@ -78,6 +99,11 @@ func load_character(path: String) -> void:
 	skin_color = _col(data.get("skin_color", [0.5, 0.5, 0.5, 1]))
 	tint_color = _col(data.get("tint_color", [1, 1, 1, 1]))
 	emotes = data.get("emotes", {})
+	body_sliders.clear()
+	for seg in SEGMENTS:
+		body_sliders[seg] = Vector2(0.5, 0.5)
+	aim_state = ""
+	aim_value = 0.0
 	_is_emoting = false
 	_is_emoting_anim = false
 	emote_anim_index = -1.0
@@ -124,10 +150,13 @@ func _rebuild(anim: String, anim_time: float) -> void:
 	if rig.is_empty():
 		return
 	_build_materials(rig.get("materials", {}))
+	_build_materials(catalogue.get("default_materials", {}))
 	_build_materials(data.get("materials", {}))
 	_build_nodes(rig.get("nodes", []))
 	_build_cloth(rig.get("cloth", {}))
+	_build_segments(rig.get("segments", {}))
 	_build_animation_player()
+	_aim_cache.clear()
 	# CharacterViewer.Initialize: materials, skin, tint, then each slot's part -> sprites -> colours.
 	_assign_slot_materials()
 	set_skin_color(skin_color)
@@ -137,6 +166,8 @@ func _rebuild(anim: String, anim_time: float) -> void:
 	for slot in SLOTS:
 		_assign_part_to_renderer(slot)
 		_assign_color_to_renderer(slot)
+	for seg in SEGMENTS:  # BodySegmentScaler.Initialize re-applies every slider
+		_apply_segment(seg)
 	if anim != "":
 		current_animation = ""
 		play(anim, 0.0)
@@ -274,6 +305,348 @@ func set_tint_color(color: Color) -> void:
 		m.set_shader_parameter("tint", color)
 
 
+# ================================================================== aim layer
+
+## Starts an Aim-layer state ("Aim Bow", "Aim Rifle", "Shot Bow", "Rapid Shot Main Hand", ...)
+## on top of the base animation, like animator.Play(state, 1). "" or "None" stops aiming.
+func play_aim(state: String) -> void:
+	if state == "" or state == "None":
+		aim_state = ""
+		return
+	if _aim_state_data(state) == null:
+		push_warning("CC2DCharacter: no aim state '%s'" % state)
+		return
+	aim_state = state
+	_aim_phase = 0.0
+
+
+## The "Aim" parameter: -1 = down, 0 = forward, 1 = up.
+func set_aim(value: float) -> void:
+	aim_value = clampf(value, -1.0, 1.0)
+
+
+func get_aim_states() -> PackedStringArray:
+	var out := PackedStringArray()
+	var states: Dictionary = _cached_json(data.get("animations", "")).get("layers", {}).get(AIM_LAYER, {}).get("states", {})
+	for k in states:
+		if states[k] != null:
+			out.append(k)
+	return out
+
+
+func _aim_state_data(state: String):
+	return _cached_json(data.get("animations", "")).get("layers", {}).get(AIM_LAYER, {}).get("states", {}).get(state)
+
+
+func _get_aim(state: String) -> Dictionary:
+	if _aim_cache.has(state):
+		return _aim_cache[state]
+	var sd = _aim_state_data(state)
+	var entry := {"children": [], "tracks": {}}
+	if sd != null:
+		var base := {}
+		for n in rig.get("nodes", []):
+			base[n.path] = n
+		var children: Array = sd.children.duplicate()
+		children.sort_custom(func(a, b): return a.threshold < b.threshold)
+		for c in children:
+			var anim := Animation.new()
+			anim.length = c.anim.length
+			var idx_by_key := {}
+			for tr in c.anim.tracks:
+				if tr.prop == "sprite" or tr.prop == "emote_anim_index":
+					continue
+				var turn := 0.0
+				if tr.prop == "rotation" and base.has(tr.path):
+					turn = round((float(tr.values[0]) - float(base[tr.path].rot)) / TAU) * TAU
+				_add_track(anim, tr.path, tr.prop, tr.times, tr.values, turn)
+				var key: String = tr.path + "|" + tr.prop
+				idx_by_key[key] = anim.get_track_count() - 1
+				if not entry.tracks.has(key):
+					var target = _track_target(tr.path, tr.prop)
+					if target != null:
+						entry.tracks[key] = target
+			entry.children.append({"threshold": float(c.threshold), "anim": anim, "idx": idx_by_key, "loop": c.anim.loop})
+	_aim_cache[state] = entry
+	return entry
+
+
+func _track_target(path: String, prop: String):
+	var node: Node = self if path == "." else parts.get(path)
+	if node == null:
+		return null
+	if prop == "alpha":
+		node = sprites.get(path)
+		return [node, NodePath("self_modulate:a")] if node != null else null
+	return [node, NodePath(prop)]
+
+
+func _apply_aim() -> void:
+	if aim_state == "":
+		return
+	var e := _get_aim(aim_state)
+	var ch: Array = e.children
+	if ch.is_empty():
+		return
+	# 1D blend tree: the two children around aim_value, clamped at the ends
+	var i0 := 0
+	var i1 := 0
+	var w := 0.0
+	if aim_value <= ch[0].threshold:
+		i0 = 0; i1 = 0
+	elif aim_value >= ch[-1].threshold:
+		i0 = ch.size() - 1; i1 = i0
+	else:
+		for i in ch.size() - 1:
+			if aim_value >= ch[i].threshold and aim_value <= ch[i + 1].threshold:
+				i0 = i; i1 = i + 1
+				w = inverse_lerp(ch[i].threshold, ch[i + 1].threshold, aim_value)
+				break
+	for key in e.tracks:
+		var v0 = _aim_sample(ch[i0], key)
+		var v1 = _aim_sample(ch[i1], key)
+		if v0 == null:
+			v0 = v1
+		if v1 == null:
+			v1 = v0
+		if v0 == null:
+			continue
+		var v = (v0 if w < 0.5 else v1) if typeof(v0) == TYPE_BOOL else lerpf(v0, v1, w)
+		var target: Array = e.tracks[key]
+		target[0].set_indexed(target[1], v)
+
+
+func _aim_sample(child: Dictionary, key: String):
+	if not child.idx.has(key):
+		return null
+	var anim: Animation = child.anim
+	var t := fmod(_aim_phase * anim.length, maxf(anim.length, 0.0001)) if child.loop else minf(_aim_phase * anim.length, anim.length)
+	return anim.value_track_interpolate(child.idx[key], t)
+
+
+func _advance_aim(delta: float) -> void:
+	if aim_state == "":
+		return
+	var e := _get_aim(aim_state)
+	var length := 0.0
+	for c in e.children:
+		length = maxf(length, c.anim.length)
+	if length > 0.0:
+		_aim_phase += delta / length
+
+
+## Weapon slash effects: sprite-swap keys from animations (method track -> here).
+func _anim_sprite(path: String, index: int) -> void:
+	var spr: Sprite2D = sprites.get(path)
+	if spr == null:
+		return
+	if index == -2:  # back to the rig's own sprite (write defaults)
+		var n = _rig_nodes.get(path, {})
+		_set_sprite(spr, n.get("sprite", {}).get("data") if n.has("sprite") else null)
+		return
+	var table: Array = _sprite_tables.get(data.get("animations", ""), [])
+	_set_sprite(spr, table[index] if index >= 0 and index < table.size() else null)
+
+
+# ================================================================== body sliders
+
+## Sets a body slider (CharacterViewer.SetBodySlider). Values are 0..1 per axis, 0.5 = default.
+## For symmetrical segments (head, ears, hands, feet) both axes are kept equal, as in CC2D.
+func set_body_slider(segment: String, value: Vector2) -> void:
+	if not _segments.has(segment):
+		return
+	var prev: Vector2 = body_sliders.get(segment, Vector2(0.5, 0.5))
+	if _segments[segment].get("symmetrical", false):
+		if prev.x != value.x and prev.y == value.y:
+			value.y = value.x
+		elif prev.x == value.x and prev.y != value.y:
+			value.x = value.y
+		elif prev.x != value.x and prev.y != value.y:
+			value.x = (value.x + value.y) * 0.5
+			value.y = value.x
+	body_sliders[segment] = value
+	_apply_segment(segment)
+
+
+func get_body_slider(segment: String) -> Vector2:
+	return body_sliders.get(segment, Vector2(0.5, 0.5))
+
+
+func _build_segments(seg_data: Dictionary) -> void:
+	_segments = seg_data
+	_pos_affections.clear()
+	for seg in seg_data:
+		for d in seg_data[seg].positioned:
+			if not _pos_affections.has(d.path):
+				_pos_affections[d.path] = []
+			_pos_affections[d.path].append({"segment": seg, "data": d})
+
+
+func _apply_segment(segment: String) -> void:
+	if not _segments.has(segment):
+		return
+	var sv: Vector2 = body_sliders.get(segment, Vector2(0.5, 0.5))
+	for o in _segments[segment].scaled:  # ScaledAffection.SetScale
+		var node: Node2D = parts.get(o.path)
+		if node == null:
+			continue
+		node.scale = Vector2(_slide(sv.x, o.min[0], o.def[0], o.max[0]), _slide(sv.y, o.min[1], o.def[1], o.max[1]))
+	for o in _segments[segment].positioned:  # PositionedAffection.updateTransform
+		_update_position(o.path)
+
+
+func _update_position(path: String) -> void:
+	var node: Node2D = parts.get(path)
+	var entries: Array = _pos_affections.get(path, [])
+	if node == null or entries.is_empty():
+		return
+	var pos := _v2(entries[0].data.default)
+	for e in entries:
+		var d: Dictionary = e.data
+		var sv: Vector2 = body_sliders.get(e.segment, Vector2(0.5, 0.5))
+		var def := _v2(d.default)
+		if d.scale_x:
+			pos += _slide_v(sv.x, _v2(d.min_x), def, _v2(d.max_x)) - def
+		if d.scale_y:
+			pos += _slide_v(sv.y, _v2(d.min_y), def, _v2(d.max_y)) - def
+	node.position = pos
+
+
+static func _slide(t: float, lo: float, def: float, hi: float) -> float:
+	if t > 0.5:
+		return lerpf(def, hi, (t - 0.5) * 2.0)
+	if t < 0.5:
+		return lerpf(lo, def, t * 2.0)
+	return def
+
+
+static func _slide_v(t: float, lo: Vector2, def: Vector2, hi: Vector2) -> Vector2:
+	if t > 0.5:
+		return def.lerp(hi, (t - 0.5) * 2.0)
+	if t < 0.5:
+		return lo.lerp(def, t * 2.0)
+	return def
+
+
+# ================================================================== character data (CC2D JSON)
+
+## The character in CC2D's CharacterData layout (what CharacterViewer.SaveToJSON writes),
+## so files round-trip between this runtime and Unity's CharacterViewer.LoadFromJSON.
+func get_character_data() -> Dictionary:
+	var slot_data := []
+	for i in SLOTS.size():
+		var s: Dictionary = slots[SLOTS[i]]
+		var p = s.part
+		slot_data.append({
+			"category": i,
+			"partName": p.name if p != null else "",
+			"partPackage": p.package if p != null else "",
+			"color1": _ucol(s.color1), "color2": _ucol(s.color2), "color3": _ucol(s.color3),
+		})
+	var emote_data := []
+	for key in emotes:
+		var e: Dictionary = emotes[key]
+		if int(e.index) >= 10 or str(e.get("name", "")) == "" or str(e.get("name", "")) == key:
+			continue  # CC2D only saves named custom emotes
+		var row := {"emotionType": int(e.index), "emotionName": e.name}
+		for slot in FACE_SLOTS:
+			var f: String = str(slot).to_lower()
+			var ref = e.get(slot)
+			row[f + "PartName"] = ref.name if ref != null else ""
+			row[f + "Package"] = ref.package if ref != null else ""
+		emote_data.append(row)
+	var segs := []
+	for i in SEGMENTS.size():
+		var v: Vector2 = body_sliders.get(SEGMENTS[i], Vector2(0.5, 0.5))
+		segs.append({"segmentType": i, "scale": {"x": v.x, "y": v.y}})
+	return {
+		"dataVersion": 1,
+		"bodyType": BODY_TYPES.find(body_type),
+		"skinColor": _ucol(skin_color),
+		"tintColor": _ucol(tint_color),
+		"slotData": slot_data,
+		"emoteData": emote_data,
+		"bodySegmentData": segs,
+	}
+
+
+## Applies CC2D CharacterData (e.g. a file saved by Unity's CharacterViewer.SaveToJSON).
+func apply_character_data(cd: Dictionary) -> void:
+	reset_emote()
+	var bt := int(cd.get("bodyType", BODY_TYPES.find(body_type)))
+	if bt >= 0 and bt < BODY_TYPES.size():
+		set_body_type(BODY_TYPES[bt])
+	if cd.has("skinColor"):
+		set_skin_color(_from_ucol(cd.skinColor))
+	if cd.has("tintColor"):
+		set_tint_color(_from_ucol(cd.tintColor))
+	for row in cd.get("slotData", []):
+		var cat := int(row.get("category", -1))
+		if cat < 0 or cat >= SLOTS.size():
+			continue
+		var slot: String = SLOTS[cat]
+		_ensure_slot_material(slot)
+		equip_part(slot, str(row.get("partName", "")), str(row.get("partPackage", "")))
+		var s: Dictionary = slots[slot]
+		s.color1 = _from_ucol(row.get("color1", _ucol(s.color1)))
+		s.color2 = _from_ucol(row.get("color2", _ucol(s.color2)))
+		s.color3 = _from_ucol(row.get("color3", _ucol(s.color3)))
+		_assign_color_to_renderer(slot)
+	for row in cd.get("emoteData", []):
+		var e := _find_emote(int(row.get("emotionType", -1)))
+		if e.is_empty():
+			continue
+		e.name = row.get("emotionName", e.name)
+		for slot in FACE_SLOTS:
+			var f: String = str(slot).to_lower()
+			var pn := str(row.get(f + "PartName", ""))
+			e[slot] = null if pn == "" else {"name": pn, "package": str(row.get(f + "Package", ""))}
+	for row in cd.get("bodySegmentData", []):
+		var si := int(row.get("segmentType", -1))
+		if si >= 0 and si < SEGMENTS.size():
+			var sc: Dictionary = row.get("scale", {})
+			body_sliders[SEGMENTS[si]] = Vector2(float(sc.get("x", 0.5)), float(sc.get("y", 0.5)))
+			_apply_segment(SEGMENTS[si])
+	_capture_default_emote()
+
+
+## Saves CC2D CharacterData JSON (loadable by Unity's CharacterViewer.LoadFromJSON).
+func save_character(path: String) -> Error:
+	var f := FileAccess.open(path, FileAccess.WRITE)
+	if f == null:
+		return FileAccess.get_open_error()
+	f.store_string(JSON.stringify(get_character_data(), "\t"))
+	return OK
+
+
+## Loads CC2D CharacterData JSON (from save_character or from Unity) onto this character.
+func load_character_data(path: String) -> Error:
+	var cd := _read_json(path)
+	if cd.is_empty():
+		return ERR_PARSE_ERROR
+	apply_character_data(cd)
+	return OK
+
+
+func _ensure_slot_material(slot: String) -> void:
+	if slots[slot].material != null:
+		return
+	var key = catalogue.get("default_slot_materials", {}).get(slot)
+	if key != null and materials.has(key):
+		slots[slot].material = key
+		_assign_slot_materials()
+
+
+static func _ucol(c: Color) -> Dictionary:
+	return {"r": c.r, "g": c.g, "b": c.b, "a": c.a}
+
+
+static func _from_ucol(d) -> Color:
+	if typeof(d) == TYPE_ARRAY:
+		return Color(d[0], d[1], d[2], d[3])
+	return Color(float(d.get("r", 0.5)), float(d.get("g", 0.5)), float(d.get("b", 0.5)), float(d.get("a", 1.0)))
+
+
 # ================================================================== expressions
 
 ## Changes the facial expression (CharacterViewer.Emote). `emotion` is an EmotionType name
@@ -310,7 +683,19 @@ func get_emotion_names() -> PackedStringArray:
 	return PackedStringArray(emotes.keys())
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	_advance_aim(delta)
+	# emoteAnimIndex of the playing animation at its current time (-1 when it has none,
+	# which is what Unity's write-defaults gives).
+	if animation_player != null and animation_player.assigned_animation != "":
+		var keys = _emote_keys.get(data.get("animations", ""), {}).get(animation_player.assigned_animation)
+		var v := -1.0
+		if keys != null:
+			var t := animation_player.current_animation_position
+			for i in keys[0].size():
+				if float(keys[0][i]) <= t + 0.0001:
+					v = float(keys[1][i])
+		emote_anim_index = v
 	# CharacterViewer.Update: follow emoteAnimIndex keys from the playing animation.
 	if not _is_emoting and emote_anim_index != _current_emote_anim_index:
 		_update_anim_emote(emote_anim_index)
@@ -577,6 +962,7 @@ func _clear() -> void:
 	parts.clear()
 	sprites.clear()
 	cloth.clear()
+	_rig_nodes.clear()
 	materials.clear()
 	animation_player = null
 	current_animation = ""
@@ -621,6 +1007,7 @@ func _build_nodes(nodes: Array) -> void:
 		else:
 			parts[n.parent].add_child(node)
 		parts[n.path] = node
+		_rig_nodes[n.path] = n
 
 		var s = n.get("sprite")
 		if s == null:
@@ -674,9 +1061,21 @@ func _build_animation_player() -> void:
 	var anim_path: String = data.get("animations", "res://cc2d/animations/cc2d.json")
 	var rig_path: String = data.get("rigs", {}).get(body_type, "")
 	var key := anim_path + "|" + rig_path
+	var anim_data := _cached_json(anim_path)
+	_sprite_tables[anim_path] = anim_data.get("sprites", [])
+	if not _emote_keys.has(anim_path):
+		var keys := {}
+		var anims: Dictionary = anim_data.get("animations", {})
+		for anim_name in anims:
+			for tr in anims[anim_name].tracks:
+				if tr.prop == "emote_anim_index":
+					keys[anim_name] = [tr.times, tr.values]
+		_emote_keys[anim_path] = keys
 	if not _library_cache.has(key):
-		_library_cache[key] = _build_library(_cached_json(anim_path), rig)
+		_library_cache[key] = _build_library(anim_data, rig)
 	animation_player.add_animation_library("", _library_cache[key])
+	# Aim layer overrides the base animation after it has been applied each frame.
+	animation_player.mixer_applied.connect(_apply_aim)
 
 
 ## Builds an AnimationLibrary for one rig. Unity's "write defaults" is emulated by giving
@@ -701,6 +1100,11 @@ static func _build_library(anim_data: Dictionary, rig_data: Dictionary) -> Anima
 		var present := {}
 		for tr in a.tracks:
 			present[tr.path + "|" + tr.prop] = true
+			if tr.prop == "sprite":
+				_add_sprite_track(anim, tr.path, tr.times, tr.values)
+				continue
+			if tr.prop == "emote_anim_index":
+				continue  # read directly from the playing animation in _process
 			var turn := 0.0
 			if tr.prop == "rotation" and base.has(tr.path):
 				# keep rotations in the same 2*PI turn as the rest pose so cross-fades don't spin
@@ -711,10 +1115,12 @@ static func _build_library(anim_data: Dictionary, rig_data: Dictionary) -> Anima
 				continue
 			var path: String = key.get_slice("|", 0)
 			var prop: String = key.get_slice("|", 1)
-			if base.has(path):
+			if prop == "sprite":
+				_add_sprite_track(anim, path, [0.0], [-2])  # restore the rig's sprite
+			elif base.has(path):
 				_add_track(anim, path, prop, [0.0], [_rest_value(base[path], prop)], 0.0)
 			elif prop == "emote_anim_index":
-				_add_track(anim, path, prop, [0.0], [-1.0], 0.0)  # prefab default: no emote
+				pass
 		for slot in rig_data.get("cloth", {}):
 			var c: Dictionary = rig_data.cloth[slot]
 			var idx := anim.add_track(Animation.TYPE_VALUE)
@@ -730,9 +1136,22 @@ static func _build_library(anim_data: Dictionary, rig_data: Dictionary) -> Anima
 	return lib
 
 
+static func _add_sprite_track(anim: Animation, path: String, times: Array, values: Array) -> void:
+	var idx := anim.add_track(Animation.TYPE_METHOD)
+	anim.track_set_path(idx, NodePath("."))
+	for i in times.size():
+		anim.track_insert_key(idx, times[i], {"method": "_anim_sprite", "args": [path, int(values[i])]})
+
+
+static func _track_path(path: String, prop: String) -> NodePath:
+	if prop == "alpha":
+		return NodePath("%s/_sprite:self_modulate:a" % path)
+	return NodePath("%s:%s" % [path, prop])
+
+
 static func _add_track(anim: Animation, path: String, prop: String, times: Array, values: Array, turn: float) -> void:
 	var idx := anim.add_track(Animation.TYPE_VALUE)
-	anim.track_set_path(idx, NodePath("%s:%s" % [path, prop]))
+	anim.track_set_path(idx, _track_path(path, prop))
 	if prop == "visible" or prop == "emote_anim_index":
 		anim.value_track_set_update_mode(idx, Animation.UPDATE_DISCRETE)
 		anim.track_set_interpolation_type(idx, Animation.INTERPOLATION_NEAREST)
@@ -762,6 +1181,8 @@ static func _rest_value(n: Dictionary, prop: String):
 			return n.rot
 		"visible":
 			return n.visible
+		"alpha":
+			return n.sprite.color[3] if n.has("sprite") else 1.0
 	return 0.0
 
 
