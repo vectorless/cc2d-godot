@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://addons/cc2d/cc2d_character.gd" id="1_cc2d"]
 [ext_resource type="Script" path="res://demo/character_walker.gd" id="2_walk"]
+[ext_resource type="Script" path="res://demo/outfit_switcher.gd" id="3_outfit"]
 
 [node name="WalkDemo" type="Node2D"]
 
@@ -22,3 +23,6 @@ character_file = "res://characters/exa/character.json"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -250)
+
+[node name="Outfit" type="CanvasLayer" parent="."]
+script = ExtResource("3_outfit")
