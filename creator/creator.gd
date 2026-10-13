@@ -49,7 +49,7 @@ const C_PANEL := Color(0.065, 0.075, 0.09, 0.86)
 
 ## Menus of the top bar and the categories each one lists (as in Unity's Creator UI).
 const MENUS := [
-	{"id": "file", "title": "File", "icon": "menu", "cats": ["new", "open", "save", "export", "demo"]},
+	{"id": "file", "title": "File", "icon": "menu", "cats": ["new", "clear", "open", "save", "export", "demo"]},
 	{"id": "body", "title": "Body", "icon": "body", "cats": ["body", "skin_details", "sliders", "randomize"]},
 	{"id": "face", "title": "Face", "icon": "face", "cats": ["hair", "eyebrow", "eyes", "nose", "mouth", "ear", "facial_hair", "emotion"]},
 	{"id": "equipment", "title": "Equipment", "icon": "armor", "cats": ["helmet", "armor", "pants", "skirt", "gloves", "boots", "cape"]},
@@ -60,6 +60,7 @@ const MENUS := [
 ## sliders, randomize, emotion, export.
 const CATS := {
 	"new": {"title": "New", "icon": "plus", "kind": "action", "tip": "Start again from the default character"},
+	"clear": {"title": "Clear All Items", "icon": "clear", "kind": "action", "tip": "Take off all clothing and weapons (body and face stay)"},
 	"open": {"title": "Open JSON", "icon": "open_json", "kind": "action", "tip": "Load a CC2D CharacterData JSON (Unity's CharacterViewer files work too)"},
 	"save": {"title": "Save As JSON", "icon": "save_json", "kind": "action", "tip": "Save as CC2D CharacterData JSON (Unity can load it)"},
 	"export": {"title": "Export PNG", "icon": "png", "kind": "export", "tip": "Single image, PNG sequence or sprite sheet"},
@@ -703,6 +704,8 @@ func _build_top_bar(root: Control) -> void:
 	right.alignment = BoxContainer.ALIGNMENT_END
 	var dice := _button(right, "Randomize", func(): randomize_character(), "dice", "Random parts and colours (Body > Randomize has the options)")
 	dice.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	var clear := _button(right, "Clear All", clear_items, "clear", "Take off all clothing and weapons (body and face stay)")
+	clear.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	var demo := _button(right, "Walk Demo", _go_demo, "play", "Walk around with this character")
 	demo.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 
@@ -2489,6 +2492,8 @@ func _run_action(c: String) -> void:
 			_ask_file(true, PackedStringArray(["*.json ; CC2D character"]), "my_character.json", func(p):
 				var err := character.save_character(p)
 				_toast(("Saved " if err == OK else "Couldn't save ") + p))
+		"clear":
+			clear_items()
 		"demo":
 			_go_demo()
 
@@ -2509,6 +2514,17 @@ func _new_character() -> void:
 		character.set_body_slider(seg, Vector2(0.5, 0.5))
 	_after_load()
 	_toast("New character")
+
+
+## Slots that "Clear All Items" empties: clothing and weapons. Body, skin and face stay.
+const ITEM_SLOTS := ["Helmet", "Armor", "Pants", "Skirt", "Gloves", "Boots", "Cape", "MainHand", "OffHand"]
+
+
+func clear_items() -> void:
+	for s in ITEM_SLOTS:
+		character.equip_part(s, "")
+	_toast("All items removed")
+	_show_category(cat if CATS.get(cat, {}).get("kind", "") != "action" else "armor")
 
 
 func _after_load() -> void:
