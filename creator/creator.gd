@@ -237,15 +237,17 @@ func is_busy() -> bool:
 
 # ================================================================== data
 
-func _load_custom_packs() -> void:
+## Adds every pack in res://custom to the catalogue. Returns how many parts were new.
+func _load_custom_packs() -> int:
 	custom_packages.clear()
+	var added := 0
 	if not DirAccess.dir_exists_absolute(CUSTOM_DIR):
-		return
+		return 0
 	for d in DirAccess.get_directories_at(CUSTOM_DIR):
 		var path := "%s/%s/parts.json" % [CUSTOM_DIR, d]
 		if not FileAccess.file_exists(path):
 			continue
-		CC2DCharacter.add_part_pack(path)
+		added += CC2DCharacter.add_part_pack(path)
 		var pack = JSON.parse_string(FileAccess.get_file_as_string(path))
 		if pack is Dictionary:
 			var pkg := str(pack.get("package", d.capitalize()))
@@ -256,6 +258,16 @@ func _load_custom_packs() -> void:
 				break
 			if not custom_packages.has(pkg):
 				custom_packages.append(pkg)
+	return added
+
+
+## Packs generated while the creator is open show up when you come back to the window.
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_FOCUS_IN and is_node_ready():
+		var n := _load_custom_packs()
+		if n > 0:
+			_rebuild = true
+			_toast("%d new part%s found in custom packs" % [n, "" if n == 1 else "s"])
 
 
 func _load_palettes() -> void:
@@ -980,9 +992,11 @@ func _build_parts_page(page: VBoxContainer) -> void:
 	_parts_scroll.add_child(_parts_list)
 
 
-func _cat_parts(c: String) -> Array:
+## Parts listed on a category page. all_bodies: also the other body type's parts (shown dimmed;
+## picking one switches the body type).
+func _cat_parts(c: String, all_bodies := false) -> Array:
 	var info: Dictionary = CATS[c]
-	var parts: Array = character.get_parts(info.slot)
+	var parts: Array = character.get_parts(info.slot, not all_bodies)
 	if info.has("weapons"):
 		var allowed: Array = info.weapons
 		parts = parts.filter(func(p): return p.get("weapon", "") in allowed)
@@ -997,7 +1011,10 @@ func _build_parts() -> void:
 	_thumb_queue.clear()
 	for b in _body_buttons:
 		_body_buttons[b].set_pressed_no_signal(b == character.body_type)
-	var parts := _cat_parts(cat)
+	var parts := _cat_parts(cat, cat != "body")
+	# this body type's parts first, then the other body's (dimmed)
+	var fits := parts.filter(func(p): return character.body_type in p.body)
+	parts = fits + parts.filter(func(p): return not (character.body_type in p.body))
 	var by_pkg := {}
 	for p in parts:
 		if not by_pkg.has(p.package):
@@ -1072,6 +1089,9 @@ func _make_tile(p: Dictionary, text: String) -> Button:
 		b.tooltip_text = "%s\n%s pack · %s" % [p.name, p.package, " / ".join(p.body)]
 		if p.has("colors"):
 			b.tooltip_text += "\nComes with its own colours"
+		if not (character.body_type in p.body):
+			b.modulate = Color(1, 1, 1, 0.45)
+			b.tooltip_text += "\n%s body only: click to switch to it and wear this" % " / ".join(p.body)
 	var tr := TextureRect.new()
 	tr.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	tr.offset_left = 8
@@ -1158,6 +1178,8 @@ func _scroll_to_selected() -> void:
 func _on_tile_pressed(p: Dictionary) -> void:
 	if slot == "":
 		return
+	if not p.is_empty() and not (character.body_type in p.body) and not p.body.is_empty():
+		character.set_body_type(p.body[0])   # rebuilds the page next frame
 	if p.is_empty():
 		character.equip_part(slot, "")
 		_toast("%s removed" % _slot_title(slot))

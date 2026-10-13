@@ -66,7 +66,7 @@ func _ready() -> void:
 			creator.open_category(c)
 			await frames(1)
 			var n: int = creator._tiles.size() - 1
-			var want: int = creator._cat_parts(c).size()
+			var want: int = creator._cat_parts(c, c != "body").size()   # other body type's parts are listed too (dimmed)
 			check(n == want and n > 0, "%s > %s: %d parts" % [m.title, Creator.CATS[c].title, n])
 			creator._thumb_queue.clear()
 
@@ -132,6 +132,17 @@ func _ready() -> void:
 	check(shown.size() > 0 and shown.all(func(tt): return "07" in tt.part.name), "search '07' shows %d parts" % shown.size())
 	creator._search_edit.text = ""
 	creator._search_edit.text_changed.emit("")
+	# a part made only for the other body type is listed dimmed; picking it switches the body
+	var other: Array = creator._tiles.filter(func(tt): return not tt.part.is_empty() and not (ch.body_type in tt.part.body))
+	check(other.size() > 0 and other[0].button.modulate.a < 1.0, "other body type's parts are listed dimmed (%d)" % other.size())
+	if other.size() > 0:
+		var op: Dictionary = other[0].part
+		var was := ch.body_type
+		other[0].button.pressed.emit()
+		await settle()
+		check(ch.body_type != was and ch.get_equipped(other[0].slot) == op.name, "picking %s switches to %s body and wears it" % [op.name, ch.body_type])
+		creator._set_body_type(was)
+		await settle()
 
 	print("== body menu")
 	creator._menu_buttons.body.button.pressed.emit()
