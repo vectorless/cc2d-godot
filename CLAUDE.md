@@ -154,8 +154,10 @@ into them. Equipping parts on an instantiated prefab inside `execute_code` chang
 This has happened once already: Exa's weapon materials ended up with a gun mask and had to be
 restored. Before equipping anything on an instance, call the private `instantiateSlotsMaterial` by
 reflection and then `RelinkMaterials()`. Destroy the instance and the material copies afterwards.
-`tests/shots/packs/*_unity.png` and `characters/packs/*.json` were made this way; see the
-"pack outfits" section of the git history (`packs_test.gd`) for the outfit rules.
+`unity/snippets/render_pack_outfits.cs` does it properly. It regenerates
+`characters/packs/*.json` and the Unity reference renders `tests/shots/packs/*_unity.png`
+that `tests/packs_test.tscn` compares against (the shots aren't committed, so run it before
+that test on a fresh checkout).
 
 **New part packs** only reach the export after CC2D's part list is refreshed:
 `CharacterEditor2D.InspectorPartList.RefreshPartPackage(); CharacterEditor2D.InspectorPartList.Refresh(CharacterCreator2D.PartList.Static);`

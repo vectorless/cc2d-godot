@@ -162,7 +162,8 @@ repo. **If you change one copy, update the other.** It writes straight into
    CC2D's part list (and so the export) doesn't include the new parts.
 3. Choose *Tools > CC2D > Export Shared Data … to Godot*.
 4. Open the Godot project so it imports the new textures, then run `tests/packs_test.tscn`.
-   It equips every part on both bodies and compares outfits with Unity's renders.
+   It equips every part on both bodies and compares outfits with Unity's renders. The Unity
+   renders come from `unity/snippets/render_pack_outfits.cs`, run through MCP for Unity.
 
 To move a character without re-exporting, save it in Unity (`CharacterViewer.SaveToJSON`) and
 load it here with `load_character_data()`, or the other way round.
