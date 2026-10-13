@@ -4,6 +4,7 @@
 ## - equips any part from cc2d/parts.json (incl. capes and skirts)
 ## - recolours parts with the CC2D armour/skin shaders
 ## - plays CC2D animations (cape/skirt motion is pre-baked per frame by the exporter)
+## - facial expressions (CharacterViewer.Expression): emote(), reset_emote(), animation-driven emotes
 class_name CC2DCharacter
 extends Node2D
 
@@ -16,6 +17,8 @@ const SLOTS := ["Armor", "Boots", "Ear", "Eyebrow", "Eyes", "FacialHair", "Glove
 const BODY_TYPES := ["Male", "Female"]
 const SKIN_SLOTS := ["BodySkin", "Ear", "Nose"]
 const CLOTH_SLOTS := ["Cape", "Skirt"]
+## Face slots swapped by emotes (HumanoidUtility.IsFace).
+const FACE_SLOTS := ["Eyebrow", "Eyes", "Nose", "Mouth", "Ear"]
 const MAIN_HAND_WEAPONS := ["OneHanded", "TwoHanded", "Gun", "Rifle"]
 const OFF_HAND_WEAPONS := ["OneHanded", "Shield", "Bow", "Gun"]
 const TWO_HANDED_WEAPONS := ["TwoHanded", "Bow", "Rifle"]
@@ -23,6 +26,7 @@ const TWO_HANDED_WEAPONS := ["TwoHanded", "Bow", "Rifle"]
 signal character_loaded
 signal part_equipped(slot: String, part_name: String)
 signal body_type_changed(body_type: String)
+signal emote_changed(emotion: String)  ## "" when the face returns to default
 
 ## character.json produced by the Unity exporter.
 @export_file("*.json") var character_file: String
@@ -44,6 +48,16 @@ var tint_color := Color.WHITE
 var catalogue := {}
 var data := {}
 var rig := {}
+var emotes := {}  ## EmotionType name ("Blink", "Talk", "Emote_0", ...) -> {index, name, <face slot>: part ref or null}
+## Driven by animations (CharacterViewer.emoteAnimIndex): EmotionType index, -1 = default face.
+var emote_anim_index := -1.0
+var current_emote := ""
+
+var _current_emote_anim_index := -1.0
+var _default_emote := {}
+var _is_emoting := false
+var _is_emoting_anim := false
+var _emote_token := 0
 
 static var _json_cache := {}
 static var _library_cache := {}
@@ -63,6 +77,11 @@ func load_character(path: String) -> void:
 	body_type = data.get("body_type", "Male")
 	skin_color = _col(data.get("skin_color", [0.5, 0.5, 0.5, 1]))
 	tint_color = _col(data.get("tint_color", [1, 1, 1, 1]))
+	emotes = data.get("emotes", {})
+	_is_emoting = false
+	_is_emoting_anim = false
+	emote_anim_index = -1.0
+	_current_emote_anim_index = -1.0
 	slots.clear()
 	var slot_data: Dictionary = data.get("slots", {})
 	for slot in SLOTS:
@@ -75,6 +94,7 @@ func load_character(path: String) -> void:
 			"color3": _col(sd.get("color3", [0.5, 0.5, 0.5, 1])),
 		}
 	_rebuild("", 0.0)
+	_capture_default_emote()
 	character_loaded.emit()
 
 
@@ -87,8 +107,14 @@ func set_body_type(new_body_type: String) -> void:
 		return
 	var anim := current_animation
 	var t := animation_player.current_animation_position if animation_player and animation_player.is_playing() else 0.0
+	if _is_emoting or _is_emoting_anim:
+		reset_emote()
+		_is_emoting_anim = false
 	body_type = new_body_type
 	_rebuild(anim, t)
+	_capture_default_emote()
+	_current_emote_anim_index = -1.0
+	emote_anim_index = -1.0
 	body_type_changed.emit(body_type)
 
 
@@ -149,8 +175,15 @@ func equip_part(slot: String, part_name: String, package := "") -> bool:
 		if part == null:
 			push_warning("CC2DCharacter: can't find part '%s' for slot %s" % [part_name, slot])
 			return false
+	return _equip(slot, part)
+
+
+func _equip(slot: String, part) -> bool:
 	if not _set_part_to_slot(slot, part):
 		return false
+	# CharacterViewer.EquipPart: changing a face part while not emoting changes the default face.
+	if slot in FACE_SLOTS and not _is_emoting and not _is_emoting_anim:
+		_default_emote[slot] = slots[slot].part
 	_assign_part_to_renderer(slot)
 	part_equipped.emit(slot, get_equipped(slot))
 	return true
@@ -239,6 +272,104 @@ func set_tint_color(color: Color) -> void:
 	tint_color = color
 	for m in materials.values():
 		m.set_shader_parameter("tint", color)
+
+
+# ================================================================== expressions
+
+## Changes the facial expression (CharacterViewer.Emote). `emotion` is an EmotionType name
+## ("Blink", "Attack", "Hurt", "Talk", "Emote_0".."Emote_9"), an emote's display name, or its index.
+## With duration > 0 the face resets to default afterwards.
+func emote(emotion, duration := 0.0) -> void:
+	var e := _find_emote(emotion)
+	if e.is_empty():
+		push_error("CC2DCharacter: emotion not found: %s" % str(emotion))
+		return
+	if _is_emoting_anim:
+		_update_anim_emote(-1.0)
+	_emote(e, duration, false)
+
+
+## Returns the face to its default parts (CharacterViewer.ResetEmote).
+func reset_emote() -> void:
+	for slot in FACE_SLOTS:
+		_equip(slot, _default_emote.get(slot))
+	_is_emoting = false
+	current_emote = ""
+	emote_changed.emit("")
+
+
+## Sets which part an emotion uses for a face slot ("" = keep the default face part).
+func set_emote_part(emotion: String, slot: String, part_name: String, package := "") -> void:
+	var e := _find_emote(emotion)
+	if e.is_empty() or not slot in FACE_SLOTS:
+		return
+	e[slot] = null if part_name == "" else {"name": part_name, "package": package}
+
+
+func get_emotion_names() -> PackedStringArray:
+	return PackedStringArray(emotes.keys())
+
+
+func _process(_delta: float) -> void:
+	# CharacterViewer.Update: follow emoteAnimIndex keys from the playing animation.
+	if not _is_emoting and emote_anim_index != _current_emote_anim_index:
+		_update_anim_emote(emote_anim_index)
+
+
+func _emote(e: Dictionary, duration: float, is_animation: bool) -> void:
+	_emote_token += 1  # cancels a pending timed reset (CancelInvoke)
+	_is_emoting = not is_animation
+	for slot in FACE_SLOTS:
+		var ref = e.get(slot)
+		var part = find_part(slot, ref.name, ref.get("package", "")) if ref != null else null
+		_equip(slot, part if part != null else _default_emote.get(slot))
+	current_emote = _emote_key(e)
+	emote_changed.emit(current_emote)
+	if duration > 0.0:
+		var token := _emote_token
+		get_tree().create_timer(duration).timeout.connect(func():
+			if token == _emote_token:
+				reset_emote())
+
+
+func _update_anim_emote(value: float) -> void:
+	var index := int(value)
+	if index >= 0:
+		reset_emote()
+		_is_emoting_anim = true
+		var e := _find_emote(index)
+		if not e.is_empty():
+			_emote(e, 0.0, true)
+	else:
+		reset_emote()
+		_is_emoting_anim = false
+	_current_emote_anim_index = emote_anim_index
+
+
+func _capture_default_emote() -> void:
+	for slot in FACE_SLOTS:
+		_default_emote[slot] = slots[slot].part
+
+
+func _find_emote(emotion) -> Dictionary:
+	if typeof(emotion) == TYPE_INT or typeof(emotion) == TYPE_FLOAT:
+		for key in emotes:
+			if int(emotes[key].index) == int(emotion):
+				return emotes[key]
+		return {}
+	if emotes.has(emotion):
+		return emotes[emotion]
+	for key in emotes:
+		if emotes[key].get("name", "") == emotion:
+			return emotes[key]
+	return {}
+
+
+func _emote_key(e: Dictionary) -> String:
+	for key in emotes:
+		if emotes[key] == e:
+			return key
+	return ""
 
 
 # ================================================================== setter (HumanoidSetter)
@@ -582,6 +713,8 @@ static func _build_library(anim_data: Dictionary, rig_data: Dictionary) -> Anima
 			var prop: String = key.get_slice("|", 1)
 			if base.has(path):
 				_add_track(anim, path, prop, [0.0], [_rest_value(base[path], prop)], 0.0)
+			elif prop == "emote_anim_index":
+				_add_track(anim, path, prop, [0.0], [-1.0], 0.0)  # prefab default: no emote
 		for slot in rig_data.get("cloth", {}):
 			var c: Dictionary = rig_data.cloth[slot]
 			var idx := anim.add_track(Animation.TYPE_VALUE)
@@ -600,7 +733,7 @@ static func _build_library(anim_data: Dictionary, rig_data: Dictionary) -> Anima
 static func _add_track(anim: Animation, path: String, prop: String, times: Array, values: Array, turn: float) -> void:
 	var idx := anim.add_track(Animation.TYPE_VALUE)
 	anim.track_set_path(idx, NodePath("%s:%s" % [path, prop]))
-	if prop == "visible":
+	if prop == "visible" or prop == "emote_anim_index":
 		anim.value_track_set_update_mode(idx, Animation.UPDATE_DISCRETE)
 		anim.track_set_interpolation_type(idx, Animation.INTERPOLATION_NEAREST)
 	else:

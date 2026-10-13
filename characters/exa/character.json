@@ -29,4 +29,19 @@
 "Cape":{"material":"Exa Cape","part":null,"package":"","color1":[0.5,0.5,0.5,1],"color2":[0.5,0.5,0.5,1],"color3":[0.5,0.5,0.5,1]},
 "Skirt":{"material":"Exa Skirt","part":null,"package":"","color1":[0.5,0.5,0.5,1],"color2":[0.5,0.5,0.5,1],"color3":[0.5,0.5,0.5,1]},
 "BodySkin":{"material":"Exa Skin","part":"Base 00 Male","package":"Base","color1":[0.5,0.5,0.5,1],"color2":[0.5,0.5,0.5,1],"color3":[0.5,0.5,0.5,1]}
+},"emotes":{
+"Emote_0":{"index":0,"name":"Emote_0","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":null,"Ear":null},
+"Emote_1":{"index":1,"name":"Emote_1","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":null,"Ear":null},
+"Emote_2":{"index":2,"name":"Emote_2","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":null,"Ear":null},
+"Emote_3":{"index":3,"name":"Emote_3","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":null,"Ear":null},
+"Emote_4":{"index":4,"name":"Emote_4","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":null,"Ear":null},
+"Emote_5":{"index":5,"name":"Emote_5","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":null,"Ear":null},
+"Emote_6":{"index":6,"name":"Emote_6","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":null,"Ear":null},
+"Emote_7":{"index":7,"name":"Emote_7","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":null,"Ear":null},
+"Emote_8":{"index":8,"name":"Emote_8","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":null,"Ear":null},
+"Emote_9":{"index":9,"name":"Emote_9","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":null,"Ear":null},
+"Blink":{"index":10,"name":"Blink","Eyebrow":null,"Eyes":{"name":"05","package":"Base"},"Nose":null,"Mouth":null,"Ear":null},
+"Attack":{"index":11,"name":"Attack","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":{"name":"06","package":"Base"},"Ear":null},
+"Hurt":{"index":12,"name":"Hurt","Eyebrow":null,"Eyes":{"name":"04","package":"Base"},"Nose":null,"Mouth":{"name":"06","package":"Base"},"Ear":null},
+"Talk":{"index":13,"name":"Talk","Eyebrow":null,"Eyes":null,"Nose":null,"Mouth":{"name":"06","package":"Emote"},"Ear":null}
 }}

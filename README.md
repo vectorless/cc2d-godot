@@ -27,7 +27,16 @@ character.set_tint_color(Color.WHITE)
 character.set_body_type("Female")                       # parts swap to female versions
 character.equip_part("Cape", "Fantasy 00")
 character.equip_part("Skirt", "Base 01")
+
+# facial expressions (CharacterViewer.Emote)
+character.emote("Hurt", 1.5)        # Blink / Attack / Hurt / Talk / Emote_0..Emote_9, optional duration
+character.reset_emote()
+character.set_emote_part("Emote_0", "Mouth", "03")   # define custom emotes
+character.emote_changed.connect(func(e): print(e))
 ```
+
+Animations drive the face as in Unity: Idle blinks, Talk animations move the mouth,
+Hit/Die show Hurt, attacks show Attack (CC2D's `emoteAnimIndex` curve -> `emote_anim_index`).
 
 Slots: Armor, Boots, Ear, Eyebrow, Eyes, FacialHair, Gloves, Hair, Helmet, Mouth, Nose,
 Pants, SkinDetails, MainHand, OffHand, Cape, Skirt, BodySkin
@@ -35,4 +44,5 @@ Pants, SkinDetails, MainHand, OffHand, Cape, Skirt, BodySkin
 ## Demo controls
 A/D or arrows walk, Shift runs. Tab / Shift+Tab chooses a slot, W/S cycles parts,
 C randomises the slot's colours, X removes the part, R randomises the whole outfit,
-B switches between male and female.
+B switches between male and female. 1-4 show Blink/Attack/Hurt/Talk, 0 resets the face,
+T / H / K play the Talk 1 / Hit / Attack animations, Z zooms onto the face.
