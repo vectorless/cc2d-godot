@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://addons/cc2d/cc2d_character.gd" id="1_cc2d"]
+[ext_resource type="Script" path="res://demo/character_walker.gd" id="2_walk"]
+
+[node name="WalkDemo" type="Node2D"]
+
+[node name="Ground" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -50000.0
+offset_right = 50000.0
+offset_bottom = 400.0
+color = Color(0.33, 0.45, 0.3, 1)
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("2_walk")
+
+[node name="Character" type="Node2D" parent="Player"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_cc2d")
+character_file = "res://characters/exa/character.json"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -250)
