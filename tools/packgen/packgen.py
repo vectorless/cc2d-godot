@@ -2,6 +2,7 @@
 
     python3 packgen.py run specs/gangster.json [more specs...] [--budget 150] [--only ID] [--redo ID]
     python3 packgen.py list specs/*.json
+    python3 packgen.py prompts specs/*.json > PROMPTS.md   (the exact prompt sent for every part)
     python3 packgen.py reconvert specs/x.json [--only ID]   (redo fitting/colours from the saved image, no image-model call)
     --matte   cut pieces out with a background-removal model instead of flood-filling the white
               (also per part / per spec: "matte": true). Use it for white garments, straps, loops.
@@ -371,6 +372,13 @@ def main(argv):
             if redo and p['id'] in redo and done:
                 os.remove(os.path.join(wd, 'done.json')); done = False
             if only and p['id'] not in only:
+                continue
+            if cmd == 'prompts':
+                tp = template_part(p['category'], p['template'])
+                print('### %s / %s\n\nTemplate: `%s` (%s)%s\n\n> %s\n' % (
+                    spec['package'], p['name'], p['template'], p['category'],
+                    ', cut out with %s' % MATTE_MODEL if p.get('matte', spec.get('matte')) else '',
+                    describe(p['category'], tp) + ' Redraw it as ' + p['desc'].rstrip('.') + '.' + KEEP))
                 continue
             if cmd == 'list':
                 print('%-6s %-14s %-10s %-28s %s' % ('done' if done else '-', spec['package'], p['category'], p['name'], p['template']))
