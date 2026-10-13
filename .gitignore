@@ -2,3 +2,5 @@
 .DS_Store
 tests/shots/
 .unity_muzzle_ref.png
+__pycache__/
+creator/_new_ui/

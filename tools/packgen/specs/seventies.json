@@ -1,0 +1,146 @@
+{
+ "pack_dir": "custom/seventies",
+ "package": "Seventies",
+ "parts": [
+  {
+   "id": "disco_shirt_m",
+   "category": "Armor",
+   "name": "Disco Shirt Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1970s disco shirt in a bold geometric print with a huge pointed collar, unbuttoned to the chest, with a gold chain"
+  },
+  {
+   "id": "leisure_m",
+   "category": "Armor",
+   "name": "Leisure Suit Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1970s powder-blue polyester leisure suit jacket with wide lapels and contrast stitching over a patterned shirt"
+  },
+  {
+   "id": "track_m",
+   "category": "Armor",
+   "name": "Track Jacket Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1970s zip-up track jacket with two stripes down the sleeves and a ribbed collar (no logos)"
+  },
+  {
+   "id": "punk_m",
+   "category": "Armor",
+   "name": "Punk Leather Jacket Male",
+   "template": "Daily 09 Male",
+   "desc": "a late-1970s punk black leather biker jacket covered in studs, safety pins and band-style patches without readable words"
+  },
+  {
+   "id": "turtleneck_m",
+   "category": "Armor",
+   "name": "Turtleneck and Blazer Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1970s brown corduroy blazer with wide lapels over a cream ribbed turtleneck"
+  },
+  {
+   "id": "halter_f",
+   "category": "Armor",
+   "name": "Halter Top Female",
+   "template": "Daily 14 Female",
+   "desc": "a 1970s disco halter top in shimmering gold sequins"
+  },
+  {
+   "id": "wrap_f",
+   "category": "Armor",
+   "name": "Wrap Top Female",
+   "template": "Daily 09 Female",
+   "desc": "a 1970s jersey wrap top with a deep V-neck and long sleeves in a bold orange and brown geometric print"
+  },
+  {
+   "id": "ringer_f",
+   "category": "Armor",
+   "name": "Ringer Tee Female",
+   "template": "Daily 00 Female",
+   "desc": "a 1970s fitted ringer T-shirt with contrasting coloured collar and sleeve bands and a rainbow across the chest"
+  },
+  {
+   "id": "flares_m",
+   "category": "Pants",
+   "name": "Polyester Flares Male",
+   "template": "Daily 01 Male",
+   "desc": "1970s tight high-waisted polyester flared trousers in brown with a wide belt"
+  },
+  {
+   "id": "flares_f",
+   "category": "Pants",
+   "name": "High-Waisted Flares Female",
+   "template": "Daily 01 Female",
+   "desc": "1970s high-waisted wide flared jeans with a patch pocket and a wide belt"
+  },
+  {
+   "id": "platforms",
+   "category": "Boots",
+   "name": "Platform Shoes",
+   "template": "Daily 00",
+   "desc": "1970s disco platform shoes with very thick soles and high heels, in shiny two-tone patent leather"
+  },
+  {
+   "id": "platform_boots",
+   "category": "Boots",
+   "name": "Platform Boots",
+   "template": "Fantasy 03",
+   "desc": "1970s knee-high platform boots with thick soles, in metallic silver"
+  },
+  {
+   "id": "feathered",
+   "category": "Hair",
+   "name": "Feathered Hair",
+   "template": "04",
+   "desc": "1970s feathered hair: long, layered and flicked back in wings at the sides"
+  },
+  {
+   "id": "big_afro",
+   "category": "Hair",
+   "name": "Big Afro",
+   "template": "00",
+   "desc": "a large 1970s afro with a pick comb tucked in"
+  },
+  {
+   "id": "shag",
+   "category": "Hair",
+   "name": "Shag Cut",
+   "template": "00",
+   "desc": "a 1970s choppy layered shag haircut with a heavy fringe and sideburns"
+  },
+  {
+   "id": "walrus",
+   "category": "FacialHair",
+   "name": "Walrus Moustache",
+   "template": "00",
+   "desc": "a thick 1970s walrus moustache"
+  },
+  {
+   "id": "mutton",
+   "category": "FacialHair",
+   "name": "Mutton Chops",
+   "template": "00",
+   "desc": "big 1970s mutton-chop sideburns joined by a moustache, chin shaved"
+  },
+  {
+   "id": "sweatband",
+   "category": "Helmet",
+   "name": "Sweatband",
+   "template": "Daily 00",
+   "desc": "a 1970s terry-cloth sports headband with two stripes, worn across the forehead"
+  },
+  {
+   "id": "wide_brim",
+   "category": "Helmet",
+   "name": "Wide-Brim Hat",
+   "template": "Daily 00",
+   "desc": "a 1970s wide-brimmed felt hat with a feather in the band"
+  },
+  {
+   "id": "boombox",
+   "category": "Weapon",
+   "name": "Boombox",
+   "template": "Daily Two Handed 00",
+   "desc": "a chunky 1970s portable radio cassette player carried by its handle, drawn upright"
+  }
+ ]
+}

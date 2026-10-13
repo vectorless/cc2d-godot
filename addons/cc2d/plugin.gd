@@ -5,7 +5,7 @@ extends EditorPlugin
 ## JSON (rigs, animations, part catalogue, characters, export presets) and Godot leaves
 ## non-resource files out of exported games.
 
-const DATA_DIRS := ["res://cc2d", "res://characters", "res://addons/cc2d", "res://custom"]
+const DATA_DIRS := ["res://cc2d", "res://characters", "res://addons/cc2d", "res://custom", "res://creator"]
 
 var _export: EditorExportPlugin
 

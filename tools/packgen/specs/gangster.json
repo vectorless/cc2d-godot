@@ -1,0 +1,167 @@
+{
+ "pack_dir": "custom/gangster",
+ "package": "Gangster",
+ "parts": [
+  {
+   "id": "vest_shirt_m",
+   "category": "Armor",
+   "name": "Waistcoat and Shirt Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1950s gangster's white dress shirt with the sleeves rolled up to the elbow, a black buttoned waistcoat, braces and a loosened dark tie"
+  },
+  {
+   "id": "overcoat_m",
+   "category": "Armor",
+   "name": "Camel Overcoat Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1950s camel-hair double-breasted overcoat with wide lapels turned up, buttoned, over a dark suit and tie"
+  },
+  {
+   "id": "leather_m",
+   "category": "Armor",
+   "name": "Greaser Jacket Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1950s black leather motorcycle jacket with an asymmetric zip, wide lapels and silver studs, over a white T-shirt"
+  },
+  {
+   "id": "blouse_f",
+   "category": "Armor",
+   "name": "Satin Blouse Female",
+   "template": "Daily 09 Female",
+   "desc": "a 1950s gangster's moll satin blouse with a pussy-bow at the neck and long fitted sleeves with buttoned cuffs"
+  },
+  {
+   "id": "suit_f",
+   "category": "Armor",
+   "name": "Fitted Suit Jacket Female",
+   "template": "Daily 09 Female",
+   "desc": "a 1950s fitted women's pinstripe suit jacket with a nipped waist, peplum, padded shoulders and a brooch on the lapel"
+  },
+  {
+   "id": "trousers_m",
+   "category": "Pants",
+   "name": "Pinstripe Trousers Male",
+   "template": "Daily 01 Male",
+   "desc": "1950s high-waisted pleated pinstripe suit trousers with sharp creases and turn-ups"
+  },
+  {
+   "id": "trousers_f",
+   "category": "Pants",
+   "name": "Pinstripe Trousers Female",
+   "template": "Daily 01 Female",
+   "desc": "1950s high-waisted wide-leg women's pinstripe trousers with pleats"
+  },
+  {
+   "id": "pencil_skirt",
+   "category": "Skirt",
+   "name": "Pencil Skirt",
+   "template": "Daily 05",
+   "desc": "a 1950s fitted pencil skirt with a high waist, a small back slit and a thin belt"
+  },
+  {
+   "id": "wingtips",
+   "category": "Boots",
+   "name": "Two-Tone Wingtips",
+   "template": "Daily 00",
+   "desc": "1950s two-tone spectator wingtip brogue shoes, black and white leather, with laces"
+  },
+  {
+   "id": "spats",
+   "category": "Boots",
+   "name": "Shoes with Spats",
+   "template": "Fantasy 03",
+   "desc": "1950s polished black oxford shoes with pale grey button-up spats over the ankles; the shaft pieces are the trouser hem and spats"
+  },
+  {
+   "id": "fedora",
+   "category": "Helmet",
+   "name": "Fedora",
+   "template": "Daily 00",
+   "desc": "a 1950s gangster fedora hat with a wide snap brim and a black silk band"
+  },
+  {
+   "id": "trilby",
+   "category": "Helmet",
+   "name": "Trilby",
+   "template": "Daily 00",
+   "desc": "a 1950s narrow-brim trilby hat in grey felt with a small feather in the band"
+  },
+  {
+   "id": "flat_cap",
+   "category": "Helmet",
+   "name": "Flat Cap",
+   "template": "Daily 00",
+   "desc": "a 1950s tweed newsboy flat cap with a short peak and a button on top"
+  },
+  {
+   "id": "pillbox",
+   "category": "Helmet",
+   "name": "Pillbox Hat with Veil",
+   "template": "Daily 00",
+   "desc": "a 1950s women's small pillbox hat with a short black net veil and a flower"
+  },
+  {
+   "id": "slick_hair",
+   "category": "Hair",
+   "name": "Slicked Back",
+   "template": "00",
+   "desc": "short 1950s slicked-back hair, glossy with pomade, combed straight back"
+  },
+  {
+   "id": "pompadour",
+   "category": "Hair",
+   "name": "Pompadour",
+   "template": "00",
+   "desc": "a 1950s greaser pompadour quiff, tall at the front and slicked at the sides"
+  },
+  {
+   "id": "victory_rolls",
+   "category": "Hair",
+   "name": "Victory Rolls",
+   "template": "04",
+   "desc": "1950s women's victory-roll curls: shoulder-length waved hair with two big rolls on top"
+  },
+  {
+   "id": "pencil_tache",
+   "category": "FacialHair",
+   "name": "Pencil Moustache",
+   "template": "00",
+   "desc": "a thin 1950s pencil moustache"
+  },
+  {
+   "id": "tommy",
+   "category": "Weapon",
+   "name": "Drum Gun",
+   "template": "Rifle 00",
+   "desc": "a 1950s gangster submachine gun with a wooden stock, a wooden fore-grip, a round drum magazine and a finned barrel, drawn facing the same way as the input"
+  },
+  {
+   "id": "revolver",
+   "category": "Weapon",
+   "name": "Snub Revolver",
+   "template": "Gun 00",
+   "desc": "a snub-nose revolver with a short barrel, a six-shot cylinder and a wooden grip, drawn facing the same way as the input"
+  },
+  {
+   "id": "switchblade",
+   "category": "Weapon",
+   "name": "Switchblade",
+   "template": "Daily 00",
+   "desc": "an open switchblade knife with a pearl handle, pointing the same way as the input"
+  },
+  {
+   "id": "bat",
+   "category": "Weapon",
+   "name": "Baseball Bat",
+   "template": "Daily Two Handed 00",
+   "desc": "a wooden baseball bat held vertically, handle at the bottom, with a taped grip"
+  },
+  {
+   "id": "gloves",
+   "category": "Gloves",
+   "name": "Leather Driving Gloves",
+   "template": "Daily 03",
+   "desc": "black leather driving gloves with a buttoned wrist strap"
+  }
+ ]
+}

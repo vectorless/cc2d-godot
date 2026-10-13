@@ -1,0 +1,111 @@
+{
+ "pack_dir": "custom/nightclub",
+ "package": "Nightclub",
+ "parts": [
+  {
+   "id": "sequin_crop_f",
+   "category": "Armor",
+   "name": "Sequin Crop Top Female",
+   "template": "Daily 14 Female",
+   "desc": "a fashionable nightclub outfit top: a short silver sequin crop top with thin straps, showing the midriff"
+  },
+  {
+   "id": "bralette_f",
+   "category": "Armor",
+   "name": "Satin Bralette Female",
+   "template": "Base 00 Female",
+   "desc": "a fashionable nightclub satin bralette top in deep red with thin straps"
+  },
+  {
+   "id": "mesh_top_f",
+   "category": "Armor",
+   "name": "Mesh Long-Sleeve Top Female",
+   "template": "Daily 09 Female",
+   "desc": "a fashionable nightclub sheer black mesh long-sleeved top worn over a black bandeau"
+  },
+  {
+   "id": "halter_bodycon_f",
+   "category": "Armor",
+   "name": "Bodycon Halter Top Female",
+   "template": "Daily 14 Female",
+   "desc": "a fashionable nightclub bodycon halter-neck top in electric blue with a low back, ending at the waist"
+  },
+  {
+   "id": "cutout_f",
+   "category": "Armor",
+   "name": "Cut-Out Top Female",
+   "template": "Daily 00 Female",
+   "desc": "a fashionable nightclub fitted black top with short sleeves and geometric side cut-outs at the waist"
+  },
+  {
+   "id": "hotpants_f",
+   "category": "Pants",
+   "name": "Vinyl Hot Pants Female",
+   "template": "Base 00 Female",
+   "desc": "fashionable nightclub high-waisted shiny black vinyl hot pants"
+  },
+  {
+   "id": "fishnets_f",
+   "category": "Pants",
+   "name": "Shorts and Fishnets Female",
+   "template": "Daily 01 Female",
+   "desc": "fashionable nightclub look: short sequin shorts at the hips with black fishnet tights covering the legs"
+  },
+  {
+   "id": "micro_skirt",
+   "category": "Skirt",
+   "name": "Micro Mini Skirt",
+   "template": "Daily 00",
+   "desc": "a fashionable nightclub very short metallic gold mini skirt"
+  },
+  {
+   "id": "slit_skirt",
+   "category": "Skirt",
+   "name": "Satin Slit Skirt",
+   "template": "Daily 05",
+   "desc": "a fashionable nightclub fitted satin skirt in emerald green with a high side slit"
+  },
+  {
+   "id": "thigh_boots",
+   "category": "Boots",
+   "name": "Thigh-High Boots",
+   "template": "Fantasy 03",
+   "desc": "fashionable nightclub glossy black stiletto boots reaching up the leg"
+  },
+  {
+   "id": "heels",
+   "category": "Boots",
+   "name": "Strappy Heels",
+   "template": "Daily 00",
+   "desc": "fashionable nightclub strappy high-heeled sandals in gold"
+  },
+  {
+   "id": "silk_shirt_m",
+   "category": "Armor",
+   "name": "Open Silk Shirt Male",
+   "template": "Daily 09 Male",
+   "desc": "a fashionable nightclub black silk shirt with long sleeves, unbuttoned halfway down the chest, with a thin chain necklace"
+  },
+  {
+   "id": "mesh_tank_m",
+   "category": "Armor",
+   "name": "Mesh Tank Male",
+   "template": "Daily 14 Male",
+   "desc": "a fashionable nightclub sheer black mesh sleeveless tank top"
+  },
+  {
+   "id": "leather_pants_m",
+   "category": "Pants",
+   "name": "Leather Trousers Male",
+   "template": "Daily 01 Male",
+   "desc": "fashionable nightclub tight black leather trousers with a silver belt buckle"
+  },
+  {
+   "id": "club_hair_f",
+   "category": "Hair",
+   "name": "Sleek High Ponytail",
+   "template": "04",
+   "desc": "a sleek, glossy high ponytail hairstyle for a night out"
+  }
+ ]
+}

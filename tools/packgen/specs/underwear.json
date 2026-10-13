@@ -1,0 +1,97 @@
+{
+ "pack_dir": "custom/underwear",
+ "package": "Underwear",
+ "parts": [
+  {
+   "id": "lace_bra",
+   "category": "Armor",
+   "name": "Lace Bra Female",
+   "template": "Base 00 Female",
+   "desc": "a tasteful black lace balconette bra with thin straps"
+  },
+  {
+   "id": "sports_bra",
+   "category": "Armor",
+   "name": "Sports Bra Female",
+   "template": "Base 00 Female",
+   "desc": "a plain grey athletic sports bra with a wide elastic band"
+  },
+  {
+   "id": "bandeau",
+   "category": "Armor",
+   "name": "Bandeau Female",
+   "template": "Base 00 Female",
+   "desc": "a simple strapless striped cotton bandeau top"
+  },
+  {
+   "id": "camisole",
+   "category": "Armor",
+   "name": "Silk Camisole Female",
+   "template": "Daily 14 Female",
+   "desc": "a silk camisole with thin straps and lace trim at the neckline and hem"
+  },
+  {
+   "id": "corset",
+   "category": "Armor",
+   "name": "Corset Female",
+   "template": "Daily 14 Female",
+   "desc": "a Victorian-style satin corset with boning and front lacing, covering the torso"
+  },
+  {
+   "id": "briefs_f",
+   "category": "Pants",
+   "name": "Lace Briefs Female",
+   "template": "Base 00 Female",
+   "desc": "tasteful matching black lace briefs (full coverage)"
+  },
+  {
+   "id": "highwaist_f",
+   "category": "Pants",
+   "name": "High-Waisted Briefs Female",
+   "template": "Base 00 Female",
+   "desc": "retro high-waisted cotton briefs in pastel pink with a small bow"
+  },
+  {
+   "id": "stockings",
+   "category": "Pants",
+   "name": "Stockings and Garter Belt Female",
+   "template": "Daily 01 Female",
+   "desc": "sheer black thigh-high stockings with lace tops, attached to a black lace garter belt worn over briefs at the hips"
+  },
+  {
+   "id": "tank_m",
+   "category": "Armor",
+   "name": "Ribbed Undershirt Male",
+   "template": "Daily 14 Male",
+   "desc": "a white ribbed cotton sleeveless undershirt (tank top)"
+  },
+  {
+   "id": "tee_m",
+   "category": "Armor",
+   "name": "Undershirt Tee Male",
+   "template": "Daily 00 Male",
+   "desc": "a plain white cotton crew-neck undershirt T-shirt"
+  },
+  {
+   "id": "boxers_m",
+   "category": "Pants",
+   "name": "Striped Boxers Male",
+   "template": "Base 00 Male",
+   "desc": "loose cotton boxer shorts with blue and white stripes and an elastic waistband"
+  },
+  {
+   "id": "briefs_m",
+   "category": "Pants",
+   "name": "Boxer Briefs Male",
+   "template": "Base 00 Male",
+   "desc": "fitted dark grey boxer briefs with a wide elastic waistband"
+  },
+  {
+   "id": "socks",
+   "category": "Boots",
+   "name": "Ankle Socks",
+   "template": "Daily 00",
+   "desc": "plain white ankle socks on bare feet (no shoes)"
+  }
+ ]
+}

@@ -1,0 +1,146 @@
+{
+ "pack_dir": "custom/flower_power",
+ "package": "Flower Power",
+ "parts": [
+  {
+   "id": "fringe_vest_m",
+   "category": "Armor",
+   "name": "Fringed Vest Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1960s hippie brown suede vest with long fringes, worn open over a white loose long-sleeved peasant shirt"
+  },
+  {
+   "id": "tiedye_m",
+   "category": "Armor",
+   "name": "Tie-Dye Tee Male",
+   "template": "Daily 00 Male",
+   "desc": "a 1960s loose tie-dye T-shirt with a spiral rainbow swirl pattern"
+  },
+  {
+   "id": "nehru_m",
+   "category": "Armor",
+   "name": "Nehru Jacket Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1960s mod Nehru jacket with a mandarin collar, in a bold floral brocade, buttoned"
+  },
+  {
+   "id": "peasant_f",
+   "category": "Armor",
+   "name": "Peasant Blouse Female",
+   "template": "Daily 09 Female",
+   "desc": "a 1960s white peasant blouse with an embroidered floral yoke and wide flowing bell sleeves"
+  },
+  {
+   "id": "crochet_f",
+   "category": "Armor",
+   "name": "Crochet Halter Top Female",
+   "template": "Daily 14 Female",
+   "desc": "a 1960s hippie crochet halter top made of colourful granny squares"
+  },
+  {
+   "id": "tiedye_f",
+   "category": "Armor",
+   "name": "Tie-Dye Tee Female",
+   "template": "Daily 00 Female",
+   "desc": "a 1960s tie-dye T-shirt in purple, pink and yellow swirls, with a peace sign on the chest"
+  },
+  {
+   "id": "bellbottoms_m",
+   "category": "Pants",
+   "name": "Patched Bell-Bottoms Male",
+   "template": "Daily 01 Male",
+   "desc": "1960s faded denim bell-bottom jeans flaring wide at the bottom, with flower and peace-sign patches"
+  },
+  {
+   "id": "bellbottoms_f",
+   "category": "Pants",
+   "name": "Floral Flares Female",
+   "template": "Daily 01 Female",
+   "desc": "1960s high-waisted flared trousers in a bright flower-power print, very wide at the hem"
+  },
+  {
+   "id": "mod_skirt",
+   "category": "Skirt",
+   "name": "Mod Mini Skirt",
+   "template": "Daily 00",
+   "desc": "a 1960s mod mini skirt with a black-and-white op-art pattern"
+  },
+  {
+   "id": "fringe_skirt",
+   "category": "Skirt",
+   "name": "Fringed Suede Skirt",
+   "template": "Daily 05",
+   "desc": "a 1960s tan suede skirt with long fringes at the hem and beaded trim"
+  },
+  {
+   "id": "sandals",
+   "category": "Boots",
+   "name": "Leather Sandals",
+   "template": "Daily 00",
+   "desc": "1960s hippie brown leather strappy sandals"
+  },
+  {
+   "id": "gogo",
+   "category": "Boots",
+   "name": "Go-Go Boots",
+   "template": "Fantasy 03",
+   "desc": "1960s shiny white patent go-go boots, calf-high with a low heel"
+  },
+  {
+   "id": "long_hair",
+   "category": "Hair",
+   "name": "Long Centre Part",
+   "template": "04",
+   "desc": "long straight 1960s hippie hair parted in the centre, falling past the shoulders"
+  },
+  {
+   "id": "afro",
+   "category": "Hair",
+   "name": "Afro",
+   "template": "00",
+   "desc": "a big round 1960s afro hairstyle"
+  },
+  {
+   "id": "moptop",
+   "category": "Hair",
+   "name": "Mop-Top",
+   "template": "00",
+   "desc": "a 1960s shaggy mop-top haircut with a full fringe covering the forehead"
+  },
+  {
+   "id": "flower_crown",
+   "category": "Helmet",
+   "name": "Flower Crown",
+   "template": "Daily 00",
+   "desc": "a crown of daisies and colourful flowers worn as a headband"
+  },
+  {
+   "id": "headband",
+   "category": "Helmet",
+   "name": "Beaded Headband",
+   "template": "Daily 00",
+   "desc": "a 1960s woven beaded headband with a peace-sign charm, worn across the forehead"
+  },
+  {
+   "id": "floppy_hat",
+   "category": "Helmet",
+   "name": "Floppy Hat",
+   "template": "Daily 00",
+   "desc": "a 1960s wide floppy felt hat with a flower on the band"
+  },
+  {
+   "id": "guitar",
+   "category": "Weapon",
+   "name": "Acoustic Guitar",
+   "template": "Daily Two Handed 00",
+   "desc": "an acoustic guitar painted with flowers, held vertically, neck at the top"
+  },
+  {
+   "id": "peace_sign",
+   "category": "Weapon",
+   "name": "Peace Placard",
+   "template": "Daily Two Handed 00",
+   "desc": "a hand-painted protest placard on a wooden stick showing a big peace symbol and flowers (no words)"
+  }
+ ]
+}

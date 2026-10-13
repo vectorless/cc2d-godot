@@ -19,32 +19,69 @@ architecture, data formats and how to test changes.
 ## Quick start
 
 1. Open this folder in **Godot 4.6** (Compatibility renderer).
-2. Press **F5**. The walking demo runs.
-3. To use the character creator, open `creator/creator.tscn` and press **F6** (Cmd+R on a Mac).
+2. Press **F5**. The character creator opens (it's the main scene).
+3. Click **Walk Demo** in the creator to walk around with your character.
 
 | Scene | What it is |
 |---|---|
-| `demo/walk_demo.tscn` (main scene) | A character you walk around while swapping parts with the keyboard |
-| `creator/creator.tscn` | The character creator: parts, colours, body, sliders, expressions, animation and aim preview, save/load, PNG export |
-| `tests/fx_test.tscn`, `tests/creator_test.tscn` | Automated checks (see [Tests](#tests)) |
+| `creator/creator.tscn` (main scene) | The character creator: parts, colours, body, sliders, expressions, animation and aim preview, save/load, PNG export |
+| `demo/walk_demo.tscn` | A character you walk around while swapping parts with the keyboard |
+| `tests/*_test.tscn` | Automated checks (see [Tests](#tests)) |
 
 ### Walk demo controls
 A/D or the arrow keys walk, and Shift runs. Tab / Shift+Tab picks a slot, W/S cycles its parts,
 C randomises its colours and X removes the part. R randomises the whole outfit and B switches
 male/female. 1–4 show the Blink, Attack, Hurt and Talk faces, and 0 resets the face. T, H and K
-play the Talk 1, Hit and Attack animations. Z zooms onto the face.
+play the Talk 1, Hit and Attack animations. Z zooms onto the face. Esc, or the Character Creator
+button at the top right, goes back to the creator with the character.
 
 ### Character creator
-- **Parts:** choose a slot, click a part, and set up to three colours. Randomise is at the bottom.
-- **Expression:** Blink / Attack / Hurt / Talk preview the face.
-- **Animation / Aim:** any CC2D animation, plus an Aim-layer state on top, with an aim slider
-  that runs from down to up. To see a gun fire, set MainHand to `Gun 00 (Fantasy)` and Aim to `Shot Main Hand`.
-  Where several packs use the same part name, the list shows the pack in brackets.
-- **Body sliders:** width and length for each body segment.
-- **Export PNG:** a preset (Default, Portrait, FullBody, Animation) or your own settings, then
-  Single image, PNG sequence or Sprite sheet. It exports whatever animation and aim are playing.
-- **Save JSON / Load JSON:** CC2D's own CharacterData format. Unity's
-  `CharacterViewer.LoadFromJSON` reads these files, and Unity's saved files load here.
+A port of CC2D's Creator UI. Everything works with the mouse.
+
+- **Top bar:** the File, Body, Face, Equipment, Weapon and Gun menus, plus **Randomize** and
+  **Walk Demo** buttons.
+- **Left:** the open menu's categories:
+  - Equipment: Helmet, Armor, Pants, Skirt, Gloves, Boots and Cape.
+  - Body: Body, Skin Details, Body Sliders and Randomize.
+  - Face: Hair, Eyebrow, Eyes, Nose, Mouth, Ear, Facial Hair and Emotion.
+  - Weapon: Main Hand, Off Hand, Two Handed, Shield and Bow.
+  - Gun: Main Hand, Off Hand and Rifle.
+
+  Next to them are the category's parts as thumbnails, grouped by pack. Click a pack's heading
+  to fold it. There's a search box, a pack filter, and a dice button that picks a random part.
+  **None** removes the part. Hover over a part to see its full name and pack. Thumbnails show
+  the slot's current colours and are cached in `user://cc2d_thumbs/`.
+- **Centre:** the character. Zoom with the mouse wheel or the slider (zooming in moves towards
+  the face), drag to move the view, and double-click to reset it. Below the character are the
+  **Base Layer** animation and the **Aim Layer** state. Use ◀ ▶, or click the name for the full
+  list. While aiming, a slider sets the aim angle. The button at the bottom left changes the
+  background.
+- **Right (COLOR):** the selected part's colour slots. Hair, eyes, eyebrows, mouth, facial hair
+  and skin details have one; other parts have three. Skin parts use the skin colour. Click a
+  slot, then pick a colour with the picker, from one of CC2D's palettes (Skin, Hair, Eyes, Lips,
+  Fabric, Leather, Metal and others) or from the recent colours. The panel also has random
+  colours and copy / paste. Eyebrows and facial hair can take the hair colour, and the mouth can
+  take the skin colour. Skin details have an opacity slider, and custom parts have a
+  **Pack colours** button that restores their designed colours.
+- **Body** has Male / Female and the body skin, with the skin and tint colours. **Body Sliders**
+  sets the width and length of each body part. **Randomize** is CC2D's randomiser: choose which
+  parts, colours and packs it uses, and whether it changes the body sliders.
+- **Emotion** previews Blink, Attack, Hurt, Talk and the ten custom emotes. You can choose the
+  face parts for each emote and name the custom ones. Named custom emotes are saved in the JSON.
+- **Custom packs** in `res://custom/<pack>/parts.json` load at startup and have their own pack
+  headings. If a custom part has designed colours, picking it applies them.
+- **File:** New, Open JSON, Save As JSON, Export PNG and Walk Demo. The JSON files use CC2D's
+  CharacterData format: Unity's `CharacterViewer.LoadFromJSON` reads them, and files saved by
+  Unity load here.
+- **Export PNG:** choose a preset (Default, Portrait, FullBody, Animation) or your own settings
+  (size, fps, offset, scale, background, scale mode, flip, loop aim layer). Then export a single
+  image, a PNG sequence or a sprite sheet. The export uses the animation and aim state that are
+  playing under the character. **Render frame** previews the result. Presets can be loaded from
+  and saved to `.pngconfig` files, including Unity's.
+
+To see a gun fire, open Gun > Main Hand, pick a gun, and set the Aim Layer to `Shot Main Hand`.
+**Walk Demo** takes the character into the walk demo, and the demo's **Character Creator**
+button (or Esc) brings it back.
 
 ---
 
@@ -178,6 +215,7 @@ images to `tests/shots/`, which isn't committed.
 ```sh
 godot --path . --fixed-fps 60 res://tests/fx_test.tscn       # muzzle flashes + PNG export
 godot --path . --fixed-fps 60 res://tests/creator_test.tscn  # the creator's export panel
+godot --path . --fixed-fps 60 res://tests/creator_ui_test.tscn  # clicks through the creator, screenshots in tests/shots/creator_ui/
 godot --path . --fixed-fps 60 res://tests/packs_test.tscn    # every part + pack outfits vs Unity
 ```
 
@@ -202,7 +240,9 @@ cc2d/                     shared data exported from Unity (don't hand-edit; re-e
   textures/                 all part / body / FX textures
 characters/               exported characters (character.json) and CharacterData examples
   packs/                    one test outfit per pack and body (CharacterData saved in Unity)
-creator/                  the character creator scene
+creator/                  the character creator scene (UI built in creator.gd)
+  icons/, backgrounds/      CC2D Creator UI icons and backgrounds
+  palettes.json             CC2D's colour palettes (from Data/Color Palettes)
 demo/                     the walk demo
 tests/                    test scenes
 unity/Editor/             copy of the Unity exporter script

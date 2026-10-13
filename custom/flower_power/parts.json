@@ -118,6 +118,1526 @@
       "px_scale": 1
      }
     }
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Fringed Vest Male",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+    "mask": "res://custom/flower_power/textures/Armor/Fringed Vest Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5898,
+      0.4636,
+      0.367,
+      1.0
+     ],
+     [
+      0.8354,
+      0.8354,
+      0.8351,
+      1.0
+     ],
+     [
+      0.973,
+      0.9732,
+      0.9726,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a 1960s hippie brown suede vest with long fringes, worn open over a white loose long-sleeved peasant shirt"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Tie-Dye Tee Male",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Male.png",
+    "mask": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9191,
+      0.2792,
+      0.3744,
+      1.0
+     ],
+     [
+      0.9424,
+      0.9676,
+      0.0856,
+      1.0
+     ],
+     [
+      0.2133,
+      0.9817,
+      0.2758,
+      1.0
+     ]
+    ],
+    "template": "Daily 00 Male",
+    "desc": "a 1960s loose tie-dye T-shirt with a spiral rainbow swirl pattern"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Nehru Jacket Male",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Armor/Nehru Jacket Male.png",
+    "mask": "res://custom/flower_power/textures/Armor/Nehru Jacket Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/flower_power/textures/Armor/Nehru Jacket Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Nehru Jacket Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Nehru Jacket Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/flower_power/textures/Armor/Nehru Jacket Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Nehru Jacket Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Nehru Jacket Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5738,
+      0.26,
+      0.1883,
+      1.0
+     ],
+     [
+      0.671,
+      0.5119,
+      0.3339,
+      1.0
+     ],
+     [
+      0.9219,
+      0.793,
+      0.5134,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a 1960s mod Nehru jacket with a mandarin collar, in a bold floral brocade, buttoned"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Peasant Blouse Female",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Armor/Peasant Blouse Female.png",
+    "mask": "res://custom/flower_power/textures/Armor/Peasant Blouse Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/flower_power/textures/Armor/Peasant Blouse Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Peasant Blouse Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Peasant Blouse Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/flower_power/textures/Armor/Peasant Blouse Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Peasant Blouse Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Peasant Blouse Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     [
+      0.8536,
+      0.8532,
+      0.8514,
+      1.0
+     ],
+     [
+      0.5656,
+      0.5647,
+      0.5325,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "a 1960s white peasant blouse with an embroidered floral yoke and wide flowing bell sleeves"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Crochet Halter Top Female",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Armor/Crochet Halter Top Female.png",
+    "mask": "res://custom/flower_power/textures/Armor/Crochet Halter Top Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/flower_power/textures/Armor/Crochet Halter Top Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3418,
+      0.6536,
+      0.5371,
+      1.0
+     ],
+     [
+      0.9495,
+      0.7615,
+      0.2214,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "a 1960s hippie crochet halter top made of colourful granny squares"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Tie-Dye Tee Female",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
+    "mask": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7016,
+      0.4522,
+      0.6503,
+      1.0
+     ],
+     [
+      0.997,
+      0.9286,
+      0.5232,
+      1.0
+     ],
+     [
+      0.9404,
+      0.7067,
+      0.7543,
+      1.0
+     ]
+    ],
+    "template": "Daily 00 Female",
+    "desc": "a 1960s tie-dye T-shirt in purple, pink and yellow swirls, with a peace sign on the chest"
+   }
+  ],
+  "Pants": [
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Patched Bell-Bottoms Male",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Pants/Patched Bell-Bottoms Male.png",
+    "mask": "res://custom/flower_power/textures/Pants/Patched Bell-Bottoms Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/flower_power/textures/Pants/Patched Bell-Bottoms Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/flower_power/textures/Pants/Patched Bell-Bottoms Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/flower_power/textures/Pants/Patched Bell-Bottoms Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/flower_power/textures/Pants/Patched Bell-Bottoms Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/flower_power/textures/Pants/Patched Bell-Bottoms Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/flower_power/textures/Pants/Patched Bell-Bottoms Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.6829,
+      0.7274,
+      0.7491,
+      1.0
+     ],
+     [
+      0.4055,
+      0.4968,
+      0.5841,
+      1.0
+     ],
+     [
+      0.9487,
+      0.7944,
+      0.3758,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "1960s faded denim bell-bottom jeans flaring wide at the bottom, with flower and peace-sign patches"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Floral Flares Female",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Pants/Floral Flares Female.png",
+    "mask": "res://custom/flower_power/textures/Pants/Floral Flares Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/flower_power/textures/Pants/Floral Flares Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/flower_power/textures/Pants/Floral Flares Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/flower_power/textures/Pants/Floral Flares Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/flower_power/textures/Pants/Floral Flares Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/flower_power/textures/Pants/Floral Flares Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/flower_power/textures/Pants/Floral Flares Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9692,
+      0.8766,
+      0.3753,
+      1.0
+     ],
+     [
+      0.4934,
+      0.74,
+      0.5773,
+      1.0
+     ],
+     [
+      0.672,
+      0.4552,
+      0.3019,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "1960s high-waisted flared trousers in a bright flower-power print, very wide at the hem"
+   }
+  ],
+  "Skirt": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Mod Mini Skirt",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Skirt/Mod Mini Skirt.png",
+    "mask": "res://custom/flower_power/textures/Skirt/Mod Mini Skirt Mask.png",
+    "sprites": {
+     "Daily 00 Skirt": {
+      "texture": "res://custom/flower_power/textures/Skirt/Mod Mini Skirt.png",
+      "region": [
+       0,
+       0,
+       512,
+       768
+      ],
+      "offset": [
+       -256,
+       -384
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9974,
+      0.9974,
+      0.9972,
+      1.0
+     ],
+     [
+      0.781,
+      0.7807,
+      0.7803,
+      1.0
+     ],
+     [
+      0.4502,
+      0.4496,
+      0.4493,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a 1960s mod mini skirt with a black-and-white op-art pattern"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Fringed Suede Skirt",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Skirt/Fringed Suede Skirt.png",
+    "mask": "res://custom/flower_power/textures/Skirt/Fringed Suede Skirt Mask.png",
+    "sprites": {
+     "Daily 05 Skirt": {
+      "texture": "res://custom/flower_power/textures/Skirt/Fringed Suede Skirt.png",
+      "region": [
+       0,
+       0,
+       512,
+       768
+      ],
+      "offset": [
+       -256,
+       -384
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.8491,
+      0.7052,
+      0.5668,
+      1.0
+     ],
+     [
+      0.7017,
+      0.508,
+      0.318,
+      1.0
+     ],
+     [
+      0.4584,
+      0.3627,
+      0.2658,
+      1.0
+     ]
+    ],
+    "template": "Daily 05",
+    "desc": "a 1960s tan suede skirt with long fringes at the hem and beaded trim"
+   }
+  ],
+  "Boots": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Leather Sandals",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Boots/Leather Sandals.png",
+    "mask": "res://custom/flower_power/textures/Boots/Leather Sandals Mask.png",
+    "sprites": {
+     "Boots Foot R": {
+      "texture": "res://custom/flower_power/textures/Boots/Leather Sandals.png",
+      "region": [
+       0,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot F": {
+      "texture": "res://custom/flower_power/textures/Boots/Leather Sandals.png",
+      "region": [
+       0,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/flower_power/textures/Boots/Leather Sandals.png",
+      "region": [
+       0,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4915,
+      0.3233,
+      0.2372,
+      1.0
+     ],
+     [
+      0.701,
+      0.5312,
+      0.4242,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "1960s hippie brown leather strappy sandals"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Go-Go Boots",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Boots/Go-Go Boots.png",
+    "mask": "res://custom/flower_power/textures/Boots/Go-Go Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/flower_power/textures/Boots/Go-Go Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/flower_power/textures/Boots/Go-Go Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/flower_power/textures/Boots/Go-Go Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/flower_power/textures/Boots/Go-Go Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/flower_power/textures/Boots/Go-Go Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/flower_power/textures/Boots/Go-Go Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9896,
+      0.9894,
+      0.9894,
+      1.0
+     ],
+     [
+      0.7957,
+      0.7918,
+      0.8431,
+      1.0
+     ],
+     [
+      0.5212,
+      0.5209,
+      0.5396,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "1960s shiny white patent go-go boots, calf-high with a low heel"
+   }
+  ],
+  "Hair": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Long Centre Part",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Hair/Long Centre Part.png",
+    "mask": "res://custom/flower_power/textures/Hair/Long Centre Part Mask.png",
+    "sprites": {
+     "Hair B": {
+      "texture": "res://custom/flower_power/textures/Hair/Long Centre Part.png",
+      "region": [
+       512,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Hair F": {
+      "texture": "res://custom/flower_power/textures/Hair/Long Centre Part.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4789,
+      0.4783,
+      0.4782,
+      1.0
+     ],
+     [
+      0.6752,
+      0.6746,
+      0.6745,
+      1.0
+     ],
+     [
+      0.351,
+      0.3506,
+      0.3504,
+      1.0
+     ]
+    ],
+    "template": "04",
+    "desc": "long straight 1960s hippie hair parted in the centre, falling past the shoulders"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Afro",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Hair/Afro.png",
+    "mask": "res://custom/flower_power/textures/Hair/Afro Mask.png",
+    "sprites": {
+     "Hair S": {
+      "texture": "res://custom/flower_power/textures/Hair/Afro.png",
+      "region": [
+       0,
+       0,
+       256,
+       256
+      ],
+      "offset": [
+       -128,
+       -128
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7574,
+      0.7576,
+      0.7575,
+      1.0
+     ],
+     [
+      0.581,
+      0.5799,
+      0.58,
+      1.0
+     ],
+     [
+      0.815,
+      0.815,
+      0.8148,
+      1.0
+     ]
+    ],
+    "template": "00",
+    "desc": "a big round 1960s afro hairstyle"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Mop-Top",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Hair/Mop-Top.png",
+    "mask": "res://custom/flower_power/textures/Hair/Mop-Top Mask.png",
+    "sprites": {
+     "Hair S": {
+      "texture": "res://custom/flower_power/textures/Hair/Mop-Top.png",
+      "region": [
+       0,
+       0,
+       256,
+       256
+      ],
+      "offset": [
+       -128,
+       -128
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.8266,
+      0.8264,
+      0.8261,
+      1.0
+     ],
+     [
+      0.6185,
+      0.6176,
+      0.6176,
+      1.0
+     ],
+     [
+      0.4073,
+      0.4062,
+      0.4064,
+      1.0
+     ]
+    ],
+    "template": "00",
+    "desc": "a 1960s shaggy mop-top haircut with a full fringe covering the forehead"
+   }
+  ],
+  "Helmet": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Flower Crown",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Helmet/Flower Crown.png",
+    "mask": "res://custom/flower_power/textures/Helmet/Flower Crown Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/flower_power/textures/Helmet/Flower Crown.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4474,
+      0.524,
+      0.4276,
+      1.0
+     ],
+     [
+      0.9999,
+      0.9999,
+      0.9865,
+      1.0
+     ],
+     [
+      0.9819,
+      0.858,
+      0.2411,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a crown of daisies and colourful flowers worn as a headband"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Beaded Headband",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Helmet/Beaded Headband.png",
+    "mask": "res://custom/flower_power/textures/Helmet/Beaded Headband Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/flower_power/textures/Helmet/Beaded Headband.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4175,
+      0.4858,
+      0.5714,
+      1.0
+     ],
+     [
+      0.95,
+      0.7487,
+      0.3705,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a 1960s woven beaded headband with a peace-sign charm, worn across the forehead"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Floppy Hat",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Helmet/Floppy Hat.png",
+    "mask": "res://custom/flower_power/textures/Helmet/Floppy Hat Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/flower_power/textures/Helmet/Floppy Hat.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7519,
+      0.6316,
+      0.4855,
+      1.0
+     ],
+     [
+      0.477,
+      0.4018,
+      0.3323,
+      1.0
+     ],
+     [
+      0.7892,
+      0.4076,
+      0.3059,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a 1960s wide floppy felt hat with a flower on the band"
+   }
+  ],
+  "Weapon": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "TwoHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Acoustic Guitar",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Weapon/Acoustic Guitar.png",
+    "mask": "res://custom/flower_power/textures/Weapon/Acoustic Guitar Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/flower_power/textures/Weapon/Acoustic Guitar.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -686.08
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9637,
+      0.7751,
+      0.526,
+      1.0
+     ],
+     [
+      0.6875,
+      0.5636,
+      0.3493,
+      1.0
+     ],
+     [
+      0.4431,
+      0.396,
+      0.2977,
+      1.0
+     ]
+    ],
+    "template": "Daily Two Handed 00",
+    "desc": "an acoustic guitar painted with flowers, held vertically, neck at the top"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "TwoHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Peace Placard",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Weapon/Peace Placard.png",
+    "mask": "res://custom/flower_power/textures/Weapon/Peace Placard Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/flower_power/textures/Weapon/Peace Placard.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -686.08
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9825,
+      0.9701,
+      0.9509,
+      1.0
+     ],
+     [
+      0.7894,
+      0.7269,
+      0.6054,
+      1.0
+     ],
+     [
+      0.5318,
+      0.5125,
+      0.3369,
+      1.0
+     ]
+    ],
+    "template": "Daily Two Handed 00",
+    "desc": "a hand-painted protest placard on a wooden stick showing a big peace symbol and flowers (no words)"
    }
   ]
  }

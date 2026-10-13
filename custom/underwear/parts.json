@@ -1,0 +1,890 @@
+{
+ "format": 1,
+ "package": "Underwear",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Lace Bra Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Lace Bra Female.png",
+    "mask": "res://custom/underwear/textures/Armor/Lace Bra Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Lace Bra Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.314,
+      0.3132,
+      0.3136,
+      1.0
+     ],
+     [
+      0.492,
+      0.4913,
+      0.4918,
+      1.0
+     ],
+     [
+      0.8426,
+      0.8429,
+      0.8422,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a tasteful black lace balconette bra with thin straps"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Sports Bra Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Sports Bra Female.png",
+    "mask": "res://custom/underwear/textures/Armor/Sports Bra Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Sports Bra Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5192,
+      0.5196,
+      0.519,
+      1.0
+     ],
+     [
+      0.4603,
+      0.4594,
+      0.4591,
+      1.0
+     ],
+     [
+      0.3287,
+      0.3283,
+      0.3278,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a plain grey athletic sports bra with a wide elastic band"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Bandeau Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Bandeau Female.png",
+    "mask": "res://custom/underwear/textures/Armor/Bandeau Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Bandeau Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     [
+      0.825,
+      0.4928,
+      0.4876,
+      1.0
+     ],
+     [
+      0.6456,
+      0.3431,
+      0.3406,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a simple strapless striped cotton bandeau top"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Silk Camisole Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Silk Camisole Female.png",
+    "mask": "res://custom/underwear/textures/Armor/Silk Camisole Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Silk Camisole Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9988,
+      0.99,
+      0.9707,
+      1.0
+     ],
+     [
+      0.4585,
+      0.4433,
+      0.4191,
+      1.0
+     ],
+     [
+      0.7708,
+      0.7368,
+      0.6819,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "a silk camisole with thin straps and lace trim at the neckline and hem"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Corset Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Corset Female.png",
+    "mask": "res://custom/underwear/textures/Armor/Corset Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Corset Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4141,
+      0.3655,
+      0.3722,
+      1.0
+     ],
+     [
+      0.6008,
+      0.5536,
+      0.5544,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "a Victorian-style satin corset with boning and front lacing, covering the torso"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Ribbed Undershirt Male",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male.png",
+    "mask": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     [
+      0.8723,
+      0.8722,
+      0.8718,
+      1.0
+     ],
+     [
+      0.618,
+      0.6177,
+      0.6175,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Male",
+    "desc": "a white ribbed cotton sleeveless undershirt (tank top)"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Undershirt Tee Male",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Undershirt Tee Male.png",
+    "mask": "res://custom/underwear/textures/Armor/Undershirt Tee Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Undershirt Tee Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/underwear/textures/Armor/Undershirt Tee Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/underwear/textures/Armor/Undershirt Tee Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/underwear/textures/Armor/Undershirt Tee Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.8441,
+      0.8451,
+      0.8437,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     [
+      0.5638,
+      0.5626,
+      0.5625,
+      1.0
+     ]
+    ],
+    "template": "Daily 00 Male",
+    "desc": "a plain white cotton crew-neck undershirt T-shirt"
+   }
+  ],
+  "Pants": [
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Lace Briefs Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Pants/Lace Briefs Female.png",
+    "mask": "res://custom/underwear/textures/Pants/Lace Briefs Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/underwear/textures/Pants/Lace Briefs Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/underwear/textures/Pants/Lace Briefs Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/underwear/textures/Pants/Lace Briefs Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.364,
+      0.3607,
+      0.3609,
+      1.0
+     ],
+     [
+      0.6059,
+      0.6012,
+      0.6021,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "tasteful matching black lace briefs (full coverage)"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "High-Waisted Briefs Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Pants/High-Waisted Briefs Female.png",
+    "mask": "res://custom/underwear/textures/Pants/High-Waisted Briefs Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/underwear/textures/Pants/High-Waisted Briefs Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/underwear/textures/Pants/High-Waisted Briefs Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/underwear/textures/Pants/High-Waisted Briefs Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.8766,
+      0.6416,
+      0.7188,
+      1.0
+     ],
+     [
+      0.9981,
+      0.8307,
+      0.8707,
+      1.0
+     ],
+     [
+      0.5675,
+      0.4581,
+      0.4921,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "retro high-waisted cotton briefs in pastel pink with a small bow"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Stockings and Garter Belt Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Pants/Stockings and Garter Belt Female.png",
+    "mask": "res://custom/underwear/textures/Pants/Stockings and Garter Belt Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/underwear/textures/Pants/Stockings and Garter Belt Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/underwear/textures/Pants/Stockings and Garter Belt Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/underwear/textures/Pants/Stockings and Garter Belt Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/underwear/textures/Pants/Stockings and Garter Belt Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/underwear/textures/Pants/Stockings and Garter Belt Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/underwear/textures/Pants/Stockings and Garter Belt Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5423,
+      0.4565,
+      0.4237,
+      1.0
+     ],
+     [
+      0.9982,
+      0.8776,
+      0.7986,
+      1.0
+     ],
+     [
+      0.9162,
+      0.738,
+      0.6711,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "sheer black thigh-high stockings with lace tops, attached to a black lace garter belt worn over briefs at the hips"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Striped Boxers Male",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Pants/Striped Boxers Male.png",
+    "mask": "res://custom/underwear/textures/Pants/Striped Boxers Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/underwear/textures/Pants/Striped Boxers Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/underwear/textures/Pants/Striped Boxers Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/underwear/textures/Pants/Striped Boxers Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4607,
+      0.566,
+      0.7649,
+      1.0
+     ],
+     [
+      0.9425,
+      0.9639,
+      0.9988,
+      1.0
+     ],
+     [
+      0.7184,
+      0.7625,
+      0.8613,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Male",
+    "desc": "loose cotton boxer shorts with blue and white stripes and an elastic waistband"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Boxer Briefs Male",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Pants/Boxer Briefs Male.png",
+    "mask": "res://custom/underwear/textures/Pants/Boxer Briefs Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/underwear/textures/Pants/Boxer Briefs Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/underwear/textures/Pants/Boxer Briefs Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/underwear/textures/Pants/Boxer Briefs Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4405,
+      0.4411,
+      0.4399,
+      1.0
+     ],
+     [
+      0.5125,
+      0.5126,
+      0.512,
+      1.0
+     ],
+     [
+      0.3435,
+      0.3429,
+      0.3424,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Male",
+    "desc": "fitted dark grey boxer briefs with a wide elastic waistband"
+   }
+  ],
+  "Boots": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Ankle Socks",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Boots/Ankle Socks.png",
+    "mask": "res://custom/underwear/textures/Boots/Ankle Socks Mask.png",
+    "sprites": {
+     "Boots Foot R": {
+      "texture": "res://custom/underwear/textures/Boots/Ankle Socks.png",
+      "region": [
+       0,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot F": {
+      "texture": "res://custom/underwear/textures/Boots/Ankle Socks.png",
+      "region": [
+       0,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/underwear/textures/Boots/Ankle Socks.png",
+      "region": [
+       0,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     [
+      0.9313,
+      0.8614,
+      0.8246,
+      1.0
+     ],
+     [
+      0.5813,
+      0.5596,
+      0.5511,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "plain white ankle socks on bare feet (no shoes)"
+   }
+  ]
+ }
+}

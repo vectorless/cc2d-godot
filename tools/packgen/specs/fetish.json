@@ -1,0 +1,139 @@
+{
+ "pack_dir": "custom/fetish",
+ "package": "Fetish",
+ "parts": [
+  {
+   "id": "harness_m",
+   "category": "Armor",
+   "name": "Chest Harness Male",
+   "template": "Fantasy 00 Male",
+   "desc": "a fashion costume piece: a black leather chest harness of straps with silver O-rings and buckles, worn on a bare torso (draw the straps only, the torso area between straps transparent white background)"
+  },
+  {
+   "id": "harness_f",
+   "category": "Armor",
+   "name": "Harness Bra Female",
+   "template": "Base 00 Female",
+   "desc": "a fashion costume piece: a black leather strappy harness bra with silver O-rings and buckles"
+  },
+  {
+   "id": "corset_f",
+   "category": "Armor",
+   "name": "Latex Corset Female",
+   "template": "Daily 14 Female",
+   "desc": "a fashion costume piece: a glossy black latex corset with buckles down the front and shoulder straps"
+  },
+  {
+   "id": "catsuit_f",
+   "category": "Armor",
+   "name": "Latex Catsuit Top Female",
+   "template": "Daily 09 Female",
+   "desc": "a fashion costume piece: the top of a glossy black latex catsuit with long sleeves, a high collar and a front zip"
+  },
+  {
+   "id": "vest_m",
+   "category": "Armor",
+   "name": "Leather Vest Male",
+   "template": "Daily 14 Male",
+   "desc": "a fashion costume piece: a black leather sleeveless vest with studs and a strap collar"
+  },
+  {
+   "id": "latex_leggings_f",
+   "category": "Pants",
+   "name": "Latex Leggings Female",
+   "template": "Daily 01 Female",
+   "desc": "a fashion costume piece: glossy black high-waisted latex leggings with a buckled belt"
+  },
+  {
+   "id": "leather_shorts_m",
+   "category": "Pants",
+   "name": "Leather Shorts Male",
+   "template": "Base 00 Male",
+   "desc": "a fashion costume piece: short black leather shorts with a studded belt"
+  },
+  {
+   "id": "chaps_m",
+   "category": "Pants",
+   "name": "Leather Chaps Male",
+   "template": "Daily 01 Male",
+   "desc": "a fashion costume piece: black leather chaps over dark jeans with a wide studded belt"
+  },
+  {
+   "id": "cuffs",
+   "category": "Gloves",
+   "name": "Leather Cuffs",
+   "template": "Daily 00",
+   "desc": "a fashion costume piece: padded black leather wrist cuffs with silver buckles and D-rings, with a short chain"
+  },
+  {
+   "id": "gauntlet_gloves",
+   "category": "Gloves",
+   "name": "Opera Gloves",
+   "template": "Daily 03",
+   "desc": "a fashion costume piece: long glossy black latex gloves"
+  },
+  {
+   "id": "ball_gag",
+   "category": "Mouth",
+   "name": "Ball Gag",
+   "template": "00",
+   "desc": "a costume ball gag: a red ball held in the mouth by a black leather strap (only the gag and the strap ends at the corners of the mouth, no face)"
+  },
+  {
+   "id": "hood",
+   "category": "Helmet",
+   "name": "Leather Hood",
+   "template": "Fantasy 07",
+   "desc": "a fashion costume piece: a black leather hood mask covering the head with laces at the back and openings for the eyes and mouth"
+  },
+  {
+   "id": "cap",
+   "category": "Helmet",
+   "name": "Leather Peaked Cap",
+   "template": "Daily 00",
+   "desc": "a fashion costume piece: a black leather peaked cap with a silver chain on the brim"
+  },
+  {
+   "id": "stiletto_boots",
+   "category": "Boots",
+   "name": "Lace-Up Platform Boots",
+   "template": "Fantasy 03",
+   "desc": "a fashion costume piece: black patent lace-up platform boots with high heels"
+  },
+  {
+   "id": "paddle",
+   "category": "Weapon",
+   "name": "Leather Paddle",
+   "template": "Daily 00",
+   "desc": "a costume prop: a black leather spanking paddle with a short handle and silver studs, pointing the same way as the input"
+  },
+  {
+   "id": "whip",
+   "category": "Weapon",
+   "name": "Bullwhip",
+   "template": "Daily 00",
+   "desc": "a costume prop: a black braided leather bullwhip with its long lash coiled, the handle at the same place as the input's handle"
+  },
+  {
+   "id": "crop",
+   "category": "Weapon",
+   "name": "Riding Crop",
+   "template": "Daily 00",
+   "desc": "a costume prop: a slim black riding crop with a leather tip, pointing the same way as the input"
+  },
+  {
+   "id": "flogger",
+   "category": "Weapon",
+   "name": "Flogger",
+   "template": "Daily 00",
+   "desc": "a costume prop: a black leather flogger with a wrapped handle and many suede tails, pointing the same way as the input"
+  },
+  {
+   "id": "handcuffs",
+   "category": "Weapon",
+   "name": "Fluffy Handcuffs",
+   "template": "Daily 00",
+   "desc": "a costume prop: a pair of novelty handcuffs with pink fluffy trim, held in the hand"
+  }
+ ]
+}

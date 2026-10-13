@@ -1,11 +1,10 @@
 """Tiny Replicate client: python3 rep.py <model> <input.json> <out_prefix>
 input.json values that are local file paths under key 'files:<field>' get data-URI'd."""
 import json, sys, time, base64, urllib.request, os, mimetypes
-TOKEN = open(os.path.expanduser('~/.secrets/replicate')).read().strip()
 API = 'https://api.replicate.com/v1'
 
 def req(method, url, body=None, headers=None):
-    h = {'Authorization': 'Bearer ' + TOKEN, 'Content-Type': 'application/json'}
+    h = {'Authorization': 'Bearer ' + open(os.path.expanduser('~/.secrets/replicate')).read().strip(), 'Content-Type': 'application/json'}
     h.update(headers or {})
     for attempt in range(12):
         r = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None, headers=h, method=method)

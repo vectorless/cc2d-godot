@@ -1,0 +1,139 @@
+{
+ "pack_dir": "custom/scifi",
+ "package": "Sci-Fi",
+ "parts": [
+  {
+   "id": "officer_m",
+   "category": "Armor",
+   "name": "Fleet Officer Tunic Male",
+   "template": "Daily 09 Male",
+   "desc": "an original science-fiction starship officer's uniform tunic: fitted, dark charcoal with a coloured shoulder yoke, a high collar and small rank bars on the collar (no emblems or insignia from any existing franchise)"
+  },
+  {
+   "id": "officer_f",
+   "category": "Armor",
+   "name": "Fleet Officer Tunic Female",
+   "template": "Daily 09 Female",
+   "desc": "an original science-fiction starship officer's fitted uniform tunic, dark charcoal with a coloured shoulder yoke, a high collar and rank bars (no franchise emblems)"
+  },
+  {
+   "id": "knight_m",
+   "category": "Armor",
+   "name": "Wanderer Robes Male",
+   "template": "Daily 09 Male",
+   "desc": "original sci-fi wandering-mystic robes: layered rough-spun tunic with a crossed wrap, a wide sash belt and loose sleeves"
+  },
+  {
+   "id": "trooper_m",
+   "category": "Armor",
+   "name": "Armoured Trooper Male",
+   "template": "Daily 09 Male",
+   "desc": "original sci-fi soldier armour: angular gunmetal and olive plates over a black bodysuit, with shoulder pads and glowing cyan seams (not white, not a copy of any existing design)"
+  },
+  {
+   "id": "smuggler_m",
+   "category": "Armor",
+   "name": "Spacer Vest Male",
+   "template": "Daily 09 Male",
+   "desc": "a sci-fi freighter pilot's look: an off-white shirt with long sleeves under a dark padded utility vest with pouches"
+  },
+  {
+   "id": "flightsuit_f",
+   "category": "Armor",
+   "name": "Flight Suit Female",
+   "template": "Daily 09 Female",
+   "desc": "an original sci-fi pilot flight suit top in teal with a chest harness, shoulder patches and zipped pockets"
+  },
+  {
+   "id": "officer_pants_m",
+   "category": "Pants",
+   "name": "Uniform Trousers Male",
+   "template": "Daily 01 Male",
+   "desc": "sci-fi uniform trousers, dark charcoal with a coloured stripe down the outer seam"
+  },
+  {
+   "id": "officer_pants_f",
+   "category": "Pants",
+   "name": "Uniform Trousers Female",
+   "template": "Daily 01 Female",
+   "desc": "sci-fi uniform trousers, dark charcoal with a coloured stripe down the outer seam"
+  },
+  {
+   "id": "armour_pants_m",
+   "category": "Pants",
+   "name": "Armoured Greaves Male",
+   "template": "Daily 01 Male",
+   "desc": "original sci-fi armoured trousers with angular gunmetal thigh and shin plates over a black bodysuit, glowing cyan seams"
+  },
+  {
+   "id": "tall_boots",
+   "category": "Boots",
+   "name": "Tall Uniform Boots",
+   "template": "Fantasy 03",
+   "desc": "sleek knee-high black sci-fi uniform boots with a thin metallic trim"
+  },
+  {
+   "id": "mag_boots",
+   "category": "Boots",
+   "name": "Magnetic Boots",
+   "template": "Fantasy 03",
+   "desc": "bulky sci-fi magnetic space boots in gunmetal with glowing cyan soles"
+  },
+  {
+   "id": "pilot_helmet",
+   "category": "Helmet",
+   "name": "Pilot Helmet",
+   "template": "Daily 00",
+   "desc": "an original sci-fi starfighter pilot helmet with a tinted visor raised and a small antenna"
+  },
+  {
+   "id": "visor",
+   "category": "Helmet",
+   "name": "Tactical Visor",
+   "template": "Daily 00",
+   "desc": "a sleek sci-fi wraparound tactical visor with a glowing cyan lens and an ear-piece communicator (no helmet)"
+  },
+  {
+   "id": "gauntlets",
+   "category": "Gloves",
+   "name": "Armoured Gauntlets",
+   "template": "Daily 03",
+   "desc": "sci-fi armoured gauntlets in gunmetal with glowing cyan lines"
+  },
+  {
+   "id": "cloak",
+   "category": "Cape",
+   "name": "Wanderer Cloak",
+   "template": "Base 00",
+   "desc": "a long, rough-spun brown hooded travelling cloak falling from the shoulders (the back of the cloak)"
+  },
+  {
+   "id": "blaster",
+   "category": "Weapon",
+   "name": "Blaster Pistol",
+   "template": "Gun 00",
+   "desc": "an original chunky sci-fi blaster pistol with a ribbed barrel, a scope and glowing cyan power cells, facing the same way as the input"
+  },
+  {
+   "id": "plasma_rifle",
+   "category": "Weapon",
+   "name": "Plasma Rifle",
+   "template": "Rifle 00",
+   "desc": "an original sci-fi plasma rifle with a long ribbed barrel, a glowing energy chamber and a folding stock, facing the same way as the input"
+  },
+  {
+   "id": "energy_sword",
+   "category": "Weapon",
+   "name": "Energy Sword",
+   "template": "Daily 00",
+   "desc": "an original sci-fi energy sword: a ribbed metal hilt with a long glowing light-blue blade of pure light, pointing the same way as the input"
+  },
+  {
+   "id": "staff",
+   "category": "Weapon",
+   "name": "Mystic Staff",
+   "template": "Daily Two Handed 00",
+   "desc": "a tall sci-fi mystic's staff of dark carved wood with a glowing crystal at the top, held vertically"
+  }
+ ]
+}

@@ -1,0 +1,1202 @@
+{
+ "format": 1,
+ "package": "Nightclub",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Sequin Crop Top Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Sequin Crop Top Female.png",
+    "mask": "res://custom/nightclub/textures/Armor/Sequin Crop Top Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Sequin Crop Top Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7715,
+      0.7702,
+      0.7736,
+      1.0
+     ],
+     [
+      0.999,
+      0.9992,
+      0.9989,
+      1.0
+     ],
+     [
+      0.5393,
+      0.5451,
+      0.5587,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "a fashionable nightclub outfit top: a short silver sequin crop top with thin straps, showing the midriff"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Satin Bralette Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Satin Bralette Female.png",
+    "mask": "res://custom/nightclub/textures/Armor/Satin Bralette Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Satin Bralette Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5724,
+      0.2096,
+      0.2507,
+      1.0
+     ],
+     [
+      0.78,
+      0.4336,
+      0.4715,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a fashionable nightclub satin bralette top in deep red with thin straps"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Mesh Long-Sleeve Top Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Mesh Long-Sleeve Top Female.png",
+    "mask": "res://custom/nightclub/textures/Armor/Mesh Long-Sleeve Top Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Mesh Long-Sleeve Top Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/nightclub/textures/Armor/Mesh Long-Sleeve Top Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/nightclub/textures/Armor/Mesh Long-Sleeve Top Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/nightclub/textures/Armor/Mesh Long-Sleeve Top Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/nightclub/textures/Armor/Mesh Long-Sleeve Top Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/nightclub/textures/Armor/Mesh Long-Sleeve Top Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.387,
+      0.3871,
+      0.3867,
+      1.0
+     ],
+     [
+      0.277,
+      0.2765,
+      0.2764,
+      1.0
+     ],
+     [
+      0.5064,
+      0.5065,
+      0.5064,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "a fashionable nightclub sheer black mesh long-sleeved top worn over a black bandeau"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Bodycon Halter Top Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Bodycon Halter Top Female.png",
+    "mask": "res://custom/nightclub/textures/Armor/Bodycon Halter Top Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Bodycon Halter Top Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.0102,
+      0.4887,
+      0.9987,
+      1.0
+     ],
+     [
+      0.1527,
+      0.3966,
+      0.7874,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "a fashionable nightclub bodycon halter-neck top in electric blue with a low back, ending at the waist"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Cut-Out Top Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
+    "mask": "res://custom/nightclub/textures/Armor/Cut-Out Top Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2153,
+      0.2157,
+      0.215,
+      1.0
+     ],
+     [
+      0.4917,
+      0.491,
+      0.4905,
+      1.0
+     ],
+     [
+      0.8128,
+      0.813,
+      0.8133,
+      1.0
+     ]
+    ],
+    "template": "Daily 00 Female",
+    "desc": "a fashionable nightclub fitted black top with short sleeves and geometric side cut-outs at the waist"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Open Silk Shirt Male",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Open Silk Shirt Male.png",
+    "mask": "res://custom/nightclub/textures/Armor/Open Silk Shirt Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Open Silk Shirt Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/nightclub/textures/Armor/Open Silk Shirt Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/nightclub/textures/Armor/Open Silk Shirt Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/nightclub/textures/Armor/Open Silk Shirt Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/nightclub/textures/Armor/Open Silk Shirt Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/nightclub/textures/Armor/Open Silk Shirt Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2811,
+      0.2811,
+      0.2807,
+      1.0
+     ],
+     [
+      0.4908,
+      0.4901,
+      0.4896,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a fashionable nightclub black silk shirt with long sleeves, unbuttoned halfway down the chest, with a thin chain necklace"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Mesh Tank Male",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Mesh Tank Male.png",
+    "mask": "res://custom/nightclub/textures/Armor/Mesh Tank Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Mesh Tank Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/nightclub/textures/Armor/Mesh Tank Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4972,
+      0.4967,
+      0.4961,
+      1.0
+     ],
+     [
+      0.6904,
+      0.6904,
+      0.6896,
+      1.0
+     ],
+     [
+      0.345,
+      0.3442,
+      0.344,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Male",
+    "desc": "a fashionable nightclub sheer black mesh sleeveless tank top"
+   }
+  ],
+  "Pants": [
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Vinyl Hot Pants Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Pants/Vinyl Hot Pants Female.png",
+    "mask": "res://custom/nightclub/textures/Pants/Vinyl Hot Pants Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/nightclub/textures/Pants/Vinyl Hot Pants Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/nightclub/textures/Pants/Vinyl Hot Pants Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/nightclub/textures/Pants/Vinyl Hot Pants Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5279,
+      0.5278,
+      0.5278,
+      1.0
+     ],
+     [
+      0.373,
+      0.3727,
+      0.3729,
+      1.0
+     ],
+     [
+      0.8005,
+      0.8005,
+      0.7983,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "fashionable nightclub high-waisted shiny black vinyl hot pants"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Shorts and Fishnets Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Pants/Shorts and Fishnets Female.png",
+    "mask": "res://custom/nightclub/textures/Pants/Shorts and Fishnets Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/nightclub/textures/Pants/Shorts and Fishnets Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/nightclub/textures/Pants/Shorts and Fishnets Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/nightclub/textures/Pants/Shorts and Fishnets Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/nightclub/textures/Pants/Shorts and Fishnets Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/nightclub/textures/Pants/Shorts and Fishnets Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/nightclub/textures/Pants/Shorts and Fishnets Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9815,
+      0.8836,
+      0.8231,
+      1.0
+     ],
+     [
+      0.7535,
+      0.6317,
+      0.5819,
+      1.0
+     ],
+     [
+      0.4827,
+      0.4114,
+      0.3875,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "fashionable nightclub look: short sequin shorts at the hips with black fishnet tights covering the legs"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Leather Trousers Male",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Pants/Leather Trousers Male.png",
+    "mask": "res://custom/nightclub/textures/Pants/Leather Trousers Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/nightclub/textures/Pants/Leather Trousers Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/nightclub/textures/Pants/Leather Trousers Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/nightclub/textures/Pants/Leather Trousers Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/nightclub/textures/Pants/Leather Trousers Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/nightclub/textures/Pants/Leather Trousers Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/nightclub/textures/Pants/Leather Trousers Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2695,
+      0.2689,
+      0.2689,
+      1.0
+     ],
+     [
+      0.4497,
+      0.4486,
+      0.4487,
+      1.0
+     ],
+     [
+      0.8537,
+      0.8524,
+      0.8532,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "fashionable nightclub tight black leather trousers with a silver belt buckle"
+   }
+  ],
+  "Skirt": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Micro Mini Skirt",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Skirt/Micro Mini Skirt.png",
+    "mask": "res://custom/nightclub/textures/Skirt/Micro Mini Skirt Mask.png",
+    "sprites": {
+     "Daily 00 Skirt": {
+      "texture": "res://custom/nightclub/textures/Skirt/Micro Mini Skirt.png",
+      "region": [
+       0,
+       0,
+       512,
+       768
+      ],
+      "offset": [
+       -256,
+       -384
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7882,
+      0.6301,
+      0.3513,
+      1.0
+     ],
+     [
+      0.5345,
+      0.3757,
+      0.2208,
+      1.0
+     ],
+     [
+      0.998,
+      0.9736,
+      0.7255,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a fashionable nightclub very short metallic gold mini skirt"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Satin Slit Skirt",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Skirt/Satin Slit Skirt.png",
+    "mask": "res://custom/nightclub/textures/Skirt/Satin Slit Skirt Mask.png",
+    "sprites": {
+     "Daily 05 Skirt": {
+      "texture": "res://custom/nightclub/textures/Skirt/Satin Slit Skirt.png",
+      "region": [
+       0,
+       0,
+       512,
+       768
+      ],
+      "offset": [
+       -256,
+       -384
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.1782,
+      0.5519,
+      0.4027,
+      1.0
+     ],
+     [
+      0.3347,
+      0.7742,
+      0.5897,
+      1.0
+     ],
+     [
+      0.1122,
+      0.3984,
+      0.2809,
+      1.0
+     ]
+    ],
+    "template": "Daily 05",
+    "desc": "a fashionable nightclub fitted satin skirt in emerald green with a high side slit"
+   }
+  ],
+  "Boots": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Thigh-High Boots",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Boots/Thigh-High Boots.png",
+    "mask": "res://custom/nightclub/textures/Boots/Thigh-High Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/nightclub/textures/Boots/Thigh-High Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/nightclub/textures/Boots/Thigh-High Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/nightclub/textures/Boots/Thigh-High Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/nightclub/textures/Boots/Thigh-High Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/nightclub/textures/Boots/Thigh-High Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/nightclub/textures/Boots/Thigh-High Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2612,
+      0.2611,
+      0.2609,
+      1.0
+     ],
+     [
+      0.5451,
+      0.5448,
+      0.5437,
+      1.0
+     ],
+     [
+      0.8699,
+      0.8695,
+      0.8681,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "fashionable nightclub glossy black stiletto boots reaching up the leg"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Strappy Heels",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Boots/Strappy Heels.png",
+    "mask": "res://custom/nightclub/textures/Boots/Strappy Heels Mask.png",
+    "sprites": {
+     "Boots Foot R": {
+      "texture": "res://custom/nightclub/textures/Boots/Strappy Heels.png",
+      "region": [
+       0,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot F": {
+      "texture": "res://custom/nightclub/textures/Boots/Strappy Heels.png",
+      "region": [
+       0,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/nightclub/textures/Boots/Strappy Heels.png",
+      "region": [
+       0,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9618,
+      0.8296,
+      0.5088,
+      1.0
+     ],
+     [
+      0.5997,
+      0.494,
+      0.2988,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "fashionable nightclub strappy high-heeled sandals in gold"
+   }
+  ],
+  "Hair": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Sleek High Ponytail",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Hair/Sleek High Ponytail.png",
+    "mask": "res://custom/nightclub/textures/Hair/Sleek High Ponytail Mask.png",
+    "sprites": {
+     "Hair B": {
+      "texture": "res://custom/nightclub/textures/Hair/Sleek High Ponytail.png",
+      "region": [
+       512,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Hair F": {
+      "texture": "res://custom/nightclub/textures/Hair/Sleek High Ponytail.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2987,
+      0.287,
+      0.3367,
+      1.0
+     ],
+     [
+      0.4694,
+      0.4586,
+      0.5196,
+      1.0
+     ],
+     [
+      0.7305,
+      0.7246,
+      0.7565,
+      1.0
+     ]
+    ],
+    "template": "04",
+    "desc": "a sleek, glossy high ponytail hairstyle for a night out"
+   }
+  ]
+ }
+}

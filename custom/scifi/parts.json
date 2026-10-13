@@ -1,0 +1,1783 @@
+{
+ "format": 1,
+ "package": "Sci-Fi",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Fleet Officer Tunic Male",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Male.png",
+    "mask": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.25,
+      0.2598,
+      0.2885,
+      1.0
+     ],
+     [
+      0.6551,
+      0.4421,
+      0.431,
+      1.0
+     ],
+     [
+      0.4617,
+      0.1177,
+      0.1801,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "an original science-fiction starship officer's uniform tunic: fitted, dark charcoal with a coloured shoulder yoke, a high collar and small rank bars on the collar (no emblems or insignia from any existing franchise)"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Fleet Officer Tunic Female",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Female.png",
+    "mask": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Fleet Officer Tunic Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2498,
+      0.2673,
+      0.2817,
+      1.0
+     ],
+     [
+      0.2269,
+      0.3203,
+      0.4682,
+      1.0
+     ],
+     [
+      0.8315,
+      0.8348,
+      0.8388,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "an original science-fiction starship officer's fitted uniform tunic, dark charcoal with a coloured shoulder yoke, a high collar and rank bars (no franchise emblems)"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Wanderer Robes Male",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Armor/Wanderer Robes Male.png",
+    "mask": "res://custom/scifi/textures/Armor/Wanderer Robes Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/scifi/textures/Armor/Wanderer Robes Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Wanderer Robes Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Wanderer Robes Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/scifi/textures/Armor/Wanderer Robes Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Wanderer Robes Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Wanderer Robes Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5151,
+      0.5144,
+      0.5144,
+      1.0
+     ],
+     [
+      0.6328,
+      0.6333,
+      0.6324,
+      1.0
+     ],
+     [
+      0.3698,
+      0.369,
+      0.3691,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "original sci-fi wandering-mystic robes: layered rough-spun tunic with a crossed wrap, a wide sash belt and loose sleeves"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Armoured Trooper Male",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Armor/Armoured Trooper Male.png",
+    "mask": "res://custom/scifi/textures/Armor/Armoured Trooper Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/scifi/textures/Armor/Armoured Trooper Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Armoured Trooper Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Armoured Trooper Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/scifi/textures/Armor/Armoured Trooper Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Armoured Trooper Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Armoured Trooper Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.354,
+      0.4312,
+      0.4141,
+      1.0
+     ],
+     [
+      0.6164,
+      0.7106,
+      0.7222,
+      1.0
+     ],
+     [
+      0.1878,
+      0.9999,
+      0.9997,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "original sci-fi soldier armour: angular gunmetal and olive plates over a black bodysuit, with shoulder pads and glowing cyan seams (not white, not a copy of any existing design)"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Spacer Vest Male",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Armor/Spacer Vest Male.png",
+    "mask": "res://custom/scifi/textures/Armor/Spacer Vest Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/scifi/textures/Armor/Spacer Vest Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Spacer Vest Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Spacer Vest Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/scifi/textures/Armor/Spacer Vest Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Spacer Vest Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Spacer Vest Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4741,
+      0.4703,
+      0.4413,
+      1.0
+     ],
+     [
+      0.9612,
+      0.9378,
+      0.8758,
+      1.0
+     ],
+     [
+      0.8106,
+      0.783,
+      0.7341,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a sci-fi freighter pilot's look: an off-white shirt with long sleeves under a dark padded utility vest with pouches"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Flight Suit Female",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Armor/Flight Suit Female.png",
+    "mask": "res://custom/scifi/textures/Armor/Flight Suit Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/scifi/textures/Armor/Flight Suit Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Flight Suit Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Flight Suit Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/scifi/textures/Armor/Flight Suit Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/scifi/textures/Armor/Flight Suit Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/scifi/textures/Armor/Flight Suit Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4699,
+      0.6039,
+      0.6021,
+      1.0
+     ],
+     [
+      0.3463,
+      0.4736,
+      0.4728,
+      1.0
+     ],
+     [
+      0.2771,
+      0.3566,
+      0.358,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "an original sci-fi pilot flight suit top in teal with a chest harness, shoulder patches and zipped pockets"
+   }
+  ],
+  "Pants": [
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Uniform Trousers Male",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Male.png",
+    "mask": "res://custom/scifi/textures/Pants/Uniform Trousers Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3222,
+      0.3371,
+      0.3476,
+      1.0
+     ],
+     [
+      0.926,
+      0.5833,
+      0.4241,
+      1.0
+     ],
+     [
+      0.4476,
+      0.2462,
+      0.1585,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "sci-fi uniform trousers, dark charcoal with a coloured stripe down the outer seam"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Uniform Trousers Female",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Female.png",
+    "mask": "res://custom/scifi/textures/Pants/Uniform Trousers Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/scifi/textures/Pants/Uniform Trousers Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3125,
+      0.3484,
+      0.3785,
+      1.0
+     ],
+     [
+      0.1702,
+      0.738,
+      0.9743,
+      1.0
+     ],
+     [
+      0.7505,
+      0.7575,
+      0.7601,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "sci-fi uniform trousers, dark charcoal with a coloured stripe down the outer seam"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Armoured Greaves Male",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Pants/Armoured Greaves Male.png",
+    "mask": "res://custom/scifi/textures/Pants/Armoured Greaves Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/scifi/textures/Pants/Armoured Greaves Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/scifi/textures/Pants/Armoured Greaves Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/scifi/textures/Pants/Armoured Greaves Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/scifi/textures/Pants/Armoured Greaves Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/scifi/textures/Pants/Armoured Greaves Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/scifi/textures/Pants/Armoured Greaves Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5765,
+      0.7062,
+      0.7247,
+      1.0
+     ],
+     [
+      0.3406,
+      0.4709,
+      0.4858,
+      1.0
+     ],
+     [
+      0.1952,
+      0.9999,
+      0.9997,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "original sci-fi armoured trousers with angular gunmetal thigh and shin plates over a black bodysuit, glowing cyan seams"
+   }
+  ],
+  "Boots": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Tall Uniform Boots",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+    "mask": "res://custom/scifi/textures/Boots/Tall Uniform Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2696,
+      0.2694,
+      0.2691,
+      1.0
+     ],
+     [
+      0.8918,
+      0.8919,
+      0.8919,
+      1.0
+     ],
+     [
+      0.4884,
+      0.4879,
+      0.4874,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "sleek knee-high black sci-fi uniform boots with a thin metallic trim"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Magnetic Boots",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Boots/Magnetic Boots.png",
+    "mask": "res://custom/scifi/textures/Boots/Magnetic Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/scifi/textures/Boots/Magnetic Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/scifi/textures/Boots/Magnetic Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/scifi/textures/Boots/Magnetic Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/scifi/textures/Boots/Magnetic Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/scifi/textures/Boots/Magnetic Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/scifi/textures/Boots/Magnetic Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4867,
+      0.5891,
+      0.5909,
+      1.0
+     ],
+     [
+      0.9125,
+      0.9991,
+      0.9982,
+      1.0
+     ],
+     [
+      0.4471,
+      0.9944,
+      0.9953,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "bulky sci-fi magnetic space boots in gunmetal with glowing cyan soles"
+   }
+  ],
+  "Helmet": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Pilot Helmet",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Helmet/Pilot Helmet.png",
+    "mask": "res://custom/scifi/textures/Helmet/Pilot Helmet Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/scifi/textures/Helmet/Pilot Helmet.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3547,
+      0.3415,
+      0.344,
+      1.0
+     ],
+     [
+      0.502,
+      0.4976,
+      0.5069,
+      1.0
+     ],
+     [
+      0.7806,
+      0.7767,
+      0.7786,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "an original sci-fi starfighter pilot helmet with a tinted visor raised and a small antenna"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Tactical Visor",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Helmet/Tactical Visor.png",
+    "mask": "res://custom/scifi/textures/Helmet/Tactical Visor Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/scifi/textures/Helmet/Tactical Visor.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4041,
+      0.9696,
+      0.9888,
+      1.0
+     ],
+     [
+      0.4733,
+      0.5523,
+      0.5633,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a sleek sci-fi wraparound tactical visor with a glowing cyan lens and an ear-piece communicator (no helmet)"
+   }
+  ],
+  "Gloves": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Armoured Gauntlets",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Gloves/Armoured Gauntlets.png",
+    "mask": "res://custom/scifi/textures/Gloves/Armoured Gauntlets Mask.png",
+    "sprites": {
+     "Gloves Lower Arm R": {
+      "texture": "res://custom/scifi/textures/Gloves/Armoured Gauntlets.png",
+      "region": [
+       0,
+       0,
+       171,
+       300
+      ],
+      "offset": [
+       -85.5,
+       -150
+      ],
+      "px_scale": 1
+     },
+     "Gloves Hand L 0": {
+      "texture": "res://custom/scifi/textures/Gloves/Armoured Gauntlets.png",
+      "region": [
+       171,
+       300,
+       171,
+       212
+      ],
+      "offset": [
+       -85.5,
+       -106
+      ],
+      "px_scale": 1
+     },
+     "Gloves Hand L 1": {
+      "texture": "res://custom/scifi/textures/Gloves/Armoured Gauntlets.png",
+      "region": [
+       342,
+       300,
+       170,
+       212
+      ],
+      "offset": [
+       -85,
+       -106
+      ],
+      "px_scale": 1
+     },
+     "Gloves Hand R 0": {
+      "texture": "res://custom/scifi/textures/Gloves/Armoured Gauntlets.png",
+      "region": [
+       0,
+       300,
+       171,
+       212
+      ],
+      "offset": [
+       -85.5,
+       -106
+      ],
+      "px_scale": 1
+     },
+     "Gloves Hand R 1": {
+      "texture": "res://custom/scifi/textures/Gloves/Armoured Gauntlets.png",
+      "region": [
+       342,
+       88,
+       170,
+       212
+      ],
+      "offset": [
+       -85,
+       -106
+      ],
+      "px_scale": 1
+     },
+     "Gloves Lower Arm L": {
+      "texture": "res://custom/scifi/textures/Gloves/Armoured Gauntlets.png",
+      "region": [
+       171,
+       0,
+       171,
+       300
+      ],
+      "offset": [
+       -85.5,
+       -150
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5895,
+      0.7207,
+      0.734,
+      1.0
+     ],
+     [
+      0.3335,
+      0.4571,
+      0.4629,
+      1.0
+     ],
+     [
+      0.1127,
+      1.0,
+      0.9999,
+      1.0
+     ]
+    ],
+    "template": "Daily 03",
+    "desc": "sci-fi armoured gauntlets in gunmetal with glowing cyan lines"
+   }
+  ],
+  "Cape": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Wanderer Cloak",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Cape/Wanderer Cloak.png",
+    "mask": "res://custom/scifi/textures/Cape/Wanderer Cloak Mask.png",
+    "sprites": {
+     "Base 00": {
+      "texture": "res://custom/scifi/textures/Cape/Wanderer Cloak.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -512
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3889,
+      0.2775,
+      0.1919,
+      1.0
+     ],
+     [
+      0.2934,
+      0.2018,
+      0.1415,
+      1.0
+     ],
+     [
+      0.7479,
+      0.7468,
+      0.7451,
+      1.0
+     ]
+    ],
+    "template": "Base 00",
+    "desc": "a long, rough-spun brown hooded travelling cloak falling from the shoulders (the back of the cloak)"
+   }
+  ],
+  "Weapon": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "Gun",
+    "muzzle": [
+     63,
+     159
+    ],
+    "name": "Blaster Pistol",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Weapon/Blaster Pistol.png",
+    "mask": "res://custom/scifi/textures/Weapon/Blaster Pistol Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/scifi/textures/Weapon/Blaster Pistol.png",
+      "region": [
+       0,
+       0,
+       1024,
+       512
+      ],
+      "offset": [
+       -354.5041,
+       -281.5493
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.6351,
+      0.6672,
+      0.6815,
+      1.0
+     ],
+     [
+      0.407,
+      0.4445,
+      0.4478,
+      1.0
+     ],
+     [
+      0.9776,
+      0.9844,
+      0.9896,
+      1.0
+     ]
+    ],
+    "template": "Gun 00",
+    "desc": "an original chunky sci-fi blaster pistol with a ribbed barrel, a scope and glowing cyan power cells, facing the same way as the input"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "Rifle",
+    "muzzle": [
+     84,
+     489
+    ],
+    "name": "Plasma Rifle",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Weapon/Plasma Rifle.png",
+    "mask": "res://custom/scifi/textures/Weapon/Plasma Rifle Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/scifi/textures/Weapon/Plasma Rifle.png",
+      "region": [
+       0,
+       0,
+       1024,
+       512
+      ],
+      "offset": [
+       -354.5041,
+       -281.5493
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5653,
+      0.5867,
+      0.6116,
+      1.0
+     ],
+     [
+      0.414,
+      0.4135,
+      0.4135,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Rifle 00",
+    "desc": "an original sci-fi plasma rifle with a long ribbed barrel, a glowing energy chamber and a folding stock, facing the same way as the input"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Energy Sword",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Weapon/Energy Sword.png",
+    "mask": "res://custom/scifi/textures/Weapon/Energy Sword Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/scifi/textures/Weapon/Energy Sword.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9151,
+      0.9998,
+      0.9999,
+      1.0
+     ],
+     [
+      0.5166,
+      0.5321,
+      0.5387,
+      1.0
+     ],
+     [
+      0.6318,
+      0.8809,
+      0.9503,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "an original sci-fi energy sword: a ribbed metal hilt with a long glowing light-blue blade of pure light, pointing the same way as the input"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "TwoHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Mystic Staff",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Weapon/Mystic Staff.png",
+    "mask": "res://custom/scifi/textures/Weapon/Mystic Staff Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/scifi/textures/Weapon/Mystic Staff.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -686.08
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3892,
+      0.3505,
+      0.3435,
+      1.0
+     ],
+     [
+      0.4171,
+      0.5537,
+      0.6988,
+      1.0
+     ],
+     [
+      0.6584,
+      0.9635,
+      0.9926,
+      1.0
+     ]
+    ],
+    "template": "Daily Two Handed 00",
+    "desc": "a tall sci-fi mystic's staff of dark carved wood with a glowing crystal at the top, held vertically"
+   }
+  ]
+ }
+}
