@@ -28,14 +28,16 @@
    "category": "Armor",
    "name": "Bodycon Halter Top Female",
    "template": "Daily 14 Female",
-   "desc": "a fashionable nightclub bodycon halter-neck top in electric blue with a low back, ending at the waist"
+   "desc": "a fashionable nightclub bodycon halter-neck top in electric blue, sleeveless, ending at the waist. The halter is one thin strap rising straight from the centre of the neckline up to the front of the neck (it goes behind the neck, so draw only its front part); bare shoulders, no strap loop on the chest or shoulders",
+   "matte": true
   },
   {
    "id": "cutout_f",
    "category": "Armor",
    "name": "Cut-Out Top Female",
-   "template": "Daily 00 Female",
-   "desc": "a fashionable nightclub fitted black top with short sleeves and geometric side cut-outs at the waist"
+   "template": "Daily 15 Female",
+   "desc": "a fashionable nightclub fitted sleeveless top in smooth matte black stretch fabric (plain, no glitter, no sequins, no texture), with a simple scoop neckline (no collar, no turtleneck) and two geometric cut-outs at the sides of the waist",
+   "matte": true
   },
   {
    "id": "hotpants_f",
