@@ -5,6 +5,9 @@ characters in Unity, export them, and in Godot they look and behave the same: sw
 recolouring, body types, animations, aiming, expressions, body sliders, muzzle flashes, and
 PNG / sprite-sheet export. Character files are interchangeable with Unity's.
 
+**Parts included (704):** Base, Emote and Fantasy (shipped with CC2D), plus the **Daily**,
+**Post Apocalyptic** and **Undead** packs.
+
 > **Licence:** this repo contains Character Creator 2D art and data covered by the Unity Asset
 > Store EULA. Keep it private and do not redistribute it.
 
@@ -35,7 +38,8 @@ play the Talk 1, Hit and Attack animations. Z zooms onto the face.
 - **Parts:** choose a slot, click a part, and set up to three colours. Randomise is at the bottom.
 - **Expression:** Blink / Attack / Hurt / Talk preview the face.
 - **Animation / Aim:** any CC2D animation, plus an Aim-layer state on top, with an aim slider
-  that runs from down to up. To see a gun fire, set MainHand to `Gun 00` and Aim to `Shot Main Hand`.
+  that runs from down to up. To see a gun fire, set MainHand to `Gun 00 (Fantasy)` and Aim to `Shot Main Hand`.
+  Where several packs use the same part name, the list shows the pack in brackets.
 - **Body sliders:** width and length for each body segment.
 - **Export PNG:** a preset (Default, Portrait, FullBody, Animation) or your own settings, then
   Single image, PNG sequence or Sprite sheet. It exports whatever animation and aim are playing.
@@ -77,6 +81,8 @@ hero.pose("Walk", 0.25, "Shot Rifle", 0.1)          # freeze on one frame (play(
 
 # parts & colours
 hero.equip_part("Armor", "Fantasy 09 Male")         # "" unequips; body-type variants handled as in CC2D
+hero.equip_part("MainHand", "Gun 00", "Daily")      # names repeat across packs: pass the package to be sure
+hero.get_equipped("MainHand"); hero.get_equipped_package("MainHand")   # "Gun 00", "Daily"
 hero.equip_part("OffHand", "Bow 01")                # one-/two-handed rules as in CC2D
 hero.cycle_part("Helmet", 1)
 hero.get_parts("MainHand")                          # the catalogue for a slot
@@ -150,6 +156,14 @@ repo. **If you change one copy, update the other.** It writes straight into
   *Tools > CC2D > Export Shared Data (rigs, animations, parts) to Godot*. Re-run this after
   adding part packs or changing the exporter.
 
+### Adding a CC2D part pack
+1. Import the pack into the Unity project.
+2. In Unity, choose *Window > Character Creator 2D > Refresh Parts and Add-Ons*. Until you do,
+   CC2D's part list (and so the export) doesn't include the new parts.
+3. Choose *Tools > CC2D > Export Shared Data … to Godot*.
+4. Open the Godot project so it imports the new textures, then run `tests/packs_test.tscn`.
+   It equips every part on both bodies and compares outfits with Unity's renders.
+
 To move a character without re-exporting, save it in Unity (`CharacterViewer.SaveToJSON`) and
 load it here with `load_character_data()`, or the other way round.
 
@@ -163,6 +177,7 @@ images to `tests/shots/`, which isn't committed.
 ```sh
 godot --path . --fixed-fps 60 res://tests/fx_test.tscn       # muzzle flashes + PNG export
 godot --path . --fixed-fps 60 res://tests/creator_test.tscn  # the creator's export panel
+godot --path . --fixed-fps 60 res://tests/packs_test.tscn    # every part + pack outfits vs Unity
 ```
 
 On a Mac, `godot` is `/Applications/Godot-4.6.1.app/Contents/MacOS/Godot` (adjust the path to
@@ -185,6 +200,7 @@ cc2d/                     shared data exported from Unity (don't hand-edit; re-e
   animations/cc2d.json      every animator state, the Aim layer blend trees, sprite swaps, emote keys
   textures/                 all part / body / FX textures
 characters/               exported characters (character.json) and CharacterData examples
+  packs/                    one test outfit per pack and body (CharacterData saved in Unity)
 creator/                  the character creator scene
 demo/                     the walk demo
 tests/                    test scenes

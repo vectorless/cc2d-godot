@@ -59,13 +59,20 @@ func _ready() -> void:
 
 	print("== Gun 00 in the main hand")
 	ch.equip_part("OffHand", "")
-	check(ch.equip_part("MainHand", "Gun 00"), "equipped Gun 00")
+	check(ch.equip_part("MainHand", "Gun 00", "Fantasy"), "equipped Gun 00")
 	check(muzzle("MainHand").position.is_equal_approx(Vector2(76, 218)), "muzzle moved to the gun's muzzlePosition (%s)" % muzzle("MainHand").position)
-	ch.equip_part("MainHand", "Rifle 01")
+	ch.equip_part("MainHand", "Rifle 01", "Fantasy")
 	check(muzzle("MainHand").position.is_equal_approx(Vector2(63, 540)), "...and to the rifle's")
 	ch.equip_part("MainHand", "")
 	check(muzzle("MainHand").position == Vector2.ZERO, "no weapon: back to zero, as in HumanoidAssigner")
-	ch.equip_part("MainHand", "Gun 00")
+	ch.equip_part("MainHand", "Gun 00", "Daily")
+	check(muzzle("MainHand").position.is_equal_approx(Vector2(63, 159)), "Daily's Gun 00 has its own muzzle (%s)" % muzzle("MainHand").position)
+	var seen := {}
+	for i in ch.get_parts("MainHand").size():
+		ch.cycle_part("MainHand", 1)
+		seen[ch.get_equipped_package("MainHand") + "/" + ch.get_equipped("MainHand")] = true
+	check(seen.size() == ch.get_parts("MainHand").size(), "cycling goes through every main-hand weapon, same-named ones too (%d of %d)" % [seen.size(), ch.get_parts("MainHand").size()])
+	ch.equip_part("MainHand", "Gun 00", "Fantasy")
 
 	print("== Shot Main Hand fires it")
 	ch.play("Idle")
@@ -97,7 +104,7 @@ func _ready() -> void:
 	check(not muzzle("MainHand").visible, "stopping the aim layer puts the flash out")
 
 	print("== Rapid Shot Both Hand, two guns")
-	ch.equip_part("OffHand", "Gun 01")
+	ch.equip_part("OffHand", "Gun 01", "Fantasy")
 	ch.play_aim("Rapid Shot Both Hand")
 	var both := false
 	for i in 30:

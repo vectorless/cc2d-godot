@@ -396,16 +396,23 @@ func _refresh_slot() -> void:
 	_parts_list.clear()
 	_parts_list.add_item("(none)")
 	var equipped := character.get_equipped(slot)
+	var package := character.get_equipped_package(slot)
 	var sel := 0
-	for p in character.get_parts(slot):
-		var idx := _parts_list.add_item(p.name, _thumb(p))
+	var parts := character.get_parts(slot)
+	var seen := {}
+	for p in parts:
+		seen[p.name] = seen.get(p.name, 0) + 1
+	for p in parts:
+		# the same name in several packs ("Gun 00"): say which pack
+		var label: String = p.name if seen[p.name] == 1 else "%s (%s)" % [p.name, p.package]
+		var idx := _parts_list.add_item(label, _thumb(p))
 		_parts_list.set_item_metadata(idx, p)
 		_parts_list.set_item_tooltip(idx, "%s / %s" % [p.package, p.name])
-		if p.name == equipped:
+		if p.name == equipped and p.package == package:
 			sel = idx
 	_parts_list.select(sel)
 	_parts_list.ensure_current_is_visible()
-	_part_label.text = equipped if equipped != "" else "(none)"
+	_part_label.text = "%s (%s)" % [equipped, package] if equipped != "" else "(none)"
 	var cols := character.get_part_colors(slot)
 	var single: bool = character.catalogue.get("colorable_links", {}).has(slot) or slot == "SkinDetails"
 	for i in 3:

@@ -298,10 +298,17 @@ func _equip(slot: String, part) -> bool:
 	return true
 
 
-## Name of the part currently in a slot ("" if empty).
+## Name of the part currently in a slot ("" if empty). Names aren't unique across packs
+## ("Gun 00" is in Fantasy, Daily and Post Apocalyptic): see get_equipped_package().
 func get_equipped(slot: String) -> String:
 	var p = slots.get(slot, {}).get("part")
 	return p.name if p != null else ""
+
+
+## Package (pack) of the part in a slot: "Base", "Fantasy", "Daily", ... ("" if empty).
+func get_equipped_package(slot: String) -> String:
+	var p = slots.get(slot, {}).get("part")
+	return p.package if p != null else ""
 
 
 ## All parts that can go in a slot (optionally only those supporting this body type).
@@ -330,10 +337,10 @@ func cycle_part(slot: String, step := 1) -> String:
 	var list := get_parts(slot)
 	if list.is_empty():
 		return get_equipped(slot)
-	var current := get_equipped(slot)
+	var current = slots[slot].part
 	var idx := -1
 	for i in list.size():
-		if list[i].name == current:
+		if current != null and list[i].name == current.name and list[i].package == current.package:
 			idx = i
 			break
 	var next = list[posmod(idx + step, list.size())]

@@ -148,6 +148,21 @@ Editor is open:
 
 After re-exporting, check that `git diff --stat cc2d/` is limited to what you meant to change.
 
+**Don't modify the user's Unity assets by accident.** CharacterViewer slots point at shared
+material *assets* (e.g. `Examples/Exa_materials/*.mat`), and `EquipPart` writes colour masks
+into them. Equipping parts on an instantiated prefab inside `execute_code` changes those files.
+This has happened once already: Exa's weapon materials ended up with a gun mask and had to be
+restored. Before equipping anything on an instance, call the private `instantiateSlotsMaterial` by
+reflection and then `RelinkMaterials()`. Destroy the instance and the material copies afterwards.
+`tests/shots/packs/*_unity.png` and `characters/packs/*.json` were made this way; see the
+"pack outfits" section of the git history (`packs_test.gd`) for the outfit rules.
+
+**New part packs** only reach the export after CC2D's part list is refreshed:
+`CharacterEditor2D.InspectorPartList.RefreshPartPackage(); CharacterEditor2D.InspectorPartList.Refresh(CharacterCreator2D.PartList.Static);`
+(this is what *Window > Character Creator 2D > Refresh Parts and Add-Ons* does, without its modal
+dialog). Part names repeat across packs ("Gun 00", "Sword 00", "Tattoo 00"), so anything that
+finds or compares parts must use name **and** package.
+
 ## GDScript traps already hit here
 
 - `:=` fails when the right-hand side is a Variant (dictionary access, `get()`, untyped

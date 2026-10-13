@@ -107,6 +107,8 @@ func _refresh() -> void:
 		return
 	var slot: String = DEMO_SLOTS[slot_index]
 	var equipped: String = character.get_equipped(slot)
+	if equipped != "":
+		equipped += " (%s)" % character.get_equipped_package(slot)
 	label.text = "Body: %s   [B]\nSlot: %s   [Tab]\nPart: %s   [W/S]  (%d options)\n[C] colours   [X] remove   [R] random outfit\nFace: %s   [1] blink [2] attack [3] hurt [4] talk [0] reset\n[T] talk anim  [H] hit  [K] attack  [Z] zoom face   [A/D] walk  [Shift] run" % [
 		character.body_type, slot, equipped if equipped != "" else "(none)", character.get_parts(slot).size(),
 		character.current_emote if character.current_emote != "" else "default"]
