@@ -5,7 +5,7 @@ extends EditorPlugin
 ## JSON (rigs, animations, part catalogue, characters, export presets) and Godot leaves
 ## non-resource files out of exported games.
 
-const DATA_DIRS := ["res://cc2d", "res://characters", "res://addons/cc2d"]
+const DATA_DIRS := ["res://cc2d", "res://characters", "res://addons/cc2d", "res://custom"]
 
 var _export: EditorExportPlugin
 
@@ -34,6 +34,8 @@ class CC2DExportData:
 
 	func _add_json(dir: String) -> int:
 		var n := 0
+		if not DirAccess.dir_exists_absolute(dir):
+			return 0
 		for f in DirAccess.get_files_at(dir):
 			if f.get_extension() == "json":
 				var path := dir.path_join(f)

@@ -1,0 +1,124 @@
+{
+ "format": 1,
+ "package": "Flower Power",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Male"
+    ],
+    "colors": [
+     [
+      0.8357,
+      0.6487,
+      0.3254,
+      1
+     ],
+     [
+      0.623,
+      0.4693,
+      0.2232,
+      1
+     ],
+     [
+      0.4094,
+      0.5611,
+      0.4798,
+      1
+     ]
+    ],
+    "name": "Flower Power 00 Male",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Armor/Flower Power 00 Male.png",
+    "mask": "res://custom/flower_power/textures/Armor/Flower Power 00 Male Mask.png",
+    "template": "Daily 09 Male",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/flower_power/textures/Armor/Flower Power 00 Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Flower Power 00 Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Flower Power 00 Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/flower_power/textures/Armor/Flower Power 00 Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Flower Power 00 Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Flower Power 00 Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    }
+   }
+  ]
+ }
+}

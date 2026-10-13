@@ -298,6 +298,27 @@ func _equip(slot: String, part) -> bool:
 	return true
 
 
+## Adds a custom part pack (a JSON file shaped like cc2d/parts.json: {"categories": {...}})
+## to the shared catalogue, so every character can equip its parts. Returns how many parts
+## were added (0 if the pack was already added). Custom packs live in res://custom/<pack>/.
+static func add_part_pack(path: String, catalogue_path := "res://cc2d/parts.json") -> int:
+	var cat := _cached_json(catalogue_path)
+	var pack := _read_json(path)
+	if cat.is_empty() or pack.is_empty():
+		return 0
+	var added := 0
+	for category in pack.get("categories", {}):
+		if not cat.categories.has(category):
+			cat.categories[category] = []
+		var list: Array = cat.categories[category]
+		for p in pack.categories[category]:
+			if list.any(func(q): return q.name == p.name and q.package == p.package):
+				continue
+			list.append(p)
+			added += 1
+	return added
+
+
 ## Name of the part currently in a slot ("" if empty). Names aren't unique across packs
 ## ("Gun 00" is in Fantasy, Daily and Post Apocalyptic): see get_equipped_package().
 func get_equipped(slot: String) -> String:

@@ -177,6 +177,14 @@ finds or compares parts must use name **and** package.
   don't zero either right after `restart()`.
 - Drawing over a transparent viewport gives **premultiplied** colour; un-premultiply before saving PNGs.
 
+## Custom packs (AI-generated parts)
+See `tools/packgen/README.md`. Generated parts must follow CC2D's guide layouts
+(`~/My project/Assets/CharacterCreator2D/Texture Guides`, sliced by `Data/Part Templates`);
+the scripts take sprite rectangles from the template part in `cc2d/parts.json`. In the cloud
+session's Linux VM the Replicate token is at `~/.secrets/replicate`. Replicate rate-limits
+bursts (HTTP 429), and the VM kills background processes when a shell call ends, so run one
+generation per call.
+
 ## Not done / ideas
 - Bake mode and the Atlas export preset. These need `Data/Animations/Export PNG/Export Atlas.controller`
   exported (`Atlas Male/Female.anim`); the cloth bake is tied to the clip list in `ExportShared`.

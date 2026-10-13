@@ -1,0 +1,124 @@
+{
+ "format": 1,
+ "package": "Gangster",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Male"
+    ],
+    "colors": [
+     [
+      0.4515,
+      0.4513,
+      0.4512,
+      1
+     ],
+     [
+      0.2852,
+      0.2851,
+      0.2846,
+      1
+     ],
+     [
+      0.949,
+      0.9482,
+      0.9486,
+      1
+     ]
+    ],
+    "name": "Gangster 00 Male",
+    "package": "Gangster",
+    "texture": "res://custom/gangster/textures/Armor/Gangster 00 Male.png",
+    "mask": "res://custom/gangster/textures/Armor/Gangster 00 Male Mask.png",
+    "template": "Daily 09 Male",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/gangster/textures/Armor/Gangster 00 Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/gangster/textures/Armor/Gangster 00 Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/gangster/textures/Armor/Gangster 00 Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/gangster/textures/Armor/Gangster 00 Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/gangster/textures/Armor/Gangster 00 Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/gangster/textures/Armor/Gangster 00 Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    }
+   }
+  ]
+ }
+}
