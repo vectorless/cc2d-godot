@@ -16,13 +16,15 @@ cd tools/packgen
 python3 packgen.py list specs/*.json                       # what's done / pending
 python3 packgen.py run specs/nightclub.json --only heels   # generate one part (resumable)
 python3 packgen.py run specs/nightclub.json --redo heels   # throw away and regenerate
+python3 packgen.py run specs/x.json --model meshy/nano-banana-pro   # same model through Meshy's API
 python3 packgen.py reconvert specs/nightclub.json          # redo cut-out/fit/colours from saved images (no image-model call)
 python3 packgen.py reconvert specs/underwear.json --matte  # ...using the background-removal matte
 python3 packgen.py prompts specs/*.json > PROMPTS.md       # the exact prompt for every part
 ```
 
-Needs python3 with numpy, Pillow and scipy, and a Replicate API token in `~/.secrets/replicate`
-on the machine running it (**never commit it**). Work files (raw generations, canvases, mattes)
+Needs python3 with numpy, Pillow and scipy, plus `pip install rembg onnxruntime` for the cutout
+(downloads a ~170 MB model on first use). API keys go in `~/.secrets/replicate` and/or
+`~/.secrets/meshy` on the machine running it (**never commit them**). Work files (raw generations, canvases, mattes)
 go to `~/packgen_work/<Package>/<part id>/`, outside the repo. `--budget N` stops starting new
 parts after N seconds (useful in sandboxes that kill long commands).
 
@@ -35,10 +37,11 @@ to its template, or open the creator (main scene) and pick the pack in the parts
 |---|---|---|
 | Redraw the part | `google/nano-banana-pro` (2K output) | Image *editing* model: it takes the template sheet as input and redraws it. In a side-by-side test on the same template against OpenAI gpt-image, FLUX and Seedream, it kept every piece in place and at the right size most reliably. That matters more than anything else here, because pieces that move no longer line up with the character's joints. It also holds a consistent bold-outline cartoon style, and 2K gives plenty of detail per piece. |
 | Fallback | `openai/gpt-image-2` (set `"model"` on a part) | Second-best at layout. Use it when nano-banana refuses a prompt or keeps getting one part wrong. |
-| Cut-out (optional) | `bria/remove-background` | Takes about a second per image and gives a clean, soft alpha matte. Flood-filling the white background (the default) fails on **white garments** (the fill leaks through gaps in the outline) and on **thin straps and loops** (white stays trapped between strap and body). Turn it on per part with `"matte": true`, per spec, or with `--matte`. The matte is cached as `gen_0_alpha.png`. |
+| Cut-out (optional) | `rembg` `isnet-general-use`, run locally (free, ~1 s); falls back to `bria/remove-background` on Replicate if rembg isn't installed | Flood-filling the white background (the default) fails on **white garments**, where the fill leaks through gaps in the outline. The matte is combined with the flood fill, so a pixel counts as fabric if either one keeps it. On torso pieces, flat white areas enclosed by the drawing where the template has no cloth are removed, which handles **strap loops** (camisoles, halters) that matting models fill in. Turn it on per part with `"matte": true`, per spec, or with `--matte`. The matte is cached as `gen_0_alpha.png` and redone when the drawing is newer. |
 
-`mesh.py` is an alternative client for Meshy's image-to-image API (`"model": "meshy/nano-banana-pro"`,
-key in `~/.secrets/meshy`), with the same interface as `rep.py`.
+`mesh.py` is a client for Meshy's image-to-image API, with the same interface as `rep.py`. It
+gives the same nano-banana-pro model (`--model meshy/nano-banana-pro`, or `"model"` per part) at
+1K resolution, in about 25-35 s per part. That's plenty for 1024x512 part textures.
 
 ## How templates are used
 
@@ -86,6 +89,12 @@ silhouette closely:
   pieces reach the knee. `Fantasy 03` only has an ankle cuff, so a "knee-high" boot drawn on it
   is squeezed into the cuff.
 - Bras and bikini tops → `Base 00 Female` (the underwear sheet).
+- **Hand-made guide templates** live in `templates/`. A part can use one for the canvas and
+  fitting while still registering with a real template's sprites (same layout required):
+  `"template": "Fantasy 03", "template_texture": "templates/Tall Boot.png"`. `Tall Boot.png` is
+  Fantasy 03's plain shoes plus smooth knee-high shafts. All the CC2D tall boots are armour,
+  and the model copies their knee plates and buckles.
+- Pieces the template leaves empty (e.g. no collar) are skipped even if the model draws something there.
 
 ## Prompts
 
@@ -102,6 +111,9 @@ Every prompt has three parts, assembled by `run_part` in `packgen.py`:
 
 The full prompt for every part is in [PROMPTS.md](PROMPTS.md), and also in each part's
 `done.json`. Tips learnt the hard way:
+- If a white garment shows skin through it in game, check `gen_0.png`. Models sometimes leave a
+  gap in an outline, and white fabric with no outline can't be told apart from the white
+  background. Regenerate (`--redo`).
 - Say what a piece is **not**. Image models draw a whole boot in each boot-shaft slot unless told
   "the boot shaft pieces are only the leg of the boot ... with no foot on them".
 - Ask for plain fabric. Glitter, sequins and fine textures turn into speckle noise when the
@@ -126,5 +138,7 @@ body-specific clothes, like CC2D does). Only `id`, `category`, `name`, `template
 - Shoes sit on CC2D's flat foot, so high heels look like heels but the foot doesn't tilt.
 - `Boots` has no thigh piece. Thigh-high boots end just over the knee. Going higher needs a
   matching `Pants` part (e.g. boot-coloured leggings).
+- `tools/packgen` reads textures straight from disk, but Godot loads the *imported* copies. After
+  regenerating, focus the Godot editor (or run `godot --headless --import`) before testing.
 - Each part is one image-model call (plus one matte call if enabled). Reconverting is free,
   so tweak fit rules first and regenerate only when the drawing itself is wrong.

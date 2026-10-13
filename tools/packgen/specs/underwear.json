@@ -63,14 +63,16 @@
    "category": "Armor",
    "name": "Ribbed Undershirt Male",
    "template": "Daily 14 Male",
-   "desc": "a white ribbed cotton sleeveless undershirt (tank top)"
+   "desc": "a white ribbed cotton sleeveless undershirt (tank top)",
+   "matte": true
   },
   {
    "id": "tee_m",
    "category": "Armor",
    "name": "Undershirt Tee Male",
    "template": "Daily 00 Male",
-   "desc": "a plain white cotton crew-neck undershirt T-shirt"
+   "desc": "a plain white cotton crew-neck undershirt T-shirt",
+   "matte": true
   },
   {
    "id": "boxers_m",
@@ -91,7 +93,8 @@
    "category": "Boots",
    "name": "Ankle Socks",
    "template": "Daily 00",
-   "desc": "plain white ankle socks on bare feet (no shoes)"
+   "desc": "plain white ankle socks on bare feet (no shoes)",
+   "matte": true
   }
  ]
 }

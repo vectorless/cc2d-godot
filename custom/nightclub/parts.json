@@ -396,6 +396,53 @@
     "body": [
      "Female"
     ],
+    "name": "Cut-Out Top Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
+    "mask": "res://custom/nightclub/textures/Armor/Cut-Out Top Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2357,
+      0.2358,
+      0.2357,
+      1.0
+     ],
+     [
+      0.2615,
+      0.2613,
+      0.2627,
+      1.0
+     ],
+     [
+      0.3629,
+      0.3655,
+      0.3671,
+      1.0
+     ]
+    ],
+    "template": "Daily 15 Female",
+    "desc": "a fashionable nightclub fitted sleeveless top in smooth matte black stretch fabric (plain, no glitter, no sequins, no texture), with a simple scoop neckline (no collar, no turtleneck) and two geometric cut-outs at the sides of the waist"
+   },
+   {
+    "body": [
+     "Female"
+    ],
     "name": "Bodycon Halter Top Female",
     "package": "Nightclub",
     "texture": "res://custom/nightclub/textures/Armor/Bodycon Halter Top Female.png",
@@ -418,115 +465,26 @@
     },
     "colors": [
      [
-      0.0103,
-      0.4886,
-      0.9981,
+      0.0063,
+      0.5067,
+      0.9756,
       1.0
      ],
      [
-      0.0125,
-      0.3916,
-      0.819,
+      0.0363,
+      0.4133,
+      0.785,
       1.0
      ],
      [
-      0.1763,
-      0.3024,
-      0.5544,
+      0.4421,
+      0.4752,
+      0.5104,
       1.0
      ]
     ],
     "template": "Daily 14 Female",
-    "desc": "a fashionable nightclub bodycon halter-neck top in electric blue with a low back, ending at the waist"
-   },
-   {
-    "body": [
-     "Female"
-    ],
-    "name": "Cut-Out Top Female",
-    "package": "Nightclub",
-    "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
-    "mask": "res://custom/nightclub/textures/Armor/Cut-Out Top Female Mask.png",
-    "sprites": {
-     "Armor Body": {
-      "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
-      "region": [
-       0,
-       0,
-       350,
-       512
-      ],
-      "offset": [
-       -175,
-       -256
-      ],
-      "px_scale": 1
-     },
-     "Armor Neck": {
-      "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
-      "region": [
-       350,
-       0,
-       190,
-       177
-      ],
-      "offset": [
-       -95,
-       -88.5
-      ],
-      "px_scale": 1
-     },
-     "Armor Upper Arm L": {
-      "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
-      "region": [
-       540,
-       177,
-       190,
-       335
-      ],
-      "offset": [
-       -95,
-       -167.5
-      ],
-      "px_scale": 1
-     },
-     "Armor Upper Arm R": {
-      "texture": "res://custom/nightclub/textures/Armor/Cut-Out Top Female.png",
-      "region": [
-       350,
-       177,
-       190,
-       335
-      ],
-      "offset": [
-       -95,
-       -167.5
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.2115,
-      0.2123,
-      0.2113,
-      1.0
-     ],
-     [
-      0.226,
-      0.227,
-      0.2254,
-      1.0
-     ],
-     [
-      0.6093,
-      0.6059,
-      0.6072,
-      1.0
-     ]
-    ],
-    "template": "Daily 00 Female",
-    "desc": "a fashionable nightclub fitted black top with short sleeves and geometric side cut-outs at the waist"
+    "desc": "a fashionable nightclub bodycon halter-neck top in electric blue, sleeveless, ending at the waist. The halter is one thin strap rising straight from the centre of the neckline up to the front of the neck (it goes behind the neck, so draw only its front part); bare shoulders, no strap loop on the chest or shoulders"
    }
   ],
   "Pants": [
@@ -1036,26 +994,26 @@
     },
     "colors": [
      [
-      0.2616,
-      0.2615,
-      0.2613,
+      0.3543,
+      0.3551,
+      0.355,
       1.0
      ],
      [
-      0.5523,
-      0.5519,
-      0.5508,
+      0.7234,
+      0.7238,
+      0.7234,
       1.0
      ],
      [
-      0.9121,
-      0.9118,
-      0.911,
+      0.5509,
+      0.5506,
+      0.5499,
       1.0
      ]
     ],
     "template": "Fantasy 03",
-    "desc": "fashionable nightclub glossy black stiletto boots reaching up the leg"
+    "desc": "fashionable nightclub glossy black stiletto boots reaching up over the knee. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
    },
    {
     "body": [
@@ -1112,21 +1070,21 @@
     },
     "colors": [
      [
-      0.8171,
-      0.6724,
-      0.3918,
+      0.9626,
+      0.831,
+      0.5113,
       1.0
      ],
      [
-      0.9913,
-      0.9383,
-      0.7086,
+      1.0,
+      1.0,
+      1.0,
       1.0
      ],
      [
-      0.5337,
-      0.4381,
-      0.2586,
+      0.6067,
+      0.4979,
+      0.2956,
       1.0
      ]
     ],

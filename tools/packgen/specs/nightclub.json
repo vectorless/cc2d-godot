@@ -71,9 +71,10 @@
    "id": "thigh_boots",
    "category": "Boots",
    "name": "Thigh-High Boots",
-   "template": "Fantasy 08",
+   "template": "Fantasy 03",
    "desc": "fashionable nightclub glossy black stiletto boots reaching up over the knee. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part.",
-   "matte": true
+   "matte": true,
+   "template_texture": "templates/Tall Boot.png"
   },
   {
    "id": "heels",

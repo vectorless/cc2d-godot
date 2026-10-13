@@ -124,123 +124,6 @@
     "body": [
      "Male"
     ],
-    "name": "Fringed Vest Male",
-    "package": "Flower Power",
-    "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
-    "mask": "res://custom/flower_power/textures/Armor/Fringed Vest Male Mask.png",
-    "sprites": {
-     "Armor Body": {
-      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
-      "region": [
-       0,
-       0,
-       350,
-       512
-      ],
-      "offset": [
-       -175,
-       -256
-      ],
-      "px_scale": 1
-     },
-     "Armor Lower Arm L": {
-      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
-      "region": [
-       877,
-       232,
-       147,
-       280
-      ],
-      "offset": [
-       -73.5,
-       -140
-      ],
-      "px_scale": 1
-     },
-     "Armor Lower Arm R": {
-      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
-      "region": [
-       730,
-       232,
-       147,
-       280
-      ],
-      "offset": [
-       -73.5,
-       -140
-      ],
-      "px_scale": 1
-     },
-     "Armor Neck": {
-      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
-      "region": [
-       350,
-       0,
-       190,
-       177
-      ],
-      "offset": [
-       -95,
-       -88.5
-      ],
-      "px_scale": 1
-     },
-     "Armor Upper Arm L": {
-      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
-      "region": [
-       540,
-       177,
-       190,
-       335
-      ],
-      "offset": [
-       -95,
-       -167.5
-      ],
-      "px_scale": 1
-     },
-     "Armor Upper Arm R": {
-      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
-      "region": [
-       350,
-       177,
-       190,
-       335
-      ],
-      "offset": [
-       -95,
-       -167.5
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.5888,
-      0.466,
-      0.373,
-      1.0
-     ],
-     [
-      0.8358,
-      0.8357,
-      0.8354,
-      1.0
-     ],
-     [
-      0.9759,
-      0.976,
-      0.9756,
-      1.0
-     ]
-    ],
-    "template": "Daily 09 Male",
-    "desc": "a 1960s hippie brown suede vest with long fringes, worn open over a white loose long-sleeved peasant shirt"
-   },
-   {
-    "body": [
-     "Male"
-    ],
     "name": "Tie-Dye Tee Male",
     "package": "Flower Power",
     "texture": "res://custom/flower_power/textures/Armor/Tie-Dye Tee Male.png",
@@ -536,6 +419,53 @@
     "body": [
      "Female"
     ],
+    "name": "Crochet Halter Top Female",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Armor/Crochet Halter Top Female.png",
+    "mask": "res://custom/flower_power/textures/Armor/Crochet Halter Top Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/flower_power/textures/Armor/Crochet Halter Top Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3207,
+      0.6533,
+      0.5304,
+      1.0
+     ],
+     [
+      0.932,
+      0.5767,
+      0.1499,
+      1.0
+     ],
+     [
+      0.9997,
+      1.0,
+      0.9994,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "a 1960s hippie crochet halter top made of colourful granny squares"
+   },
+   {
+    "body": [
+     "Female"
+    ],
     "name": "Peasant Blouse Female",
     "package": "Flower Power",
     "texture": "res://custom/flower_power/textures/Armor/Peasant Blouse Female.png",
@@ -628,21 +558,21 @@
     },
     "colors": [
      [
-      1.0,
-      1.0,
-      1.0,
+      0.9747,
+      0.9751,
+      0.9737,
       1.0
      ],
      [
-      0.8514,
-      0.851,
-      0.8494,
+      0.8079,
+      0.8026,
+      0.8265,
       1.0
      ],
      [
-      0.559,
-      0.5699,
-      0.5389,
+      0.5546,
+      0.5606,
+      0.5344,
       1.0
      ]
     ],
@@ -651,50 +581,120 @@
    },
    {
     "body": [
-     "Female"
+     "Male"
     ],
-    "name": "Crochet Halter Top Female",
+    "name": "Fringed Vest Male",
     "package": "Flower Power",
-    "texture": "res://custom/flower_power/textures/Armor/Crochet Halter Top Female.png",
-    "mask": "res://custom/flower_power/textures/Armor/Crochet Halter Top Female Mask.png",
+    "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+    "mask": "res://custom/flower_power/textures/Armor/Fringed Vest Male Mask.png",
     "sprites": {
      "Armor Body": {
-      "texture": "res://custom/flower_power/textures/Armor/Crochet Halter Top Female.png",
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
       "region": [
        0,
        0,
-       512,
+       350,
        512
       ],
       "offset": [
-       -256,
+       -175,
        -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/flower_power/textures/Armor/Fringed Vest Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
       ],
       "px_scale": 1
      }
     },
     "colors": [
      [
-      0.3207,
-      0.6533,
-      0.5304,
+      0.6317,
+      0.4863,
+      0.3708,
       1.0
      ],
      [
-      0.932,
-      0.5767,
-      0.1499,
+      0.9892,
+      0.9768,
+      0.946,
       1.0
      ],
      [
-      0.9997,
-      1.0,
-      0.9994,
+      0.4943,
+      0.3419,
+      0.2216,
       1.0
      ]
     ],
-    "template": "Daily 14 Female",
-    "desc": "a 1960s hippie crochet halter top made of colourful granny squares"
+    "template": "Daily 09 Male",
+    "desc": "a 1960s hippie brown suede vest with long fringes, worn open over a white loose long-sleeved peasant shirt"
    }
   ],
   "Pants": [
@@ -939,54 +939,6 @@
      "Male",
      "Female"
     ],
-    "name": "Mod Mini Skirt",
-    "package": "Flower Power",
-    "texture": "res://custom/flower_power/textures/Skirt/Mod Mini Skirt.png",
-    "mask": "res://custom/flower_power/textures/Skirt/Mod Mini Skirt Mask.png",
-    "sprites": {
-     "Daily 00 Skirt": {
-      "texture": "res://custom/flower_power/textures/Skirt/Mod Mini Skirt.png",
-      "region": [
-       0,
-       0,
-       512,
-       768
-      ],
-      "offset": [
-       -256,
-       -384
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.9974,
-      0.9974,
-      0.9972,
-      1.0
-     ],
-     [
-      0.781,
-      0.7807,
-      0.7803,
-      1.0
-     ],
-     [
-      0.4502,
-      0.4495,
-      0.4493,
-      1.0
-     ]
-    ],
-    "template": "Daily 00",
-    "desc": "a 1960s mod mini skirt with a black-and-white op-art pattern"
-   },
-   {
-    "body": [
-     "Male",
-     "Female"
-    ],
     "name": "Fringed Suede Skirt",
     "package": "Flower Power",
     "texture": "res://custom/flower_power/textures/Skirt/Fringed Suede Skirt.png",
@@ -1029,6 +981,54 @@
     ],
     "template": "Daily 05",
     "desc": "a 1960s tan suede skirt with long fringes at the hem and beaded trim"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Mod Mini Skirt",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Skirt/Mod Mini Skirt.png",
+    "mask": "res://custom/flower_power/textures/Skirt/Mod Mini Skirt Mask.png",
+    "sprites": {
+     "Daily 00 Skirt": {
+      "texture": "res://custom/flower_power/textures/Skirt/Mod Mini Skirt.png",
+      "region": [
+       0,
+       0,
+       512,
+       768
+      ],
+      "offset": [
+       -256,
+       -384
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9978,
+      0.9975,
+      0.9974,
+      1.0
+     ],
+     [
+      0.7848,
+      0.7843,
+      0.7842,
+      1.0
+     ],
+     [
+      0.4477,
+      0.4467,
+      0.4464,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a 1960s mod mini skirt with a black-and-white op-art pattern"
    }
   ],
   "Boots": [
@@ -1205,26 +1205,26 @@
     },
     "colors": [
      [
-      0.9921,
-      0.992,
-      0.9919,
+      0.983,
+      0.9834,
+      0.984,
       1.0
      ],
      [
+      0.7678,
       0.7969,
-      0.7928,
-      0.8434,
+      0.8498,
       1.0
      ],
      [
       0.5228,
-      0.5221,
-      0.5405,
+      0.5379,
+      0.5648,
       1.0
      ]
     ],
     "template": "Fantasy 03",
-    "desc": "1960s shiny white patent go-go boots, calf-high with a low heel"
+    "desc": "1960s shiny white patent go-go boots reaching the knee, with a low heel. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
    }
   ],
   "Hair": [

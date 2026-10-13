@@ -14,7 +14,8 @@
    "category": "Armor",
    "name": "Fringed Vest Male",
    "template": "Daily 09 Male",
-   "desc": "a 1960s hippie brown suede vest with long fringes, worn open over a white loose long-sleeved peasant shirt"
+   "desc": "a 1960s hippie brown suede vest with long fringes, worn open over a white loose long-sleeved peasant shirt",
+   "matte": true
   },
   {
    "id": "tiedye_m",
@@ -35,7 +36,8 @@
    "category": "Armor",
    "name": "Peasant Blouse Female",
    "template": "Daily 09 Female",
-   "desc": "a 1960s white peasant blouse with an embroidered floral yoke and wide flowing bell sleeves"
+   "desc": "a 1960s white peasant blouse with an embroidered floral yoke and wide flowing bell sleeves",
+   "matte": true
   },
   {
    "id": "crochet_f",
@@ -70,7 +72,8 @@
    "category": "Skirt",
    "name": "Mod Mini Skirt",
    "template": "Daily 00",
-   "desc": "a 1960s mod mini skirt with a black-and-white op-art pattern"
+   "desc": "a 1960s mod mini skirt with a black-and-white op-art pattern",
+   "matte": true
   },
   {
    "id": "fringe_skirt",
@@ -90,9 +93,10 @@
    "id": "gogo",
    "category": "Boots",
    "name": "Go-Go Boots",
-   "template": "Fantasy 09",
+   "template": "Fantasy 03",
    "desc": "1960s shiny white patent go-go boots reaching the knee, with a low heel. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part.",
-   "matte": true
+   "matte": true,
+   "template_texture": "templates/Tall Boot.png"
   },
   {
    "id": "long_hair",

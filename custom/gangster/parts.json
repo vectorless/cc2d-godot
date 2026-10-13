@@ -684,21 +684,21 @@
     },
     "colors": [
      [
-      0.962,
-      0.9623,
-      0.9619,
+      0.965,
+      0.9664,
+      0.965,
       1.0
      ],
      [
-      0.8065,
-      0.8064,
-      0.8062,
+      0.8076,
+      0.8087,
+      0.835,
       1.0
      ],
      [
-      0.4967,
-      0.4966,
-      0.4969,
+      0.5225,
+      0.5212,
+      0.5384,
       1.0
      ]
     ],
@@ -948,82 +948,6 @@
      "Male",
      "Female"
     ],
-    "name": "Two-Tone Wingtips",
-    "package": "Gangster",
-    "texture": "res://custom/gangster/textures/Boots/Two-Tone Wingtips.png",
-    "mask": "res://custom/gangster/textures/Boots/Two-Tone Wingtips Mask.png",
-    "sprites": {
-     "Boots Foot R": {
-      "texture": "res://custom/gangster/textures/Boots/Two-Tone Wingtips.png",
-      "region": [
-       0,
-       0,
-       256,
-       170
-      ],
-      "offset": [
-       -128,
-       -85
-      ],
-      "px_scale": 1
-     },
-     "Boots Foot F": {
-      "texture": "res://custom/gangster/textures/Boots/Two-Tone Wingtips.png",
-      "region": [
-       0,
-       340,
-       180,
-       172
-      ],
-      "offset": [
-       -90,
-       -86
-      ],
-      "px_scale": 1
-     },
-     "Boots Foot L": {
-      "texture": "res://custom/gangster/textures/Boots/Two-Tone Wingtips.png",
-      "region": [
-       0,
-       170,
-       256,
-       170
-      ],
-      "offset": [
-       -128,
-       -85
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.3582,
-      0.3572,
-      0.3574,
-      1.0
-     ],
-     [
-      0.9872,
-      0.9873,
-      0.987,
-      1.0
-     ],
-     [
-      0.6986,
-      0.6981,
-      0.6983,
-      1.0
-     ]
-    ],
-    "template": "Daily 00",
-    "desc": "1950s two-tone spectator wingtip brogue shoes, black and white leather, with laces"
-   },
-   {
-    "body": [
-     "Male",
-     "Female"
-    ],
     "name": "Shoes with Spats",
     "package": "Gangster",
     "texture": "res://custom/gangster/textures/Boots/Shoes with Spats.png",
@@ -1136,6 +1060,82 @@
     ],
     "template": "Fantasy 03",
     "desc": "1950s polished black oxford shoes with pale grey button-up spats over the ankles; the shaft pieces are the trouser hem and spats"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Two-Tone Wingtips",
+    "package": "Gangster",
+    "texture": "res://custom/gangster/textures/Boots/Two-Tone Wingtips.png",
+    "mask": "res://custom/gangster/textures/Boots/Two-Tone Wingtips Mask.png",
+    "sprites": {
+     "Boots Foot R": {
+      "texture": "res://custom/gangster/textures/Boots/Two-Tone Wingtips.png",
+      "region": [
+       0,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot F": {
+      "texture": "res://custom/gangster/textures/Boots/Two-Tone Wingtips.png",
+      "region": [
+       0,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/gangster/textures/Boots/Two-Tone Wingtips.png",
+      "region": [
+       0,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3547,
+      0.3535,
+      0.3535,
+      1.0
+     ],
+     [
+      0.9887,
+      0.9888,
+      0.9886,
+      1.0
+     ],
+     [
+      0.6951,
+      0.6945,
+      0.6946,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "1950s two-tone spectator wingtip brogue shoes, black and white leather, with laces"
    }
   ],
   "Helmet": [

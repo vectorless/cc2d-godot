@@ -10,7 +10,7 @@ Template: `Daily 09 Male` (Armor)
 
 ### Flower Power / Fringed Vest Male
 
-Template: `Daily 09 Male` (Armor)
+Template: `Daily 09 Male` (Armor), cut out with bria/remove-background
 
 > This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - the torso, two forearm sleeves, a collar piece and two upper-arm sleeves. Redraw it as a 1960s hippie brown suede vest with long fringes, worn open over a white loose long-sleeved peasant shirt. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
@@ -28,7 +28,7 @@ Template: `Daily 09 Male` (Armor)
 
 ### Flower Power / Peasant Blouse Female
 
-Template: `Daily 09 Female` (Armor)
+Template: `Daily 09 Female` (Armor), cut out with bria/remove-background
 
 > This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - the torso, two forearm sleeves, a collar piece and two upper-arm sleeves. Redraw it as a 1960s white peasant blouse with an embroidered floral yoke and wide flowing bell sleeves. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
@@ -58,7 +58,7 @@ Template: `Daily 01 Female` (Pants)
 
 ### Flower Power / Mod Mini Skirt
 
-Template: `Daily 00` (Skirt)
+Template: `Daily 00` (Skirt), cut out with bria/remove-background
 
 > This image is the texture of a skirt for a 2D cut-out game character: one piece, waistband at the top. Redraw it as a 1960s mod mini skirt with a black-and-white op-art pattern. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
@@ -76,9 +76,9 @@ Template: `Daily 00` (Boots)
 
 ### Flower Power / Go-Go Boots
 
-Template: `Fantasy 09` (Boots), cut out with bria/remove-background
+Template: `Fantasy 03` (Boots), cut out with bria/remove-background
 
-> This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - two boot shaft (lower leg)s, a shoe seen from the front, two shoe seen from the sides and a front-facing boot shaft. Redraw it as 1960s shiny white patent go-go boots reaching the knee, with a low heel. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
+> This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - a shoe seen from the front, two shoe seen from the sides, a front-facing boot shaft and two boot shaft (lower leg)s. Redraw it as 1960s shiny white patent go-go boots reaching the knee, with a low heel. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
 ### Flower Power / Long Centre Part
 
@@ -136,7 +136,7 @@ Template: `Daily 09 Male` (Armor)
 
 ### Gangster / Waistcoat and Shirt Male
 
-Template: `Daily 09 Male` (Armor)
+Template: `Daily 09 Male` (Armor), cut out with bria/remove-background
 
 > This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - the torso, two forearm sleeves, a collar piece and two upper-arm sleeves. Redraw it as a 1950s gangster's white dress shirt with the sleeves rolled up to the elbow, a black buttoned waistcoat, braces and a loosened dark tie. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
@@ -184,7 +184,7 @@ Template: `Daily 05` (Skirt)
 
 ### Gangster / Two-Tone Wingtips
 
-Template: `Daily 00` (Boots)
+Template: `Daily 00` (Boots), cut out with bria/remove-background
 
 > This image is a sprite sheet for a 2D cut-out game character: 3 separate pieces of one item on a white background - two shoe seen from the sides and a shoe seen from the front. Redraw it as 1950s two-tone spectator wingtip brogue shoes, black and white leather, with laces. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
@@ -340,9 +340,9 @@ Template: `Daily 00` (Boots)
 
 ### Seventies / Platform Boots
 
-Template: `Fantasy 09` (Boots), cut out with bria/remove-background
+Template: `Fantasy 03` (Boots), cut out with bria/remove-background
 
-> This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - two boot shaft (lower leg)s, a shoe seen from the front, two shoe seen from the sides and a front-facing boot shaft. Redraw it as 1970s knee-high platform boots with thick soles, in metallic silver. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
+> This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - a shoe seen from the front, two shoe seen from the sides, a front-facing boot shaft and two boot shaft (lower leg)s. Redraw it as 1970s knee-high platform boots with thick soles, in metallic silver. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
 ### Seventies / Feathered Hair
 
@@ -442,13 +442,13 @@ Template: `Daily 01 Female` (Pants)
 
 ### Underwear / Ribbed Undershirt Male
 
-Template: `Daily 14 Male` (Armor)
+Template: `Daily 14 Male` (Armor), cut out with bria/remove-background
 
 > This image is a sprite sheet for a 2D cut-out game character: 2 separate pieces of one item on a white background - the torso and a collar piece. Redraw it as a white ribbed cotton sleeveless undershirt (tank top). Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
 ### Underwear / Undershirt Tee Male
 
-Template: `Daily 00 Male` (Armor)
+Template: `Daily 00 Male` (Armor), cut out with bria/remove-background
 
 > This image is a sprite sheet for a 2D cut-out game character: 4 separate pieces of one item on a white background - the torso, a collar piece and two upper-arm sleeves. Redraw it as a plain white cotton crew-neck undershirt T-shirt. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
@@ -466,7 +466,7 @@ Template: `Base 00 Male` (Pants)
 
 ### Underwear / Ankle Socks
 
-Template: `Daily 00` (Boots)
+Template: `Daily 00` (Boots), cut out with bria/remove-background
 
 > This image is a sprite sheet for a 2D cut-out game character: 3 separate pieces of one item on a white background - two shoe seen from the sides and a shoe seen from the front. Redraw it as plain white ankle socks on bare feet (no shoes). Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
@@ -526,9 +526,9 @@ Template: `Daily 01 Male` (Pants)
 
 ### Sci-Fi / Tall Uniform Boots
 
-Template: `Fantasy 08` (Boots), cut out with bria/remove-background
+Template: `Fantasy 03` (Boots), cut out with bria/remove-background
 
-> This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - two boot shaft (lower leg)s, a shoe seen from the front, two shoe seen from the sides and a front-facing boot shaft. Redraw it as sleek knee-high black sci-fi uniform boots with a thin metallic trim. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
+> This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - a shoe seen from the front, two shoe seen from the sides, a front-facing boot shaft and two boot shaft (lower leg)s. Redraw it as sleek knee-high black sci-fi uniform boots with a thin metallic trim. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
 ### Sci-Fi / Magnetic Boots
 
@@ -640,9 +640,9 @@ Template: `Daily 05` (Skirt)
 
 ### Nightclub / Thigh-High Boots
 
-Template: `Fantasy 08` (Boots), cut out with bria/remove-background
+Template: `Fantasy 03` (Boots), cut out with bria/remove-background
 
-> This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - two boot shaft (lower leg)s, a shoe seen from the front, two shoe seen from the sides and a front-facing boot shaft. Redraw it as fashionable nightclub glossy black stiletto boots reaching up over the knee. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
+> This image is a sprite sheet for a 2D cut-out game character: 6 separate pieces of one item on a white background - a shoe seen from the front, two shoe seen from the sides, a front-facing boot shaft and two boot shaft (lower leg)s. Redraw it as fashionable nightclub glossy black stiletto boots reaching up over the knee. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part. Keep every piece exactly where it is, at the same size, with the same silhouette and the same three-quarter angle, so it still fits the character's body. Same art style as the input: hand-drawn cartoon with bold black outlines and soft cel shading. Plain white background and nothing else: no body, no skin, no hands, no text, no labels, no logos.
 
 ### Nightclub / Strappy Heels
 

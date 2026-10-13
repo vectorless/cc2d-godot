@@ -193,67 +193,6 @@
    },
    {
     "body": [
-     "Male"
-    ],
-    "name": "Ribbed Undershirt Male",
-    "package": "Underwear",
-    "texture": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male.png",
-    "mask": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male Mask.png",
-    "sprites": {
-     "Armor Body": {
-      "texture": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male.png",
-      "region": [
-       0,
-       0,
-       350,
-       512
-      ],
-      "offset": [
-       -175,
-       -256
-      ],
-      "px_scale": 1
-     },
-     "Armor Neck": {
-      "texture": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male.png",
-      "region": [
-       350,
-       0,
-       190,
-       177
-      ],
-      "offset": [
-       -95,
-       -88.5
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      1.0,
-      1.0,
-      1.0,
-      1.0
-     ],
-     [
-      0.8723,
-      0.8722,
-      0.8718,
-      1.0
-     ],
-     [
-      0.618,
-      0.6177,
-      0.6175,
-      1.0
-     ]
-    ],
-    "template": "Daily 14 Male",
-    "desc": "a white ribbed cotton sleeveless undershirt (tank top)"
-   },
-   {
-    "body": [
      "Female"
     ],
     "name": "Silk Camisole Female",
@@ -298,6 +237,67 @@
     ],
     "template": "Daily 14 Female",
     "desc": "a silk camisole with thin straps and lace trim at the neckline and hem"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Ribbed Undershirt Male",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male.png",
+    "mask": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/underwear/textures/Armor/Ribbed Undershirt Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     [
+      0.8717,
+      0.8716,
+      0.8712,
+      1.0
+     ],
+     [
+      0.6185,
+      0.6182,
+      0.6176,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Male",
+    "desc": "a white ribbed cotton sleeveless undershirt (tank top)"
    },
    {
     "body": [
@@ -373,15 +373,15 @@
       1.0
      ],
      [
-      0.8402,
-      0.8412,
-      0.8398,
+      0.7432,
+      0.7566,
+      0.7743,
       1.0
      ],
      [
-      0.5698,
-      0.5685,
-      0.5685,
+      0.5195,
+      0.5201,
+      0.5242,
       1.0
      ]
     ],
@@ -864,21 +864,21 @@
     },
     "colors": [
      [
-      1.0,
-      1.0,
-      1.0,
+      0.9119,
+      0.8596,
+      0.8339,
       1.0
      ],
      [
-      0.9313,
-      0.8614,
-      0.8246,
+      0.7672,
+      0.7087,
+      0.6866,
       1.0
      ],
      [
-      0.5813,
-      0.5596,
-      0.5511,
+      0.4608,
+      0.4507,
+      0.4456,
       1.0
      ]
     ],

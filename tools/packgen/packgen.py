@@ -4,6 +4,7 @@
     python3 packgen.py list specs/*.json
     python3 packgen.py prompts specs/*.json > PROMPTS.md   (the exact prompt sent for every part)
     python3 packgen.py reconvert specs/x.json [--only ID]   (redo fitting/colours from the saved image, no image-model call)
+    --model M  use another image model for this run, e.g. meshy/nano-banana-pro (Meshy's API, key in ~/.secrets/meshy)
     --matte   cut pieces out with a background-removal model instead of flood-filling the white
               (also per part / per spec: "matte": true). Use it for white garments, straps, loops.
 
@@ -130,7 +131,9 @@ TEMPLATE_FIT = {
 }
 
 
-MATTE_MODEL = 'bria/remove-background'
+MATTE_MODEL = 'bria/remove-background'      # on Replicate, used when rembg isn't installed
+LOCAL_MATTE = 'isnet-general-use'           # rembg model (pip install rembg onnxruntime): free, ~1 s
+_rembg = None
 
 
 def matte(gen_path):
@@ -138,7 +141,16 @@ def matte(gen_path):
     <gen>_alpha.png. Far better than flood-filling white for white garments, thin straps and
     loops (camisole straps, halter necks, strappy shoes). Costs one ~1 s API call per part."""
     out = os.path.splitext(gen_path)[0] + '_alpha.png'
-    if not os.path.exists(out):
+    if not os.path.exists(out) or os.path.getmtime(out) < os.path.getmtime(gen_path):
+        try:
+            global _rembg
+            from rembg import remove, new_session
+            _rembg = _rembg or new_session(LOCAL_MATTE)
+            remove(Image.open(gen_path).convert('RGB'), session=_rembg).getchannel('A').save(out)
+            open(out + '.txt', 'w').write('rembg/' + LOCAL_MATTE)
+            return out
+        except ImportError:
+            pass
         inp = {'image': rep.data_uri(gen_path)}
         p = rep.req('POST', '%s/models/%s/predictions' % (rep.API, MATTE_MODEL), {'input': inp}, {'Prefer': 'wait=60'})
         while p['status'] not in ('succeeded', 'failed', 'canceled'):
@@ -151,19 +163,40 @@ def matte(gen_path):
         __import__('urllib.request').request.urlretrieve(url, tmp)
         Image.open(tmp).convert('RGBA').getchannel('A').save(out)
         os.remove(tmp)
+        open(out + '.txt', 'w').write(MATTE_MODEL)
     return out
 
 
-def _matte_mask(a_rect):
-    """Pieces in a matte rectangle: drop specks and bits of neighbouring pieces."""
+def _matte_mask(a_rect, rgb_rect=None, tmpl_alpha=None, extra=None):
+    """Pieces in a matte rectangle: drop specks and bits of neighbouring pieces, and open up
+    background trapped inside the drawing (between a strap and the body, inside a halter loop):
+    flat, plain-white areas enclosed by the piece where the template has no cloth. Matting
+    models keep those as part of the object. Returns (mask, holes)."""
     from scipy import ndimage
-    fg = a_rect > 0.5
+    # matting models give white-on-white areas (white boots, shirts) partial alpha: fill them in
+    fg = ndimage.binary_fill_holes((a_rect > 0.5) | (extra if extra is not None else False))
+    holes = np.zeros_like(fg)
+    if rgb_rect is not None and tmpl_alpha is not None:
+        white = (rgb_rect.min(axis=2) > 242) & ((rgb_rect.max(axis=2) - rgb_rect.min(axis=2)) < 14) & fg
+        lab, n = ndimage.label(white)
+        edge_ids = set(np.unique(np.concatenate([lab[0], lab[-1], lab[:, 0], lab[:, -1]]))) - {0}
+        mins = rgb_rect.min(axis=2)
+        for i in range(1, n + 1):
+            if i in edge_ids:
+                continue
+            comp = lab == i
+            if comp.sum() < 60 or float(mins[comp].std()) > 3.5:
+                continue
+            if float((tmpl_alpha[comp] < 0.5).mean()) > 0.7:
+                holes |= comp
+        holes = ndimage.binary_dilation(holes, iterations=2) & fg & (rgb_rect.min(axis=2) > 200)
+        fg &= ~holes
     lab, n = ndimage.label(fg)
     if n == 0:
-        return fg
+        return fg, holes
     sizes = ndimage.sum(fg, lab, range(1, n + 1))
     keep = [i + 1 for i, v in enumerate(sizes) if v >= max(200, 0.04 * sizes.max())]
-    return np.isin(lab, keep)
+    return np.isin(lab, keep), holes
 
 
 def convert(gen_path, meta, tex_path, regions, out_path, mode='auto', overrides=None, alpha_path=None):
@@ -185,20 +218,47 @@ def convert(gen_path, meta, tex_path, regions, out_path, mode='auto', overrides=
         X, Y, Wr, Hr = 2 * rx, 2 * ry, 2 * rw, 2 * rh
         rect = g2[Y:Y + Hr, X:X + Wr]
         ta2 = np.asarray(Image.fromarray(talpha[ry:ry + rh, rx:rx + rw]).resize((Wr, Hr), Image.NEAREST)).astype(np.float32) / 255.0
+        # Look a little beyond the sprite rectangle: models often draw a piece slightly bigger than
+        # its slot, and cutting strictly at the rectangle would slice off a shoulder or a sleeve top.
+        # Pieces found there are kept only if they lie mostly inside the rectangle.
+        from scipy import ndimage
+        M = int(0.1 * max(Wr, Hr))
+        ex0, ey0, ex1, ey1 = max(0, X - M), max(0, Y - M), min(2 * W, X + Wr + M), min(2 * H, Y + Hr + M)
+        erect = g2[ey0:ey1, ex0:ex1]
+        cx0, cy0 = X - ex0, Y - ey0
+        core = np.zeros(erect.shape[:2], bool)
+        core[cy0:cy0 + Hr, cx0:cx0 + Wr] = True
+        eta = np.zeros(erect.shape[:2], np.float32)
+        eta[cy0:cy0 + Hr, cx0:cx0 + Wr] = ta2
         if am is not None:
-            from scipy import ndimage
-            fg = _matte_mask(am[Y:Y + Hr, X:X + Wr])
-            soft_fg = am[Y:Y + Hr, X:X + Wr] * ndimage.binary_dilation(fg, iterations=3)
+            # trapped background (strap loops) only happens on torso pieces; on sleeves and legs a
+            # flat white area outside the template's outline is just a looser white garment
+            loops = name in ('Armor Body', 'Armor Neck', 'Pants Hip')
+            ea = am[ey0:ey1, ex0:ex1]
+            # union with the flood fill: it keeps white fabric the matte only half-keeps
+            efg, holes = _matte_mask(ea, erect if loops else None, eta, piece_mask(erect, eta))
+            inner = ndimage.binary_erosion(efg, iterations=3)
         else:
-            fg = piece_mask(rect, ta2)
-            soft_fg = fg.astype(np.float32)
-        gb = bbox(fg)
+            efg = piece_mask(erect, eta)
+        lab, n = ndimage.label(efg)
+        if n:
+            inside = ndimage.sum(core, lab, range(1, n + 1)) / np.maximum(1, ndimage.sum(efg, lab, range(1, n + 1)))
+            efg = np.isin(lab, [i + 1 for i in range(n) if inside[i] > 0.5])
+        if am is not None:
+            esoft = np.where(inner & efg, 1.0, ea * ndimage.binary_dilation(efg, iterations=3)) * ~holes
+        else:
+            esoft = efg.astype(np.float32)
+        fg = efg[cy0:cy0 + Hr, cx0:cx0 + Wr]
+        gb = bbox(efg)
         if gb is None:
             report[name] = 'empty'
             continue
         tb = bbox(talpha[ry:ry + rh, rx:rx + rw] > 20)
+        if tb is None and mode != 'identity':
+            report[name] = 'skipped (empty on the template)'   # e.g. a collar the template doesn't have
+            continue
         canvas_rgb = rect.copy()
-        canvas_a = soft_fg.copy()
+        canvas_a = esoft[cy0:cy0 + Hr, cx0:cx0 + Wr].copy()
         rule = (overrides or {}).get(name) or (fit_rule(name) if mode != 'identity' else 'none')
         if rule != 'none' and tb is not None:
             tb = [2 * v for v in tb]
@@ -227,8 +287,8 @@ def convert(gen_path, meta, tex_path, regions, out_path, mode='auto', overrides=
                 sx = sy = min(tw / gw, th / gh) if gw / gh > 0 else 1.0
                 ax, ay = 'c', 'c'
             nw, nh = max(1, round(gw * sx)), max(1, round(gh * sy))
-            pim = Image.fromarray(rect[gy0:gy1, gx0:gx1].astype(np.uint8)).resize((nw, nh), Image.LANCZOS)
-            mim = Image.fromarray((soft_fg[gy0:gy1, gx0:gx1] * 255).astype(np.uint8)).resize((nw, nh), Image.LANCZOS)
+            pim = Image.fromarray(erect[gy0:gy1, gx0:gx1].astype(np.uint8)).resize((nw, nh), Image.LANCZOS)
+            mim = Image.fromarray((esoft[gy0:gy1, gx0:gx1] * 255).astype(np.uint8)).resize((nw, nh), Image.LANCZOS)
             flipped = False
             if rule == 'foot' and name[-2:] in (' L', ' R'):
                 # Side-view shoes: image models like to mirror one of the pair. Both of the
@@ -308,17 +368,19 @@ def register(pack_dir, package, category, name, tp, tex_src, mask_src, colors, e
     json.dump(data, open(pj, 'w'), indent=1)
 
 
-def run_part(spec_file, spec, p, reuse=False, force_matte=False):
+def run_part(spec_file, spec, p, reuse=False, force_matte=False, model_override=None):
     pkg = spec['package']
     wd = os.path.join(WORK, pkg.replace(' ', '_'), p['id'])
     os.makedirs(wd, exist_ok=True)
     cat = p['category']
     tp = template_part(cat, p['template'])
-    tex_path = res_path(tp['texture'])
+    # "template_texture": a hand-made guide image with the template's layout (e.g. templates/Tall Boot.png:
+    # Fantasy 03's sprite layout with smooth knee-high shafts), used for the canvas and fitting only
+    tex_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), p['template_texture']) if p.get('template_texture') else res_path(tp['texture'])
     size = Image.open(tex_path).size
     meta = make_canvas(tex_path, os.path.join(wd, 'canvas.png'))
     prompt = describe(cat, tp) + ' Redraw it as ' + p['desc'].rstrip('.') + '.' + KEEP
-    model = p.get('model', spec.get('model', 'google/nano-banana-pro'))
+    model = model_override or p.get('model', spec.get('model', 'google/nano-banana-pro'))
     inp = {'prompt': prompt, 'files:image_input': [os.path.join(wd, 'canvas.png')], 'aspect_ratio': meta['aspect'],
            'resolution': '2K', 'output_format': 'png'}
     if 'gpt-image' in model:
@@ -335,13 +397,19 @@ def run_part(spec_file, spec, p, reuse=False, force_matte=False):
     rgba = os.path.join(wd, 'part.png')
     overrides = dict(TEMPLATE_FIT.get(p['template'], {}) if cat == 'Armor' else {}, **p.get('fit', {}))
     use_matte = force_matte or p.get('matte', spec.get('matte', False))
-    alpha = matte(files[0]) if use_matte else None
+    alpha = None
+    if use_matte:
+        try:
+            alpha = matte(files[0])
+        except Exception as e:   # e.g. no Replicate credit: fall back to the white flood fill
+            print('  matte unavailable (%s), using flood fill' % repr(e)[:120])
+            use_matte = False
     rep_fit = convert(files[0], meta, tex_path, regions, rgba, p.get('mode', 'auto'), overrides, alpha)
     colors = recolor.split(rgba, os.path.join(wd, 'tex.png'), os.path.join(wd, 'mask.png'))
     extra = {'template': p['template'], 'desc': p['desc']}
     register(spec['pack_dir'], pkg, cat, p['name'], tp, os.path.join(wd, 'tex.png'), os.path.join(wd, 'mask.png'), colors, extra)
     json.dump({'model': model, 'seconds': round(time.time() - t0, 1), 'prompt': prompt, 'fit': rep_fit, 'meta': meta,
-               'matte': MATTE_MODEL if use_matte else None},
+               'matte': (open(alpha + '.txt').read() if os.path.exists(alpha + '.txt') else 'yes') if alpha else None},
               open(os.path.join(wd, 'done.json'), 'w'), indent=1)
     print('  done %s/%s in %.0fs %s' % (pkg, p['name'], time.time() - t0, rep_fit))
     return True
@@ -349,13 +417,15 @@ def run_part(spec_file, spec, p, reuse=False, force_matte=False):
 
 def main(argv):
     cmd, rest = argv[0], argv[1:]
-    budget, only, redo, files, force_matte = 150.0, None, None, [], False
+    budget, only, redo, files, force_matte, model = 150.0, None, None, [], False, None
     i = 0
     while i < len(rest):
         if rest[i] == '--budget':
             budget = float(rest[i + 1]); i += 2
         elif rest[i] == '--only':
             only = rest[i + 1].split(','); i += 2
+        elif rest[i] == '--model':
+            model = rest[i + 1]; i += 2
         elif rest[i] == '--matte':
             force_matte = True; i += 1
         elif rest[i] == '--redo':
@@ -393,7 +463,7 @@ def main(argv):
                 pending += 1
                 continue
             try:
-                if not run_part(f, spec, p, force_matte=force_matte):
+                if not run_part(f, spec, p, force_matte=force_matte, model_override=model):
                     print('  FAILED', p['id'])
             except Exception as e:
                 print('  ERROR', p['id'], repr(e)[:300])

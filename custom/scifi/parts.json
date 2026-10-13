@@ -1065,124 +1065,6 @@
      "Male",
      "Female"
     ],
-    "name": "Tall Uniform Boots",
-    "package": "Sci-Fi",
-    "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
-    "mask": "res://custom/scifi/textures/Boots/Tall Uniform Boots Mask.png",
-    "sprites": {
-     "Boots Foot F": {
-      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
-      "region": [
-       768,
-       340,
-       180,
-       172
-      ],
-      "offset": [
-       -90,
-       -86
-      ],
-      "px_scale": 1
-     },
-     "Boots Foot L": {
-      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
-      "region": [
-       768,
-       170,
-       256,
-       170
-      ],
-      "offset": [
-       -128,
-       -85
-      ],
-      "px_scale": 1
-     },
-     "Boots Foot R": {
-      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
-      "region": [
-       768,
-       0,
-       256,
-       170
-      ],
-      "offset": [
-       -128,
-       -85
-      ],
-      "px_scale": 1
-     },
-     "Boots Lower Leg F": {
-      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
-      "region": [
-       512,
-       0,
-       256,
-       400
-      ],
-      "offset": [
-       -128,
-       -200
-      ],
-      "px_scale": 1
-     },
-     "Boots Lower Leg L": {
-      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
-      "region": [
-       256,
-       0,
-       256,
-       400
-      ],
-      "offset": [
-       -128,
-       -200
-      ],
-      "px_scale": 1
-     },
-     "Boots Lower Leg R": {
-      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
-      "region": [
-       0,
-       0,
-       256,
-       400
-      ],
-      "offset": [
-       -128,
-       -200
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.2696,
-      0.2695,
-      0.2691,
-      1.0
-     ],
-     [
-      0.8969,
-      0.897,
-      0.897,
-      1.0
-     ],
-     [
-      0.4892,
-      0.4888,
-      0.4883,
-      1.0
-     ]
-    ],
-    "template": "Fantasy 03",
-    "desc": "sleek knee-high black sci-fi uniform boots with a thin metallic trim"
-   },
-   {
-    "body": [
-     "Male",
-     "Female"
-    ],
     "name": "Magnetic Boots",
     "package": "Sci-Fi",
     "texture": "res://custom/scifi/textures/Boots/Magnetic Boots.png",
@@ -1295,6 +1177,124 @@
     ],
     "template": "Fantasy 03",
     "desc": "bulky sci-fi magnetic space boots in gunmetal with glowing cyan soles"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Tall Uniform Boots",
+    "package": "Sci-Fi",
+    "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+    "mask": "res://custom/scifi/textures/Boots/Tall Uniform Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/scifi/textures/Boots/Tall Uniform Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2933,
+      0.2933,
+      0.293,
+      1.0
+     ],
+     [
+      0.6113,
+      0.6115,
+      0.6108,
+      1.0
+     ],
+     [
+      0.9894,
+      0.99,
+      0.9899,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "sleek knee-high black sci-fi uniform boots with a thin metallic trim. The boot shaft pieces are only the leg of the boot, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
    }
   ],
   "Helmet": [

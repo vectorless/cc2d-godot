@@ -14,7 +14,8 @@
    "category": "Armor",
    "name": "Waistcoat and Shirt Male",
    "template": "Daily 09 Male",
-   "desc": "a 1950s gangster's white dress shirt with the sleeves rolled up to the elbow, a black buttoned waistcoat, braces and a loosened dark tie"
+   "desc": "a 1950s gangster's white dress shirt with the sleeves rolled up to the elbow, a black buttoned waistcoat, braces and a loosened dark tie",
+   "matte": true
   },
   {
    "id": "overcoat_m",
@@ -70,7 +71,8 @@
    "category": "Boots",
    "name": "Two-Tone Wingtips",
    "template": "Daily 00",
-   "desc": "1950s two-tone spectator wingtip brogue shoes, black and white leather, with laces"
+   "desc": "1950s two-tone spectator wingtip brogue shoes, black and white leather, with laces",
+   "matte": true
   },
   {
    "id": "spats",
