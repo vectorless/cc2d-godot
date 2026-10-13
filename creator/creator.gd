@@ -1,6 +1,7 @@
 ## Character creator for the CC2D Godot runtime (port of CC2D's Creator UI essentials).
 ## Pick parts per slot, colours, skin, body type and body sliders, preview expressions,
-## animations and aiming, and save/load CC2D CharacterData JSON (compatible with Unity).
+## animations and aiming, save/load CC2D CharacterData JSON (compatible with Unity), and export
+## PNGs: a single image, a PNG sequence or a sprite sheet (CC2D's Export PNG screen).
 extends Node2D
 
 const PANEL_WIDTH := 470
@@ -27,6 +28,13 @@ var _file_dialog: FileDialog
 var _status: Label
 var _thumbs := {}
 var _updating := false
+var _exporter: CC2DExporter
+var _export_mode: OptionButton
+var _export_preset: OptionButton
+var _export_fields := {}   # name -> SpinBox / OptionButton / CheckBox
+var _export_dialog: FileDialog
+var _export_button: Button
+const EXPORT_MODES := ["Single image", "PNG sequence", "Sprite sheet"]
 
 
 func _ready() -> void:
@@ -163,6 +171,8 @@ func _build_ui() -> void:
 			pair.append(sl)
 		_sliders[segment] = pair
 
+	_build_export_ui(box)
+
 	# actions
 	_heading(box, "Character")
 	var act_row := _row(box)
@@ -185,6 +195,132 @@ func _build_ui() -> void:
 	_file_dialog.filters = PackedStringArray(["*.json ; CC2D character"])
 	_file_dialog.file_selected.connect(_on_file_selected)
 	add_child(_file_dialog)
+
+
+func _build_export_ui(box: VBoxContainer) -> void:
+	_exporter = CC2DExporter.new()
+	add_child(_exporter)
+	_heading(box, "Export PNG")
+	var row1 := _row(box)
+	_export_preset = OptionButton.new()
+	_export_preset.add_item("Custom")
+	for pr in CC2DExporter.get_presets():
+		_export_preset.add_item(pr.capitalize())
+	_export_preset.item_selected.connect(func(i):
+		if i > 0:
+			_exporter.apply_preset(CC2DExporter.get_presets()[i - 1])
+			_export_mode.select(int(_exporter.mode))
+			_refresh_export())
+	_labelled(row1, "Preset", _export_preset)
+	_export_mode = OptionButton.new()
+	for m in EXPORT_MODES:
+		_export_mode.add_item(m)
+	_labelled(row1, "As", _export_mode)
+
+	var row2 := _row(box)
+	_export_fields.width = _spin(row2, "W", 16, 4096, 1)
+	_export_fields.height = _spin(row2, "H", 16, 4096, 1)
+	_export_fields.fps = _spin(row2, "FPS", 1, 60, 1)
+	var row3 := _row(box)
+	_export_fields.x = _spin(row3, "X", -50, 50, 0.05)
+	_export_fields.y = _spin(row3, "Y", -50, 50, 0.05)
+	_export_fields.scale = _spin(row3, "Scale", 0.05, 10, 0.05)
+	var row4 := _row(box)
+	var bg := OptionButton.new()
+	for b in CC2DExporter.Background.keys():
+		bg.add_item(String(b).capitalize())
+	bg.item_selected.connect(func(_i): _read_export())
+	_labelled(row4, "Background", bg)
+	_export_fields.bg = bg
+	var sm := OptionButton.new()
+	sm.add_item("Automatic")
+	sm.add_item("Actual pixel size")
+	sm.item_selected.connect(func(_i): _read_export())
+	_labelled(row4, "Scale mode", sm)
+	_export_fields.scale_mode = sm
+	var row5 := _row(box)
+	for flag in ["flip", "loop_aim"]:
+		var cb := CheckBox.new()
+		cb.text = "Flip" if flag == "flip" else "Loop aim layer"
+		cb.toggled.connect(func(_on): _read_export())
+		row5.add_child(cb)
+		_export_fields[flag] = cb
+	_export_button = _button(row5, "Export…", func():
+		_export_dialog.current_dir = ProjectSettings.globalize_path("res://")
+		_export_dialog.current_file = "%s.png" % character.current_animation.to_snake_case()
+		_export_dialog.popup_centered(Vector2i(900, 600)))
+
+	_export_dialog = FileDialog.new()
+	_export_dialog.access = FileDialog.ACCESS_FILESYSTEM
+	_export_dialog.use_native_dialog = true
+	_export_dialog.file_mode = FileDialog.FILE_MODE_SAVE_FILE
+	_export_dialog.filters = PackedStringArray(["*.png ; PNG"])
+	_export_dialog.file_selected.connect(_export_to)
+	add_child(_export_dialog)
+	_exporter.progress.connect(func(i, n): _status.text = "Exporting frame %d / %d…" % [i, n])
+	_exporter.apply_preset("default")
+	_refresh_export()
+
+
+func _spin(row: HBoxContainer, label: String, lo: float, hi: float, step: float) -> SpinBox:
+	var sb := SpinBox.new()
+	sb.min_value = lo
+	sb.max_value = hi
+	sb.step = step
+	sb.custom_minimum_size = Vector2(90, 0)
+	sb.value_changed.connect(func(_v): _read_export())
+	_labelled(row, label, sb)
+	return sb
+
+
+## Exporter settings -> UI.
+func _refresh_export() -> void:
+	_updating = true
+	_export_fields.width.value = _exporter.width
+	_export_fields.height.value = _exporter.height
+	_export_fields.fps.value = _exporter.target_fps
+	_export_fields.x.value = _exporter.char_position.x
+	_export_fields.y.value = _exporter.char_position.y
+	_export_fields.scale.value = _exporter.char_scale
+	_export_fields.bg.select(int(_exporter.background))
+	_export_fields.scale_mode.select(int(_exporter.scale_mode))
+	_export_fields.flip.button_pressed = _exporter.flip
+	_export_fields.loop_aim.button_pressed = _exporter.loop_aim_layer
+	_updating = false
+
+
+## UI -> exporter settings (any edit makes the preset "Custom", as in CC2D).
+func _read_export() -> void:
+	if _updating:
+		return
+	_exporter.width = int(_export_fields.width.value)
+	_exporter.height = int(_export_fields.height.value)
+	_exporter.target_fps = int(_export_fields.fps.value)
+	_exporter.char_position = Vector2(_export_fields.x.value, _export_fields.y.value)
+	_exporter.char_scale = _export_fields.scale.value
+	_exporter.background = _export_fields.bg.selected as CC2DExporter.Background
+	_exporter.scale_mode = _export_fields.scale_mode.selected as CC2DExporter.ScaleMode
+	_exporter.flip = _export_fields.flip.button_pressed
+	_exporter.loop_aim_layer = _export_fields.loop_aim.button_pressed
+	_export_preset.select(0)
+
+
+func _export_to(path: String) -> void:
+	var anim := character.current_animation
+	var aim := character.aim_state
+	_export_button.disabled = true
+	match _export_mode.selected:
+		0:
+			var err := await _exporter.export_image(character, path)
+			_status.text = ("Saved " if err == OK else "Couldn't save ") + path
+		1:
+			var files := await _exporter.export_sequence(character, path, anim, aim)
+			_status.text = "Saved %d frames: %s … %s" % [files.size(), files[0].get_file() if files.size() > 0 else "", files[-1].get_file() if files.size() > 0 else ""]
+		2:
+			var sheet := await _exporter.export_sheet(character, path, anim, aim)
+			_status.text = "Saved a %dx%d sprite sheet (%d frames of %dx%d) to %s, with a .json next to it" % [
+				sheet.get_width(), sheet.get_height(), _exporter.frame_count(character, anim, aim), _exporter.width, _exporter.height, path]
+	_export_button.disabled = false
 
 
 func _heading(parent: Control, text: String) -> void:

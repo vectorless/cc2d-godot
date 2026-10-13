@@ -20,6 +20,10 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/cc2d/plugin.cfg")
+
 [importer_defaults]
 
 texture={

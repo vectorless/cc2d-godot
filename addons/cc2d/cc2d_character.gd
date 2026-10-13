@@ -28,6 +28,11 @@ const AIM_LAYER := "Aim Layer"
 const MAIN_HAND_WEAPONS := ["OneHanded", "TwoHanded", "Gun", "Rifle"]
 const OFF_HAND_WEAPONS := ["OneHanded", "Shield", "Bow", "Gun"]
 const TWO_HANDED_WEAPONS := ["TwoHanded", "Bow", "Rifle"]
+## SetupData.muzzleFXLinks: where each hand's muzzle flash lives (moved to Weapon.muzzlePosition).
+const MUZZLE_LINKS := {
+	"MainHand": "Root/Pos_Hip/Bone_Hip/Pos_Body/Bone_Body/Pos_Upper Arm R/Bone_Upper Arm R/Pos_Lower Arm R/Bone_Lower Arm R/Pos_Hand R/Bone_Hand R/Pos_Weapon R/Bone_Weapon R/Muzzle R",
+	"OffHand": "Root/Pos_Hip/Bone_Hip/Pos_Body/Bone_Body/Pos_Upper Arm L/Bone_Upper Arm L/Pos_Lower Arm L/Bone_Lower Arm L/Pos_Hand L/Bone_Hand L/Pos_Weapon L/Bone_Weapon L/Muzzle L",
+}
 
 signal character_loaded
 signal part_equipped(slot: String, part_name: String)
@@ -76,6 +81,10 @@ var body_sliders := {}
 var _segments := {}
 var _pos_affections := {}  # node path -> [{segment, data}] in Unity's insertion order
 var _rig_nodes := {}       # rig path -> node data from the rig json
+var _particles := {}       # rig path -> {node, fx: CPUParticles2D, shown, cycle} (muzzle flashes)
+var _posed := false        # frozen on one frame by pose() (for rendering) until the next play()
+var loaded_file := ""      ## the character.json this character was built from
+static var _flash_textures := {}   # padded particle textures, by source path
 
 static var _sprite_tables := {}
 static var _emote_keys := {}  # animations path -> {anim name: [times, values]}
@@ -94,6 +103,7 @@ func load_character(path: String) -> void:
 	data = _read_json(path)
 	if data.is_empty():
 		return
+	loaded_file = path
 	catalogue = _cached_json(data.get("parts", "res://cc2d/parts.json"))
 	body_type = data.get("body_type", "Male")
 	skin_color = _col(data.get("skin_color", [0.5, 0.5, 0.5, 1]))
@@ -183,10 +193,78 @@ func play(anim_name: String, blend := -1.0) -> void:
 	if animation_player == null or not animation_player.has_animation(anim_name):
 		push_warning("CC2DCharacter: no animation '%s'" % anim_name)
 		return
-	if anim_name == current_animation and animation_player.is_playing():
+	if anim_name == current_animation and animation_player.is_playing() and not _posed:
 		return
+	_posed = false
 	current_animation = anim_name
 	animation_player.play(anim_name, default_blend if blend < 0.0 else blend)
+
+
+## Freezes the character on one frame, for rendering: base animation at base_time seconds, plus
+## an Aim-layer state at aim_time seconds ("" = none). Muzzle flashes are simulated up to that
+## moment. play() / play_aim() unfreeze it.
+func pose(base_anim: String, base_time: float, aim := "", aim_time := 0.0) -> void:
+	if animation_player != null and animation_player.has_animation(base_anim):
+		current_animation = base_anim
+		animation_player.play(base_anim, 0.0)
+		animation_player.seek(base_time, true)
+		animation_player.pause()
+	if aim == "" or aim == "None" or _aim_state_data(aim) == null:
+		play_aim("")
+	else:
+		aim_state = aim
+		var length := get_aim_length(aim)
+		_aim_phase = aim_time / length if length > 0.0 else 0.0
+		_apply_aim()
+	_posed = true
+	_update_emote_anim_index()
+	for path in _particles:
+		var e: Dictionary = _particles[path]
+		e.shown = e.node.is_visible_in_tree()
+		e.cycle = int(floor(_aim_phase)) if aim_state != "" else -1
+		if e.shown:
+			# CPUParticles2D pre-simulates in 1/30 s steps on its next update (plus that frame).
+			var age := _flash_age(path, aim_time)
+			e.fx.preprocess = age if age >= 1.0 / 30.0 else 0.0
+			e.fx.restart()
+
+
+## Length in seconds of an Aim-layer state (its longest blend-tree child), 0 if it has none.
+func get_aim_length(state: String) -> float:
+	var length := 0.0
+	for c in _get_aim(state).children:
+		length = maxf(length, c.anim.length)
+	return length
+
+
+## Length in seconds of a base animation, 0 if there isn't one.
+func get_animation_length(anim_name: String) -> float:
+	if animation_player == null or not animation_player.has_animation(anim_name):
+		return 0.0
+	return animation_player.get_animation(anim_name).length
+
+
+## How long a muzzle flash has been on, at aim_time into the current aim state.
+func _flash_age(path: String, aim_time: float) -> float:
+	var e := _get_aim(aim_state)
+	var key := path + "|visible"
+	for c in e.children:
+		if not c.idx.has(key):
+			continue
+		var anim: Animation = c.anim
+		var t := fmod(aim_time, maxf(anim.length, 0.0001)) if c.loop else minf(aim_time, anim.length)
+		var tr: int = c.idx[key]
+		var onset := 0.0
+		for k in anim.track_get_key_count(tr):
+			var kt := anim.track_get_key_time(tr, k)
+			if kt > t + 0.0001:
+				break
+			var on: bool = anim.track_get_key_value(tr, k)
+			var prev: bool = anim.track_get_key_value(tr, k - 1) if k > 0 else false
+			if on and not prev:
+				onset = kt
+		return maxf(t - onset, 0.0)
+	return 0.0
 
 
 func get_animation_names() -> PackedStringArray:
@@ -310,8 +388,11 @@ func set_tint_color(color: Color) -> void:
 ## Starts an Aim-layer state ("Aim Bow", "Aim Rifle", "Shot Bow", "Rapid Shot Main Hand", ...)
 ## on top of the base animation, like animator.Play(state, 1). "" or "None" stops aiming.
 func play_aim(state: String) -> void:
+	_posed = false
 	if state == "" or state == "None":
 		aim_state = ""
+		for path in _particles:
+			_particles[path].node.visible = false   # the Aim layer's weight goes to 0: flashes off
 		return
 	if _aim_state_data(state) == null:
 		push_warning("CC2DCharacter: no aim state '%s'" % state)
@@ -684,7 +765,14 @@ func get_emotion_names() -> PackedStringArray:
 
 
 func _process(delta: float) -> void:
+	if _posed:
+		return
 	_advance_aim(delta)
+	_update_particles()
+	_update_emote_anim_index()
+
+
+func _update_emote_anim_index() -> void:
 	# emoteAnimIndex of the playing animation at its current time (-1 when it has none,
 	# which is what Unity's write-defaults gives).
 	if animation_player != null and animation_player.assigned_animation != "":
@@ -865,6 +953,10 @@ func _assign_weapon(slot: String) -> void:
 				_assign_sprites(wl.shield, {})
 				_assign_sprites(wl.off, {})
 				_assign_sprites(wl.bow, spr)
+	# HumanoidAssigner.AssignMuzzlePosition
+	var muzzle: Node2D = parts.get(MUZZLE_LINKS.get(slot, ""))
+	if muzzle != null:
+		muzzle.position = _v2(weapon.muzzle) if weapon != null and weapon.get("muzzle") != null else Vector2.ZERO
 
 
 func _assign_color_to_renderer(slot: String) -> void:
@@ -963,6 +1055,7 @@ func _clear() -> void:
 	sprites.clear()
 	cloth.clear()
 	_rig_nodes.clear()
+	_particles.clear()
 	materials.clear()
 	animation_player = null
 	current_animation = ""
@@ -1008,6 +1101,8 @@ func _build_nodes(nodes: Array) -> void:
 			parts[n.parent].add_child(node)
 		parts[n.path] = node
 		_rig_nodes[n.path] = n
+		if n.get("particles") != null:
+			_build_particles(n.path, node, n.particles)
 
 		var s = n.get("sprite")
 		if s == null:
@@ -1026,6 +1121,114 @@ func _build_nodes(nodes: Array) -> void:
 		node.add_child(spr)
 		node.move_child(spr, 0)
 		sprites[n.path] = spr
+
+
+# ================================================================== muzzle flashes
+
+## A Unity particle system (CC2D only uses them for gun muzzle flashes) as CPUParticles2D.
+## It plays when its node is shown (playOnAwake: the Shot clips switch the Muzzle object on and
+## off once per shot).
+func _build_particles(path: String, node: Node2D, p: Dictionary) -> void:
+	var holder := Node2D.new()
+	holder.name = "_particles"
+	holder.rotation = _v2(p.direction).angle()    # emit along +X of the holder
+	node.add_child(holder)
+	var fx := CPUParticles2D.new()
+	fx.name = "_fx"
+	fx.emitting = false
+	var burst := int(p.burst)
+	var life: Array = p.lifetime
+	fx.one_shot = not p.loop
+	fx.amount = maxi(1, burst if burst > 0 else int(ceil(float(p.rate) * float(life[1]))))
+	fx.explosiveness = 1.0 if burst > 0 else 0.0
+	fx.lifetime = maxf(float(life[1]), 0.01)
+	fx.lifetime_randomness = clampf(1.0 - float(life[0]) / fx.lifetime, 0.0, 1.0)
+	fx.local_coords = p.local
+	fx.direction = Vector2.RIGHT
+	fx.spread = float(p.spread)
+	fx.gravity = Vector2.ZERO
+	fx.initial_velocity_min = float(p.speed[0])
+	fx.initial_velocity_max = float(p.speed[1])
+	if float(p.radius) > 0.0:
+		fx.emission_shape = CPUParticles2D.EMISSION_SHAPE_SPHERE
+		fx.emission_sphere_radius = float(p.radius)
+	fx.z_index = int(p.z)
+	fx.color = _col(p.color)
+	if p.get("color_over_life") != null:
+		var g := Gradient.new()
+		g.offsets = PackedFloat32Array()
+		g.colors = PackedColorArray()
+		for k in p.color_over_life:
+			g.add_point(float(k[0]), Color(k[1], k[2], k[3], k[4]))
+		fx.color_ramp = g
+	if p.get("texture") != null:
+		var stretch: bool = p.get("render_mode", "") == "Stretch"
+		var length := absf(float(p.get("length_scale", 1.0))) if stretch else 1.0
+		var forward = null
+		if stretch:
+			forward = float(p.get("length_scale", 1.0)) < 0.0
+		var tex := _flash_texture(p.texture, length, forward)
+		fx.texture = tex
+		var art := float(tex.get_height())    # Unity's quad is size x size (x |lengthScale| along the motion)
+		fx.scale_amount_min = float(p.size[0]) / art
+		fx.scale_amount_max = float(p.size[1]) / art
+	if p.get("additive", false):
+		var m := CanvasItemMaterial.new()
+		m.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
+		fx.material = m
+	holder.add_child(fx)
+	_particles[path] = {"node": node, "fx": fx, "shown": false, "cycle": -1}
+
+
+## Unity draws a stretched billboard from the particle's position along its velocity (forward,
+## for a negative lengthScale) and CPUParticles2D draws textures centred, so: pad the texture
+## with transparency on the other side, so its centre is the art's back (or front) edge.
+## forward: true / false = stretched forward / backward, null = not stretched (as is).
+static func _flash_texture(path: String, length: float, forward) -> Texture2D:
+	var key := "%s|%s|%s" % [path, length, forward]
+	if _flash_textures.has(key):
+		return _flash_textures[key]
+	var src: Texture2D = _tex(path)
+	if forward == null or src == null:
+		_flash_textures[key] = src
+		return src
+	var img := src.get_image()
+	if img.is_compressed():
+		img.decompress()
+	img.convert(Image.FORMAT_RGBA8)
+	var w := maxi(1, int(round(img.get_width() * length)))
+	if w != img.get_width():
+		img.resize(w, img.get_height(), Image.INTERPOLATE_BILINEAR)
+	var out := Image.create(w * 2, img.get_height(), false, Image.FORMAT_RGBA8)
+	out.blit_rect(img, Rect2i(0, 0, w, img.get_height()), Vector2i(w if forward else 0, 0))
+	var tex := ImageTexture.create_from_image(out)
+	_flash_textures[key] = tex
+	return tex
+
+
+## Restart a flash when its node is switched on, and again when a looping Shot clip comes round
+## (Rapid Shot's "off" frame can be shorter than a frame).
+func _update_particles() -> void:
+	var cycle := int(floor(_aim_phase)) if aim_state != "" else -1
+	for path in _particles:
+		var e: Dictionary = _particles[path]
+		var shown: bool = e.node.is_visible_in_tree()
+		if shown and (not e.shown or cycle != e.cycle):
+			e.fx.preprocess = 0.0
+			e.fx.restart()
+		e.shown = shown
+		e.cycle = cycle
+
+
+## Fire the muzzle flash of a hand by hand ("MainHand" / "OffHand"), outside of the Shot clips.
+func muzzle_flash(slot := "MainHand") -> void:
+	var e = _particles.get(MUZZLE_LINKS.get(slot, ""))
+	if e == null:
+		return
+	e.node.visible = true
+	e.fx.preprocess = 0.0
+	e.fx.restart()
+	e.shown = true
 
 
 func _build_cloth(cloth_data: Dictionary) -> void:

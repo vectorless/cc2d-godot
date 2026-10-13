@@ -1,2 +1,4 @@
 .godot/
 .DS_Store
+tests/shots/
+.unity_muzzle_ref.png
