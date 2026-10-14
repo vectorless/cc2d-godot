@@ -142,3 +142,24 @@ body-specific clothes, like CC2D does). Only `id`, `category`, `name`, `template
   regenerating, focus the Godot editor (or run `godot --headless --import`) before testing.
 - Each part is one image-model call (plus one matte call if enabled). Reconverting is free,
   so tweak fit rules first and regenerate only when the drawing itself is wrong.
+
+## Checking and fixing generated parts
+
+`python3 check_parts.py [custom/<pack> ...] [--only "Part name"] [--sheet tests/shots/check.png]` compares every
+custom part with its template and flags the problems seen so far: background or blank fills kept inside a part
+(white between straps, a blank face in a hairstyle), skin-coloured colour channels (bare skin that would recolour
+with the garment), template area left bare (skin showing through), pieces reaching outside the template (rear
+straps drawn in front of the neck, offset tops), stray bits and thin lines, held items that are too small/large or
+don't reach the hand, and format problems (sizes, missing .import, colours). `--sheet` draws the flagged parts
+(template | part | overlay: red = bare, blue = outside). Mark intended results in the spec with `"qa_ignore"`.
+
+`python3 fixparts.py custom/<pack> "Part name" <fix> ...` fixes a finished part in place (originals backed up to
+`~/packgen_work/_backup`): `unskin`, `fill_feet` (white socks cut away with the background), `rear_strap`,
+`white_holes`, `drop1/2/3` (make one colour channel transparent, e.g. drawn-in skin), `down100`/`up`/`left`/`right`
+(move the part). Always look at a render afterwards (`tests/custom_preview.tscn`).
+
+Meshy (`mesh.py`, key in `~/.secrets/meshy`): set `"model": "meshy/nano-banana-pro"` on a spec or part. Meshy's
+nano-banana models only take 1:1, 4:3, 3:4, 16:9 and 9:16; other sheets are padded with white and cropped back.
+
+Skin Details overlays (stockings, choker) multiply the skin, so they can only darken it: opaque light items
+(white socks) belong in the Boots slot. Only one Skin Details overlay can be worn at a time.

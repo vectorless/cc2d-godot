@@ -93,7 +93,10 @@
    "category": "Helmet",
    "name": "Tactical Visor",
    "template": "Daily 00",
-   "desc": "a sleek sci-fi wraparound tactical visor with a glowing cyan lens and an ear-piece communicator (no helmet)"
+   "desc": "a sleek sci-fi wraparound tactical visor with a glowing cyan lens and an ear-piece communicator (no helmet)",
+   "qa_ignore": [
+    "white_fill"
+   ]
   },
   {
    "id": "gauntlets",

@@ -1,0 +1,820 @@
+{
+ "format": 1,
+ "package": "Police",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Patrol Shirt Male",
+    "package": "Police",
+    "texture": "res://custom/police/textures/Armor/Patrol Shirt Male.png",
+    "mask": "res://custom/police/textures/Armor/Patrol Shirt Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2352,
+      0.2699,
+      0.3685,
+      1.0
+     ],
+     [
+      0.886,
+      0.888,
+      0.8914,
+      1.0
+     ],
+     [
+      0.5884,
+      0.5923,
+      0.5999,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a navy-blue police patrol uniform shirt with long sleeves, shoulder epaulettes, two chest pockets, a plain silver star badge on the chest and a dark tie Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Patrol Shirt Female",
+    "package": "Police",
+    "texture": "res://custom/police/textures/Armor/Patrol Shirt Female.png",
+    "mask": "res://custom/police/textures/Armor/Patrol Shirt Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/police/textures/Armor/Patrol Shirt Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2306,
+      0.2701,
+      0.3799,
+      1.0
+     ],
+     [
+      0.6036,
+      0.6081,
+      0.6169,
+      1.0
+     ],
+     [
+      0.9046,
+      0.9085,
+      0.9152,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "a fitted navy-blue police patrol uniform shirt with long sleeves, shoulder epaulettes, chest pockets and a plain silver star badge Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Hi-Vis Duty Vest Male",
+    "package": "Police",
+    "texture": "res://custom/police/textures/Armor/Hi-Vis Duty Vest Male.png",
+    "mask": "res://custom/police/textures/Armor/Hi-Vis Duty Vest Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/police/textures/Armor/Hi-Vis Duty Vest Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/police/textures/Armor/Hi-Vis Duty Vest Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/police/textures/Armor/Hi-Vis Duty Vest Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/police/textures/Armor/Hi-Vis Duty Vest Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/police/textures/Armor/Hi-Vis Duty Vest Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/police/textures/Armor/Hi-Vis Duty Vest Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.8862,
+      0.998,
+      0.1784,
+      1.0
+     ],
+     [
+      0.8616,
+      0.8626,
+      0.8604,
+      1.0
+     ],
+     [
+      0.5028,
+      0.5439,
+      0.2536,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a fluorescent yellow high-visibility police duty vest with silver reflective stripes and radio clip, worn over a navy long-sleeved shirt Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   }
+  ],
+  "Pants": [
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Patrol Trousers Male",
+    "package": "Police",
+    "texture": "res://custom/police/textures/Pants/Patrol Trousers Male.png",
+    "mask": "res://custom/police/textures/Pants/Patrol Trousers Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2251,
+      0.2527,
+      0.3179,
+      1.0
+     ],
+     [
+      0.5884,
+      0.6463,
+      0.7148,
+      1.0
+     ],
+     [
+      0.9102,
+      0.9121,
+      0.9138,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "navy-blue police uniform trousers with a black duty belt holding pouches and a thin lighter-blue stripe down the outer seam Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Patrol Trousers Female",
+    "package": "Police",
+    "texture": "res://custom/police/textures/Pants/Patrol Trousers Female.png",
+    "mask": "res://custom/police/textures/Pants/Patrol Trousers Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/police/textures/Pants/Patrol Trousers Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2434,
+      0.2714,
+      0.3431,
+      1.0
+     ],
+     [
+      0.582,
+      0.6007,
+      0.6375,
+      1.0
+     ],
+     [
+      0.9116,
+      0.9156,
+      0.9182,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "navy-blue police uniform trousers with a black duty belt and a thin lighter-blue stripe down the outer seam Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   }
+  ],
+  "Helmet": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Police Peaked Cap",
+    "package": "Police",
+    "texture": "res://custom/police/textures/Helmet/Police Peaked Cap.png",
+    "mask": "res://custom/police/textures/Helmet/Police Peaked Cap Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/police/textures/Helmet/Police Peaked Cap.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2634,
+      0.2948,
+      0.3878,
+      1.0
+     ],
+     [
+      0.999,
+      0.9991,
+      0.999,
+      1.0
+     ],
+     [
+      0.5694,
+      0.5709,
+      0.5766,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a navy-blue police peaked cap with a black glossy visor, a black-and-white chequered band and a plain silver badge Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   }
+  ],
+  "Boots": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Duty Boots",
+    "package": "Police",
+    "texture": "res://custom/police/textures/Boots/Duty Boots.png",
+    "mask": "res://custom/police/textures/Boots/Duty Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/police/textures/Boots/Duty Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/police/textures/Boots/Duty Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/police/textures/Boots/Duty Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/police/textures/Boots/Duty Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/police/textures/Boots/Duty Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/police/textures/Boots/Duty Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3115,
+      0.3117,
+      0.3108,
+      1.0
+     ],
+     [
+      0.5251,
+      0.5253,
+      0.5243,
+      1.0
+     ],
+     [
+      0.8662,
+      0.8664,
+      0.8633,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "black polished leather police duty boots reaching mid-calf, laced The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+   }
+  ],
+  "Weapon": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Police Baton",
+    "package": "Police",
+    "texture": "res://custom/police/textures/Weapon/Police Baton.png",
+    "mask": "res://custom/police/textures/Weapon/Police Baton Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/police/textures/Weapon/Police Baton.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2412,
+      0.2412,
+      0.2413,
+      1.0
+     ],
+     [
+      0.3987,
+      0.3981,
+      0.4005,
+      1.0
+     ],
+     [
+      0.8365,
+      0.837,
+      0.8371,
+      1.0
+     ]
+    ],
+    "template": "Sword 00",
+    "desc": "a black police baton (side-handle nightstick), the handle where the input's grip is"
+   }
+  ]
+ }
+}

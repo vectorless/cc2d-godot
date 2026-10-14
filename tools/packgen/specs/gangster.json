@@ -71,8 +71,9 @@
    "category": "Boots",
    "name": "Two-Tone Wingtips",
    "template": "Daily 00",
-   "desc": "1950s two-tone spectator wingtip brogue shoes, black and white leather, with laces",
-   "matte": true
+   "desc": "1950s two-tone spectator wingtip brogue shoes, black and white leather, with laces. The sheet has three shoes: the top two are side views (toe pointing right); the bottom one is the same shoe seen from the FRONT, toe pointing straight at the viewer, small and narrow like the input's bottom piece - not a side view and not a back view.",
+   "matte": true,
+   "model": "meshy/nano-banana-pro"
   },
   {
    "id": "spats",

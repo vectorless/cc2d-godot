@@ -19,8 +19,12 @@ Checks (name: what it catches, e.g.)
   thin_lines    stray thin lines not attached to the drawing (a leftover body or jaw outline)
   prop_size     held item much smaller/bigger than the template item
   prop_grip     held item doesn't reach the hand (grip point)
+
+A part's spec entry can list checks to skip when the result is intended: "qa_ignore": ["uncovered", "thin_lines"].
+Fix tools for what it finds: fixparts.py (unskin, fill_feet, rear_strap, white_holes, dropN, down/up/left/rightN).
 """
 import json, os, sys, glob
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 from PIL import Image, ImageDraw
 from scipy import ndimage
@@ -83,9 +87,13 @@ def check_part(cat, p, tp, guide):
             hue = 0 if mx == mn else (60 * ((g - b) / (mx - mn)) % 360 if mx == r else 0)
             ch = M[..., i] > 128
             share = (ch & (T[..., 3] > 128)).sum() / max((T[..., 3] > 128).sum(), 1)
-            if mx == r and 8 <= hue <= 45 and 0.18 <= sat <= 0.6 and 0.35 <= mx <= 0.98 and share > 0.03 \
+            if mx == r and 8 <= hue <= 45 and 0.12 <= sat <= 0.6 and 0.35 <= mx <= 1.0 and share > 0.03 \
                     and cat not in ('Hair', 'Helmet', 'Weapon', 'Mouth', 'FacialHair'):
                 probs.append(('skin_channel', 'colour %d %s looks like skin and covers %.0f%% of the part' % (i + 1, np.round(c[:3], 2).tolist(), share * 100)))
+    RGB = T[..., :3]
+    if len(cols) == 3:
+        from fixparts import shaded
+        RGB = shaded(T, M, cols) * 255
     ov = np.zeros(T.shape[:2] + (3,), np.uint8)
     a = T[..., 3] > 128
     for name, (x, y, w, h) in regions(cat, p, (T.shape[1], T.shape[0])).items():
@@ -96,11 +104,19 @@ def check_part(cat, p, tp, guide):
         if not pa.any():
             probs.append(('uncovered', '%s: empty' % name)); continue
         lum = T[sl][..., :3].mean(-1)
-        # white_fill: big flat near-white blobs inside the drawing
-        white = pa & (T[sl][..., :3].min(-1) > 225) & (np.ptp(T[sl][..., :3], axis=-1) < 18)
+        # white_fill: big flat near-white blobs inside the drawing, judged on the part as coloured in game
+        C = RGB[sl]
+        tl = T[sl][..., :3].mean(-1)
+        tmu = ndimage.uniform_filter(tl, 9); tsd = np.sqrt(np.maximum(ndimage.uniform_filter(tl * tl, 9) - tmu * tmu, 0))
+        # background kept as cloth is white AND perfectly flat in the shading texture (white fabric still has shading)
+        white = pa & (C.min(-1) > 225) & (np.ptp(C, axis=-1) < 18) & (tsd < 1.2)
         lab, n = ndimage.label(white)
         if n:
-            sz = ndimage.sum(white, lab, range(1, n + 1)); big = sz[sz >= 150].sum()
+            # only white blobs lying mostly where the template has no cloth (a face opening, between a rifle and its sling,
+            # inside a strap loop): white fabric sits on the template, kept background mostly doesn't
+            near_t = ndimage.binary_dilation(ta, iterations=6)
+            sz = np.array([((lab == i) & ~near_t).sum() if (lab == i).sum() >= 150 and ((lab == i) & ~near_t).mean() * 0 + ((lab == i) & ~near_t).sum() / (lab == i).sum() > 0.6 else 0 for i in range(1, n + 1)])
+            big = sz.sum()
             if big > 0.04 * pa.sum():
                 probs.append(('white_fill', '%s: %.0f%% is flat white' % (name, 100 * big / pa.sum())))
         # flat_fill: large unshaded areas
@@ -199,6 +215,7 @@ def main(argv):
                 sp = specs.get((p['package'], p['name']), {})
                 guide = os.path.join(HERE, sp['template_texture']) if sp.get('template_texture') else None
                 probs, ov = check_part(cat, p, tp, guide)
+                probs = [(k, m) for k, m in probs if k not in sp.get('qa_ignore', [])]   # known, intended (set in the spec)
                 for k, msg in probs:
                     print('%-14s %-12s %-34s %-12s %s' % (p['package'], cat, p['name'], k, msg))
                 total += len(probs)

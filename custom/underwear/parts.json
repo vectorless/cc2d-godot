@@ -1130,82 +1130,6 @@
      "Male",
      "Female"
     ],
-    "name": "Classic High Heels",
-    "package": "Underwear",
-    "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
-    "mask": "res://custom/underwear/textures/Boots/Classic High Heels Mask.png",
-    "sprites": {
-     "Boots Foot R": {
-      "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
-      "region": [
-       0,
-       0,
-       256,
-       170
-      ],
-      "offset": [
-       -128,
-       -85
-      ],
-      "px_scale": 1
-     },
-     "Boots Foot F": {
-      "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
-      "region": [
-       0,
-       340,
-       180,
-       172
-      ],
-      "offset": [
-       -90,
-       -86
-      ],
-      "px_scale": 1
-     },
-     "Boots Foot L": {
-      "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
-      "region": [
-       0,
-       170,
-       256,
-       170
-      ],
-      "offset": [
-       -128,
-       -85
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.3657,
-      0.3653,
-      0.3651,
-      1.0
-     ],
-     [
-      0.6084,
-      0.1676,
-      0.1791,
-      1.0
-     ],
-     [
-      0.8329,
-      0.8329,
-      0.8322,
-      1.0
-     ]
-    ],
-    "template": "Daily 00",
-    "desc": "glossy black patent leather stiletto court shoes with pointed toes and tall thin heels"
-   },
-   {
-    "body": [
-     "Male",
-     "Female"
-    ],
     "name": "Knee-High Boots",
     "package": "Underwear",
     "texture": "res://custom/underwear/textures/Boots/Knee-High Boots.png",
@@ -1318,6 +1242,148 @@
     ],
     "template": "Fantasy 03",
     "desc": "sleek knee-high black leather fashion boots with slim block heels and a side zip. The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Classic High Heels",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
+    "mask": "res://custom/underwear/textures/Boots/Classic High Heels Mask.png",
+    "sprites": {
+     "Boots Foot R": {
+      "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
+      "region": [
+       0,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot F": {
+      "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
+      "region": [
+       0,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
+      "region": [
+       0,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3137,
+      0.3141,
+      0.3137,
+      1.0
+     ],
+     [
+      0.6017,
+      0.6019,
+      0.6011,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "glossy black patent leather stiletto court shoes with pointed toes and tall thin heels. The sheet has three shoes: the top two are side views (toe pointing right); the bottom one is the same shoe seen from the FRONT, toe pointing straight at the viewer, small and narrow like the input's bottom piece - not a side view and not a back view."
+   }
+  ],
+  "SkinDetails": [
+   {
+    "name": "Sheer Hold-Up Stockings",
+    "package": "Underwear",
+    "body": [
+     "Female"
+    ],
+    "texture": "res://custom/underwear/textures/SkinDetails/Sheer Hold-Up Stockings.png",
+    "mask": null,
+    "sprites": {},
+    "colors": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      1
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "sheer black thigh-high hold-up stockings with a lace band (skin overlay, multiplies the skin)"
+   },
+   {
+    "name": "Velvet Choker",
+    "package": "Underwear",
+    "body": [
+     "Female"
+    ],
+    "texture": "res://custom/underwear/textures/SkinDetails/Velvet Choker.png",
+    "mask": null,
+    "sprites": {},
+    "colors": [
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      1
+     ],
+     [
+      1,
+      1,
+      1,
+      1
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "black velvet choker (skin overlay on the neck)"
    }
   ]
  }

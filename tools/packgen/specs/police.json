@@ -1,0 +1,67 @@
+{
+ "pack_dir": "custom/police",
+ "package": "Police",
+ "model": "meshy/nano-banana-pro",
+ "parts": [
+  {
+   "id": "shirt_m",
+   "category": "Armor",
+   "name": "Patrol Shirt Male",
+   "template": "Daily 09 Male",
+   "desc": "a navy-blue police patrol uniform shirt with long sleeves, shoulder epaulettes, two chest pockets, a plain silver star badge on the chest and a dark tie Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "shirt_f",
+   "category": "Armor",
+   "name": "Patrol Shirt Female",
+   "template": "Daily 09 Female",
+   "desc": "a fitted navy-blue police patrol uniform shirt with long sleeves, shoulder epaulettes, chest pockets and a plain silver star badge Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "vest_m",
+   "category": "Armor",
+   "name": "Hi-Vis Duty Vest Male",
+   "template": "Daily 09 Male",
+   "desc": "a fluorescent yellow high-visibility police duty vest with silver reflective stripes and radio clip, worn over a navy long-sleeved shirt Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "trousers_m",
+   "category": "Pants",
+   "name": "Patrol Trousers Male",
+   "template": "Daily 01 Male",
+   "desc": "navy-blue police uniform trousers with a black duty belt holding pouches and a thin lighter-blue stripe down the outer seam Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "trousers_f",
+   "category": "Pants",
+   "name": "Patrol Trousers Female",
+   "template": "Daily 01 Female",
+   "desc": "navy-blue police uniform trousers with a black duty belt and a thin lighter-blue stripe down the outer seam Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "cap",
+   "category": "Helmet",
+   "name": "Police Peaked Cap",
+   "template": "Daily 00",
+   "desc": "a navy-blue police peaked cap with a black glossy visor, a black-and-white chequered band and a plain silver badge Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "boots",
+   "category": "Boots",
+   "name": "Duty Boots",
+   "template": "Fantasy 03",
+   "template_texture": "templates/Tall Boot.png",
+   "matte": true,
+   "desc": "black polished leather police duty boots reaching mid-calf, laced The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+  },
+  {
+   "id": "baton",
+   "category": "Weapon",
+   "name": "Police Baton",
+   "template": "Sword 00",
+   "mode": "area",
+   "scale": 0.6,
+   "desc": "a black police baton (side-handle nightstick), the handle where the input's grip is"
+  }
+ ]
+}

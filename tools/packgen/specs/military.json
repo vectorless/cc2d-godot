@@ -1,0 +1,72 @@
+{
+ "pack_dir": "custom/military",
+ "package": "Military",
+ "model": "meshy/nano-banana-pro",
+ "parts": [
+  {
+   "id": "combat_m",
+   "category": "Armor",
+   "name": "Combat Jacket Male",
+   "template": "Daily 09 Male",
+   "desc": "a woodland-camouflage military combat jacket (green, brown and black blotches) with long sleeves, chest pockets and a plain olive armband Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "combat_f",
+   "category": "Armor",
+   "name": "Combat Jacket Female",
+   "template": "Daily 09 Female",
+   "desc": "a fitted woodland-camouflage military combat jacket with long sleeves and chest pockets Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "dress_m",
+   "category": "Armor",
+   "name": "Dress Uniform Jacket Male",
+   "template": "Daily 09 Male",
+   "desc": "a smart olive-green military dress uniform jacket with brass buttons, shoulder boards, a row of plain coloured ribbon bars and a khaki shirt and tie Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "cargo_m",
+   "category": "Pants",
+   "name": "Combat Trousers Male",
+   "template": "Daily 01 Male",
+   "desc": "woodland-camouflage military combat trousers with thigh cargo pockets, a webbing belt and knee pads Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "cargo_f",
+   "category": "Pants",
+   "name": "Combat Trousers Female",
+   "template": "Daily 01 Female",
+   "desc": "woodland-camouflage military combat trousers with thigh cargo pockets and a webbing belt Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "helmet",
+   "category": "Helmet",
+   "name": "Combat Helmet",
+   "template": "Daily 00",
+   "desc": "an olive-green military combat helmet with a camouflage cover and a chin strap (headwear only, no head) Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "beret",
+   "category": "Helmet",
+   "name": "Beret",
+   "template": "Daily 00",
+   "desc": "a dark green military beret worn tilted to one side, with a plain brass badge Original design: no real police force, army or country names, flags, crests or insignia; no text."
+  },
+  {
+   "id": "boots",
+   "category": "Boots",
+   "name": "Combat Boots",
+   "template": "Fantasy 03",
+   "template_texture": "templates/Tall Boot.png",
+   "matte": true,
+   "desc": "black leather military combat boots reaching mid-calf, laced to the top, with thick rugged soles The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+  },
+  {
+   "id": "rifle",
+   "category": "Weapon",
+   "name": "Service Rifle",
+   "template": "Rifle 00",
+   "desc": "a generic modern military service rifle in matte black with a short scope and a sling (not a copy of a specific real model)"
+  }
+ ]
+}

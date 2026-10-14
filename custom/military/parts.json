@@ -1,0 +1,868 @@
+{
+ "format": 1,
+ "package": "Military",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Combat Jacket Male",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Armor/Combat Jacket Male.png",
+    "mask": "res://custom/military/textures/Armor/Combat Jacket Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.428,
+      0.4535,
+      0.317,
+      1.0
+     ],
+     [
+      0.2663,
+      0.3161,
+      0.2007,
+      1.0
+     ],
+     [
+      0.6761,
+      0.6673,
+      0.6116,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a woodland-camouflage military combat jacket (green, brown and black blotches) with long sleeves, chest pockets and a plain olive armband Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Combat Jacket Female",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Armor/Combat Jacket Female.png",
+    "mask": "res://custom/military/textures/Armor/Combat Jacket Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/military/textures/Armor/Combat Jacket Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4291,
+      0.4813,
+      0.3446,
+      1.0
+     ],
+     [
+      0.296,
+      0.3324,
+      0.2337,
+      1.0
+     ],
+     [
+      0.723,
+      0.7129,
+      0.657,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "a fitted woodland-camouflage military combat jacket with long sleeves and chest pockets Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Dress Uniform Jacket Male",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Armor/Dress Uniform Jacket Male.png",
+    "mask": "res://custom/military/textures/Armor/Dress Uniform Jacket Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/military/textures/Armor/Dress Uniform Jacket Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/military/textures/Armor/Dress Uniform Jacket Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/military/textures/Armor/Dress Uniform Jacket Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/military/textures/Armor/Dress Uniform Jacket Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/military/textures/Armor/Dress Uniform Jacket Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/military/textures/Armor/Dress Uniform Jacket Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5045,
+      0.4873,
+      0.3558,
+      1.0
+     ],
+     [
+      0.3573,
+      0.3537,
+      0.2432,
+      1.0
+     ],
+     [
+      0.8879,
+      0.8501,
+      0.7618,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a smart olive-green military dress uniform jacket with brass buttons, shoulder boards, a row of plain coloured ribbon bars and a khaki shirt and tie Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   }
+  ],
+  "Pants": [
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Combat Trousers Male",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Pants/Combat Trousers Male.png",
+    "mask": "res://custom/military/textures/Pants/Combat Trousers Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3851,
+      0.4637,
+      0.3129,
+      1.0
+     ],
+     [
+      0.7089,
+      0.6512,
+      0.4932,
+      1.0
+     ],
+     [
+      0.9139,
+      0.9133,
+      0.9024,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "woodland-camouflage military combat trousers with thigh cargo pockets, a webbing belt and knee pads Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Combat Trousers Female",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Pants/Combat Trousers Female.png",
+    "mask": "res://custom/military/textures/Pants/Combat Trousers Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/military/textures/Pants/Combat Trousers Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3673,
+      0.3495,
+      0.2535,
+      1.0
+     ],
+     [
+      0.5067,
+      0.4889,
+      0.3692,
+      1.0
+     ],
+     [
+      0.757,
+      0.7457,
+      0.7028,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "woodland-camouflage military combat trousers with thigh cargo pockets and a webbing belt Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   }
+  ],
+  "Helmet": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Combat Helmet",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Helmet/Combat Helmet.png",
+    "mask": "res://custom/military/textures/Helmet/Combat Helmet Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/military/textures/Helmet/Combat Helmet.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3901,
+      0.402,
+      0.2896,
+      1.0
+     ],
+     [
+      0.5963,
+      0.6005,
+      0.4815,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "an olive-green military combat helmet with a camouflage cover and a chin strap (headwear only, no head) Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Beret",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Helmet/Beret.png",
+    "mask": "res://custom/military/textures/Helmet/Beret Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/military/textures/Helmet/Beret.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2555,
+      0.3591,
+      0.2403,
+      1.0
+     ],
+     [
+      0.8995,
+      0.8178,
+      0.5601,
+      1.0
+     ],
+     [
+      0.1829,
+      0.2708,
+      0.1724,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a dark green military beret worn tilted to one side, with a plain brass badge Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   }
+  ],
+  "Boots": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Combat Boots",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Boots/Combat Boots.png",
+    "mask": "res://custom/military/textures/Boots/Combat Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/military/textures/Boots/Combat Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/military/textures/Boots/Combat Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/military/textures/Boots/Combat Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/military/textures/Boots/Combat Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/military/textures/Boots/Combat Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/military/textures/Boots/Combat Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2522,
+      0.2524,
+      0.2516,
+      1.0
+     ],
+     [
+      0.3885,
+      0.3878,
+      0.3879,
+      1.0
+     ],
+     [
+      0.8377,
+      0.8373,
+      0.8379,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "black leather military combat boots reaching mid-calf, laced to the top, with thick rugged soles The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+   }
+  ],
+  "Weapon": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "Rifle",
+    "muzzle": [
+     84,
+     489
+    ],
+    "name": "Service Rifle",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Weapon/Service Rifle.png",
+    "mask": "res://custom/military/textures/Weapon/Service Rifle Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/military/textures/Weapon/Service Rifle.png",
+      "region": [
+       0,
+       0,
+       1024,
+       512
+      ],
+      "offset": [
+       -354.5041,
+       -281.5493
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3981,
+      0.3981,
+      0.3978,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     [
+      0.7792,
+      0.7793,
+      0.779,
+      1.0
+     ]
+    ],
+    "template": "Rifle 00",
+    "desc": "a generic modern military service rifle in matte black with a short scope and a sling (not a copy of a specific real model)"
+   }
+  ]
+ }
+}

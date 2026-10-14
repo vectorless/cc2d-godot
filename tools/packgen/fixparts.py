@@ -7,6 +7,8 @@ fixes:
   fill_feet    white socks whose foot was cut away with the white background -> fill the foot back in
   rear_strap   strap(s) rising above the neckline on the back (left) side -> removed
   white_holes  flat white areas enclosed by the drawing (between straps, inside rings) -> transparent
+  down<N> / up<N> / left<N> / right<N>   move the whole part by N px (e.g. down110: a visor sitting too high)
+  drop1 / drop2 / drop3   everything on colour channel N -> transparent (e.g. the channel that is bare skin)
 """
 import json, os, sys, shutil
 import numpy as np
@@ -55,8 +57,25 @@ def fill_feet(T, M, p, cat):
             continue
         x, y, w, h = v['region']; sl = (slice(y, y + h), slice(x, x + w))
         a = T[sl][..., 3] > 60
+        if not a.any():
+            continue
         closed = ndimage.binary_closing(a, structure=np.ones((3, 3)), iterations=6)
+        # the sock outline is open at the ankle: close it across its top rows before filling
+        ys = np.nonzero(closed.any(1))[0]
+        for yy in range(ys[0], min(ys[0] + 6, ys[-1])):
+            xs = np.nonzero(closed[yy])[0]
+            if len(xs) > 1:
+                closed[yy, xs[0]:xs[-1] + 1] = True
         filled = ndimage.binary_fill_holes(closed)
+        if filled.sum() < 1.6 * a.sum():
+            # still open (outline with gaps): fill the outline's convex hull instead
+            from scipy.spatial import ConvexHull
+            from PIL import ImageDraw
+            yy, xx = np.nonzero(a)
+            hull = ConvexHull(np.c_[xx, yy])
+            poly = Image.new('L', (a.shape[1], a.shape[0]), 0)
+            ImageDraw.Draw(poly).polygon([(float(xx[i]), float(yy[i])) for i in hull.vertices], fill=255)
+            filled = filled | (np.asarray(poly) > 0)
         add = filled & ~a
         if not add.any():
             continue
@@ -93,7 +112,17 @@ def white_holes(T, M, p, cat):
     return int(holes.sum())
 
 
-FIXES = {'unskin': unskin, 'fill_feet': fill_feet, 'rear_strap': rear_strap, 'white_holes': white_holes}
+def drop(k):
+    def f(T, M, p, cat):
+        ch = (M[..., k] > 128) & (M[..., k] >= M[..., :3].max(-1)) & (T[..., 3] > 0)
+        rim = ndimage.binary_dilation(ch, iterations=1) & (M[..., :3].max(-1) < 60) & (T[..., :3].mean(-1) > 110)
+        kill = ch | rim
+        T[..., 3] = np.where(kill, 0, T[..., 3]); M[kill] = 0
+        return int(kill.sum())
+    return f
+
+
+FIXES = {'drop1': drop(0), 'drop2': drop(1), 'drop3': drop(2), 'unskin': unskin, 'fill_feet': fill_feet, 'rear_strap': rear_strap, 'white_holes': white_holes}
 
 
 def main(pack, name, fixes):
@@ -112,6 +141,19 @@ def main(pack, name, fixes):
             T = np.asarray(Image.open(tp).convert('RGBA')).astype(np.float32).copy()
             M = np.asarray(Image.open(mp).convert('RGBA')).astype(np.float32).copy()
             for fx in fixes:
+                mv = next((k for k in ('down', 'up', 'left', 'right') if fx.startswith(k) and fx[len(k):].isdigit()), None)
+                if mv:
+                    n = int(fx[len(mv):]); ax = 0 if mv in ('down', 'up') else 1; n = n if mv in ('down', 'right') else -n
+                    for A in (T, M):
+                        A[:] = np.roll(A, n, axis=ax)
+                        if ax == 0:
+                            A[:n] = 0 if n > 0 else A[:n]
+                            if n < 0: A[n:] = 0
+                        else:
+                            if n > 0: A[:, :n] = 0
+                            else: A[:, n:] = 0
+                    print('%s: moved %s %d px' % (name, mv, abs(n)))
+                    continue
                 print('%s: %s changed %d px' % (name, fx, FIXES[fx](T, M, p, cat)))
             Image.fromarray(np.clip(T, 0, 255).astype(np.uint8)).save(tp)
             Image.fromarray(np.clip(M, 0, 255).astype(np.uint8)).save(mp)
