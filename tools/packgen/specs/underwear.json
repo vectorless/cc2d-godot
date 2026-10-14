@@ -58,8 +58,8 @@
    "template": "Daily 01 Female",
    "desc": "sheer black thigh-high stockings with lace tops, attached to a black lace garter belt worn over briefs at the hips",
    "qa_ignore": [
-    "skin_channel",
-    "uncovered",
+	"skin_channel",
+	"uncovered",
     "thin_lines"
    ]
   },
