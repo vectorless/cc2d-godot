@@ -1,5 +1,6 @@
 extends Node2D
 ## Smoke clip test: both bodies x cigarette / cigar / pipe, frames at rest, raising, at the lips, exhaling.
+## Run:  godot --path . --fixed-fps 60 res://tests/smoke_test.tscn   (writes tests/shots/smoke_test.png)
 const TIMES := [0.2, 0.95, 2.0, 3.8]
 var fails := []
 func check(ok: bool, msg: String) -> void:
