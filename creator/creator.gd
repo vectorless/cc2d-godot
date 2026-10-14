@@ -1278,14 +1278,20 @@ func _thumb_data(p: Dictionary) -> Dictionary:
 	var key := "%s|%s|%s" % [p.get("texture", ""), p.package, p.name]
 	if _thumbs.has(key):
 		return _thumbs[key]
-	var best = null
-	var best_area := 0.0
-	for sname in p.get("sprites", {}):
-		var sd: Dictionary = p.sprites[sname]
-		var area: float = sd.region[2] * sd.region[3]
-		if area > best_area:
-			best_area = area
-			best = sd
+	# a thumbnail made before is found by the part's files alone, without loading them to pick a sprite
+	var ptex: String = p.get("texture", "") if p.get("texture") is String else ""
+	var pmask: String = p.get("mask", "") if p.get("mask") is String else ""
+	if ptex != "" and ResourceLoader.exists(ptex):
+		var pre := ("v2|%s|%s|%s|%d|%d|%d" % [ptex, pmask, ",".join(PackedStringArray(p.get("sprites", {}).keys())),
+			FileAccess.get_modified_time(ptex), FileAccess.get_modified_time(pmask) if pmask != "" else 0, THUMB_PX]).md5_text()
+		var pf := THUMB_DIR + pre + ".png"
+		if FileAccess.file_exists(pf):
+			var pd := {"tex": ImageTexture.create_from_image(Image.load_from_file(pf))}
+			if FileAccess.file_exists(THUMB_DIR + pre + "_m.png"):
+				pd.mask = ImageTexture.create_from_image(Image.load_from_file(THUMB_DIR + pre + "_m.png"))
+			_thumbs[key] = pd
+			return pd
+	var best = _thumb_sprite(p)
 	var tex_path := ""
 	var region := Rect2i()
 	if best is Dictionary:
@@ -1294,8 +1300,7 @@ func _thumb_data(p: Dictionary) -> Dictionary:
 	elif p.get("texture") is String:
 		tex_path = p.texture
 	if tex_path == "" or not ResourceLoader.exists(tex_path):
-		_thumbs[key] = {}
-		return {}
+		return {}   # not cached: a new pack's textures may not be imported yet, so try again next time
 	var mask_path := ""
 	if p.get("mask") is String and p.get("texture") == tex_path and ResourceLoader.exists(p.mask):
 		mask_path = p.mask
@@ -1339,11 +1344,48 @@ func _thumb_data(p: Dictionary) -> Dictionary:
 		img.save_png(file)
 		if mimg != null:
 			mimg.save_png(mfile)
+		if ptex != "" and ptex == tex_path:
+			var pre2 := ("v2|%s|%s|%s|%d|%d|%d" % [ptex, pmask, ",".join(PackedStringArray(p.get("sprites", {}).keys())),
+				FileAccess.get_modified_time(ptex), FileAccess.get_modified_time(pmask) if pmask != "" else 0, THUMB_PX]).md5_text()
+			img.save_png(THUMB_DIR + pre2 + ".png")
+			if mimg != null:
+				mimg.save_png(THUMB_DIR + pre2 + "_m.png")
 	var d := {"tex": ImageTexture.create_from_image(img)}
 	if mimg != null:
 		d.mask = ImageTexture.create_from_image(mimg)
 	_thumbs[key] = d
 	return d
+
+
+## The sprite a thumbnail shows: the one with the most drawn in it (its used rectangle), not just
+## the biggest region. Some templates leave a big piece empty (Base 00 Female's left thigh band).
+func _thumb_sprite(p: Dictionary):
+	var sprites: Dictionary = p.get("sprites", {})
+	if sprites.is_empty():
+		return null
+	var names := sprites.keys()
+	names.sort_custom(func(a, b): return sprites[a].region[2] * sprites[a].region[3] > sprites[b].region[2] * sprites[b].region[3])
+	if names.size() == 1:
+		return sprites[names[0]]
+	var best = sprites[names[0]]
+	var best_used := -1
+	var images := {}
+	for n in names:
+		var sd: Dictionary = sprites[n]
+		var tp: String = sd.get("texture", p.get("texture", ""))
+		if not images.has(tp):
+			images[tp] = _load_image(tp)
+		var img: Image = images[tp]
+		if img == null:
+			continue
+		var r := Rect2i(int(sd.region[0]), int(sd.region[1]), int(sd.region[2]), int(sd.region[3])).intersection(Rect2i(Vector2i.ZERO, img.get_size()))
+		if r.size.x <= 0 or r.size.y <= 0:
+			continue
+		var used := img.get_region(r).get_used_rect()
+		if used.size.x * used.size.y > best_used:
+			best_used = used.size.x * used.size.y
+			best = sd
+	return best
 
 
 static func _load_image(path: String) -> Image:
