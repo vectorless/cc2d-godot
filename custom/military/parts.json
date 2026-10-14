@@ -821,6 +821,240 @@
     ],
     "template": "Daily 09 Female",
     "desc": "a fitted 1914-1918 style army general's service tunic in khaki serge with red collar tabs with gold oak leaves, brass buttons, pleated pockets, a brown Sam Browne belt, ribbon bars and medals, and rank lace rings on the cuffs Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Marshal's Coat Male",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Armor/Marshal's Coat Male.png",
+    "mask": "res://custom/military/textures/Armor/Marshal's Coat Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.6596,
+      0.5287,
+      0.2764,
+      1.0
+     ],
+     [
+      0.8987,
+      0.8115,
+      0.5855,
+      1.0
+     ],
+     [
+      0.4167,
+      0.3591,
+      0.2708,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a Napoleonic-era marshal's dress coat in dark navy blue with a high stand collar, heavy gold oak-leaf embroidery on the collar, chest and cuffs, large gold fringed epaulettes on both shoulders, two rows of gold buttons, a wide red silk sash across the chest and several gold star decorations Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Marshal's Coat Female",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Armor/Marshal's Coat Female.png",
+    "mask": "res://custom/military/textures/Armor/Marshal's Coat Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/military/textures/Armor/Marshal's Coat Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.6727,
+      0.5473,
+      0.3119,
+      1.0
+     ],
+     [
+      0.9492,
+      0.8469,
+      0.4868,
+      1.0
+     ],
+     [
+      0.3972,
+      0.3342,
+      0.2452,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "a fitted Napoleonic-era marshal's dress coat in dark navy blue with a high collar, heavy gold embroidery, large gold fringed epaulettes, gold buttons and a red silk sash across the chest Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
    }
   ],
   "Pants": [
@@ -1525,6 +1759,240 @@
     ],
     "template": "Daily 01 Female",
     "desc": "1914-1918 style khaki cavalry breeches, wide at the thighs and tight below the knee Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Marshal's Breeches Male",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Pants/Marshal's Breeches Male.png",
+    "mask": "res://custom/military/textures/Pants/Marshal's Breeches Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9704,
+      0.9714,
+      0.9697,
+      1.0
+     ],
+     [
+      0.8579,
+      0.8447,
+      0.8373,
+      1.0
+     ],
+     [
+      0.5513,
+      0.5331,
+      0.5048,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "Napoleonic-era tight white buckskin breeches with a white waistcoat hem at the waist and a gold-tasselled red sash knot at the hip Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Marshal's Breeches Female",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Pants/Marshal's Breeches Female.png",
+    "mask": "res://custom/military/textures/Pants/Marshal's Breeches Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/military/textures/Pants/Marshal's Breeches Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9561,
+      0.9516,
+      0.9324,
+      1.0
+     ],
+     [
+      0.8052,
+      0.7894,
+      0.7558,
+      1.0
+     ],
+     [
+      0.5656,
+      0.508,
+      0.4201,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "Napoleonic-era tight white buckskin breeches with a gold-tasselled red sash knot at the hip Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
    }
   ],
   "Helmet": [
@@ -1719,6 +2187,54 @@
     ],
     "template": "Daily 00",
     "desc": "a 1914-1918 style general's soft peaked service cap in khaki with a bright red cap band, a gold-embroidered badge of crossed sabres in a wreath, and a brown leather visor and chin strap (headwear only, no head) Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Bicorne Hat",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Helmet/Bicorne Hat.png",
+    "mask": "res://custom/military/textures/Helmet/Bicorne Hat Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/military/textures/Helmet/Bicorne Hat.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9709,
+      0.9715,
+      0.9706,
+      1.0
+     ],
+     [
+      0.9165,
+      0.7966,
+      0.4852,
+      1.0
+     ],
+     [
+      0.5749,
+      0.4877,
+      0.3288,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a large black felt Napoleonic bicorne hat worn sideways, edged with gold lace and white ostrich feather trim, with a red-white-blue rosette replaced by a plain gold rosette (headwear only, no head) Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
    }
   ],
   "Boots": [
@@ -2075,6 +2591,124 @@
     ],
     "template": "Fantasy 03",
     "desc": "brown leather ankle boots worn with tall brown leather riding gaiters (leggings) strapped up the shins to just below the knee The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Cavalry Jackboots",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Boots/Cavalry Jackboots.png",
+    "mask": "res://custom/military/textures/Boots/Cavalry Jackboots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/military/textures/Boots/Cavalry Jackboots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/military/textures/Boots/Cavalry Jackboots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/military/textures/Boots/Cavalry Jackboots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/military/textures/Boots/Cavalry Jackboots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/military/textures/Boots/Cavalry Jackboots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/military/textures/Boots/Cavalry Jackboots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4842,
+      0.485,
+      0.4839,
+      1.0
+     ],
+     [
+      0.2819,
+      0.2825,
+      0.2821,
+      1.0
+     ],
+     [
+      0.3866,
+      0.3873,
+      0.3864,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "tall glossy black Napoleonic cavalry jackboots reaching just below the knee with a stiff cuff at the top The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
    }
   ],
   "Weapon": [
@@ -2130,6 +2764,59 @@
     ],
     "template": "Rifle 00",
     "desc": "a generic modern military service rifle in matte black with a short scope and a sling (not a copy of a specific real model)"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Marshal's Sabre",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Weapon/Marshal's Sabre.png",
+    "mask": "res://custom/military/textures/Weapon/Marshal's Sabre Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/military/textures/Weapon/Marshal's Sabre.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.8435,
+      0.7807,
+      0.6186,
+      1.0
+     ],
+     [
+      0.6077,
+      0.5211,
+      0.3651,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Sword 00",
+    "desc": "an ornate Napoleonic cavalry sabre with a curved polished steel blade and a gilded brass hilt with a knuckle guard, the hilt where the input's grip is"
    }
   ]
  }

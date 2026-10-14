@@ -1,0 +1,416 @@
+{
+ "format": 1,
+ "package": "Sportswear",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Sports Bra Female",
+    "package": "Sportswear",
+    "texture": "res://custom/sportswear/textures/Armor/Sports Bra Female.png",
+    "mask": "res://custom/sportswear/textures/Armor/Sports Bra Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/sportswear/textures/Armor/Sports Bra Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2327,
+      0.6482,
+      0.641,
+      1.0
+     ],
+     [
+      0.1671,
+      0.4889,
+      0.4814,
+      1.0
+     ],
+     [
+      0.7903,
+      0.8257,
+      0.83,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a fitted teal athletic sports bra with a racerback, wide under-band with a small white stripe, smooth stretch fabric (same shape and position as the input bra)"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Fitted Crop Tank Female",
+    "package": "Sportswear",
+    "texture": "res://custom/sportswear/textures/Armor/Fitted Crop Tank Female.png",
+    "mask": "res://custom/sportswear/textures/Armor/Fitted Crop Tank Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/sportswear/textures/Armor/Fitted Crop Tank Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2182,
+      0.2513,
+      0.251,
+      1.0
+     ],
+     [
+      0.386,
+      0.5936,
+      0.571,
+      1.0
+     ],
+     [
+      0.291,
+      0.4583,
+      0.4445,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "a skin-tight black athletic crop tank top ending just above the navel, racerback straps, sleek stretch fabric with a thin teal trim"
+   }
+  ],
+  "Pants": [
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Yoga Leggings Female",
+    "package": "Sportswear",
+    "texture": "res://custom/sportswear/textures/Pants/Yoga Leggings Female.png",
+    "mask": "res://custom/sportswear/textures/Pants/Yoga Leggings Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/sportswear/textures/Pants/Yoga Leggings Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/sportswear/textures/Pants/Yoga Leggings Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/sportswear/textures/Pants/Yoga Leggings Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/sportswear/textures/Pants/Yoga Leggings Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/sportswear/textures/Pants/Yoga Leggings Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/sportswear/textures/Pants/Yoga Leggings Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2413,
+      0.2577,
+      0.2546,
+      1.0
+     ],
+     [
+      0.2916,
+      0.4364,
+      0.4184,
+      1.0
+     ],
+     [
+      0.4212,
+      0.5939,
+      0.5741,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "skin-tight high-waisted black yoga leggings to the ankle with a wide waistband and a subtle teal panel down each side, sleek stretch fabric hugging the legs"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Bike Shorts Female",
+    "package": "Sportswear",
+    "texture": "res://custom/sportswear/textures/Pants/Bike Shorts Female.png",
+    "mask": "res://custom/sportswear/textures/Pants/Bike Shorts Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/sportswear/textures/Pants/Bike Shorts Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/sportswear/textures/Pants/Bike Shorts Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/sportswear/textures/Pants/Bike Shorts Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/sportswear/textures/Pants/Bike Shorts Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/sportswear/textures/Pants/Bike Shorts Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/sportswear/textures/Pants/Bike Shorts Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2384,
+      0.6112,
+      0.6219,
+      1.0
+     ],
+     [
+      0.1732,
+      0.4827,
+      0.4924,
+      1.0
+     ],
+     [
+      0.1788,
+      0.3713,
+      0.3761,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "skin-tight high-waisted teal bike shorts ending at mid-thigh with a wide waistband; the lower-leg (shin) pieces are bare and left completely empty"
+   }
+  ],
+  "Boots": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Running Trainers",
+    "package": "Sportswear",
+    "texture": "res://custom/sportswear/textures/Boots/Running Trainers.png",
+    "mask": "res://custom/sportswear/textures/Boots/Running Trainers Mask.png",
+    "sprites": {
+     "Boots Foot R": {
+      "texture": "res://custom/sportswear/textures/Boots/Running Trainers.png",
+      "region": [
+       0,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot F": {
+      "texture": "res://custom/sportswear/textures/Boots/Running Trainers.png",
+      "region": [
+       0,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/sportswear/textures/Boots/Running Trainers.png",
+      "region": [
+       0,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9802,
+      0.9999,
+      0.9998,
+      1.0
+     ],
+     [
+      0.301,
+      0.6731,
+      0.6424,
+      1.0
+     ],
+     [
+      0.8092,
+      0.8713,
+      0.8765,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "white running trainers with teal accents and thick cushioned soles. The sheet has three shoes: the top two are side views (toe pointing right); the bottom one is the same shoe seen from the FRONT, toe pointing straight at the viewer."
+   }
+  ]
+ }
+}

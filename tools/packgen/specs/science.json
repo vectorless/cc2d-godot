@@ -8,8 +8,8 @@
    "category": "Armor",
    "name": "Lab Coat Male",
    "template": "Daily 09 Male",
-   "matte": true,
-   "desc": "a scientist's long white laboratory coat with long sleeves, a notched lapel collar, buttoned front, a breast pocket with pens and a clip-on ID badge, worn over a light blue shirt and dark tie The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
+   "matte": false,
+   "desc": "a scientist's long white laboratory coat with long sleeves, a notched lapel collar, buttoned front, a breast pocket with pens and a clip-on ID badge, worn over a light blue shirt and dark tie The torso piece must keep the input's exact outline: same neckline height, same shoulder width and same hem, nothing sticking out above the neckline, so the body is fully covered with no gaps at the shoulders. The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
   },
   {
    "id": "labcoat_f",

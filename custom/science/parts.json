@@ -5,123 +5,6 @@
   "Armor": [
    {
     "body": [
-     "Male"
-    ],
-    "name": "Lab Coat Male",
-    "package": "Science",
-    "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
-    "mask": "res://custom/science/textures/Armor/Lab Coat Male Mask.png",
-    "sprites": {
-     "Armor Body": {
-      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
-      "region": [
-       0,
-       0,
-       350,
-       512
-      ],
-      "offset": [
-       -175,
-       -256
-      ],
-      "px_scale": 1
-     },
-     "Armor Lower Arm L": {
-      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
-      "region": [
-       877,
-       232,
-       147,
-       280
-      ],
-      "offset": [
-       -73.5,
-       -140
-      ],
-      "px_scale": 1
-     },
-     "Armor Lower Arm R": {
-      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
-      "region": [
-       730,
-       232,
-       147,
-       280
-      ],
-      "offset": [
-       -73.5,
-       -140
-      ],
-      "px_scale": 1
-     },
-     "Armor Neck": {
-      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
-      "region": [
-       350,
-       0,
-       190,
-       177
-      ],
-      "offset": [
-       -95,
-       -88.5
-      ],
-      "px_scale": 1
-     },
-     "Armor Upper Arm L": {
-      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
-      "region": [
-       540,
-       177,
-       190,
-       335
-      ],
-      "offset": [
-       -95,
-       -167.5
-      ],
-      "px_scale": 1
-     },
-     "Armor Upper Arm R": {
-      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
-      "region": [
-       350,
-       177,
-       190,
-       335
-      ],
-      "offset": [
-       -95,
-       -167.5
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.9448,
-      0.9808,
-      0.9965,
-      1.0
-     ],
-     [
-      0.7792,
-      0.8305,
-      0.8591,
-      1.0
-     ],
-     [
-      0.5072,
-      0.5315,
-      0.5475,
-      1.0
-     ]
-    ],
-    "template": "Daily 09 Male",
-    "desc": "a scientist's long white laboratory coat with long sleeves, a notched lapel collar, buttoned front, a breast pocket with pens and a clip-on ID badge, worn over a light blue shirt and dark tie The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
-   },
-   {
-    "body": [
      "Female"
     ],
     "name": "Lab Coat Female",
@@ -236,6 +119,123 @@
     ],
     "template": "Daily 09 Female",
     "desc": "a scientist's white laboratory coat with long sleeves, a notched lapel collar, buttoned front, a breast pocket with pens and a clip-on ID badge, worn over a lavender blouse The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Lab Coat Male",
+    "package": "Science",
+    "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+    "mask": "res://custom/science/textures/Armor/Lab Coat Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9514,
+      0.9838,
+      0.9971,
+      1.0
+     ],
+     [
+      0.783,
+      0.8327,
+      0.8645,
+      1.0
+     ],
+     [
+      0.5242,
+      0.5402,
+      0.5537,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a scientist's long white laboratory coat with long sleeves, a notched lapel collar, buttoned front, a breast pocket with pens and a clip-on ID badge, worn over a light blue shirt and dark tie The torso piece must keep the input's exact outline: same neckline height, same shoulder width and same hem, nothing sticking out above the neckline, so the body is fully covered with no gaps at the shoulders. The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
    }
   ],
   "Skirt": [

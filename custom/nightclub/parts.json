@@ -1131,6 +1131,54 @@
     ],
     "template": "Daily 10",
     "desc": "the long floor-length skirt of a glamorous black sequin evening gown, fitted over the hips, with a dramatic thigh-high slit up the front of one leg showing the leg, shimmering silver-black sequins"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Micro-Mini Dress Skirt",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Skirt/Micro-Mini Dress Skirt.png",
+    "mask": "res://custom/nightclub/textures/Skirt/Micro-Mini Dress Skirt Mask.png",
+    "sprites": {
+     "Daily 00 Skirt": {
+      "texture": "res://custom/nightclub/textures/Skirt/Micro-Mini Dress Skirt.png",
+      "region": [
+       0,
+       0,
+       512,
+       768
+      ],
+      "offset": [
+       -256,
+       -384
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9802,
+      0.3885,
+      0.6803,
+      1.0
+     ],
+     [
+      0.8554,
+      0.204,
+      0.5137,
+      1.0
+     ],
+     [
+      0.5506,
+      0.3304,
+      0.4357,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "the very short skirt part of a hot-pink bodycon micro-mini party dress, tight stretch fabric ending high on the thighs"
    }
   ],
   "Boots": [

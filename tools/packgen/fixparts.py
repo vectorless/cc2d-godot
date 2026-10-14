@@ -8,6 +8,8 @@ fixes:
   rear_strap   strap(s) rising above the neckline on the back (left) side -> removed
   white_holes  flat white areas enclosed by the drawing (between straps, inside rings) -> transparent
   down<N> / up<N> / left<N> / right<N>   move the whole part by N px (e.g. down110: a visor sitting too high)
+  fill_sleeves white sleeves cut away with the background -> filled
+  blank_shins  clear the lower-leg pieces (shorts drawn full length)
   drop1 / drop2 / drop3   everything on colour channel N -> transparent (e.g. the channel that is bare skin)
 """
 import json, os, sys, shutil
@@ -50,10 +52,10 @@ def unskin(T, M, p, cat):
     return int(kill.sum())
 
 
-def fill_feet(T, M, p, cat):
+def fill_feet(T, M, p, cat, which=('Boots Foot',)):
     n = 0
     for name, v in p['sprites'].items():
-        if not name.startswith('Boots Foot'):
+        if not name.startswith(which):
             continue
         x, y, w, h = v['region']; sl = (slice(y, y + h), slice(x, x + w))
         a = T[sl][..., 3] > 60
@@ -122,7 +124,22 @@ def drop(k):
     return f
 
 
-FIXES = {'drop1': drop(0), 'drop2': drop(1), 'drop3': drop(2), 'unskin': unskin, 'fill_feet': fill_feet, 'rear_strap': rear_strap, 'white_holes': white_holes}
+def blank_shins(T, M, p, cat):
+    """shorts drawn full-length: clear the lower-leg (shin) pieces"""
+    n = 0
+    for name, v in p['sprites'].items():
+        if 'Lower Leg' in name:
+            x, y, w, h = v['region']; n += int((T[y:y + h, x:x + w, 3] > 0).sum())
+            T[y:y + h, x:x + w] = 0; M[y:y + h, x:x + w] = 0
+    return n
+
+
+def fill_sleeves(T, M, p, cat):
+    """white sleeves whose inside was cut away with the background -> fill them back in"""
+    return fill_feet(T, M, p, cat, which=('Armor Upper Arm', 'Armor Lower Arm'))
+
+
+FIXES = {'fill_sleeves': fill_sleeves, 'blank_shins': blank_shins, 'drop1': drop(0), 'drop2': drop(1), 'drop3': drop(2), 'unskin': unskin, 'fill_feet': fill_feet, 'rear_strap': rear_strap, 'white_holes': white_holes}
 
 
 def main(pack, name, fixes):
