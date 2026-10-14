@@ -387,6 +387,53 @@
     ],
     "template": "Daily 00 Male",
     "desc": "a plain white cotton crew-neck undershirt T-shirt"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Bikini Top Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Armor/Bikini Top Female.png",
+    "mask": "res://custom/underwear/textures/Armor/Bikini Top Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/underwear/textures/Armor/Bikini Top Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.989,
+      0.4977,
+      0.426,
+      1.0
+     ],
+     [
+      0.977,
+      0.3644,
+      0.2971,
+      1.0
+     ],
+     [
+      0.5579,
+      0.5054,
+      0.4916,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a bright coral bandeau bikini top: exactly the same strapless shape, size and position as the input bra (two cups side by side with a band under them), no straps, no ties above the cups, solid coral fabric with a small ring between the cups"
    }
   ],
   "Pants": [
@@ -806,6 +853,81 @@
     ],
     "template": "Base 00 Male",
     "desc": "fitted dark grey boxer briefs with a wide elastic waistband"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Bikini Bottoms Female",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Pants/Bikini Bottoms Female.png",
+    "mask": "res://custom/underwear/textures/Pants/Bikini Bottoms Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/underwear/textures/Pants/Bikini Bottoms Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/underwear/textures/Pants/Bikini Bottoms Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/underwear/textures/Pants/Bikini Bottoms Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9964,
+      0.4466,
+      0.3745,
+      1.0
+     ],
+     [
+      0.9649,
+      0.728,
+      0.681,
+      1.0
+     ],
+     [
+      0.5603,
+      0.5209,
+      0.5162,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "bikini bottoms in bright coral with thin string ties at the hips; the two small leg pieces are just the thin edge of the leg openings"
    }
   ],
   "Boots": [
@@ -884,6 +1006,318 @@
     ],
     "template": "Daily 00",
     "desc": "plain white ankle socks on bare feet (no shoes)"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Knee-High Socks",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Boots/Knee-High Socks.png",
+    "mask": "res://custom/underwear/textures/Boots/Knee-High Socks Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Socks.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Socks.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Socks.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Socks.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Socks.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Socks.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ],
+     [
+      0.8282,
+      0.828,
+      0.8282,
+      1.0
+     ],
+     [
+      0.5462,
+      0.5451,
+      0.5454,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "plain white cotton knee-high socks with a ribbed cuff just below the knee: the foot pieces are socked feet (soft rounded sock, no shoe, no sole), the shafts are smooth white sock fabric. The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Classic High Heels",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
+    "mask": "res://custom/underwear/textures/Boots/Classic High Heels Mask.png",
+    "sprites": {
+     "Boots Foot R": {
+      "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
+      "region": [
+       0,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot F": {
+      "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
+      "region": [
+       0,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/underwear/textures/Boots/Classic High Heels.png",
+      "region": [
+       0,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3657,
+      0.3653,
+      0.3651,
+      1.0
+     ],
+     [
+      0.6084,
+      0.1676,
+      0.1791,
+      1.0
+     ],
+     [
+      0.8329,
+      0.8329,
+      0.8322,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "glossy black patent leather stiletto court shoes with pointed toes and tall thin heels"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Knee-High Boots",
+    "package": "Underwear",
+    "texture": "res://custom/underwear/textures/Boots/Knee-High Boots.png",
+    "mask": "res://custom/underwear/textures/Boots/Knee-High Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/underwear/textures/Boots/Knee-High Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2629,
+      0.263,
+      0.2625,
+      1.0
+     ],
+     [
+      0.3934,
+      0.3934,
+      0.3929,
+      1.0
+     ],
+     [
+      0.8896,
+      0.8889,
+      0.8882,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "sleek knee-high black leather fashion boots with slim block heels and a side zip. The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
    }
   ]
  }

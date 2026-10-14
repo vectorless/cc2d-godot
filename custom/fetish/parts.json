@@ -1,0 +1,1307 @@
+{
+ "format": 1,
+ "package": "Fetish",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Latex Catsuit Top Female",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Armor/Latex Catsuit Top Female.png",
+    "mask": "res://custom/fetish/textures/Armor/Latex Catsuit Top Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/fetish/textures/Armor/Latex Catsuit Top Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/fetish/textures/Armor/Latex Catsuit Top Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/fetish/textures/Armor/Latex Catsuit Top Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/fetish/textures/Armor/Latex Catsuit Top Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/fetish/textures/Armor/Latex Catsuit Top Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/fetish/textures/Armor/Latex Catsuit Top Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2564,
+      0.2565,
+      0.2562,
+      1.0
+     ],
+     [
+      0.7821,
+      0.7822,
+      0.7819,
+      1.0
+     ],
+     [
+      0.5112,
+      0.5109,
+      0.5105,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "a fashion costume piece: the top of a glossy black latex catsuit with long sleeves, a high collar and a front zip"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Leather Vest Male",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Armor/Leather Vest Male.png",
+    "mask": "res://custom/fetish/textures/Armor/Leather Vest Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/fetish/textures/Armor/Leather Vest Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/fetish/textures/Armor/Leather Vest Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3046,
+      0.3049,
+      0.3044,
+      1.0
+     ],
+     [
+      0.7286,
+      0.7273,
+      0.7258,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Male",
+    "desc": "a fashion costume piece: a black leather sleeveless vest with studs and a strap collar"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Chest Harness Male",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Armor/Chest Harness Male.png",
+    "mask": "res://custom/fetish/textures/Armor/Chest Harness Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/fetish/textures/Armor/Chest Harness Male.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3087,
+      0.3088,
+      0.3081,
+      1.0
+     ],
+     [
+      0.5797,
+      0.5791,
+      0.5775,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 00 Male",
+    "desc": "a fashion costume piece: a black leather chest harness of straps with silver O-rings and buckles, worn on a bare torso (draw the straps only, the torso area between straps transparent white background)"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Harness Bra Female",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Armor/Harness Bra Female.png",
+    "mask": "res://custom/fetish/textures/Armor/Harness Bra Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/fetish/textures/Armor/Harness Bra Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3323,
+      0.3327,
+      0.3335,
+      1.0
+     ],
+     [
+      0.6869,
+      0.689,
+      0.6937,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Female",
+    "desc": "a fashion costume piece: a black leather strappy harness bra with silver O-rings and buckles"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Latex Corset Female",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Armor/Latex Corset Female.png",
+    "mask": "res://custom/fetish/textures/Armor/Latex Corset Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/fetish/textures/Armor/Latex Corset Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3295,
+      0.3298,
+      0.3292,
+      1.0
+     ],
+     [
+      0.57,
+      0.5699,
+      0.5684,
+      1.0
+     ],
+     [
+      0.917,
+      0.9166,
+      0.9156,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "a fashion costume piece: a glossy black latex corset with buckles down the front and shoulder straps"
+   }
+  ],
+  "Pants": [
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Latex Leggings Female",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Pants/Latex Leggings Female.png",
+    "mask": "res://custom/fetish/textures/Pants/Latex Leggings Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/fetish/textures/Pants/Latex Leggings Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/fetish/textures/Pants/Latex Leggings Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/fetish/textures/Pants/Latex Leggings Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/fetish/textures/Pants/Latex Leggings Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/fetish/textures/Pants/Latex Leggings Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/fetish/textures/Pants/Latex Leggings Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3122,
+      0.3124,
+      0.3115,
+      1.0
+     ],
+     [
+      0.4771,
+      0.4765,
+      0.4755,
+      1.0
+     ],
+     [
+      0.8072,
+      0.8052,
+      0.8047,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "a fashion costume piece: glossy black high-waisted latex leggings with a buckled belt"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Leather Shorts Male",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Pants/Leather Shorts Male.png",
+    "mask": "res://custom/fetish/textures/Pants/Leather Shorts Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/fetish/textures/Pants/Leather Shorts Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/fetish/textures/Pants/Leather Shorts Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/fetish/textures/Pants/Leather Shorts Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2816,
+      0.2813,
+      0.281,
+      1.0
+     ],
+     [
+      0.4617,
+      0.4594,
+      0.4561,
+      1.0
+     ],
+     [
+      0.858,
+      0.8529,
+      0.8492,
+      1.0
+     ]
+    ],
+    "template": "Base 00 Male",
+    "desc": "a fashion costume piece: short black leather shorts with a studded belt"
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Leather Chaps Male",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Pants/Leather Chaps Male.png",
+    "mask": "res://custom/fetish/textures/Pants/Leather Chaps Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/fetish/textures/Pants/Leather Chaps Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/fetish/textures/Pants/Leather Chaps Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/fetish/textures/Pants/Leather Chaps Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/fetish/textures/Pants/Leather Chaps Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/fetish/textures/Pants/Leather Chaps Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/fetish/textures/Pants/Leather Chaps Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2592,
+      0.2687,
+      0.2797,
+      1.0
+     ],
+     [
+      0.4059,
+      0.4069,
+      0.4072,
+      1.0
+     ],
+     [
+      0.8571,
+      0.8573,
+      0.8604,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "a fashion costume piece: black leather chaps over dark jeans with a wide studded belt"
+   }
+  ],
+  "Gloves": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Leather Cuffs",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Gloves/Leather Cuffs.png",
+    "mask": "res://custom/fetish/textures/Gloves/Leather Cuffs Mask.png",
+    "sprites": {
+     "Gloves Lower Arm R": {
+      "texture": "res://custom/fetish/textures/Gloves/Leather Cuffs.png",
+      "region": [
+       0,
+       0,
+       171,
+       300
+      ],
+      "offset": [
+       -85.5,
+       -150
+      ],
+      "px_scale": 1
+     },
+     "Gloves Lower Arm L": {
+      "texture": "res://custom/fetish/textures/Gloves/Leather Cuffs.png",
+      "region": [
+       171,
+       0,
+       171,
+       300
+      ],
+      "offset": [
+       -85.5,
+       -150
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3566,
+      0.3553,
+      0.3555,
+      1.0
+     ],
+     [
+      0.6911,
+      0.6886,
+      0.6877,
+      1.0
+     ],
+     [
+      0.9993,
+      0.9993,
+      0.9993,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a fashion costume piece: padded black leather wrist cuffs with silver buckles and D-rings, with a short chain"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Opera Gloves",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Gloves/Opera Gloves.png",
+    "mask": "res://custom/fetish/textures/Gloves/Opera Gloves Mask.png",
+    "sprites": {
+     "Gloves Lower Arm R": {
+      "texture": "res://custom/fetish/textures/Gloves/Opera Gloves.png",
+      "region": [
+       0,
+       0,
+       171,
+       300
+      ],
+      "offset": [
+       -85.5,
+       -150
+      ],
+      "px_scale": 1
+     },
+     "Gloves Hand L 0": {
+      "texture": "res://custom/fetish/textures/Gloves/Opera Gloves.png",
+      "region": [
+       171,
+       300,
+       171,
+       212
+      ],
+      "offset": [
+       -85.5,
+       -106
+      ],
+      "px_scale": 1
+     },
+     "Gloves Hand L 1": {
+      "texture": "res://custom/fetish/textures/Gloves/Opera Gloves.png",
+      "region": [
+       342,
+       300,
+       170,
+       212
+      ],
+      "offset": [
+       -85,
+       -106
+      ],
+      "px_scale": 1
+     },
+     "Gloves Hand R 0": {
+      "texture": "res://custom/fetish/textures/Gloves/Opera Gloves.png",
+      "region": [
+       0,
+       300,
+       171,
+       212
+      ],
+      "offset": [
+       -85.5,
+       -106
+      ],
+      "px_scale": 1
+     },
+     "Gloves Hand R 1": {
+      "texture": "res://custom/fetish/textures/Gloves/Opera Gloves.png",
+      "region": [
+       342,
+       88,
+       170,
+       212
+      ],
+      "offset": [
+       -85,
+       -106
+      ],
+      "px_scale": 1
+     },
+     "Gloves Lower Arm L": {
+      "texture": "res://custom/fetish/textures/Gloves/Opera Gloves.png",
+      "region": [
+       171,
+       0,
+       171,
+       300
+      ],
+      "offset": [
+       -85.5,
+       -150
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2957,
+      0.2955,
+      0.295,
+      1.0
+     ],
+     [
+      0.8534,
+      0.8529,
+      0.8518,
+      1.0
+     ],
+     [
+      0.6001,
+      0.5992,
+      0.5991,
+      1.0
+     ]
+    ],
+    "template": "Daily 03",
+    "desc": "a fashion costume piece: long glossy black latex gloves"
+   }
+  ],
+  "Mouth": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Ball Gag",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Mouth/Ball Gag.png",
+    "mask": "res://custom/fetish/textures/Mouth/Ball Gag Mask.png",
+    "sprites": {
+     "Mouth F": {
+      "texture": "res://custom/fetish/textures/Mouth/Ball Gag.png",
+      "region": [
+       0,
+       0,
+       128,
+       64
+      ],
+      "offset": [
+       -64,
+       -32
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.8983,
+      0.3835,
+      0.3608,
+      1.0
+     ],
+     [
+      0.5517,
+      0.2543,
+      0.2426,
+      1.0
+     ],
+     [
+      0.9882,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "00",
+    "desc": "a costume ball gag: a red ball held in the mouth by a black leather strap (only the gag and the strap ends at the corners of the mouth, no face)"
+   }
+  ],
+  "Helmet": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Leather Peaked Cap",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Helmet/Leather Peaked Cap.png",
+    "mask": "res://custom/fetish/textures/Helmet/Leather Peaked Cap Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/fetish/textures/Helmet/Leather Peaked Cap.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3547,
+      0.3543,
+      0.3544,
+      1.0
+     ],
+     [
+      0.6432,
+      0.6417,
+      0.6414,
+      1.0
+     ],
+     [
+      0.9707,
+      0.9705,
+      0.9695,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a fashion costume piece: a black leather peaked cap with a silver chain on the brim"
+   }
+  ],
+  "Boots": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Lace-Up Platform Boots",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Boots/Lace-Up Platform Boots.png",
+    "mask": "res://custom/fetish/textures/Boots/Lace-Up Platform Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/fetish/textures/Boots/Lace-Up Platform Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/fetish/textures/Boots/Lace-Up Platform Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/fetish/textures/Boots/Lace-Up Platform Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/fetish/textures/Boots/Lace-Up Platform Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/fetish/textures/Boots/Lace-Up Platform Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/fetish/textures/Boots/Lace-Up Platform Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.6532,
+      0.6527,
+      0.6605,
+      1.0
+     ],
+     [
+      0.3866,
+      0.3854,
+      0.4094,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "a fashion costume piece: black patent lace-up platform boots with high heels"
+   }
+  ],
+  "Weapon": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Riding Crop",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Weapon/Riding Crop.png",
+    "mask": "res://custom/fetish/textures/Weapon/Riding Crop Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/fetish/textures/Weapon/Riding Crop.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2641,
+      0.2636,
+      0.2616,
+      1.0
+     ],
+     [
+      0.39,
+      0.3887,
+      0.3865,
+      1.0
+     ],
+     [
+      0.6906,
+      0.6905,
+      0.6895,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a costume prop: a slim black riding crop with a leather tip, pointing the same way as the input"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Bullwhip",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Weapon/Bullwhip.png",
+    "mask": "res://custom/fetish/textures/Weapon/Bullwhip Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/fetish/textures/Weapon/Bullwhip.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2564,
+      0.2559,
+      0.2562,
+      1.0
+     ],
+     [
+      0.3667,
+      0.3654,
+      0.3665,
+      1.0
+     ],
+     [
+      0.7182,
+      0.715,
+      0.7179,
+      1.0
+     ]
+    ],
+    "template": "Sword 00",
+    "desc": "a costume prop: a black braided leather bullwhip, the handle where the input's grip is and the long lash rising in a loose S-curve to the top of the input"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Leather Paddle",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Weapon/Leather Paddle.png",
+    "mask": "res://custom/fetish/textures/Weapon/Leather Paddle Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/fetish/textures/Weapon/Leather Paddle.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2611,
+      0.2613,
+      0.2608,
+      1.0
+     ],
+     [
+      0.4841,
+      0.484,
+      0.4821,
+      1.0
+     ],
+     [
+      0.8502,
+      0.8501,
+      0.8475,
+      1.0
+     ]
+    ],
+    "template": "Sword 00",
+    "desc": "a costume prop: a black leather spanking paddle with a short handle and silver studs, pointing the same way as the input"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Flogger",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Weapon/Flogger.png",
+    "mask": "res://custom/fetish/textures/Weapon/Flogger Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/fetish/textures/Weapon/Flogger.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3063,
+      0.3054,
+      0.3015,
+      1.0
+     ],
+     [
+      0.5166,
+      0.5135,
+      0.5144,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Sword 00",
+    "desc": "a costume prop: a black leather flogger, the wrapped handle where the input's grip is and many long suede tails bundled along where the input's blade is"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Fluffy Handcuffs",
+    "package": "Fetish",
+    "texture": "res://custom/fetish/textures/Weapon/Fluffy Handcuffs.png",
+    "mask": "res://custom/fetish/textures/Weapon/Fluffy Handcuffs Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/fetish/textures/Weapon/Fluffy Handcuffs.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9855,
+      0.7405,
+      0.8424,
+      1.0
+     ],
+     [
+      0.7182,
+      0.6629,
+      0.6811,
+      1.0
+     ],
+     [
+      0.4792,
+      0.476,
+      0.4721,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a costume prop: a pair of novelty handcuffs with pink fluffy trim, held in the hand"
+   }
+  ]
+ }
+}

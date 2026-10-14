@@ -485,6 +485,53 @@
     ],
     "template": "Daily 14 Female",
     "desc": "a fashionable nightclub bodycon halter-neck top in electric blue, sleeveless, ending at the waist. The halter is one thin strap rising straight from the centre of the neckline up to the front of the neck (it goes behind the neck, so draw only its front part); bare shoulders, no strap loop on the chest or shoulders"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Evening Gown Bodice Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Evening Gown Bodice Female.png",
+    "mask": "res://custom/nightclub/textures/Armor/Evening Gown Bodice Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Evening Gown Bodice Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5307,
+      0.1561,
+      0.1932,
+      1.0
+     ],
+     [
+      0.7536,
+      0.5412,
+      0.5561,
+      1.0
+     ],
+     [
+      0.6709,
+      0.2816,
+      0.3168,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "the bodice of an elegant low-cut evening gown in deep red satin: a plunging V neckline, thin shoulder straps, fitted to the waist, smooth shiny satin with soft folds"
    }
   ],
   "Pants": [
@@ -894,6 +941,54 @@
     ],
     "template": "Daily 05",
     "desc": "a fashionable nightclub fitted satin skirt in emerald green with a high side slit"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Evening Gown Skirt",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Skirt/Evening Gown Skirt.png",
+    "mask": "res://custom/nightclub/textures/Skirt/Evening Gown Skirt Mask.png",
+    "sprites": {
+     "Daily 10 Skirt": {
+      "texture": "res://custom/nightclub/textures/Skirt/Evening Gown Skirt.png",
+      "region": [
+       0,
+       0,
+       512,
+       768
+      ],
+      "offset": [
+       -256,
+       -384
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.6428,
+      0.0638,
+      0.0906,
+      1.0
+     ],
+     [
+      0.4765,
+      0.0891,
+      0.109,
+      1.0
+     ],
+     [
+      0.6929,
+      0.3369,
+      0.353,
+      1.0
+     ]
+    ],
+    "template": "Daily 10",
+    "desc": "the long floor-length skirt of an elegant evening gown in deep red satin, fitted at the waist and flowing straight down to the ankles with a high slit on one side and soft satin folds"
    }
   ],
   "Boots": [

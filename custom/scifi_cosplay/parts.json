@@ -1,0 +1,870 @@
+{
+ "format": 1,
+ "package": "Sci-Fi Cosplay",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Starfarer Bodysuit Female",
+    "package": "Sci-Fi Cosplay",
+    "texture": "res://custom/scifi_cosplay/textures/Armor/Starfarer Bodysuit Female.png",
+    "mask": "res://custom/scifi_cosplay/textures/Armor/Starfarer Bodysuit Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Starfarer Bodysuit Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Starfarer Bodysuit Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Starfarer Bodysuit Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Starfarer Bodysuit Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Starfarer Bodysuit Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Starfarer Bodysuit Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.953,
+      0.5396,
+      0.1634,
+      1.0
+     ],
+     [
+      0.9566,
+      0.9657,
+      0.9659,
+      1.0
+     ],
+     [
+      0.7466,
+      0.7588,
+      0.7827,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "a white and orange spandex sci-fi explorer bodysuit top with sculpted foam shoulder pauldrons, a round glowing chest light and silver piping. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Foam Armour Cosplay Male",
+    "package": "Sci-Fi Cosplay",
+    "texture": "res://custom/scifi_cosplay/textures/Armor/Foam Armour Cosplay Male.png",
+    "mask": "res://custom/scifi_cosplay/textures/Armor/Foam Armour Cosplay Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Foam Armour Cosplay Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Foam Armour Cosplay Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Foam Armour Cosplay Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Foam Armour Cosplay Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Foam Armour Cosplay Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Foam Armour Cosplay Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.8508,
+      0.923,
+      0.9386,
+      1.0
+     ],
+     [
+      0.3804,
+      0.4214,
+      0.4634,
+      1.0
+     ],
+     [
+      0.5748,
+      0.6477,
+      0.6837,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "chunky handmade EVA-foam sci-fi space-ranger chest armour and arm bracers, painted metallic silver with dark weathering, visible black velcro straps and rivets, thin glowing blue LED strips along the plate edges, over a black long-sleeved undersuit. The torso piece must keep the input's exact outline: same neckline height, same shoulder width and same hem, nothing sticking out above the neckline, so the body is fully covered with no gaps at the shoulders. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Rocket Ranger Jacket Male",
+    "package": "Sci-Fi Cosplay",
+    "texture": "res://custom/scifi_cosplay/textures/Armor/Rocket Ranger Jacket Male.png",
+    "mask": "res://custom/scifi_cosplay/textures/Armor/Rocket Ranger Jacket Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Rocket Ranger Jacket Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Rocket Ranger Jacket Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Rocket Ranger Jacket Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Rocket Ranger Jacket Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Rocket Ranger Jacket Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/scifi_cosplay/textures/Armor/Rocket Ranger Jacket Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5605,
+      0.4431,
+      0.383,
+      1.0
+     ],
+     [
+      0.4213,
+      0.2846,
+      0.2063,
+      1.0
+     ],
+     [
+      0.9687,
+      0.979,
+      0.9808,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a 1950s retro pulp sci-fi rocket-pilot jacket: brown leather with a tall collar, chrome finned shoulder pieces, a chest control panel with round dials, and quilted sleeves. The torso piece must keep the input's exact outline: same neckline height, same shoulder width and same hem, nothing sticking out above the neckline, so the body is fully covered with no gaps at the shoulders. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   }
+  ],
+  "Pants": [
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Starfarer Leggings Female",
+    "package": "Sci-Fi Cosplay",
+    "texture": "res://custom/scifi_cosplay/textures/Pants/Starfarer Leggings Female.png",
+    "mask": "res://custom/scifi_cosplay/textures/Pants/Starfarer Leggings Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Starfarer Leggings Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Starfarer Leggings Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Starfarer Leggings Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Starfarer Leggings Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Starfarer Leggings Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Starfarer Leggings Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9589,
+      0.9593,
+      0.9571,
+      1.0
+     ],
+     [
+      0.9772,
+      0.5345,
+      0.2061,
+      1.0
+     ],
+     [
+      0.6194,
+      0.6117,
+      0.6023,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "white and orange spandex sci-fi explorer leggings with silver piping and sculpted foam knee pads. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Foam Armour Greaves Male",
+    "package": "Sci-Fi Cosplay",
+    "texture": "res://custom/scifi_cosplay/textures/Pants/Foam Armour Greaves Male.png",
+    "mask": "res://custom/scifi_cosplay/textures/Pants/Foam Armour Greaves Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Foam Armour Greaves Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Foam Armour Greaves Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Foam Armour Greaves Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Foam Armour Greaves Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Foam Armour Greaves Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/scifi_cosplay/textures/Pants/Foam Armour Greaves Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.8946,
+      0.9098,
+      0.9109,
+      1.0
+     ],
+     [
+      0.4967,
+      0.7449,
+      0.8065,
+      1.0
+     ],
+     [
+      0.3692,
+      0.4219,
+      0.4663,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "handmade EVA-foam sci-fi armour trousers: silver painted weathered thigh and shin plates strapped over black undersuit trousers, glowing blue LED strip accents. Draw exactly six pieces in exactly the input's arrangement: two thighs top-left, the hips piece top-right, three shins along the bottom; each the same size as the input piece. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   }
+  ],
+  "Helmet": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Alien Antenna Headband",
+    "package": "Sci-Fi Cosplay",
+    "texture": "res://custom/scifi_cosplay/textures/Helmet/Alien Antenna Headband.png",
+    "mask": "res://custom/scifi_cosplay/textures/Helmet/Alien Antenna Headband Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/scifi_cosplay/textures/Helmet/Alien Antenna Headband.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9293,
+      0.9997,
+      0.9314,
+      1.0
+     ],
+     [
+      0.5882,
+      0.9883,
+      0.6015,
+      1.0
+     ],
+     [
+      0.3437,
+      0.7281,
+      0.3825,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a light-up cosplay alien headband: a thin silver headband with two springy antennae topped with glowing green balls (headwear only, no hair or head). Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   }
+  ],
+  "Boots": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Foam Armour Boots",
+    "package": "Sci-Fi Cosplay",
+    "texture": "res://custom/scifi_cosplay/textures/Boots/Foam Armour Boots.png",
+    "mask": "res://custom/scifi_cosplay/textures/Boots/Foam Armour Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/scifi_cosplay/textures/Boots/Foam Armour Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/scifi_cosplay/textures/Boots/Foam Armour Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/scifi_cosplay/textures/Boots/Foam Armour Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/scifi_cosplay/textures/Boots/Foam Armour Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/scifi_cosplay/textures/Boots/Foam Armour Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/scifi_cosplay/textures/Boots/Foam Armour Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.6457,
+      0.6969,
+      0.7452,
+      1.0
+     ],
+     [
+      0.4596,
+      0.4763,
+      0.4945,
+      1.0
+     ],
+     [
+      0.9446,
+      0.9509,
+      0.9524,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "handmade EVA-foam sci-fi armour boot covers, silver painted with weathering, angular toe caps, velcro straps and blue LED trim. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   }
+  ],
+  "Cape": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Cosmic Cape",
+    "package": "Sci-Fi Cosplay",
+    "texture": "res://custom/scifi_cosplay/textures/Cape/Cosmic Cape.png",
+    "mask": "res://custom/scifi_cosplay/textures/Cape/Cosmic Cape Mask.png",
+    "sprites": {
+     "Base 00": {
+      "texture": "res://custom/scifi_cosplay/textures/Cape/Cosmic Cape.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -512
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3901,
+      0.2895,
+      0.6005,
+      1.0
+     ],
+     [
+      0.5888,
+      0.5799,
+      0.604,
+      1.0
+     ],
+     [
+      0.9685,
+      0.9659,
+      0.9711,
+      1.0
+     ]
+    ],
+    "template": "Base 00",
+    "desc": "a shimmering deep-purple satin cosplay cape printed with stars and a nebula, silver trim along the edges. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   }
+  ],
+  "Weapon": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "Gun",
+    "muzzle": [
+     63,
+     159
+    ],
+    "name": "Retro Ray Gun Prop",
+    "package": "Sci-Fi Cosplay",
+    "texture": "res://custom/scifi_cosplay/textures/Weapon/Retro Ray Gun Prop.png",
+    "mask": "res://custom/scifi_cosplay/textures/Weapon/Retro Ray Gun Prop Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/scifi_cosplay/textures/Weapon/Retro Ray Gun Prop.png",
+      "region": [
+       0,
+       0,
+       1024,
+       512
+      ],
+      "offset": [
+       -354.5041,
+       -281.5493
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.99,
+      0.997,
+      0.9965,
+      1.0
+     ],
+     [
+      0.5667,
+      0.6129,
+      0.6438,
+      1.0
+     ],
+     [
+      0.9909,
+      0.6553,
+      0.1542,
+      1.0
+     ]
+    ],
+    "template": "Gun 00",
+    "desc": "a handmade retro sci-fi ray gun cosplay prop: bulbous chrome body with three cooling fins, a red glowing emitter tip and a bright orange safety cap. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   }
+  ]
+ }
+}
