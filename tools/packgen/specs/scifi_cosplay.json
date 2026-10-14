@@ -8,7 +8,7 @@
    "category": "Armor",
    "name": "Foam Armour Cosplay Male",
    "template": "Daily 09 Male",
-   "desc": "chunky handmade EVA-foam sci-fi space-ranger chest armour and arm bracers, painted metallic silver with dark weathering, visible black velcro straps and rivets, thin glowing blue LED strips along the plate edges, over a black long-sleeved undersuit. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   "desc": "chunky handmade EVA-foam sci-fi space-ranger chest armour and arm bracers, painted metallic silver with dark weathering, visible black velcro straps and rivets, thin glowing blue LED strips along the plate edges, over a black long-sleeved undersuit. The torso piece must keep the input's exact outline: same neckline height, same shoulder width and same hem, nothing sticking out above the neckline, so the body is fully covered with no gaps at the shoulders. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
   },
   {
    "id": "star_suit_f",
@@ -22,7 +22,7 @@
    "category": "Armor",
    "name": "Rocket Ranger Jacket Male",
    "template": "Daily 09 Male",
-   "desc": "a 1950s retro pulp sci-fi rocket-pilot jacket: brown leather with a tall collar, chrome finned shoulder pieces, a chest control panel with round dials, and quilted sleeves. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   "desc": "a 1950s retro pulp sci-fi rocket-pilot jacket: brown leather with a tall collar, chrome finned shoulder pieces, a chest control panel with round dials, and quilted sleeves. The torso piece must keep the input's exact outline: same neckline height, same shoulder width and same hem, nothing sticking out above the neckline, so the body is fully covered with no gaps at the shoulders. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
   },
   {
    "id": "star_leggings_f",
@@ -36,7 +36,7 @@
    "category": "Pants",
    "name": "Foam Armour Greaves Male",
    "template": "Daily 01 Male",
-   "desc": "handmade EVA-foam sci-fi armour trousers: silver painted weathered thigh and shin plates strapped over black undersuit trousers, glowing blue LED strip accents. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
+   "desc": "handmade EVA-foam sci-fi armour trousers: silver painted weathered thigh and shin plates strapped over black undersuit trousers, glowing blue LED strip accents. Draw exactly six pieces in exactly the input's arrangement: two thighs top-left, the hips piece top-right, three shins along the bottom; each the same size as the input piece. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
   },
   {
    "id": "antenna_band",
@@ -65,14 +65,6 @@
    "name": "Retro Ray Gun Prop",
    "template": "Gun 00",
    "desc": "a handmade retro sci-fi ray gun cosplay prop: bulbous chrome body with three cooling fins, a red glowing emitter tip and a bright orange safety cap. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise."
-  },
-  {
-   "id": "foam_armour_m_nb2",
-   "category": "Armor",
-   "name": "Foam Armour Cosplay Male (nb2)",
-   "template": "Daily 09 Male",
-   "desc": "chunky handmade EVA-foam sci-fi space-ranger chest armour and arm bracers, painted metallic silver with dark weathering, visible black velcro straps and rivets, thin glowing blue LED strips along the plate edges, over a black long-sleeved undersuit. Convention cosplay look: clearly handmade costume craft, original design, no logos, emblems or insignia from any existing franchise.",
-   "model": "meshy/nano-banana-2"
   }
  ]
 }

@@ -1,0 +1,48 @@
+{
+ "pack_dir": "custom/underwear",
+ "package": "Underwear",
+ "model": "meshy/nano-banana-pro",
+ "parts": [
+  {
+   "id": "knee_socks",
+   "category": "Boots",
+   "name": "Knee-High Socks",
+   "template": "Fantasy 03",
+   "desc": "plain white cotton knee-high socks with a ribbed cuff just below the knee: the foot pieces are socked feet (soft rounded sock, no shoe, no sole), the shafts are smooth white sock fabric. The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part.",
+   "template_texture": "templates/Tall Boot.png",
+   "matte": true
+  },
+  {
+   "id": "bikini_top",
+   "category": "Armor",
+   "name": "Bikini Top Female",
+   "template": "Base 00 Female",
+   "desc": "a bright coral bandeau bikini top: exactly the same strapless shape, size and position as the input bra (two cups side by side with a band under them), no straps, no ties above the cups, solid coral fabric with a small ring between the cups",
+   "matte": true
+  },
+  {
+   "id": "bikini_bottom",
+   "category": "Pants",
+   "name": "Bikini Bottoms Female",
+   "template": "Base 00 Female",
+   "desc": "bikini bottoms in bright coral with thin string ties at the hips; the two small leg pieces are just the thin edge of the leg openings"
+  },
+  {
+   "id": "high_heels",
+   "category": "Boots",
+   "name": "Classic High Heels",
+   "template": "Daily 00",
+   "desc": "glossy black patent leather stiletto court shoes with pointed toes and tall thin heels",
+   "matte": true
+  },
+  {
+   "id": "long_boots",
+   "category": "Boots",
+   "name": "Knee-High Boots",
+   "template": "Fantasy 03",
+   "template_texture": "templates/Tall Boot.png",
+   "matte": true,
+   "desc": "sleek knee-high black leather fashion boots with slim block heels and a side zip. The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+  }
+ ]
+}

@@ -37,8 +37,25 @@ def run(model, inp, out_prefix):
         if k.startswith('files:'):
             refs += [data_uri(p) for p in inp[k]]
     body = {'ai_model': ai_model, 'prompt': inp['prompt'], 'reference_image_urls': refs[:5]}
-    if inp.get('aspect_ratio') in ('1:1', '16:9', '9:16', '4:3', '3:4', '3:2', '2:3'):
-        body['aspect_ratio'] = inp['aspect_ratio']
+    allowed = ['1:1', '16:9', '9:16', '4:3', '3:4'] + (['3:2', '2:3'] if 'gpt-image' in ai_model else [])
+    ar = inp.get('aspect_ratio')
+    pad = None
+    if ar and ar not in allowed:
+        # pad the reference image with white to the nearest supported shape, crop the result back afterwards
+        from PIL import Image
+        src = [v for k in inp if k.startswith('files:') for v in inp[k]][0]
+        im = Image.open(src).convert('RGB'); w, h = im.size
+        ratio = lambda r: float(r.split(':')[0]) / float(r.split(':')[1])
+        best = min((r for r in allowed if ratio(r) >= w / h - 1e-6 or ratio(r) <= w / h + 1e-6),
+                   key=lambda r: (abs(ratio(r) - w / h) if (ratio(r) >= w / h) == (w >= h) else 9))
+        R = ratio(best); W2, H2 = (max(w, round(h * R)), max(h, round(w / R)))
+        canvas = Image.new('RGB', (W2, H2), 'white'); canvas.paste(im, ((W2 - w) // 2, (H2 - h) // 2))
+        tmp = out_prefix + '_padded.png'; canvas.save(tmp)
+        refs = [data_uri(tmp)] + refs[1:]
+        body['reference_image_urls'] = refs[:5]
+        pad = (W2, H2, w, h); ar = best
+    if ar in allowed:
+        body['aspect_ratio'] = ar
     t0 = time.time()
     tid = req('POST', API, body)['result']
     while True:
@@ -55,7 +72,12 @@ def run(model, inp, out_prefix):
         tmp = fn + '.dl'
         urllib.request.urlretrieve(u, tmp)
         from PIL import Image
-        Image.open(tmp).convert('RGB').save(fn)   # whatever format Meshy returns -> png
+        im = Image.open(tmp).convert('RGB')         # whatever format Meshy returns -> png
+        if pad:                                     # undo the padding: crop the original area back out
+            W2, H2, w, h = pad; sx, sy = im.width / W2, im.height / H2
+            x0, y0 = (W2 - w) // 2 * sx, (H2 - h) // 2 * sy
+            im = im.crop((round(x0), round(y0), round(x0 + w * sx), round(y0 + h * sy)))
+        im.save(fn)
         os.remove(tmp)
         files.append(fn)
     print('ok', model, '%.0fs' % (time.time() - t0), files, 'credits', t.get('consumed_credits'), 'task', tid)

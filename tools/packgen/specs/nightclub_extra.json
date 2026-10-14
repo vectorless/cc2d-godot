@@ -1,0 +1,23 @@
+{
+ "pack_dir": "custom/nightclub",
+ "package": "Nightclub",
+ "model": "meshy/nano-banana-pro",
+ "parts": [
+  {
+   "id": "gown_bodice",
+   "category": "Armor",
+   "name": "Evening Gown Bodice Female",
+   "template": "Daily 14 Female",
+   "matte": true,
+   "desc": "the bodice of an elegant low-cut evening gown in deep red satin: a plunging V neckline, thin shoulder straps, fitted to the waist, smooth shiny satin with soft folds"
+  },
+  {
+   "id": "gown_skirt",
+   "category": "Skirt",
+   "name": "Evening Gown Skirt",
+   "template": "Daily 10",
+   "matte": true,
+   "desc": "the long floor-length skirt of an elegant evening gown in deep red satin, fitted at the waist and flowing straight down to the ankles with a high slit on one side and soft satin folds"
+  }
+ ]
+}

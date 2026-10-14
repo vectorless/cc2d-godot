@@ -104,15 +104,17 @@
    "id": "paddle",
    "category": "Weapon",
    "name": "Leather Paddle",
-   "template": "Daily 00",
-   "desc": "a costume prop: a black leather spanking paddle with a short handle and silver studs, pointing the same way as the input"
+   "template": "Sword 00",
+   "desc": "a costume prop: a black leather spanking paddle with a short handle and silver studs, pointing the same way as the input",
+   "mode": "area"
   },
   {
    "id": "whip",
    "category": "Weapon",
    "name": "Bullwhip",
-   "template": "Daily 00",
-   "desc": "a costume prop: a black braided leather bullwhip with its long lash coiled, the handle at the same place as the input's handle"
+   "template": "Sword 00",
+   "desc": "a costume prop: a black braided leather bullwhip, the handle where the input's grip is and the long lash rising in a loose S-curve to the top of the input",
+   "mode": "area"
   },
   {
    "id": "crop",
@@ -125,15 +127,18 @@
    "id": "flogger",
    "category": "Weapon",
    "name": "Flogger",
-   "template": "Daily 00",
-   "desc": "a costume prop: a black leather flogger with a wrapped handle and many suede tails, pointing the same way as the input"
+   "template": "Sword 00",
+   "desc": "a costume prop: a black leather flogger, the wrapped handle where the input's grip is and many long suede tails bundled along where the input's blade is",
+   "mode": "area"
   },
   {
    "id": "handcuffs",
    "category": "Weapon",
    "name": "Fluffy Handcuffs",
    "template": "Daily 00",
-   "desc": "a costume prop: a pair of novelty handcuffs with pink fluffy trim, held in the hand"
+   "desc": "a costume prop: a pair of novelty handcuffs with pink fluffy trim, held in the hand",
+   "mode": "area"
   }
- ]
+ ],
+ "model": "meshy/nano-banana-pro"
 }
