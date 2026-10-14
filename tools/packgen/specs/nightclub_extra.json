@@ -18,6 +18,38 @@
    "template": "Daily 10",
    "matte": true,
    "desc": "the long floor-length skirt of an elegant evening gown in deep red satin, fitted at the waist and flowing straight down to the ankles with a high slit on one side and soft satin folds"
+  },
+  {
+   "id": "slit_bodice",
+   "category": "Armor",
+   "name": "Sequin Slit Gown Bodice Female",
+   "template": "Daily 14 Female",
+   "matte": true,
+   "desc": "the bodice of a glamorous black sequin evening gown: a deep sweetheart neckline, thin spaghetti straps, fitted and shimmering with tiny silver-black sequins"
+  },
+  {
+   "id": "slit_skirt",
+   "category": "Skirt",
+   "name": "Sequin Slit Gown Skirt",
+   "template": "Daily 10",
+   "matte": true,
+   "desc": "the long floor-length skirt of a glamorous black sequin evening gown, fitted over the hips, with a dramatic thigh-high slit up the front of one leg showing the leg, shimmering silver-black sequins"
+  },
+  {
+   "id": "micro_top",
+   "category": "Armor",
+   "name": "Micro-Mini Dress Top Female",
+   "template": "Daily 14 Female",
+   "matte": true,
+   "desc": "the top of a hot-pink bodycon micro-mini party dress: fitted stretch fabric, a low scoop neckline and thin straps"
+  },
+  {
+   "id": "micro_skirt",
+   "category": "Skirt",
+   "name": "Micro-Mini Dress Skirt",
+   "template": "Daily 00",
+   "matte": true,
+   "desc": "the very short skirt part of a hot-pink bodycon micro-mini party dress, tight stretch fabric ending high on the thighs"
   }
  ]
 }

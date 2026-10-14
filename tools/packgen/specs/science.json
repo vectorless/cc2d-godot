@@ -1,0 +1,60 @@
+{
+ "pack_dir": "custom/science",
+ "package": "Science",
+ "model": "meshy/nano-banana-pro",
+ "parts": [
+  {
+   "id": "labcoat_m",
+   "category": "Armor",
+   "name": "Lab Coat Male",
+   "template": "Daily 09 Male",
+   "matte": true,
+   "desc": "a scientist's long white laboratory coat with long sleeves, a notched lapel collar, buttoned front, a breast pocket with pens and a clip-on ID badge, worn over a light blue shirt and dark tie The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
+  },
+  {
+   "id": "labcoat_f",
+   "category": "Armor",
+   "name": "Lab Coat Female",
+   "template": "Daily 09 Female",
+   "matte": true,
+   "desc": "a scientist's white laboratory coat with long sleeves, a notched lapel collar, buttoned front, a breast pocket with pens and a clip-on ID badge, worn over a lavender blouse The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
+  },
+  {
+   "id": "labcoat_tails",
+   "category": "Skirt",
+   "name": "Lab Coat Tails",
+   "template": "Daily 06",
+   "matte": true,
+   "desc": "the lower part of an open white laboratory coat: two white coat panels hanging from the waist to just above the knee with side pockets, open down the middle so the trousers show between them The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
+  },
+  {
+   "id": "slacks_m",
+   "category": "Pants",
+   "name": "Grey Slacks Male",
+   "template": "Daily 01 Male",
+   "desc": "plain charcoal-grey wool trousers with a black leather belt and creased legs"
+  },
+  {
+   "id": "slacks_f",
+   "category": "Pants",
+   "name": "Grey Slacks Female",
+   "template": "Daily 01 Female",
+   "desc": "plain charcoal-grey tailored trousers with a thin black belt"
+  },
+  {
+   "id": "goggles",
+   "category": "Helmet",
+   "name": "Safety Goggles",
+   "template": "Daily 00",
+   "desc": "clear plastic laboratory safety goggles with a grey elastic strap, pushed up and resting on top of the head above the forehead (goggles only, no head, no hair)"
+  },
+  {
+   "id": "shoes",
+   "category": "Boots",
+   "name": "Black Oxford Shoes",
+   "template": "Daily 00",
+   "matte": true,
+   "desc": "plain black leather oxford shoes with laces. The sheet has three shoes: the top two are side views (toe pointing right); the bottom one is the same shoe seen from the FRONT, toe pointing straight at the viewer."
+  }
+ ]
+}

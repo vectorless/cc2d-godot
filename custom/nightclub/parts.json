@@ -532,6 +532,100 @@
     ],
     "template": "Daily 14 Female",
     "desc": "the bodice of an elegant low-cut evening gown in deep red satin: a plunging V neckline, thin shoulder straps, fitted to the waist, smooth shiny satin with soft folds"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Sequin Slit Gown Bodice Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Sequin Slit Gown Bodice Female.png",
+    "mask": "res://custom/nightclub/textures/Armor/Sequin Slit Gown Bodice Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Sequin Slit Gown Bodice Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3589,
+      0.358,
+      0.3572,
+      1.0
+     ],
+     [
+      0.6752,
+      0.6743,
+      0.6724,
+      1.0
+     ],
+     [
+      0.9994,
+      0.9995,
+      0.9992,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "the bodice of a glamorous black sequin evening gown: a deep sweetheart neckline, thin spaghetti straps, fitted and shimmering with tiny silver-black sequins"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Micro-Mini Dress Top Female",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Armor/Micro-Mini Dress Top Female.png",
+    "mask": "res://custom/nightclub/textures/Armor/Micro-Mini Dress Top Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/nightclub/textures/Armor/Micro-Mini Dress Top Female.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9816,
+      0.3538,
+      0.6141,
+      1.0
+     ],
+     [
+      0.8082,
+      0.24,
+      0.4753,
+      1.0
+     ],
+     [
+      0.5906,
+      0.2306,
+      0.3743,
+      1.0
+     ]
+    ],
+    "template": "Daily 14 Female",
+    "desc": "the top of a hot-pink bodycon micro-mini party dress: fitted stretch fabric, a low scoop neckline and thin straps"
    }
   ],
   "Pants": [
@@ -989,6 +1083,54 @@
     ],
     "template": "Daily 10",
     "desc": "the long floor-length skirt of an elegant evening gown in deep red satin, fitted at the waist and flowing straight down to the ankles with a high slit on one side and soft satin folds"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Sequin Slit Gown Skirt",
+    "package": "Nightclub",
+    "texture": "res://custom/nightclub/textures/Skirt/Sequin Slit Gown Skirt.png",
+    "mask": "res://custom/nightclub/textures/Skirt/Sequin Slit Gown Skirt Mask.png",
+    "sprites": {
+     "Daily 10 Skirt": {
+      "texture": "res://custom/nightclub/textures/Skirt/Sequin Slit Gown Skirt.png",
+      "region": [
+       0,
+       0,
+       512,
+       768
+      ],
+      "offset": [
+       -256,
+       -384
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3787,
+      0.379,
+      0.3783,
+      1.0
+     ],
+     [
+      0.6622,
+      0.6629,
+      0.6628,
+      1.0
+     ],
+     [
+      0.9955,
+      0.9961,
+      0.9957,
+      1.0
+     ]
+    ],
+    "template": "Daily 10",
+    "desc": "the long floor-length skirt of a glamorous black sequin evening gown, fitted over the hips, with a dramatic thigh-high slit up the front of one leg showing the leg, shimmering silver-black sequins"
    }
   ],
   "Boots": [

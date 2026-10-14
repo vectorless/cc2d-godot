@@ -587,6 +587,240 @@
     ],
     "template": "Daily 09 Female",
     "desc": "a fitted 1940s-style army general's dress tunic in olive-drab wool with gold buttons, gold-braided shoulder boards with stars, rows of colourful ribbon bars and gold medals on the left chest, a gold aiguillette cord, a brown leather belt and gold braid cuff stripes Fictional army: no real country's flags, eagles, crests, swastikas or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Great War General's Tunic Male",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Armor/Great War General's Tunic Male.png",
+    "mask": "res://custom/military/textures/Armor/Great War General's Tunic Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.6755,
+      0.631,
+      0.5104,
+      1.0
+     ],
+     [
+      0.51,
+      0.4612,
+      0.3351,
+      1.0
+     ],
+     [
+      0.4363,
+      0.326,
+      0.2475,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a 1914-1918 style army general's service tunic in khaki serge with a stand-and-fall collar bearing red collar tabs with gold oak leaves, brass buttons, four pleated patch pockets, a brown leather Sam Browne belt with a cross strap, two rows of ribbon bars and a few medals on the left chest, and rank lace rings around the cuffs Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Great War General's Tunic Female",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Armor/Great War General's Tunic Female.png",
+    "mask": "res://custom/military/textures/Armor/Great War General's Tunic Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/military/textures/Armor/Great War General's Tunic Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7345,
+      0.6563,
+      0.4908,
+      1.0
+     ],
+     [
+      0.5049,
+      0.4444,
+      0.3146,
+      1.0
+     ],
+     [
+      0.6398,
+      0.2044,
+      0.1646,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "a fitted 1914-1918 style army general's service tunic in khaki serge with red collar tabs with gold oak leaves, brass buttons, pleated pockets, a brown Sam Browne belt, ribbon bars and medals, and rank lace rings on the cuffs Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
    }
   ],
   "Pants": [
@@ -1057,6 +1291,240 @@
     ],
     "template": "Daily 01 Female",
     "desc": "1940s-style officer's riding breeches in light khaki-grey, flared at the thighs, with a wide red general's stripe and a thin gold stripe down the outer seam Fictional army: no real country's flags, eagles, crests, swastikas or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Great War Breeches Male",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Pants/Great War Breeches Male.png",
+    "mask": "res://custom/military/textures/Pants/Great War Breeches Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7447,
+      0.6874,
+      0.5442,
+      1.0
+     ],
+     [
+      0.5943,
+      0.5407,
+      0.4098,
+      1.0
+     ],
+     [
+      0.4505,
+      0.4084,
+      0.299,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "1914-1918 style khaki cavalry breeches, wide at the thighs and tight below the knee, with a reinforced inner knee patch Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Great War Breeches Female",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Pants/Great War Breeches Female.png",
+    "mask": "res://custom/military/textures/Pants/Great War Breeches Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/military/textures/Pants/Great War Breeches Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7396,
+      0.6917,
+      0.5746,
+      1.0
+     ],
+     [
+      0.5941,
+      0.5417,
+      0.4161,
+      1.0
+     ],
+     [
+      0.4467,
+      0.391,
+      0.2944,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "1914-1918 style khaki cavalry breeches, wide at the thighs and tight below the knee Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
    }
   ],
   "Helmet": [
@@ -1203,6 +1671,54 @@
     ],
     "template": "Daily 00",
     "desc": "a 1940s-style general's peaked service cap in olive-drab with a high crown, a glossy black visor decorated with gold oak-leaf embroidery, a gold braid chin cord and a gold wreath badge with a star on the front (headwear only, no head) Fictional army: no real country's flags, eagles, crests, swastikas or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Great War General's Cap",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Helmet/Great War General's Cap.png",
+    "mask": "res://custom/military/textures/Helmet/Great War General's Cap Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/military/textures/Helmet/Great War General's Cap.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7647,
+      0.6928,
+      0.4518,
+      1.0
+     ],
+     [
+      0.4965,
+      0.4304,
+      0.2939,
+      1.0
+     ],
+     [
+      0.8451,
+      0.1376,
+      0.1164,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a 1914-1918 style general's soft peaked service cap in khaki with a bright red cap band, a gold-embroidered badge of crossed sabres in a wreath, and a brown leather visor and chin strap (headwear only, no head) Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
    }
   ],
   "Boots": [
@@ -1441,6 +1957,124 @@
     ],
     "template": "Fantasy 03",
     "desc": "tall polished brown leather officer's riding boots reaching just below the knee, smooth and glossy, with low heels and spurs The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Great War Field Boots",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Boots/Great War Field Boots.png",
+    "mask": "res://custom/military/textures/Boots/Great War Field Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/military/textures/Boots/Great War Field Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/military/textures/Boots/Great War Field Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/military/textures/Boots/Great War Field Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/military/textures/Boots/Great War Field Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/military/textures/Boots/Great War Field Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/military/textures/Boots/Great War Field Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4815,
+      0.3397,
+      0.2425,
+      1.0
+     ],
+     [
+      0.6067,
+      0.4558,
+      0.3564,
+      1.0
+     ],
+     [
+      0.3604,
+      0.2525,
+      0.1856,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "brown leather ankle boots worn with tall brown leather riding gaiters (leggings) strapped up the shins to just below the knee The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
    }
   ],
   "Weapon": [

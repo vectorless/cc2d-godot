@@ -1,0 +1,656 @@
+{
+ "format": 1,
+ "package": "Science",
+ "categories": {
+  "Armor": [
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Lab Coat Male",
+    "package": "Science",
+    "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+    "mask": "res://custom/science/textures/Armor/Lab Coat Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9448,
+      0.9808,
+      0.9965,
+      1.0
+     ],
+     [
+      0.7792,
+      0.8305,
+      0.8591,
+      1.0
+     ],
+     [
+      0.5072,
+      0.5315,
+      0.5475,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a scientist's long white laboratory coat with long sleeves, a notched lapel collar, buttoned front, a breast pocket with pens and a clip-on ID badge, worn over a light blue shirt and dark tie The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Lab Coat Female",
+    "package": "Science",
+    "texture": "res://custom/science/textures/Armor/Lab Coat Female.png",
+    "mask": "res://custom/science/textures/Armor/Lab Coat Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/science/textures/Armor/Lab Coat Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9398,
+      0.9724,
+      0.9928,
+      1.0
+     ],
+     [
+      0.7895,
+      0.8117,
+      0.8512,
+      1.0
+     ],
+     [
+      0.5304,
+      0.5326,
+      0.5644,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "a scientist's white laboratory coat with long sleeves, a notched lapel collar, buttoned front, a breast pocket with pens and a clip-on ID badge, worn over a lavender blouse The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
+   }
+  ],
+  "Skirt": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Lab Coat Tails",
+    "package": "Science",
+    "texture": "res://custom/science/textures/Skirt/Lab Coat Tails.png",
+    "mask": "res://custom/science/textures/Skirt/Lab Coat Tails Mask.png",
+    "sprites": {
+     "Daily 06 Skirt": {
+      "texture": "res://custom/science/textures/Skirt/Lab Coat Tails.png",
+      "region": [
+       0,
+       0,
+       512,
+       768
+      ],
+      "offset": [
+       -256,
+       -384
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9518,
+      0.9782,
+      0.9998,
+      1.0
+     ],
+     [
+      0.8109,
+      0.8345,
+      0.8588,
+      1.0
+     ],
+     [
+      0.5541,
+      0.5663,
+      0.5805,
+      1.0
+     ]
+    ],
+    "template": "Daily 06",
+    "desc": "the lower part of an open white laboratory coat: two white coat panels hanging from the waist to just above the knee with side pockets, open down the middle so the trousers show between them The coat is white, drawn with light grey shading and a clear black outline all round so it stands out from the white background."
+   }
+  ],
+  "Pants": [
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "Grey Slacks Male",
+    "package": "Science",
+    "texture": "res://custom/science/textures/Pants/Grey Slacks Male.png",
+    "mask": "res://custom/science/textures/Pants/Grey Slacks Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3506,
+      0.3493,
+      0.3419,
+      1.0
+     ],
+     [
+      0.909,
+      0.9071,
+      0.9076,
+      1.0
+     ],
+     [
+      0.636,
+      0.6336,
+      0.633,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "plain charcoal-grey wool trousers with a black leather belt and creased legs"
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "Grey Slacks Female",
+    "package": "Science",
+    "texture": "res://custom/science/textures/Pants/Grey Slacks Female.png",
+    "mask": "res://custom/science/textures/Pants/Grey Slacks Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/science/textures/Pants/Grey Slacks Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3088,
+      0.3092,
+      0.3088,
+      1.0
+     ],
+     [
+      0.4045,
+      0.405,
+      0.4039,
+      1.0
+     ],
+     [
+      0.8826,
+      0.8821,
+      0.8815,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "plain charcoal-grey tailored trousers with a thin black belt"
+   }
+  ],
+  "Helmet": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Safety Goggles",
+    "package": "Science",
+    "texture": "res://custom/science/textures/Helmet/Safety Goggles.png",
+    "mask": "res://custom/science/textures/Helmet/Safety Goggles Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/science/textures/Helmet/Safety Goggles.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9946,
+      0.9963,
+      0.9968,
+      1.0
+     ],
+     [
+      0.5601,
+      0.5624,
+      0.5632,
+      1.0
+     ],
+     [
+      0.7851,
+      0.7989,
+      0.8129,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "clear plastic laboratory safety goggles with a grey elastic strap, pushed up and resting on top of the head above the forehead (goggles only, no head, no hair)"
+   }
+  ],
+  "Boots": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Black Oxford Shoes",
+    "package": "Science",
+    "texture": "res://custom/science/textures/Boots/Black Oxford Shoes.png",
+    "mask": "res://custom/science/textures/Boots/Black Oxford Shoes Mask.png",
+    "sprites": {
+     "Boots Foot R": {
+      "texture": "res://custom/science/textures/Boots/Black Oxford Shoes.png",
+      "region": [
+       0,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot F": {
+      "texture": "res://custom/science/textures/Boots/Black Oxford Shoes.png",
+      "region": [
+       0,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/science/textures/Boots/Black Oxford Shoes.png",
+      "region": [
+       0,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.2899,
+      0.2901,
+      0.2898,
+      1.0
+     ],
+     [
+      0.4425,
+      0.4427,
+      0.4417,
+      1.0
+     ],
+     [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "plain black leather oxford shoes with laces. The sheet has three shoes: the top two are side views (toe pointing right); the bottom one is the same shoe seen from the FRONT, toe pointing straight at the viewer."
+   }
+  ]
+ }
+}

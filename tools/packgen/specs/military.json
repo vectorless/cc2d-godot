@@ -111,6 +111,101 @@
    "name": "General's Breeches Female",
    "template": "Daily 01 Female",
    "desc": "1940s-style officer's riding breeches in light khaki-grey, flared at the thighs, with a wide red general's stripe and a thin gold stripe down the outer seam Fictional army: no real country's flags, eagles, crests, swastikas or other real insignia, and no text."
+  },
+  {
+   "id": "ww1_tunic_m",
+   "category": "Armor",
+   "name": "Great War General's Tunic Male",
+   "template": "Daily 09 Male",
+   "desc": "a 1914-1918 style army general's service tunic in khaki serge with a stand-and-fall collar bearing red collar tabs with gold oak leaves, brass buttons, four pleated patch pockets, a brown leather Sam Browne belt with a cross strap, two rows of ribbon bars and a few medals on the left chest, and rank lace rings around the cuffs Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+  },
+  {
+   "id": "ww1_tunic_f",
+   "category": "Armor",
+   "name": "Great War General's Tunic Female",
+   "template": "Daily 09 Female",
+   "desc": "a fitted 1914-1918 style army general's service tunic in khaki serge with red collar tabs with gold oak leaves, brass buttons, pleated pockets, a brown Sam Browne belt, ribbon bars and medals, and rank lace rings on the cuffs Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+  },
+  {
+   "id": "ww1_breeches_m",
+   "category": "Pants",
+   "name": "Great War Breeches Male",
+   "template": "Daily 01 Male",
+   "desc": "1914-1918 style khaki cavalry breeches, wide at the thighs and tight below the knee, with a reinforced inner knee patch Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+  },
+  {
+   "id": "ww1_breeches_f",
+   "category": "Pants",
+   "name": "Great War Breeches Female",
+   "template": "Daily 01 Female",
+   "desc": "1914-1918 style khaki cavalry breeches, wide at the thighs and tight below the knee Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+  },
+  {
+   "id": "ww1_cap",
+   "category": "Helmet",
+   "name": "Great War General's Cap",
+   "template": "Daily 00",
+   "desc": "a 1914-1918 style general's soft peaked service cap in khaki with a bright red cap band, a gold-embroidered badge of crossed sabres in a wreath, and a brown leather visor and chin strap (headwear only, no head) Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+  },
+  {
+   "id": "ww1_boots",
+   "category": "Boots",
+   "name": "Great War Field Boots",
+   "template": "Fantasy 03",
+   "template_texture": "templates/Tall Boot.png",
+   "matte": true,
+   "desc": "brown leather ankle boots worn with tall brown leather riding gaiters (leggings) strapped up the shins to just below the knee The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+  },
+  {
+   "id": "nap_coat_m",
+   "category": "Armor",
+   "name": "Marshal's Coat Male",
+   "template": "Daily 09 Male",
+   "desc": "a Napoleonic-era marshal's dress coat in dark navy blue with a high stand collar, heavy gold oak-leaf embroidery on the collar, chest and cuffs, large gold fringed epaulettes on both shoulders, two rows of gold buttons, a wide red silk sash across the chest and several gold star decorations Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+  },
+  {
+   "id": "nap_coat_f",
+   "category": "Armor",
+   "name": "Marshal's Coat Female",
+   "template": "Daily 09 Female",
+   "desc": "a fitted Napoleonic-era marshal's dress coat in dark navy blue with a high collar, heavy gold embroidery, large gold fringed epaulettes, gold buttons and a red silk sash across the chest Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+  },
+  {
+   "id": "nap_breeches_m",
+   "category": "Pants",
+   "name": "Marshal's Breeches Male",
+   "template": "Daily 01 Male",
+   "desc": "Napoleonic-era tight white buckskin breeches with a white waistcoat hem at the waist and a gold-tasselled red sash knot at the hip Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+  },
+  {
+   "id": "nap_breeches_f",
+   "category": "Pants",
+   "name": "Marshal's Breeches Female",
+   "template": "Daily 01 Female",
+   "desc": "Napoleonic-era tight white buckskin breeches with a gold-tasselled red sash knot at the hip Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+  },
+  {
+   "id": "nap_bicorne",
+   "category": "Helmet",
+   "name": "Bicorne Hat",
+   "template": "Daily 00",
+   "desc": "a large black felt Napoleonic bicorne hat worn sideways, edged with gold lace and white ostrich feather trim, with a red-white-blue rosette replaced by a plain gold rosette (headwear only, no head) Fictional army: no real country's flags, crests, eagles or other real insignia, and no text."
+  },
+  {
+   "id": "nap_boots",
+   "category": "Boots",
+   "name": "Cavalry Jackboots",
+   "template": "Fantasy 03",
+   "template_texture": "templates/Tall Boot.png",
+   "matte": true,
+   "desc": "tall glossy black Napoleonic cavalry jackboots reaching just below the knee with a stiff cuff at the top The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+  },
+  {
+   "id": "nap_sabre",
+   "category": "Weapon",
+   "name": "Marshal's Sabre",
+   "template": "Sword 00",
+   "desc": "an ornate Napoleonic cavalry sabre with a curved polished steel blade and a gilded brass hilt with a knuckle guard, the hilt where the input's grip is"
   }
  ]
 }

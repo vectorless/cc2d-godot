@@ -1,0 +1,47 @@
+{
+ "pack_dir": "custom/sportswear",
+ "package": "Sportswear",
+ "model": "meshy/nano-banana-pro",
+ "parts": [
+  {
+   "id": "sports_bra",
+   "category": "Armor",
+   "name": "Sports Bra Female",
+   "template": "Base 00 Female",
+   "matte": true,
+   "desc": "a fitted teal athletic sports bra with a racerback, wide under-band with a small white stripe, smooth stretch fabric (same shape and position as the input bra)"
+  },
+  {
+   "id": "crop_tank",
+   "category": "Armor",
+   "name": "Fitted Crop Tank Female",
+   "template": "Daily 14 Female",
+   "matte": true,
+   "desc": "a skin-tight black athletic crop tank top ending just above the navel, racerback straps, sleek stretch fabric with a thin teal trim"
+  },
+  {
+   "id": "yoga_leggings",
+   "category": "Pants",
+   "name": "Yoga Leggings Female",
+   "template": "Daily 01 Female",
+   "matte": true,
+   "desc": "skin-tight high-waisted black yoga leggings to the ankle with a wide waistband and a subtle teal panel down each side, sleek stretch fabric hugging the legs"
+  },
+  {
+   "id": "bike_shorts",
+   "category": "Pants",
+   "name": "Bike Shorts Female",
+   "template": "Daily 01 Female",
+   "matte": true,
+   "desc": "skin-tight high-waisted teal bike shorts ending at mid-thigh with a wide waistband; the lower-leg (shin) pieces are bare and left completely empty"
+  },
+  {
+   "id": "trainers",
+   "category": "Boots",
+   "name": "Running Trainers",
+   "template": "Daily 00",
+   "matte": true,
+   "desc": "white running trainers with teal accents and thick cushioned soles. The sheet has three shoes: the top two are side views (toe pointing right); the bottom one is the same shoe seen from the FRONT, toe pointing straight at the viewer."
+  }
+ ]
+}
