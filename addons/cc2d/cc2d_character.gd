@@ -90,6 +90,10 @@ static var _sprite_tables := {}
 static var _emote_keys := {}  # animations path -> {anim name: [times, values]}
 
 static var _json_cache := {}
+## Extra animation files added by part packs ({"animations": "res://custom/<pack>/animations.json"}):
+## their clips are added to every character (see add_animation_pack).
+static var _extra_anim_files: Array[String] = []
+static var _anim_fx := {}     # clip name -> {"smoke": [[t0, t1], ...]} (exhale windows)
 static var _library_cache := {}
 
 
@@ -316,7 +320,45 @@ static func add_part_pack(path: String, catalogue_path := "res://cc2d/parts.json
 				continue
 			list.append(p)
 			added += 1
+	if pack.get("animations") is String:
+		add_animation_pack(pack.animations)
 	return added
+
+
+## Adds the clips of an extra animation file (same format as cc2d/animations/cc2d.json) to every
+## character built from now on (existing ones get them on their next rebuild, e.g. set_body_type).
+## A clip may give per-body tracks under "bodies": {"Male": {"tracks": [...]}, "Female": ...}, which
+## replace the common ones for the same path and property, and smoke windows under "smoke".
+## Returns false if the file was already added or can't be read.
+static func add_animation_pack(path: String) -> bool:
+	if path in _extra_anim_files or _read_json(path).is_empty():
+		return false
+	_extra_anim_files.append(path)
+	_library_cache.clear()
+	return true
+
+
+## The animation data for a body: the exported file plus the clips of every animation pack.
+static func _anim_data_for(anim_path: String, body: String) -> Dictionary:
+	var base := _cached_json(anim_path)
+	if _extra_anim_files.is_empty():
+		return base
+	var merged := base.duplicate()
+	merged.animations = (base.get("animations", {}) as Dictionary).duplicate()
+	for f in _extra_anim_files:
+		var extra := _cached_json(f)
+		for anim_name in extra.get("animations", {}):
+			var a: Dictionary = extra.animations[anim_name]
+			var tracks: Array = a.get("tracks", []).duplicate()
+			var own: Array = a.get("bodies", {}).get(body, {}).get("tracks", [])
+			if not own.is_empty():
+				var keys := {}
+				for tr in own:
+					keys[tr.path + "|" + tr.prop] = true
+				tracks = tracks.filter(func(tr): return not keys.has(tr.path + "|" + tr.prop)) + own
+			merged.animations[anim_name] = {"length": a.length, "loop": a.get("loop", true), "tracks": tracks}
+			_anim_fx[anim_name] = {"smoke": a.get("smoke", [])}
+	return merged
 
 
 ## Name of the part currently in a slot ("" if empty). Names aren't unique across packs
@@ -798,6 +840,95 @@ func _process(delta: float) -> void:
 	_advance_aim(delta)
 	_update_particles()
 	_update_emote_anim_index()
+	_update_smoke()
+
+
+# ============================================================================ smoke
+# A thin wisp rises from the ember of a held item whose part has "smoke_tip" (weapon-local px), and
+# clips with "smoke" windows (see add_animation_pack) puff smoke from the mouth during them.
+
+var _smoke := {}   # "wisp" / "puff" -> CPUParticles2D
+static var _smoke_tex: Texture2D
+
+
+func _update_smoke() -> void:
+	var p = slots.get("MainHand", {}).get("part")
+	var tip = p.get("smoke_tip") if p is Dictionary else null
+	var wspr: Node2D = null
+	if tip != null:
+		for path in sprites:
+			if String(path).ends_with("Bone_Weapon R/Weapon R"):
+				wspr = sprites[path]
+				break
+	var lit := tip != null and wspr != null and wspr.is_visible_in_tree()
+	if lit and not _smoke.has("wisp"):
+		_smoke.wisp = _make_smoke(false)
+	if _smoke.has("wisp"):
+		_smoke.wisp.emitting = lit
+		if lit:
+			_smoke.wisp.global_position = wspr.global_transform * Vector2(tip[0], tip[1])
+	var windows: Array = _anim_fx.get(current_animation, {}).get("smoke", [])
+	var puffing := false
+	if lit and not windows.is_empty() and animation_player != null:
+		var t := animation_player.current_animation_position
+		for w in windows:
+			if t >= float(w[0]) and t <= float(w[1]):
+				puffing = true
+	if puffing and not _smoke.has("puff"):
+		_smoke.puff = _make_smoke(true)
+	if _smoke.has("puff"):
+		_smoke.puff.emitting = puffing
+		if puffing:
+			for path in parts:
+				if String(path).ends_with("/Mouth F"):
+					var facing := signf(global_transform.x.x) if global_transform.x.x != 0.0 else 1.0
+					_smoke.puff.global_position = parts[path].global_position + Vector2(14.0 * facing, 4.0)
+					_smoke.puff.direction = Vector2(0.9 * facing, -0.5)
+					break
+
+
+func _make_smoke(puff: bool) -> CPUParticles2D:
+	if _smoke_tex == null:
+		var g := Gradient.new()
+		g.set_color(0, Color(1, 1, 1, 1))
+		g.set_color(1, Color(1, 1, 1, 0))
+		var gt := GradientTexture2D.new()
+		gt.gradient = g
+		gt.fill = GradientTexture2D.FILL_RADIAL
+		gt.fill_from = Vector2(0.5, 0.5)
+		gt.fill_to = Vector2(0.5, 0.0)
+		gt.width = 64
+		gt.height = 64
+		_smoke_tex = gt
+	var fx := CPUParticles2D.new()
+	fx.name = "_smoke_puff" if puff else "_smoke_wisp"
+	fx.texture = _smoke_tex
+	fx.local_coords = false
+	fx.z_index = 50
+	fx.amount = 40 if puff else 20
+	fx.lifetime = 2.2 if puff else 2.6
+	fx.direction = Vector2(0.9, -0.5) if puff else Vector2(0, -1)
+	fx.spread = 18.0 if puff else 6.0
+	fx.initial_velocity_min = 45.0 if puff else 14.0
+	fx.initial_velocity_max = 75.0 if puff else 24.0
+	fx.gravity = Vector2(0, -18) if puff else Vector2(4, -10)
+	fx.damping_min = 15.0 if puff else 2.0
+	fx.damping_max = 25.0 if puff else 4.0
+	fx.scale_amount_min = 0.55 if puff else 0.14
+	fx.scale_amount_max = 0.9 if puff else 0.22
+	var c := Curve.new()
+	c.add_point(Vector2(0, 0.4))
+	c.add_point(Vector2(1, 1.0 if not puff else 1.0))
+	c.max_value = 1.0
+	fx.scale_amount_curve = c
+	var ramp := Gradient.new()
+	ramp.set_color(0, Color(0.85, 0.85, 0.88, 0.0))
+	ramp.add_point(0.1, Color(0.9, 0.9, 0.93, 0.75 if puff else 0.6))
+	ramp.set_color(ramp.get_point_count() - 1, Color(0.8, 0.8, 0.84, 0.0))
+	fx.color_ramp = ramp
+	fx.emitting = false
+	add_child(fx)
+	return fx
 
 
 func _update_emote_anim_index() -> void:
@@ -1291,8 +1422,8 @@ func _build_animation_player() -> void:
 	add_child(animation_player)  # root_node ".." -> this character
 	var anim_path: String = data.get("animations", "res://cc2d/animations/cc2d.json")
 	var rig_path: String = data.get("rigs", {}).get(body_type, "")
-	var key := anim_path + "|" + rig_path
-	var anim_data := _cached_json(anim_path)
+	var key := anim_path + "|" + rig_path + "|" + ",".join(_extra_anim_files)
+	var anim_data := _anim_data_for(anim_path, body_type)
 	_sprite_tables[anim_path] = anim_data.get("sprites", [])
 	if not _emote_keys.has(anim_path):
 		var keys := {}

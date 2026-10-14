@@ -252,3 +252,22 @@ unity/Editor/             copy of the Unity exporter script
 
 - CC2D's **bake** mode (baking a character into one sprite atlas) and the Export PNG
   **Atlas** preset. The preset depends on CC2D's separate Export Atlas animations.
+
+## Smoking
+
+The **Smoking** pack (`custom/smoking/`) has a cigarette, a cigar and a tobacco pipe for the main hand,
+and a **Smoke** animation: the right hand brings the item to the lips, holds, lowers it, and the
+character exhales a puff. Any held item with a `"smoke_tip"` (its ember, in weapon-local pixels) gives
+off a thin wisp of smoke.
+
+- Animation packs: a part pack's `parts.json` can name an animations file (`"animations":
+  "res://custom/<pack>/animations.json"`, same format as `cc2d/animations/cc2d.json`). Its clips are
+  added to every character (`CC2DCharacter.add_animation_pack`). Per-body tracks go under
+  `"bodies": {"Male": {"tracks": [...]}, "Female": ...}`, and `"smoke": [[t0, t1], ...]` marks the
+  exhale windows.
+- The clip is generated: `python3 tools/anim/make_smoke_anim.py`. The per-body arm offsets in it come
+  from `tests/smoke_pose.tscn`, which searches for the pose that puts each item's `"mouth_end"` at the
+  lips with the hand in front of the chin.
+- Props are sized for real with `tools/packgen/recut_prop.py` (about 6 px per cm; `--tip` stores the
+  ember and mouth end, `--flip` holds a cigarette filter-up, `--top` hangs a pipe from its mouthpiece).
+- Test: `godot --path . --fixed-fps 60 res://tests/smoke_test.tscn`.

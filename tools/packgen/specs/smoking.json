@@ -1,0 +1,31 @@
+{
+ "pack_dir": "custom/smoking",
+ "package": "Smoking",
+ "model": "meshy/nano-banana-pro",
+ "parts": [
+  {
+   "id": "cigarette",
+   "category": "Weapon",
+   "name": "Cigarette",
+   "template": "Daily 00",
+   "matte": true,
+   "desc": "a single lit cigarette standing upright: white paper body, orange cork filter at the bottom where the input's grip is, a glowing orange ember and a little grey ash at the top, drawn large to fill the input item's size"
+  },
+  {
+   "id": "cigar",
+   "category": "Weapon",
+   "name": "Cigar",
+   "template": "Daily 00",
+   "matte": true,
+   "desc": "a fat lit cigar standing upright: rich brown tobacco leaf wrapper with a red and gold paper band near the bottom where the input's grip is, a glowing ember and grey ash at the top, drawn large to fill the input item's size"
+  },
+  {
+   "id": "pipe",
+   "category": "Weapon",
+   "name": "Tobacco Pipe",
+   "template": "Daily 00",
+   "matte": true,
+   "desc": "a classic curved briar tobacco pipe: a polished dark-brown wooden bowl with a glowing ember inside, and a black curved stem; the bowl is at the bottom where the input's grip is and the stem rises upward, drawn large to fill the input item's size"
+  }
+ ]
+}

@@ -1,0 +1,192 @@
+{
+ "format": 1,
+ "package": "Smoking",
+ "categories": {
+  "Weapon": [
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Cigarette",
+    "package": "Smoking",
+    "texture": "res://custom/smoking/textures/Weapon/Cigarette.png",
+    "mask": "res://custom/smoking/textures/Weapon/Cigarette Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/smoking/textures/Weapon/Cigarette.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9558,
+      0.6614,
+      0.303,
+      1.0
+     ],
+     [
+      0.8729,
+      0.8596,
+      0.8364,
+      1.0
+     ],
+     [
+      0.516,
+      0.4863,
+      0.4569,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a single lit cigarette standing upright: white paper body, orange cork filter at the bottom where the input's grip is, a glowing orange ember and a little grey ash at the top, drawn large to fill the input item's size",
+    "smoke_tip": [
+     1.4,
+     25.2
+    ],
+    "mouth_end": [
+     0.5,
+     -61.8
+    ]
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Cigar",
+    "package": "Smoking",
+    "texture": "res://custom/smoking/textures/Weapon/Cigar.png",
+    "mask": "res://custom/smoking/textures/Weapon/Cigar Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/smoking/textures/Weapon/Cigar.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4795,
+      0.3265,
+      0.2085,
+      1.0
+     ],
+     [
+      0.7393,
+      0.3439,
+      0.2095,
+      1.0
+     ],
+     [
+      0.7293,
+      0.6337,
+      0.4565,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a fat lit cigar standing upright: rich brown tobacco leaf wrapper with a red and gold paper band near the bottom where the input's grip is, a glowing ember and grey ash at the top, drawn large to fill the input item's size",
+    "smoke_tip": [
+     3.9,
+     32.2
+    ],
+    "mouth_end": [
+     0.5,
+     -67.8
+    ]
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Tobacco Pipe",
+    "package": "Smoking",
+    "texture": "res://custom/smoking/textures/Weapon/Tobacco Pipe.png",
+    "mask": "res://custom/smoking/textures/Weapon/Tobacco Pipe Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/smoking/textures/Weapon/Tobacco Pipe.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4299,
+      0.2656,
+      0.1877,
+      1.0
+     ],
+     [
+      0.6565,
+      0.4177,
+      0.2968,
+      1.0
+     ],
+     [
+      0.9831,
+      0.9493,
+      0.9097,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a classic curved briar tobacco pipe: a polished dark-brown wooden bowl with a glowing ember inside, and a black curved stem; the bowl is at the bottom where the input's grip is and the stem rises upward, drawn large to fill the input item's size",
+    "smoke_tip": [
+     -27.0,
+     24.2
+    ],
+    "mouth_end": [
+     0.0,
+     -45.8
+    ]
+   }
+  ]
+ },
+ "animations": "res://custom/smoking/animations.json"
+}
