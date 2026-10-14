@@ -353,6 +353,240 @@
     ],
     "template": "Daily 09 Male",
     "desc": "a smart olive-green military dress uniform jacket with brass buttons, shoulder boards, a row of plain coloured ribbon bars and a khaki shirt and tie Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "General's Tunic Male",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Armor/General's Tunic Male.png",
+    "mask": "res://custom/military/textures/Armor/General's Tunic Male Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Male.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Male.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Male.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Male.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Male.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Male.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5629,
+      0.4919,
+      0.3018,
+      1.0
+     ],
+     [
+      0.3599,
+      0.3244,
+      0.2177,
+      1.0
+     ],
+     [
+      0.9563,
+      0.8736,
+      0.5941,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Male",
+    "desc": "a 1940s-style army general's dress tunic in olive-drab wool with gold buttons, gold-braided shoulder boards with general's stars, rows of many colourful ribbon bars and several gold and silver medals on the left chest, a gold braid aiguillette cord looped from the shoulder, gold collar insignia, a wide brown leather belt with a shoulder strap across the chest, and gold braid stripes around each cuff Fictional army: no real country's flags, eagles, crests, swastikas or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "General's Tunic Female",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Armor/General's Tunic Female.png",
+    "mask": "res://custom/military/textures/Armor/General's Tunic Female Mask.png",
+    "sprites": {
+     "Armor Body": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Female.png",
+      "region": [
+       0,
+       0,
+       350,
+       512
+      ],
+      "offset": [
+       -175,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm L": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Female.png",
+      "region": [
+       877,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Lower Arm R": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Female.png",
+      "region": [
+       730,
+       232,
+       147,
+       280
+      ],
+      "offset": [
+       -73.5,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Armor Neck": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Female.png",
+      "region": [
+       350,
+       0,
+       190,
+       177
+      ],
+      "offset": [
+       -95,
+       -88.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm L": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Female.png",
+      "region": [
+       540,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     },
+     "Armor Upper Arm R": {
+      "texture": "res://custom/military/textures/Armor/General's Tunic Female.png",
+      "region": [
+       350,
+       177,
+       190,
+       335
+      ],
+      "offset": [
+       -95,
+       -167.5
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4616,
+      0.4312,
+      0.291,
+      1.0
+     ],
+     [
+      0.9416,
+      0.8629,
+      0.6384,
+      1.0
+     ],
+     [
+      0.7561,
+      0.6352,
+      0.3077,
+      1.0
+     ]
+    ],
+    "template": "Daily 09 Female",
+    "desc": "a fitted 1940s-style army general's dress tunic in olive-drab wool with gold buttons, gold-braided shoulder boards with stars, rows of colourful ribbon bars and gold medals on the left chest, a gold aiguillette cord, a brown leather belt and gold braid cuff stripes Fictional army: no real country's flags, eagles, crests, swastikas or other real insignia, and no text."
    }
   ],
   "Pants": [
@@ -589,6 +823,240 @@
     ],
     "template": "Daily 01 Female",
     "desc": "woodland-camouflage military combat trousers with thigh cargo pockets and a webbing belt Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   },
+   {
+    "body": [
+     "Male"
+    ],
+    "name": "General's Breeches Male",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Pants/General's Breeches Male.png",
+    "mask": "res://custom/military/textures/Pants/General's Breeches Male Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Male.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Male.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Male.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Male.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Male.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Male.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7053,
+      0.6955,
+      0.6167,
+      1.0
+     ],
+     [
+      0.5524,
+      0.526,
+      0.4435,
+      1.0
+     ],
+     [
+      0.6891,
+      0.1643,
+      0.1302,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Male",
+    "desc": "1940s-style officer's riding breeches in light khaki-grey, flared at the thighs, with a wide red general's stripe and a thin gold stripe down the outer seam Fictional army: no real country's flags, eagles, crests, swastikas or other real insignia, and no text."
+   },
+   {
+    "body": [
+     "Female"
+    ],
+    "name": "General's Breeches Female",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Pants/General's Breeches Female.png",
+    "mask": "res://custom/military/textures/Pants/General's Breeches Female Mask.png",
+    "sprites": {
+     "Pants Hip": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Female.png",
+      "region": [
+       512,
+       232,
+       380,
+       280
+      ],
+      "offset": [
+       -190,
+       -140
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg L": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Female.png",
+      "region": [
+       256,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Upper Leg R": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Female.png",
+      "region": [
+       0,
+       0,
+       256,
+       512
+      ],
+      "offset": [
+       -128,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg F": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Female.png",
+      "region": [
+       512,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg L": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Female.png",
+      "region": [
+       256,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Pants Lower Leg R": {
+      "texture": "res://custom/military/textures/Pants/General's Breeches Female.png",
+      "region": [
+       0,
+       512,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.7218,
+      0.7072,
+      0.629,
+      1.0
+     ],
+     [
+      0.6212,
+      0.5679,
+      0.4373,
+      1.0
+     ],
+     [
+      0.7294,
+      0.213,
+      0.1629,
+      1.0
+     ]
+    ],
+    "template": "Daily 01 Female",
+    "desc": "1940s-style officer's riding breeches in light khaki-grey, flared at the thighs, with a wide red general's stripe and a thin gold stripe down the outer seam Fictional army: no real country's flags, eagles, crests, swastikas or other real insignia, and no text."
    }
   ],
   "Helmet": [
@@ -687,6 +1155,54 @@
     ],
     "template": "Daily 00",
     "desc": "a dark green military beret worn tilted to one side, with a plain brass badge Original design: no real police force, army or country names, flags, crests or insignia; no text."
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "General's Peaked Cap",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Helmet/General's Peaked Cap.png",
+    "mask": "res://custom/military/textures/Helmet/General's Peaked Cap Mask.png",
+    "sprites": {
+     "Helmet F": {
+      "texture": "res://custom/military/textures/Helmet/General's Peaked Cap.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.5457,
+      0.4859,
+      0.3243,
+      1.0
+     ],
+     [
+      0.3595,
+      0.328,
+      0.228,
+      1.0
+     ],
+     [
+      0.9799,
+      0.884,
+      0.5064,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a 1940s-style general's peaked service cap in olive-drab with a high crown, a glossy black visor decorated with gold oak-leaf embroidery, a gold braid chin cord and a gold wreath badge with a star on the front (headwear only, no head) Fictional army: no real country's flags, eagles, crests, swastikas or other real insignia, and no text."
    }
   ],
   "Boots": [
@@ -807,6 +1323,124 @@
     ],
     "template": "Fantasy 03",
     "desc": "black leather military combat boots reaching mid-calf, laced to the top, with thick rugged soles The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "General's Riding Boots",
+    "package": "Military",
+    "texture": "res://custom/military/textures/Boots/General's Riding Boots.png",
+    "mask": "res://custom/military/textures/Boots/General's Riding Boots Mask.png",
+    "sprites": {
+     "Boots Foot F": {
+      "texture": "res://custom/military/textures/Boots/General's Riding Boots.png",
+      "region": [
+       768,
+       340,
+       180,
+       172
+      ],
+      "offset": [
+       -90,
+       -86
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot L": {
+      "texture": "res://custom/military/textures/Boots/General's Riding Boots.png",
+      "region": [
+       768,
+       170,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Foot R": {
+      "texture": "res://custom/military/textures/Boots/General's Riding Boots.png",
+      "region": [
+       768,
+       0,
+       256,
+       170
+      ],
+      "offset": [
+       -128,
+       -85
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg F": {
+      "texture": "res://custom/military/textures/Boots/General's Riding Boots.png",
+      "region": [
+       512,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg L": {
+      "texture": "res://custom/military/textures/Boots/General's Riding Boots.png",
+      "region": [
+       256,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     },
+     "Boots Lower Leg R": {
+      "texture": "res://custom/military/textures/Boots/General's Riding Boots.png",
+      "region": [
+       0,
+       0,
+       256,
+       400
+      ],
+      "offset": [
+       -128,
+       -200
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.4478,
+      0.2774,
+      0.1861,
+      1.0
+     ],
+     [
+      0.6081,
+      0.4228,
+      0.3179,
+      1.0
+     ],
+     [
+      0.7809,
+      0.7265,
+      0.7,
+      1.0
+     ]
+    ],
+    "template": "Fantasy 03",
+    "desc": "tall polished brown leather officer's riding boots reaching just below the knee, smooth and glossy, with low heels and spurs The boot shaft pieces are only the leg, from just below the knee down to the ankle, with no foot on them; the shoe pieces are only the foot part."
    }
   ],
   "Weapon": [
