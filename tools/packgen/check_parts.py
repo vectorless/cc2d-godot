@@ -87,9 +87,10 @@ def check_part(cat, p, tp, guide):
             hue = 0 if mx == mn else (60 * ((g - b) / (mx - mn)) % 360 if mx == r else 0)
             ch = M[..., i] > 128
             share = (ch & (T[..., 3] > 128)).sum() / max((T[..., 3] > 128).sum(), 1)
-            if mx == r and 8 <= hue <= 45 and 0.12 <= sat <= 0.6 and 0.35 <= mx <= 1.0 and share > 0.03 \
+            # cartoon skin is light and mildly saturated; brown leather, tan or olive cloth is darker or more saturated
+            if mx == r and 10 <= hue <= 32 and 0.12 <= sat <= 0.45 and mx >= 0.75 and (r - g) / r >= 0.08 and share > 0.03 \
                     and cat not in ('Hair', 'Helmet', 'Weapon', 'Mouth', 'FacialHair'):
-                probs.append(('skin_channel', 'colour %d %s looks like skin and covers %.0f%% of the part' % (i + 1, np.round(c[:3], 2).tolist(), share * 100)))
+                probs.append(('skin_channel', 'colour %d %s may be bare skin drawn into the part (%.0f%% of it): look at a render' % (i + 1, np.round(c[:3], 2).tolist(), share * 100)))
     RGB = T[..., :3]
     if len(cols) == 3:
         from fixparts import shaded
@@ -134,7 +135,7 @@ def check_part(cat, p, tp, guide):
             if unc.sum() > 0.08 * ta.sum():
                 probs.append(('uncovered', '%s: %.0f%% of the template area left bare' % (name, 100 * unc.sum() / ta.sum())))
             ov[sl][unc] = (255, 40, 40)
-        if cat not in NO_OVERFLOW:
+        if cat not in NO_OVERFLOW and not name.startswith('Boots Foot'):   # shoes rise above a flat sandal template
             out = pa & ~ndimage.binary_dilation(ta, iterations=10)
             out = ndimage.binary_opening(out, iterations=1)
             if out.sum() > 0.10 * pa.sum() and out.sum() > 300:

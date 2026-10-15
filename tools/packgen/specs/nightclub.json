@@ -51,7 +51,12 @@
    "category": "Pants",
    "name": "Shorts and Fishnets Female",
    "template": "Daily 01 Female",
-   "desc": "fashionable nightclub look: short sequin shorts at the hips with black fishnet tights covering the legs"
+   "desc": "fashionable nightclub look: short sequin shorts at the hips with black fishnet tights covering the legs",
+   "qa_ignore": [
+    "skin_channel",
+    "thin_lines",
+    "uncovered"
+   ]
   },
   {
    "id": "micro_skirt",

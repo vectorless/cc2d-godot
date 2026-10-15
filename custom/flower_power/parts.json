@@ -1233,68 +1233,6 @@
      "Male",
      "Female"
     ],
-    "name": "Long Centre Part",
-    "package": "Flower Power",
-    "texture": "res://custom/flower_power/textures/Hair/Long Centre Part.png",
-    "mask": "res://custom/flower_power/textures/Hair/Long Centre Part Mask.png",
-    "sprites": {
-     "Hair B": {
-      "texture": "res://custom/flower_power/textures/Hair/Long Centre Part.png",
-      "region": [
-       512,
-       0,
-       512,
-       512
-      ],
-      "offset": [
-       -256,
-       -256
-      ],
-      "px_scale": 1
-     },
-     "Hair F": {
-      "texture": "res://custom/flower_power/textures/Hair/Long Centre Part.png",
-      "region": [
-       0,
-       0,
-       512,
-       512
-      ],
-      "offset": [
-       -256,
-       -256
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.4591,
-      0.4587,
-      0.4584,
-      1.0
-     ],
-     [
-      0.587,
-      0.5865,
-      0.5862,
-      1.0
-     ],
-     [
-      0.7368,
-      0.7365,
-      0.7361,
-      1.0
-     ]
-    ],
-    "template": "04",
-    "desc": "long straight 1960s hippie hair parted in the centre, falling past the shoulders"
-   },
-   {
-    "body": [
-     "Male",
-     "Female"
-    ],
     "name": "Afro",
     "package": "Flower Power",
     "texture": "res://custom/flower_power/textures/Hair/Afro.png",
@@ -1385,6 +1323,68 @@
     ],
     "template": "00",
     "desc": "a 1960s shaggy mop-top haircut with a full fringe covering the forehead"
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "name": "Long Centre Part",
+    "package": "Flower Power",
+    "texture": "res://custom/flower_power/textures/Hair/Long Centre Part.png",
+    "mask": "res://custom/flower_power/textures/Hair/Long Centre Part Mask.png",
+    "sprites": {
+     "Hair F": {
+      "texture": "res://custom/flower_power/textures/Hair/Long Centre Part.png",
+      "region": [
+       0,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     },
+     "Hair B": {
+      "texture": "res://custom/flower_power/textures/Hair/Long Centre Part.png",
+      "region": [
+       512,
+       0,
+       512,
+       512
+      ],
+      "offset": [
+       -256,
+       -256
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.3253,
+      0.3249,
+      0.325,
+      1.0
+     ],
+     [
+      0.5505,
+      0.5492,
+      0.5492,
+      1.0
+     ],
+     [
+      0.9928,
+      0.9927,
+      0.9927,
+      1.0
+     ]
+    ],
+    "template": "16",
+    "desc": "long straight 1960s hippie hair parted in the centre, falling past the shoulders, with a thin braided headband"
    }
   ],
   "Helmet": [

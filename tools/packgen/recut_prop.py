@@ -1,6 +1,6 @@
 """Re-cut a held prop from its generated image at a chosen size, its bottom at the hand.
 
-    python3 recut_prop.py specs/<pack>.json <part id> <height px> [bottom y px] [--tip] [--top] [--flip]
+    python3 recut_prop.py specs/<pack>.json <part id> <height px> [bottom y px] [--tip] [--top] [--flip] [--widen=1.5]
 
 The item is cut out of gen_0.png (background and enclosed flat white made transparent), scaled to
 <height> px tall (the character is ~1100 px tall, so ~6 px per cm), centred on the grip column and
@@ -37,6 +37,9 @@ a = np.where(inner, 1.0, np.where(edge, np.clip((255 - g.min(-1)) / 120, 0, 1), 
 rgb = np.where(edge[..., None], np.clip((g - 255 * (1 - a[..., None])) / np.maximum(a, 1e-3)[..., None], 0, 255), g)
 rgba = np.dstack([rgb, a * 255])[y0:y1, x0:x1]
 s = H / (y1 - y0); w = max(1, round((x1 - x0) * s))
+for a_ in sys.argv:
+    if a_.startswith('--widen='):   # thicker than drawn (e.g. a cigarette that would vanish at game size)
+        w = max(1, round(w * float(a_.split('=')[1])))
 piece = Image.fromarray(rgba.astype(np.uint8), 'RGBA').resize((w, H), Image.LANCZOS)
 if '--flip' in sys.argv:          # upside down: e.g. a cigarette held with the filter up and the lit end down
     piece = piece.transpose(Image.FLIP_TOP_BOTTOM)

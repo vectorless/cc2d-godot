@@ -42,6 +42,26 @@ func _ready() -> void:
 				col += 1
 			check(ch._smoke.has("wisp") and ch._smoke.wisp.emitting, "%s %s: wisp from the ember" % [bt, w])
 			row += 1
+	# an exported frame (CC2DExporter poses a copy of the character) shows the exhale puff
+	var ex := CC2DExporter.new()
+	add_child(ex)
+	ex.apply_preset("default")
+	ex.width = 512
+	ex.height = 640
+	ex.char_position = Vector2(0, -1.0)
+	ex.char_scale = 1.15
+	ch.equip_part("MainHand", "Cigarette", "Smoking")
+	var with_smoke := await ex.render_image(ch, "Smoke", 3.8)
+	ch.equip_part("MainHand", "")
+	var without := await ex.render_image(ch, "Smoke", 3.8)
+	var diff := 0
+	for y in range(0, 280):
+		for x in range(200, 512):
+			var a := with_smoke.get_pixel(x, y)
+			var b := without.get_pixel(x, y)
+			if absf(a.a - b.a) + absf(a.r - b.r) > 0.15:
+				diff += 1
+	check(diff > 40, "exported frame shows smoke (%d pixels differ near the head)" % diff)
 	ch.equip_part("MainHand", "")
 	await get_tree().process_frame
 	await get_tree().process_frame

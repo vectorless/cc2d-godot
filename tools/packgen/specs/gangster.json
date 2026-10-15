@@ -22,7 +22,10 @@
    "category": "Armor",
    "name": "Camel Overcoat Male",
    "template": "Daily 09 Male",
-   "desc": "a 1950s camel-hair double-breasted overcoat with wide lapels turned up, buttoned, over a dark suit and tie"
+   "desc": "a 1950s camel-hair double-breasted overcoat with wide lapels turned up, buttoned, over a dark suit and tie",
+   "qa_ignore": [
+    "skin_channel"
+   ]
   },
   {
    "id": "leather_m",

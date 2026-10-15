@@ -102,8 +102,12 @@
    "id": "long_hair",
    "category": "Hair",
    "name": "Long Centre Part",
-   "template": "04",
-   "desc": "long straight 1960s hippie hair parted in the centre, falling past the shoulders"
+   "template": "16",
+   "desc": "long straight 1960s hippie hair parted in the centre, falling past the shoulders, with a thin braided headband",
+   "model": "meshy/nano-banana-pro",
+   "qa_ignore": [
+    "flat_fill"
+   ]
   },
   {
    "id": "afro",

@@ -231,6 +231,7 @@ func pose(base_anim: String, base_time: float, aim := "", aim_time := 0.0) -> vo
 			var age := _flash_age(path, aim_time)
 			e.fx.preprocess = age if age >= 1.0 / 30.0 else 0.0
 			e.fx.restart()
+	_pose_smoke(base_time)
 
 
 ## Length in seconds of an Aim-layer state (its longest blend-tree child), 0 if it has none.
@@ -887,6 +888,25 @@ func _update_smoke() -> void:
 					break
 
 
+## Smoke for a posed frame (exports): placed for this pose and pre-simulated with a fixed seed, so
+## frames of one animation show the same smoke moving on (the wisp as if it had been rising for a while,
+## the puff for as long as the exhale has been going).
+func _pose_smoke(t: float) -> void:
+	_update_smoke()
+	var windows: Array = _anim_fx.get(current_animation, {}).get("smoke", [])
+	for k in _smoke:
+		var fx: CPUParticles2D = _smoke[k]
+		if not fx.emitting:
+			continue
+		var age := fx.lifetime + t
+		if k == "puff":
+			for w in windows:
+				if t >= float(w[0]) and t <= float(w[1]):
+					age = t - float(w[0])
+		fx.preprocess = age if age >= 1.0 / 30.0 else 0.0
+		fx.restart()
+
+
 func _make_smoke(puff: bool) -> CPUParticles2D:
 	if _smoke_tex == null:
 		var g := Gradient.new()
@@ -927,6 +947,9 @@ func _make_smoke(puff: bool) -> CPUParticles2D:
 	ramp.set_color(ramp.get_point_count() - 1, Color(0.8, 0.8, 0.84, 0.0))
 	fx.color_ramp = ramp
 	fx.emitting = false
+	if "use_fixed_seed" in fx:   # Godot 4.4+: the same smoke every time for the same pose (exports)
+		fx.set("use_fixed_seed", true)
+		fx.set("seed", 1234 if puff else 4321)
 	add_child(fx)
 	return fx
 

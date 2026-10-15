@@ -13,67 +13,6 @@
      0,
      0
     ],
-    "name": "Cigarette",
-    "package": "Smoking",
-    "texture": "res://custom/smoking/textures/Weapon/Cigarette.png",
-    "mask": "res://custom/smoking/textures/Weapon/Cigarette Mask.png",
-    "sprites": {
-     "Weapon": {
-      "texture": "res://custom/smoking/textures/Weapon/Cigarette.png",
-      "region": [
-       0,
-       0,
-       512,
-       1024
-      ],
-      "offset": [
-       -256,
-       -757.76
-      ],
-      "px_scale": 1
-     }
-    },
-    "colors": [
-     [
-      0.9558,
-      0.6614,
-      0.303,
-      1.0
-     ],
-     [
-      0.8729,
-      0.8596,
-      0.8364,
-      1.0
-     ],
-     [
-      0.516,
-      0.4863,
-      0.4569,
-      1.0
-     ]
-    ],
-    "template": "Daily 00",
-    "desc": "a single lit cigarette standing upright: white paper body, orange cork filter at the bottom where the input's grip is, a glowing orange ember and a little grey ash at the top, drawn large to fill the input item's size",
-    "smoke_tip": [
-     1.4,
-     25.2
-    ],
-    "mouth_end": [
-     0.5,
-     -61.8
-    ]
-   },
-   {
-    "body": [
-     "Male",
-     "Female"
-    ],
-    "weapon": "OneHanded",
-    "muzzle": [
-     0,
-     0
-    ],
     "name": "Cigar",
     "package": "Smoking",
     "texture": "res://custom/smoking/textures/Weapon/Cigar.png",
@@ -184,6 +123,67 @@
     "mouth_end": [
      0.0,
      -45.8
+    ]
+   },
+   {
+    "body": [
+     "Male",
+     "Female"
+    ],
+    "weapon": "OneHanded",
+    "muzzle": [
+     0,
+     0
+    ],
+    "name": "Cigarette",
+    "package": "Smoking",
+    "texture": "res://custom/smoking/textures/Weapon/Cigarette.png",
+    "mask": "res://custom/smoking/textures/Weapon/Cigarette Mask.png",
+    "sprites": {
+     "Weapon": {
+      "texture": "res://custom/smoking/textures/Weapon/Cigarette.png",
+      "region": [
+       0,
+       0,
+       512,
+       1024
+      ],
+      "offset": [
+       -256,
+       -757.76
+      ],
+      "px_scale": 1
+     }
+    },
+    "colors": [
+     [
+      0.9667,
+      0.6747,
+      0.3172,
+      1.0
+     ],
+     [
+      0.9818,
+      0.9787,
+      0.972,
+      1.0
+     ],
+     [
+      0.5583,
+      0.5157,
+      0.4767,
+      1.0
+     ]
+    ],
+    "template": "Daily 00",
+    "desc": "a single lit cigarette standing upright: white paper body, orange cork filter at the bottom where the input's grip is, a glowing orange ember and a little grey ash at the top, drawn large to fill the input item's size",
+    "smoke_tip": [
+     0.9,
+     25.2
+    ],
+    "mouth_end": [
+     0.0,
+     -61.8
     ]
    }
   ]
